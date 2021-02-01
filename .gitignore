@@ -44,6 +44,5 @@ build/**
 *.fls
 *.fdb_latexmk
 
-*.jpg
 *.png
 *.pdf
