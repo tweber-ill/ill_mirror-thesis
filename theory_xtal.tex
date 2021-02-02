@@ -164,13 +164,21 @@ Angle $\xi$ between $\left| Q \right>$ and orientation vector $\left| a \right>$
 \sigma_{\mathrm{side}} \cdot \arccos \left( \frac{ \left< Q | a \right> }{ \sqrt{\left< Q | Q \right>} \sqrt{\left< a | a \right>} } \right) = 
 \sigma_{\mathrm{side}} \cdot \arccos \left( \frac{ Q^i g_{ij} a^j }{ \sqrt{Q^i g_{ij} Q^j} \sqrt{a^i g_{ij} a^j} } \right) } \end{equation}
 
-The sign, $\sigma_{\mathrm{side}}$, of $\xi$ depends on which side of the orientation vector $\left| a \right>$ the scattering vector $\left| Q \right>$ 
-is located. The sign can be found by calculating the (covariant) cross product of $\left| a \right>$ and $\left| Q \right>$ to give an out-of-plane vector 
-which can be compared with the given scattering plane up vector.
+The sign, $\sigma_{\mathrm{side}}$, of $\xi$ depends on which side of the orientation vector $\left| a \right>$ 
+the scattering vector $\left| Q \right>$ is located. 
+The sign can be found by calculating the (covariant) cross product of $\left| a \right>$ and $\left| Q \right>$ 
+to give an out-of-plane vector $\left| x \right>$ which can be compared with the given scattering plane up vector. 
+The covariant cross-product is calculated as \cite[p. 815]{Arens2015}:
+\begin{equation}
+	x^l = g^{li} \epsilon_{ijk} a^j Q^k, \hspace{0.5cm} \mathrm{with} \ 
+	\epsilon_{ijk} = \left|
+		\begin{array}{ccc} \left| 
+			\bm{b_i} \right> & \left| \bm{b_j} \right> & \left| \bm{b_k} \right>
+		\end{array} \right|.
+\end{equation}
 
 
 \paragraph*{Special case}
 Special case for cubic crystals, $g_{ij} = \delta_{ij} \cdot \left( 2\pi / a \right)^2$:
 \begin{equation} \xi = \sigma_{\mathrm{side}} \cdot \arccos \left( \frac{ Q_i a^i }{ \sqrt{Q_i Q^i} \sqrt{a_i a^i} } \right) \end{equation}
 % ------------------------------------------------------------------------------------------------------------------------------------
-
