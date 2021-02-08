@@ -21,7 +21,7 @@ CONVERT = convert
 # -----------------------------------------------------------------------------
 .PHONY: all clean figures_svg2pdf
 
-all: figures_svg2pdf thesis.pdf
+all: thesis.pdf
 
 clean:
 	find . \( -name "*.aux" -o -name "*.out" \

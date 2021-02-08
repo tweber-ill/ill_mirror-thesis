@@ -16,7 +16,7 @@
 \usepackage{graphicx}
 \usepackage{siunitx}
 \usepackage{babel}
-\usepackage[numbib]{tocbibind}
+\usepackage[numbib, chapter]{tocbibind}
 \usepackage[colorlinks=true, linkcolor=black, citecolor=blue, urlcolor=blue, unicode=true]{hyperref}
 \usepackage[a4paper]{geometry}
 \geometry{tmargin=2.5cm, bmargin=2.5cm, lmargin=2cm, rmargin=2cm}
@@ -40,20 +40,33 @@
 
 
 % ====================================================================================================================================
-\chapter{Front matter}
-\section{Abstract}
-	\input{abstract.tex}
-\section{Acknowledgements}
-	\input{acknowledgements.tex}
+\part{Front matter}
+%\addcontentsline{toc}{part}{Front matter} 
+\input{abstract.tex}
+\input{acknowledgements.tex}
+
+
+\part{Main part}
 
 \chapter{Introduction}
 \input{intro.tex}
 
 \chapter{Theory}
 \input{theory_xtal.tex}
+\input{theory_path.tex}
 
-\chapter{Back matter}
+
+\chapter{Implementation}
+% library
+% GUI
+% Nomad interface
+
+
+\appendix
+\part{Back matter}
+%\addcontentsline{toc}{part}{Back matter} 
 \input{publications.tex}
+\input{errata.tex}
 
 %\section{Bibliography}
 \bibliographystyle{alpha}
