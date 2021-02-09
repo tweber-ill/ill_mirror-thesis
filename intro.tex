@@ -1,15 +1,25 @@
-Neutron triple-axis spectrometers (TAS) are one of the fundamental types of instruments in the field of neutron scattering at research reactors. The goal of this work is the design and implementation of software tools which enable an automatic path finding for TAS instruments. Automatic path finding is necessary for the instrument to circumvent obstacles in its path. The methods in this work are part of the current drive towards autonomous experimentation.
-
-In this chapter, we introduce the concepts of neutron scattering and shortly present the different types of instruments typically found at a research reactor (Sec. \ref{sec:scattering}). A special emphasis is put on triple-axis spectroscopy as they are the technique we are interested here (Sec. \ref{sec:scattering}). Finally, we summarise the current state of autonomous experimentation (Sec. \ref{sec:autonomous}).
+In this chapter we introduce the concepts of neutron scattering and shortly present the different types of instruments typically found at a research reactor (Sec. \ref{sec:scattering}). A special emphasis is put on triple-axis spectrometers (TAS) as the work-horse of inelastic scattering (Sec. \ref{sec:scattering}). Finally, we summarise the current state of autonomous experimentation (Sec. \ref{sec:autonomous}).
 
 
 
 \section{Neutron scattering \label{sec:scattering}}
 
+The history of neutron physics begins in 1932 with the discovery of the neutron by James Chadwick, who used alpha particles (helium nuclei) to bombard a beryllium-9 sample, producing carbon-12 and a neutron per reaction \cite[p.1]{Jacrot2021}. 
+In 1939, Otto Hahn used the same kind of neutron source to irradiate uranium-235 in an attempt to produce trans-uranium elements \cite{TODO}. But instead of heavier elements, the experiment yielded lighter elements, which was interpreted by Lise Meitner as a splitting of the uranium nucleus, the discovery of nuclear fission \cite{TODO}. A typical fission reaction is
+TODO ,
+where two to three neutrons are produces by each reaction in addition to the daughter nuclei.
+In 1942, Enrico Fermi made use of these excess neutrons to produce a continuous nuclear fission chain reaction \cite[p.1]{Jacrot2021} in the first artificial nuclear reactor, the \textit{Chicago Pile-1} \footnote{Note that \textit{Chicago Pile-1} was the first \textit{artificial} nuclear reactor, the first \textit{natural} reactor was discovered to having run in Oklo, Gabun. \cite{TODO}}.
+The first research reactor at a power of 3.5 MW was built in Oak Ridge, USA in 1943 \cite[p.3]{Jacrot2021}. Here, first neutron scattering experiments were performed by Clifford Shull using a two-axis diffractometer \cite[p.3]{Jacrot2021}.
 
 
 \section{Triple-axis spectrometers \label{sec:tas}}
 
+The triple-axis spectrometer (TAS) is one of the fundamental types of instruments in the field of neutron scattering at research reactors.
+
+
 
 
 \section{Autonomous experiments \label{sec:autonomous}}
+
+The goal of this work is the design and implementation of software tools which enable an automatic path finding for TAS instruments.
+Automatic path finding is necessary for the instrument to circumvent obstacles in its path. The methods in this work are part of the current drive towards autonomous experimentation.
