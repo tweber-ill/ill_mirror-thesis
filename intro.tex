@@ -1,4 +1,4 @@
-In this chapter we introduce the concepts of neutron scattering and shortly present the different types of instruments typically found at a research reactor (Sec. \ref{sec:scattering}). A special emphasis is put on triple-axis spectrometers (TAS) as the work-horse of inelastic scattering (Sec. \ref{sec:scattering}). Finally, we summarise the current state of autonomous experimentation (Sec. \ref{sec:autonomous}).
+In this chapter we introduce the concepts of neutron scattering and shortly present some types of instruments typically found at a research reactor (Sec. \ref{sec:instruments}). A special emphasis is put on triple-axis spectrometers (TAS) as the work-horse of inelastic scattering. Finally, we summarise the current state of autonomous experimentation (Sec. \ref{sec:autonomous}).
 
 
 
@@ -8,7 +8,7 @@ The history of neutron physics begins in 1932 with the discovery of the neutron 
 
 In 1939, Otto Hahn used a Chadwick-type neutron source to irradiate uranium isotopes in an attempt to produce heavy trans-uranium elements \cite{wiki_fission}. But instead of heavier elements, the experiment yielded lighter elements, which was interpreted by Lise Meitner as a splitting of the uranium nucleus, which marked the discovery of nuclear fission \cite{wiki_fission}. A typical possible channel of a fission reaction is the decay of uranium-235 into baryum-144 and krypton-89, where two to three neutrons are produced by each reaction in addition to the daughter nuclei and energy \cite{wiki_fission}.
 
-In 1942, Enrico Fermi made use of the excess neutrons that are obtained by each fission reaction to produce a continuous, self-sustaining chain reaction in the first artificial nuclear reactor, the \textit{Chicago Pile-1}~\cite[p.1]{Jacrot2021}~\footnote{Note that \textit{Chicago Pile-1} was the first \textit{artificial} nuclear reactor. The first \textit{natural} reactor was discovered to have run more that 1.5 billion years ago in Oklo, Gabun, at an average power of about 100 kW for a period of half a million years \cite{wiki_oklo}!}.
+In 1942, Enrico Fermi made use of the excess neutrons that are obtained by each fission reaction to produce a continuous, self-sustaining chain reaction in the first artificial nuclear reactor, the \textit{Chicago Pile-1}~\cite[p.1]{Jacrot2021}~\footnote{Note that \textit{Chicago Pile-1} was the first \textit{artificial} nuclear reactor. The first \textit{natural} reactor was discovered to have run more that 1.5 billion years ago in Oklo, Gabun, at an average power of about 100 kW for a period of half a million years! \cite{wiki_oklo}}.
 
 The first research reactor, having a power of 3.5 MW~\footnote{As research reactors do not produce electricity, the given numbers refer to thermal powers.} and being used for studies in solid-state physics, was built in Oak Ridge, USA in 1943, shortly after Fermi's pile \cite[p. 3]{Jacrot2021}. 
 Here, first neutron scattering experiments were performed by Clifford Shull using a two-axis diffractometer \cite[pp. 3, 37]{Jacrot2021}.
@@ -19,21 +19,23 @@ Studying the structure and dynamics of crystals is possible because neutrons eme
 
 
 
-\section{Two-axis diffractometers \label{sec:diff}}
+\section{Instruments \label{sec:instruments}}
+\subsection{Two-axis diffractometers}
 
 A two-axis diffractometer is used for determining the structure of crystals. It is one of the fundamental types of instruments in the field of neutron scattering at research reactors. This instrument type consists of a single crystal, the monochromator, which picks out one specific wavelength from the polychromatic neutron beam coming from the reactor or from one of its moderators. The physical principle behind wavelength selection is Bragg reflection \cite[p. 68]{Gross2012}, 
 \begin{equation}
 	n \cdot \lambda \ =\  2 d \cdot \sin\left(\theta\right),
 \end{equation}
 with $\lambda$ being the wavelength, $d$ the spacing of the crystal lattice planes and $\theta$ half the scattering angle.
-The resulting monochromatic beam is Bragg-scattered a second time, this time from a sample single-crystal or powder. By the intensity of the sample's different Bragg reflections, the so-called nuclear structure factor can be reconstructed. Absences of Bragg peaks determine the crystal symmetry and its space group.
+The resulting monochromatic beam is Bragg-scattered a second time, this time from a sample powder containing small crystallites. Diffractometers typically contain hundreds of neutron detectors surrounding the sample and picking up diffracted neutrons at a whole range of scattering angles $2 \theta$. By the intensity of the sample's Bragg reflections, each of which appears at a different scattering angle, the so-called nuclear structure factor can be reconstructed. Absences of Bragg peaks determine the crystal symmetry given by its space group. Together, they determine the structural buildup of the crystal.
 
 
+\subsection{Triple-axis spectrometers}
 
-\section{Triple-axis spectrometers \label{sec:tas}}
+While the angle of scattering at a sample in a two-axis diffractometer defines a momentum $\hbar Q$ which is transferred from the sample to the neutron, it does not allow to select the energy $E$ transfer from the sample to the neutron, or vice-versa.
+
 
 A triple-axis spectrometer (TAS) is used to study the dynamics of crystals (as opposed to the structure, which is investigated with a two-axis instrument).
-
 
 
 \clearpage
