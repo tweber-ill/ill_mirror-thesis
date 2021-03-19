@@ -1,3 +1,10 @@
+%
+% intro
+% @author Tobias Weber <tweber@ill.fr>
+% @date mar-2021
+% @license see 'LICENSE' file
+%
+
 In this chapter we introduce the concepts of neutron scattering and shortly present some types of instruments typically found at a research reactor (Sec. \ref{sec:instruments}). A special emphasis is put on triple-axis spectrometers (TAS) as the work-horse of inelastic scattering. Finally, we summarise the current state of autonomous experimentation (Sec. \ref{sec:autonomous}).
 
 
@@ -19,10 +26,10 @@ Studying the structure and dynamics of crystals is possible because neutrons eme
 
 
 
-\section{Instruments \label{sec:instruments}}
+\section{Instruments for neutron scattering \label{sec:instruments}}
 \subsection{Two-axis diffractometers}
 
-A two-axis diffractometer is used for determining the structure of crystals. It is one of the fundamental types of instruments in the field of neutron scattering at research reactors. This instrument type consists of a single crystal, the monochromator, which picks out one specific wavelength from the polychromatic neutron beam coming from the reactor or from one of its moderators. The physical principle behind wavelength selection is Bragg reflection \cite[p. 68]{Gross2012}, 
+A two-axis diffractometer is used for determining the structure of crystals. It is one of the fundamental types of instruments in the field of neutron scattering at research reactors. This instrument type consists of a single crystal, which is called monochromator after its function to pick out one specific wavelength from the polychromatic neutron beam coming from the reactor core or from one of its moderators. The physical principle behind wavelength selection is Bragg reflection \cite[p. 68]{Gross2012}, 
 \begin{equation}
 	n \cdot \lambda \ =\  2 d \cdot \sin\left(\theta\right),
 \end{equation}
@@ -32,17 +39,18 @@ The resulting monochromatic beam is Bragg-scattered a second time, this time fro
 
 \subsection{Triple-axis spectrometers}
 
-While the angle of scattering at a sample in a two-axis diffractometer defines a momentum $\hbar Q$ which is transferred from the sample to the neutron, it does not allow to select the energy $E$ transfer from the sample to the neutron, or vice-versa.
+While in a two-axis diffractometer the scattering angle from a sample defines a momentum $\hbar Q$ which is transferred from the sample to the neutron, it does not allow to select an energy transfer $E$ from the sample to the neutron, or vice-versa. The data obtained from such an instrument is integrated over all possible energy transfers. This is no problem, because elastic scattering, i.e. scattering with no energy transfer, is usually many orders of magnitude stronger than inelastic scattering.
 
+A triple-axis spectrometer (TAS) is used to study the dynamics of crystals. Here, we are only interested in energy transfers, the cases when neutrons scattering from the sample crystal excite collective modes. These modes typically comprise vibrations of the crystal's nuclei, called phonons, which can be imagined as quantised sound waves. Another typical example includes the coupled motions of the atom hull's electron spins, which are named spin-waves or magnons.
 
-A triple-axis spectrometer (TAS) is used to study the dynamics of crystals (as opposed to the structure, which is investigated with a two-axis instrument).
+As the name implies, the difference in set-up compared to the two-axis diffractometer is one additional axis. Having passed the sample, the neutrons have possibly changed in energy (and thus wavelength). A further single-crystal is thus placed between the sample and the detector. Bragg scattering on this crystal allows the detection of the neutron wavelength after the sample. And since we know the incoming wavelength before the scattering event at the sample, we can calculate the transferred energy. This new crystal and the instrument axis is named analyser.
 
 
 \clearpage
 \begin{figure*}[htb]
 	\centering
 	\includegraphics[width=0.75\textwidth]{figures/thales.jpg}
-	\caption{The triple-axis spectrometer ThALES \cite{thales} at the Institut Laue-Langevin in Grenoble, France. This picture is reproduced from \cite{TODO}.}
+	\caption{The triple-axis spectrometer ThALES \cite{thales} at the Institut Laue-Langevin in Grenoble, France. This picture is reproduced from \cite{skxpaper}.}
 	\label{fig:thales}
 \end{figure*}
 
