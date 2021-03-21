@@ -5,12 +5,14 @@
 % @license see 'LICENSE' file
 %
 
+
+In this chapter we review the theory for conversion between crystal coordinates and scattering angles at the triple-axis instrument. Section \ref{sec:xtalcoords} introduces crystal coordinates and the so-called UB matrix formalism, section \ref{sec:tasangles} calculates the corresponding TAS angles. Note that sections \ref{sec:xtalcoords} and \ref{sec:tasangles} have been published in Ref. \cite{Takin2021} and are based on calculations in my PhD thesis \cite{TODO}.
+ 
+
 % ------------------------------------------------------------------------------------------------------------------------------------
+\section{Fractional crystal coordinates \label{sec:xtalcoords}}
 
-\section{Fractional crystal coordinates}
-
-The UB matrix formalism to convert between relative lattice units and laboratory or instrument coordinates is described in \cite{Lumsden2005}. The derivation of the transformation matrix for fractional coordinates can be found in \cite{wiki_fractional}.
-
+We begin by presenting the UB matrix formalism to convert between relative lattice units and laboratory or instrument coordinates, which is described in \cite{Lumsden2005}. The derivation of the transformation matrix for fractional coordinates can be found in \cite{wiki_fractional}.
 
 \begin{center}
 	\includegraphics[width = 0.2 \textwidth]{figures/cell}
@@ -112,15 +114,13 @@ The angle $\theta$ between two Bragg peaks $\left| G \right>$ and $\left| H \rig
 	\frac{\left< G | H \right>}{\left\Vert \left< G | G \right> \right\Vert \cdot \left\Vert \left< H | H \right> \right\Vert} = 
 	\frac{g_{ij} G^i H^j }{\sqrt{g_{ij} G^i G^j} \sqrt{g_{ij} H^i H^j}} = \cos \theta.
 \end{equation}
-
-
 % ------------------------------------------------------------------------------------------------------------------------------------
 
 
 
 
 % ------------------------------------------------------------------------------------------------------------------------------------
-\section{Scattering triangle and TAS angles}
+\section{Scattering triangle and TAS angles \label{sec:tasangles}}
 
 The derivation of basic scattering geometries in triple-axis spectrometers can be found in \cite[Ch. 1.3]{Shirane2002}.
 
