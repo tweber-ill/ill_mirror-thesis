@@ -27,30 +27,32 @@ Studying the structure and dynamics of crystals is possible because neutrons eme
 
 
 \section{Instruments for neutron scattering \label{sec:instruments}}
+
+While a modern research reactor houses a multitude of different instrument types, among them time-of-flight, back-scattering and spin-echo spectrometers, furthermore Larmor and Laue diffractometers, in this section, we want to shortly present the most basic types of instrument, the two-axis diffractometer and the triple-axis spectrometer. A comprehensive introduction into these instruments, especially triple-axis spectroscopy can be found in the book by G. Shirane \cite{Shirane2002}.
+
+
 \subsection{Two-axis diffractometers}
 
-A two-axis diffractometer is used for determining the structure of crystals. It is one of the fundamental types of instruments in the field of neutron scattering at research reactors. This instrument type consists of a single crystal, which is called monochromator after its function to pick out one specific wavelength from the polychromatic neutron beam coming from the reactor core or from one of its moderators. The physical principle behind wavelength selection is Bragg reflection \cite[p. 68]{Gross2012}, 
+A two-axis diffractometer is used for determining the structure of crystals. It is one of the fundamental types of instruments in the field of neutron scattering at research reactors. This instrument type consists of a single crystal, which is called ``monochromator'' after its function to pick out one specific wavelength from the polychromatic neutron beam coming from the reactor core or from one of its moderators. The physical principle behind wavelength selection is Bragg reflection \cite[p. 68]{Gross2012}, 
 \begin{equation}
 	n \cdot \lambda \ =\  2 d \cdot \sin\left(\theta\right),
 \end{equation}
-with $\lambda$ being the wavelength, $d$ the spacing of the crystal lattice planes and $\theta$ half the scattering angle.
+with $\lambda$ being the neutron wavelength, $d$ the spacing of the crystal lattice planes and $\theta$ half the scattering angle.
 The resulting monochromatic beam is Bragg-scattered a second time, this time from a sample powder containing small crystallites. Diffractometers typically contain hundreds of neutron detectors surrounding the sample and picking up diffracted neutrons at a whole range of scattering angles $2 \theta$. By the intensity of the sample's Bragg reflections, each of which appears at a different scattering angle, the so-called nuclear structure factor can be reconstructed. Absences of Bragg peaks determine the crystal symmetry given by its space group. Together, they determine the structural buildup of the crystal.
 
 
 \subsection{Triple-axis spectrometers}
 
-While in a two-axis diffractometer the scattering angle from a sample defines a momentum $\hbar Q$ which is transferred from the sample to the neutron, it does not allow to select an energy transfer $E$ from the sample to the neutron, or vice-versa. The data obtained from such an instrument is integrated over all possible energy transfers. This is no problem, because elastic scattering, i.e. scattering with no energy transfer, is usually many orders of magnitude stronger than inelastic scattering.
+While in a two-axis diffractometer the scattering angle from a sample defines a momentum $\hbar Q$ which is transferred from the sample to the neutron, it does not allow to select an energy transfer $E$ from the sample to the neutron, or vice-versa. The data obtained from such an instrument is integrated over all possible energy transfers. This is no problem in practice, because elastic scattering, i.e. scattering with no energy transfer, is usually many orders of magnitude stronger than inelastic scattering.
 
-A triple-axis spectrometer (TAS) is used to study the dynamics of crystals. Here, we are only interested in energy transfers, the cases when neutrons scattering from the sample crystal excite collective modes. These modes typically comprise vibrations of the crystal's nuclei, called phonons, which can be imagined as quantised sound waves. Another typical example includes the coupled motions of the atom hull's electron spins, which are named spin-waves or magnons.
+Complementary to the two-axis instrument, a triple-axis spectrometer (TAS) is not used to study structures, but instead the dynamics of sample, which are usually single-crystals. At TAS, we are only interested in energy transfers, i.e. the cases when neutrons scattering from the sample crystal excite collective modes. These modes typically comprise vibrations of the crystal's nuclei, called phonons, which can be imagined as quantised sound waves. Another typical example includes the coupled motions of the atom hull's electron spins, which are named spin-waves or magnons.
 
-As the name implies, the difference in set-up compared to the two-axis diffractometer is one additional axis. Having passed the sample, the neutrons have possibly changed in energy (and thus wavelength). A further single-crystal is thus placed between the sample and the detector. Bragg scattering on this crystal allows the detection of the neutron wavelength after the sample. And since we know the incoming wavelength before the scattering event at the sample, we can calculate the transferred energy. This new crystal and the instrument axis is named analyser.
+As the name implies, the difference in set-up compared to the two-axis diffractometer is one additional axis. Having passed the sample, the neutrons have possibly changed in energy (and thus wavelength). A further single-crystal is thus placed between the sample and the detector. Bragg scattering on this crystal allows the detection of the neutron wavelength after the sample. Since we also know the incoming wavelength $\lambda_i$ and with it the neutron energy $E_i$ before the scattering event at the sample, we can calculate the transferred energy as $E = E_i - E_f$. This additional crystal and the corresponding instrument axis are named ``analyser''.
 
-
-\clearpage
 \begin{figure*}[htb]
 	\centering
 	\includegraphics[width=0.75\textwidth]{figures/thales.jpg}
-	\caption{The triple-axis spectrometer ThALES \cite{thales} at the Institut Laue-Langevin in Grenoble, France. This picture is reproduced from \cite{skxpaper}.}
+	\caption{The triple-axis spectrometer ThALES \cite{thales} at the Institut Laue-Langevin in Grenoble, France. The neutron path from the rector to the detector is marked as white arrows. The momentum transfer, $\hbar \bm{Q}$, is also shown. This picture is reproduced from \cite{skxpaper}.}
 	\label{fig:thales}
 \end{figure*}
 
@@ -58,5 +60,9 @@ As the name implies, the difference in set-up compared to the two-axis diffracto
 
 \section{Autonomous experiments \label{sec:autonomous}}
 
-The goal of this work is the design and implementation of software tools which enable an automatic path finding for TAS instruments.
-Automatic path finding is necessary for the instrument to circumvent obstacles in its path. The methods in this work are part of the current drive towards autonomous experimentation.
+Up until the end of 2019, TAS experiments usually required external scientists to stay at the research reactor for typically one week and conduct the experiment together with the instrument's responsible scientists. Specifically at the Institut Laue-Langevin (ILL) there had already been attempts (e.g. \cite{Song2020}) of the instrument control and scientific computing groups to convince the instrument scientists of the benefits of instrumentation with full- or semi-autonomous as well as remote control. Nevertheless, the impact had been limited.
+
+The situation changed significantly with the Covid-19 pandemic. Receiving visiting scientists was not possible anymore, or only to a very limited degree. Instead, remote experimentation and instrument control became the new norm. Users now connect to a web interface from which the experiment can be planned and data can be analysed \footnote{https://visa.ill.eu}. Discussions with instrument scientists take place via web-cams that have been installed at every instrument.
+
+At the same time, the idea to automate manual tasks at instruments using algorithms and AI has gained significant traction, with first autonomous experiments being attempted \footnote{https://www.ill.eu/news-press-events/news/scientific-news/machine-learning-at-ill-first-autonomous-steps-of-the-neutron-spectrometer-thales}.
+As part of the current drive towards autonomous experimentation at the ILL, the goal of the present work is the design and implementation of a software tool which enable an automatic path finding for TAS instruments. Automatic path finding is necessary for the instrument to circumvent obstacles in its path. Currently, this task has to be performed by the instrument scientists before each new scan series in a time-consuming fashion. The current approach requires the instrument to be  driven along the programmed scan path, but without measuring and with the neutron beam from the reactor closed. The insturment scientist has to stay in the instrument space and watch the instrument as it moves to every scan position. A manual stop has to be initiated when the instrument would collide with a wall or with itself or when the rotation of one of the axes would pull out a cable or tube.
