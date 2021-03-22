@@ -23,7 +23,7 @@ Here, first neutron scattering experiments were performed by Clifford Shull usin
 From there on, science advanced fast, and several centres dedicated to neutron research were founded around the world.
 A selection of research reactors in operation today include the 20 MW \textit{Forschungsreaktor M\"unchen II}~\footnote{\url{https://mlz-garching.de}} (FRM-II) at the Heinz-Maier-Leibnitz-Zentrum in Germany, the 20 MW reactor at the NIST Center for Neutron Research\footnote{\url{https://www.nist.gov/ncnr}} (NCNR), the 85 MW \textit{High Flux Isotope Reactor}\footnote{\url{https://neutrons.ornl.gov/hfir}} (HFIR) at the Oak Ridge National Laboratory, both based in the United States, and the reactor of the Institut Laue-Langevin~\footnote{\url{https://www.ill.eu}} (ILL) in France, which - at 58 MW - is the most powerful neutron source used for science in Europe.
 
-Studying the structure and dynamics of crystals is possible as neutrons emerging from the reactor can be slowed down (moderated) into energy regions where their de Broglie wavelength $\lambda = h/p$ corresponds to typical inter-atomic distances in crystal unit cells, which is of the order of 1 \AA{}ngstr\"om, i.e. $10^{-10}$ m \cite[pp.1,3]{Squires2012}. In the formula, $p$ denotes the neutron momentum and $h$ Planck's constant. Such a slowing-down of neutrons is usually performed using a secondary moderator outside the main moderator, which itself sustains the nuclear fission, for example using liquid $\mathrm{D_2O}$ \cite[p. 82]{Jacrot2021}. Here, neutrons are brought into a new thermal equilibrium by elastic collisions with the nuclei of the moderator's atoms \cite[p. 30]{Stacey2007}, i.e. the neutrons take the temperature and thus energy of the surrounding material.
+Studying the structure and dynamics of crystals is possible as neutrons emerging from the reactor can be slowed down (moderated) into energy regions where their de Broglie wavelength $\lambda = h/p$ \cite[p. 89]{Gross2012} corresponds to typical inter-atomic distances in crystal unit cells, which is of the order of 1 \AA{}ngstr\"om, i.e. $10^{-10}$ m \cite[pp.1,3]{Squires2012}. In the formula, $p$ denotes the neutron momentum and $h$ Planck's constant. Such a slowing-down of neutrons is usually performed using a secondary moderator outside the main moderator, which itself sustains the nuclear fission, for example using liquid $\mathrm{D_2O}$ \cite[p. 82]{Jacrot2021}. Here, neutrons are brought into a new thermal equilibrium by elastic collisions with the nuclei of the moderator's atoms \cite[p. 30]{Stacey2007}, i.e. the neutrons take the temperature and thus energy of the surrounding material.
 
 
 
@@ -34,17 +34,52 @@ While a modern research reactor houses a multitude of different instrument types
 
 \subsection{Two-axis diffractometers}
 
-A two-axis diffractometer is used for determining the structure of crystals, which are here typically provided in powder form. It is the single most fundamental type of machines in the field of neutron scattering at research reactors. This instrument type consists of a single-crystal (meaning it comprises one single grain), which is called ``monochromator'' and named after its function to pick out one specific wavelength from the polychromatic neutron beam coming from the reactor core or from one of its moderators. The physical principle behind wavelength selection is Bragg reflection \cite[p. 68]{Gross2012},
+A two-axis diffractometer is used for determining the structure of crystals, which are here typically provided in powder form. It is the single most fundamental type of machines in the field of neutron scattering at research reactors. This instrument type consists of a single-crystal (meaning it comprises one single grain), which is called ``monochromator'' and named after its function to pick out one specific wavelength, $\lambda_i$, from the polychromatic neutron beam coming from the reactor core or from one of its moderators. The physical principle behind wavelength selection is Bragg reflection \cite[p. 68]{Gross2012},
 \begin{equation}
-	n \cdot \lambda \ =\  2 d \cdot \sin\left(\theta\right),
+	\label{eq:bragg}
+	n \cdot \lambda_i \ =\  2 d \cdot \sin\left( \theta_M \right),
 \end{equation}
-with $\lambda$ being the neutron wavelength, $d$ the spacing of the crystal lattice planes and $\theta$ half the scattering angle.
-The resulting monochromatic beam is Bragg-scattered a second time, this time from a sample powder containing small crystallites. Diffractometers typically contain hundreds of neutron detectors surrounding the sample and picking up diffracted neutrons at a whole range of scattering angles $2 \theta$. By the intensity of the sample's Bragg reflections, each of which appears at a different scattering angle, the so-called nuclear structure factor can be reconstructed. Absences of Bragg peaks determine the crystal symmetry given by its space group. Together, they determine the structural build-up of the crystal.
+with $\lambda_i$ being the neutron wavelength, $d$ the spacing of the crystal lattice planes, $\theta_M$ half the monochromator scattering angle and $n$ the order of the reflection. A graphical interpretation of Eq. \ref{eq:bragg} is depicted in Fig. \ref{fig:braggscattering}.
+
+\begin{figure*}[htb]
+	\centering
+	\includegraphics[width=0.3\textwidth]{figures/bragg.pdf}
+	\caption{Bragg scattering on crystal planes at a spacing $d$. An incoming parallel neutron beam is reflected at an angle $\theta$ on both the upper and lower crystal plane, leading to a path difference of $2d \sin\theta$ between the beams. If the path difference is an integer multiple of the neutron wavelength $\lambda$, the beams interfere constructively. Figure drawn after \cite[p. 68, Fig. 2.7]{Gross2012}. }
+	\label{fig:braggscattering}
+\end{figure*}
+
+The resulting monochromatic beam with the wavelength $\lambda_i$ and wavevector $\bm{k}_i$ is Bragg-scattered a second time, this time from a sample powder containing small crystallites. Diffractometers typically contain hundreds of neutron detectors surrounding the sample and picking up diffracted neutrons at a whole range of scattering angles $2 \theta_S$. The scattering angles define the momentum transfer from the neutron to the sample as
+\begin{equation}
+	\hbar \bm{Q} \ =\  \hbar \left( \bm{k}_i - \bm{k}_f \right),
+\end{equation}
+where the two wavevectors $\bm{k}_i$ and $\bm{k}_f$ have the same magnitudes for diffraction, namely $k_{i,f} = 2\pi / \lambda_i$, and are rotated by $2\theta_S$ one from the other, see Fig. \ref{fig:diffraction} for a visualisation. The symbol $\hbar$ denotes the reduced Planck's constant, $\hbar = h / \left( 2\pi \right)$.
+
+\begin{figure*}[htb]
+	\centering
+	\includegraphics[width=0.3\textwidth]{figures/diffraction.pdf}
+	\caption{Principle of diffraction. A polychromatic neutron beam coming from the reactor core is Bragg-scattered on the monochromator (M), picking out a single wavelength $\lambda_i$ and corresponding wavevector $\bm{k}_i$. The monochromatic beam is next scattered on the sample (S) at an angle $2\theta_S$, defining a wavevector $\bm{k}_f$. The momentum transferred from the neutron to the sample is given by $\hbar \bm{Q} = \hbar \left( \bm{k}_i - \bm{k}_f \right)$.}
+	\label{fig:diffraction}
+\end{figure*}
+
+By the intensity of the sample's Bragg reflections, each of which appears at a different scattering angle $2\theta_S$ and thus momentum transfer $\hbar \bm{Q}$, the so-called nuclear structure factor can be reconstructed. Absences of Bragg peaks determine the crystal symmetry given by its space group. Together, they determine the structural build-up of the crystal.
 
 
 \subsection{Triple-axis spectrometers}
 
-While in a two-axis diffractometer the scattering angle from a sample defines a momentum $\hbar Q$ which is transferred from the sample to the neutron, it does not allow to select a sample-neutron energy transfer $E$. The data obtained from such an instrument is instead integrated over all possible energy transfers. This is no problem in practice, because elastic scattering, i.e. scattering with no energy transfer, is usually many orders of magnitude stronger than inelastic scattering and any inelastic contribution would not hide the elastic signals used for crystal structure determination.
+While in a two-axis diffractometer the scattering angle from a sample defines a momentum $\hbar \bm{Q}$ which is transferred from the sample to the neutron, it does not allow to select a sample-neutron energy transfer by the de Broglie equation \cite[p. 89]{Gross2012},
+\begin{equation}
+	E \ =\  \frac{\hbar^2 \left(k_i - k_f\right)^2}{2 m_n},
+\end{equation}
+because for a diffractometer $k_i = k_f$. The constant $m_n$ is the neutron mass.
+The data obtained from such an instrument is instead integrated over all possible energy transfers. This is no problem in practice, because elastic scattering, i.e. scattering with no energy transfer, is usually many orders of magnitude stronger than inelastic scattering and any inelastic contribution would not hide the elastic signals used for crystal structure determination.
+
+\begin{figure*}[htb]
+	\centering
+	\includegraphics[width=0.33\textwidth]{figures/spectroscopy.pdf}
+	\caption{Principle of spectrometer. A polychromatic neutron beam coming from the reactor core is Bragg-scattered on the monochromator (M), picking out a single wavelength $\lambda_i$ and wavevector $\bm{k}_i$. The monochromatic beam is next scattered on the sample (S) at an angle $2\theta_S$, defining a wavevector $\bm{k}_f$. The magnitude of $\bm{k}_f$ and thus $\lambda_f$ is determined by Bragg-scattering on the analyser crystal (A). }
+	\label{fig:spectroscopy}
+\end{figure*}
+
 
 Complementary to the two-axis instrument, a triple-axis spectrometer (TAS) is not used to study structures, but instead the dynamics of the sample. The samples used at TAS are usually in single-crystalline form. At TAS machines, we are only interested in energy transfers, i.e. the cases when neutrons scattering from the sample crystal excite collective modes. These modes typically comprise vibrations of the crystal's nuclei, called phonons, which can be imagined as quantised sound waves. Another typical example includes the coupled motions of the atom hull's electron spins, which are named spin-waves or magnons.
 
