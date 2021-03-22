@@ -50,6 +50,7 @@ with $\lambda_i$ being the neutron wavelength, $d$ the spacing of the crystal la
 
 The resulting monochromatic beam with the wavelength $\lambda_i$ and wavevector $\bm{k}_i$ is Bragg-scattered a second time, this time from a sample powder containing small crystallites. Diffractometers typically contain hundreds of neutron detectors surrounding the sample and picking up diffracted neutrons at a whole range of scattering angles $2 \theta_S$. The scattering angles define the momentum transfer from the neutron to the sample as
 \begin{equation}
+	\label{eq:Q}
 	\hbar \bm{Q} \ =\  \hbar \left( \bm{k}_i - \bm{k}_f \right),
 \end{equation}
 where the two wavevectors $\bm{k}_i$ and $\bm{k}_f$ have the same magnitudes for diffraction, namely $k_{i,f} = 2\pi / \lambda_i$, and are rotated by $2\theta_S$ one from the other, see Fig. \ref{fig:diffraction} for a visualisation. The symbol $\hbar$ denotes the reduced Planck's constant, $\hbar = h / \left( 2\pi \right)$.
@@ -57,7 +58,7 @@ where the two wavevectors $\bm{k}_i$ and $\bm{k}_f$ have the same magnitudes for
 \begin{figure*}[htb]
 	\centering
 	\includegraphics[width=0.3\textwidth]{figures/diffraction.pdf}
-	\caption{Principle of diffraction. A polychromatic neutron beam coming from the reactor core is Bragg-scattered on the monochromator (M), picking out a single wavelength $\lambda_i$ and corresponding wavevector $\bm{k}_i$. The monochromatic beam is next scattered on the sample (S) at an angle $2\theta_S$, defining a wavevector $\bm{k}_f$. The momentum transferred from the neutron to the sample is given by $\hbar \bm{Q} = \hbar \left( \bm{k}_i - \bm{k}_f \right)$.}
+	\caption{Principle of diffraction. A polychromatic neutron beam coming from the reactor core is Bragg-scattered on the monochromator (M), picking out a single wavelength $\lambda_i$ and corresponding wavevector $\bm{k}_i$. The monochromatic beam is next scattered on the sample (S) at an angle $2\theta_S$, defining a wavevector $\bm{k}_f$. The momentum transferred from the neutron to the sample is given by Eq. \ref{eq:Q}.}
 	\label{fig:diffraction}
 \end{figure*}
 
@@ -68,6 +69,7 @@ By the intensity of the sample's Bragg reflections, each of which appears at a d
 
 While in a two-axis diffractometer the scattering angle from a sample defines a momentum $\hbar \bm{Q}$ which is transferred from the sample to the neutron, it does not allow to select a sample-neutron energy transfer by the de Broglie equation \cite[p. 89]{Gross2012},
 \begin{equation}
+	\label{eq:E}
 	E \ =\  \frac{\hbar^2 \left(k_i - k_f\right)^2}{2 m_n},
 \end{equation}
 because for a diffractometer $k_i = k_f$. The constant $m_n$ is the neutron mass.
@@ -76,7 +78,7 @@ The data obtained from such an instrument is instead integrated over all possibl
 \begin{figure*}[htb]
 	\centering
 	\includegraphics[width=0.33\textwidth]{figures/spectroscopy.pdf}
-	\caption{Principle of spectrometer. A polychromatic neutron beam coming from the reactor core is Bragg-scattered on the monochromator (M), picking out a single wavelength $\lambda_i$ and wavevector $\bm{k}_i$. The monochromatic beam is next scattered on the sample (S) at an angle $2\theta_S$, defining a wavevector $\bm{k}_f$. The magnitude of $\bm{k}_f$ and thus $\lambda_f$ is determined by Bragg-scattering on the analyser crystal (A). }
+	\caption{Principle of spectroscopy. A polychromatic neutron beam coming from the reactor core is Bragg-scattered on the monochromator crystal (M), picking out a single wavelength $\lambda_i$ and wavevector $\bm{k}_i$. The monochromatic beam is next scattered on the sample (S) at an angle $2\theta_S$, defining a wavevector $\bm{k}_f$. The magnitude of $\bm{k}_f$ and thus $\lambda_f$ is determined by Bragg-scattering on the analyser crystal (A). The momentum and energy transfers are given by Eqs. \ref{eq:Q} and \ref{eq:E}, respectively. }
 	\label{fig:spectroscopy}
 \end{figure*}
 
