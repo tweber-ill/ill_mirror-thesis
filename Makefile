@@ -39,13 +39,29 @@ figures_svg2pdf: $(patsubst %.svg, %.pdf, $(wildcard figures/*.svg))
 # general rules
 # -----------------------------------------------------------------------------
 %.pdf: %.tex
-	@echo "Building $< -> $@..."
+	@echo "[general] Building $< -> $@..."
 	$(PDFLATEX) $<
 	$(BIBTEX) $(patsubst %.tex, %, $<)
 	$(PDFLATEX) $<
 	$(PDFLATEX) $<
 
 %.pdf: %.svg
-	@echo "Converting $< -> $@..."
+	@echo "[general] Converting $< -> $@..."
 	$(CONVERT) $< $@
+# -----------------------------------------------------------------------------
+
+
+
+# -----------------------------------------------------------------------------
+# special rules
+# -----------------------------------------------------------------------------
+thesis.pdf: thesis.tex thesis.bib \
+	abstract.tex acknowledgements.tex intro.tex errata.tex \
+	notation.tex publications.tex \
+	theory_xtal.tex theory_path.tex
+	@echo "[special] Building $< -> $@..."
+	$(PDFLATEX) thesis.tex
+	$(BIBTEX) thesis
+	$(PDFLATEX) thesis.tex
+	$(PDFLATEX) thesis.tex
 # -----------------------------------------------------------------------------
