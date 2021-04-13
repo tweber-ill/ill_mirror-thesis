@@ -5,33 +5,34 @@
 % @license see 'LICENSE' file
 %
 
-{\bf \colorbox{yellow}{! VERY EARLY DRAFT VERSION, STILL IN PROGRESS, NOT YET FINISHED !}}
-\vspace{1cm}
-
-In this chapter we review the theory for conversion between crystal coordinates and scattering angles at the triple-axis instrument. Section \ref{sec:xtalcoords} introduces crystal coordinates and the so-called UB matrix formalism, section \ref{sec:tasangles} calculates the corresponding TAS angles. Note that sections \ref{sec:xtalcoords} and \ref{sec:tasangles} have been published in Ref. \cite{Takin2021} and are based on an earlier version of these calculations in my (physics) PhD thesis \cite{PhDWeber}.
+In this chapter we review the theory for conversion between crystal coordinates and scattering angles at the triple-axis instrument. Section \ref{sec:xtalcoords} introduces crystal coordinates and the so-called UB matrix formalism, section \ref{sec:tasangles} calculates the corresponding TAS angles. Note this chapter has been published in the manual of the software from Ref. \cite{Takin2021} and is based on an earlier version of these derivations from my (physics) PhD thesis \cite{PhDWeber}.
 
 
 % ------------------------------------------------------------------------------------------------------------------------------------
 \section{Fractional crystal coordinates \label{sec:xtalcoords}}
 
-We begin by presenting the UB matrix formalism to convert between relative lattice units and laboratory or instrument coordinates, which is described in \cite{Lumsden2005}. The derivation of the transformation matrices $A$ and $B$ for fractional coordinates can be found in \cite{wiki_fractional}, which we follow here.
+We begin by presenting the so-called $UB$ matrix formalism to convert between relative lattice units of a crystal and laboratory coordinates used in instrument space. This method has been described in \cite{Lumsden2005}. The derivation of the transformation matrices, $A$ and $B$, describing fractional crystal coordinates, can be found in \cite{wiki_fractional}, which we follow here.
 
-\begin{center}
+The unit cell of the crystal is spanned by its three basis vectors $\left| a \right>$, $\left| b \right>$, and $\left| c \right>$, which -- in general -- are not perpendicular to one another, but instead enclose angles of $\alpha$, $\beta$, and $\gamma$, respectively, as shown in Fig. \ref{fig:cell}. 
+To calculate the crystallographic $A$ matrix which transforms non-orthogonal crystal to orthogonal lab units, we first need to reduce the number of parameters.
+The respective relations between the basis vectors and their angles can be directly obtained via the cosine theorem:
+\begin{equation} \left< a | b \right > \ =\  ab \cos \gamma, \label{ab} \end{equation}
+\begin{equation} \left< a | c \right > \ =\  ac \cos \beta, \label{ac} \end{equation}
+\begin{equation} \left< b | c \right > \ =\  bc \cos \alpha. \label{bc} \end{equation}
+
+\begin{figure*}
+	\centering
 	\includegraphics[width = 0.2 \textwidth]{figures/cell}
-\end{center}
-
-\subsection*{Basic properties}
-
-From the cosine theorem we get:
-\begin{equation} \left< a | b \right > = ab \cos \gamma, \label{ab} \end{equation}
-\begin{equation} \left< a | c \right > = ac \cos \beta, \label{ac} \end{equation}
-\begin{equation} \left< b | c \right > = bc \cos \alpha. \label{bc} \end{equation}
+	\caption{The unit cell of a crystal is given by its coordinate vectors $a$, $b$, and $c$ 
+		as well as their angles $\alpha$, $\beta$, and $\gamma$.}
+	\label{fig:cell}
+\end{figure*}
 
 
+%\subsection*{Basis vectors}
 
-\subsection*{Basis vectors}
-
-We first choose $\left| a \right>$ along $x$, $\left| b \right>$ in the $xy$ plane, and and $\left| c \right>$ in general:
+The next goal is to explicitly write the components of the vectors $\left| a \right>$, $\left| b \right>$, and $\left| c \right>$ in terms of their (scalar) lengths $a = \sqrt{\left< a | a \right>}$, $b = \sqrt{\left< b | b \right>}$, $c = \sqrt{\left< c | c \right>}$, and the three angles.
+To that end, we first choose -- without loss of generality -- $\left| a \right>$ along the $x$ axis, $\left| b \right>$ in the $xy$ plane, and $\left| c \right>$ in general:
 \begin{equation} 
 	\boxed{ \left| a \right> = \left( \begin{array}{c} a_1 = a \\ 0 \\ 0 \end{array} \right), }
 	\hspace{0.5cm} \left| b \right> = \left( \begin{array}{c} b_1 \\ b_2 \\ 0 \end{array} \right),
@@ -82,12 +83,12 @@ The last component, $c_3$, can be obtained from the vector length normalisation,
 \begin{equation} \boxed{ \left| c \right> = \left( \begin{array}{c}
 	c \cdot \cos \beta \\
 	c \cdot \frac{\cos \alpha - \cos \gamma \cos \beta}{\sin \gamma} \\
-	c \cdot \sqrt{ 1 - \cos^2 \beta - \left(\frac{\cos \alpha - \cos \gamma \cos \beta}{\sin \gamma} \right)^2 }
+	c \cdot \sqrt{ \sin^2 \beta - \left(\frac{\cos \alpha - \cos \gamma \cos \beta}{\sin \gamma} \right)^2 }
 \end{array} \right). } \end{equation}
 
 
 
-The crystallographic $A$ matrix, which transforms real-space fractional to lab coordinates (A), is formed with the basis vectors in its columns:
+The crystallographic $A$ matrix, which transforms real-space fractional to lab coordinates (\AA), is formed with the basis vectors in its columns:
 \begin{equation}
 	A = \left(
 		\begin{array}{ccc}
@@ -98,11 +99,11 @@ The crystallographic $A$ matrix, which transforms real-space fractional to lab c
 The $B$ matrix, which transforms reciprocal-space relative lattice units (rlu) to lab coordinates (1/\AA), is:
 \begin{equation} B = 2 \pi A^{-t}, \end{equation}
 where $-t$ denotes the transposed inverse.
-The metric tensor corresponding to the coordinate system defined by the $B$ matrix is \cite[p. 808]{Arens2015}:
+We can determine the metric tensor corresponding to the coordinate system defined by the $B$ transformation matrix, it reads \cite[p. 808]{Arens2015}:
 \begin{equation}
-	\left(g_{ij}\right) = \left<\bm{b_i} | \bm{b_j} \right> = B^T B,
+	\left(g_{ij}\right) = \left<\underline{b}_i | \underline{b}_j \right> = B^T B,
 \end{equation}
-where the reciprocal basis vectors $\left| \bm{b_i} \right>$ form the columns of $B$.
+where the reciprocal basis vectors $\left| \underline{b}_i \right>$ form the columns of $B$.
 
 
 \subsection*{Example: lengths and angles in the reciprocal lattice}
@@ -211,7 +212,7 @@ The covariant cross-product is calculated as \cite[p. 815]{Arens2015}:
 	x^l = g^{li} \epsilon_{ijk} a^j Q^k, \hspace{0.5cm} \mathrm{with} \ 
 	\epsilon_{ijk} = \left|
 		\begin{array}{ccc} \left| 
-			\bm{b_i} \right> & \left| \bm{b_j} \right> & \left| \bm{b_k} \right>
+			\underline{b}_i \right> & \left| \underline{b}_j \right> & \left| \underline{b}_k \right>
 		\end{array} \right|.
 \end{equation}
 
