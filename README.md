@@ -3,4 +3,4 @@
 
 **Building**
 - Create the figures: `./make_figures.sh`.
-- `make`.
+- Create the document: `make`.
