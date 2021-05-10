@@ -6,7 +6,7 @@
 # @license GPLv3 (see 'LICENSE' file)
 #
 
-for fig_svg in meta/*.svg; do
+for fig_svg in figures_svg/*.svg; do
 	# change ending
 	fig_pdf_meta="${fig_svg%\.svg}.pdf"
 
