@@ -8,12 +8,12 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="436.386mm"
-   height="382.764mm"
+   width="312.23096mm"
+   height="263.36478mm"
    version="1.2"
    id="svg900"
-   sodipodi:docname="walls_trapezoids.svg"
-   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+   sodipodi:docname="pointrobot_walls.svg"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15)">
   <metadata
      id="metadata904">
     <rdf:RDF>
@@ -44,14 +44,19 @@
      inkscape:window-height="1651"
      id="namedview902"
      showgrid="false"
-     inkscape:zoom="1"
-     inkscape:cx="613.10956"
-     inkscape:cy="970.17437"
-     inkscape:window-x="112"
-     inkscape:window-y="317"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="173.47875"
+     inkscape:cy="692.20334"
+     inkscape:window-x="1289"
+     inkscape:window-y="423"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg900"
-     showguides="false" />
+     showguides="false"
+     inkscape:document-rotation="0"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <desc
      id="desc200">Generated with Qt</desc>
   <defs
@@ -452,175 +457,176 @@
      id="g254"
      font-style="normal"
      font-weight="400"
-     font-size="10" />
+     font-size="10"
+     transform="translate(-12.187235,6.8536352)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g256"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g262"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g264"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,124.003,391.069)" />
+     transform="matrix(1.14683,0,0,1.14683,111.81577,397.92264)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g270"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,124.003,391.069)" />
+     transform="matrix(1.14683,0,0,1.14683,111.81577,397.92264)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g272"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,574.707,190.374)" />
+     transform="matrix(1.14683,0,0,1.14683,562.51976,197.22764)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g278"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,574.707,190.374)" />
+     transform="matrix(1.14683,0,0,1.14683,562.51976,197.22764)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g280"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,29.9631,589.47)" />
+     transform="matrix(1.14683,0,0,1.14683,17.775865,596.32364)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g286"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,29.9631,589.47)" />
+     transform="matrix(1.14683,0,0,1.14683,17.775865,596.32364)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g288"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,606.818,758.054)" />
+     transform="matrix(1.14683,0,0,1.14683,594.63076,764.90764)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g294"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,606.818,758.054)" />
+     transform="matrix(1.14683,0,0,1.14683,594.63076,764.90764)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g296"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,450.849,513.779)" />
+     transform="matrix(1.14683,0,0,1.14683,438.66176,520.63264)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g302"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,450.849,513.779)" />
+     transform="matrix(1.14683,0,0,1.14683,438.66176,520.63264)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g304"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,1173.35,378.454)" />
+     transform="matrix(1.14683,0,0,1.14683,1161.1628,385.30764)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g310"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,1173.35,378.454)" />
+     transform="matrix(1.14683,0,0,1.14683,1161.1628,385.30764)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g312"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,659.572,29.8178)" />
+     transform="matrix(1.14683,0,0,1.14683,647.38477,36.671435)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g318"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,659.572,29.8178)" />
+     transform="matrix(1.14683,0,0,1.14683,647.38477,36.671435)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g320"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,1034.58,229.366)" />
+     transform="matrix(1.14683,0,0,1.14683,1022.3928,236.21964)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g326"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,1034.58,229.366)" />
+     transform="matrix(1.14683,0,0,1.14683,1022.3928,236.21964)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g328"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,914.168,638.784)" />
+     transform="matrix(1.14683,0,0,1.14683,901.98077,645.63764)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g334"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,914.168,638.784)" />
+     transform="matrix(1.14683,0,0,1.14683,901.98077,645.63764)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g336"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,690.536,951.868)" />
+     transform="matrix(1.14683,0,0,1.14683,678.34876,958.72164)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g342"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,690.536,951.868)" />
+     transform="matrix(1.14683,0,0,1.14683,678.34876,958.72164)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g344"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g348"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
        style="vector-effect:none;fill:none"
        id="polyline346"
@@ -632,21 +638,21 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g352"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g356"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
        style="vector-effect:none;fill:none"
        id="polyline354"
@@ -658,21 +664,21 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g360"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g364"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
        style="vector-effect:none;fill:none"
        id="polyline362"
@@ -684,21 +690,21 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g368"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g372"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
        style="vector-effect:none;fill:none"
        id="polyline370"
@@ -710,21 +716,21 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g376"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g380"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
        style="vector-effect:none;fill:none"
        id="polyline378"
@@ -736,35 +742,35 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g384"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g390"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g392"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g396"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
        style="vector-effect:none;fill:none"
        id="polyline394"
@@ -776,49 +782,49 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g400"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g406"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g408"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g414"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g416"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g420"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
        style="vector-effect:none;fill:none"
        id="polyline418"
@@ -830,49 +836,37 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g424"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
-  <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
-     id="g428"
-     font-style="normal"
-     font-weight="400"
-     font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
-    <polyline
-       style="vector-effect:none;fill:none"
-       id="polyline426"
-       points="606.929,712 606.909,906 " />
-  </g>
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g430"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g432"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.95150109;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.9515;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g436"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
-       style="vector-effect:none;fill:none;stroke-width:13.95150109;stroke-miterlimit:4;stroke-dasharray:none"
+       style="vector-effect:none;fill:none;stroke-width:13.9515;stroke-miterlimit:4;stroke-dasharray:none"
        id="polyline434"
        points="606.909,906 103.909,906 " />
   </g>
@@ -882,23 +876,23 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g440"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.95150109;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.9515;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g444"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
-       style="vector-effect:none;fill:none;stroke-width:13.95150109;stroke-miterlimit:4;stroke-dasharray:none"
+       style="vector-effect:none;fill:none;stroke-width:13.9515;stroke-miterlimit:4;stroke-dasharray:none"
        id="polyline442"
        points="103.909,906 103.944,565 " />
   </g>
@@ -908,23 +902,23 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g448"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.95150109;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.9515;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g452"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
-       style="vector-effect:none;fill:none;stroke-width:13.95150109;stroke-miterlimit:4;stroke-dasharray:none"
+       style="vector-effect:none;fill:none;stroke-width:13.9515;stroke-miterlimit:4;stroke-dasharray:none"
        id="polyline450"
        points="103.995,52 185.995,52 " />
   </g>
@@ -934,49 +928,37 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g456"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
-  <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
-     id="g460"
-     font-style="normal"
-     font-weight="400"
-     font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
-    <polyline
-       style="vector-effect:none;fill:none"
-       id="polyline458"
-       points="185.995,52 185.941,588.964 " />
-  </g>
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g462"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g464"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.95150109;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.9515;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g468"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
-       style="vector-effect:none;fill:none;stroke-width:13.95150109;stroke-miterlimit:4;stroke-dasharray:none"
+       style="vector-effect:none;fill:none;stroke-width:13.9515;stroke-miterlimit:4;stroke-dasharray:none"
        id="polyline466"
        points="185.941,588.964 103.944,565 " />
   </g>
@@ -986,23 +968,23 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g472"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.95150109;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.9515;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g476"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
-       style="vector-effect:none;fill:none;stroke-width:13.95150109;stroke-miterlimit:4;stroke-dasharray:none"
+       style="vector-effect:none;fill:none;stroke-width:13.9515;stroke-miterlimit:4;stroke-dasharray:none"
        id="polyline474"
        points="103.944,565 103.995,52 " />
   </g>
@@ -1012,7 +994,7 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(2.29366,0,0,2.29366,29.389685,588.89659)">
+     transform="matrix(2.29366,0,0,2.29366,17.20245,595.75023)">
     <circle
        style="fill:url(#radialGradient2368)"
        id="circle282"
@@ -1026,21 +1008,21 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g480"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g484"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
        style="vector-effect:none;fill:none"
        id="polyline482"
@@ -1052,49 +1034,37 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g488"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
-  <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
-     id="g492"
-     font-style="normal"
-     font-weight="400"
-     font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
-    <polyline
-       style="vector-effect:none;fill:none"
-       id="polyline490"
-       points="470.973,265.092 470.933,672.254 " />
-  </g>
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g494"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g496"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.95150109;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.9515;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g500"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
-       style="vector-effect:none;fill:none;stroke-width:13.95150109;stroke-miterlimit:4;stroke-dasharray:none"
+       style="vector-effect:none;fill:none;stroke-width:13.9515;stroke-miterlimit:4;stroke-dasharray:none"
        id="polyline498"
        points="470.933,672.254 185.941,588.964 " />
   </g>
@@ -1104,47 +1074,35 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g504"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
-  <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
-     id="g508"
-     font-style="normal"
-     font-weight="400"
-     font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
-    <polyline
-       style="vector-effect:none;fill:none"
-       id="polyline506"
-       points="185.941,588.964 185.961,392 " />
-  </g>
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g510"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g512"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g516"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
        style="vector-effect:none;fill:none"
        id="polyline514"
@@ -1156,49 +1114,37 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g520"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
-  <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
-     id="g524"
-     font-style="normal"
-     font-weight="400"
-     font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
-    <polyline
-       style="vector-effect:none;fill:none"
-       id="polyline522"
-       points="606.953,473.527 606.929,712 " />
-  </g>
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g526"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g528"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.95150109;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.9515;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g532"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
-       style="vector-effect:none;fill:none;stroke-width:13.95150109;stroke-miterlimit:4;stroke-dasharray:none"
+       style="vector-effect:none;fill:none;stroke-width:13.9515;stroke-miterlimit:4;stroke-dasharray:none"
        id="polyline530"
        points="606.929,712 470.933,672.254 " />
   </g>
@@ -1208,47 +1154,35 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g536"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
-  <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
-     id="g540"
-     font-style="normal"
-     font-weight="400"
-     font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
-    <polyline
-       style="vector-effect:none;fill:none"
-       id="polyline538"
-       points="470.933,672.254 470.95,499 " />
-  </g>
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g542"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g544"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g548"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
        style="vector-effect:none;fill:none"
        id="polyline546"
@@ -1260,49 +1194,37 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g552"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
-  <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
-     id="g556"
-     font-style="normal"
-     font-weight="400"
-     font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
-    <polyline
-       style="vector-effect:none;fill:none"
-       id="polyline554"
-       points="578.978,217 578.952,478.771 " />
-  </g>
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g558"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g560"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.95150109;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.9515;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g564"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
-       style="vector-effect:none;fill:none;stroke-width:13.95150109;stroke-miterlimit:4;stroke-dasharray:none"
+       style="vector-effect:none;fill:none;stroke-width:13.9515;stroke-miterlimit:4;stroke-dasharray:none"
        id="polyline562"
        points="578.952,478.771 470.95,499 " />
   </g>
@@ -1312,33 +1234,21 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g568"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
-  <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
-     id="g572"
-     font-style="normal"
-     font-weight="400"
-     font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
-    <polyline
-       style="vector-effect:none;fill:none"
-       id="polyline570"
-       points="470.95,499 470.973,265.092 " />
-  </g>
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:url(#radialGradient2378);fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g300"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(2.29366,0,0,2.29366,450.27558,513.20559)">
+     transform="matrix(2.29366,0,0,2.29366,438.08834,520.05923)">
     <circle
        style="fill:url(#radialGradient2376)"
        id="circle298"
@@ -1352,23 +1262,23 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g576"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.95150109;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.9515;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g580"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
-       style="vector-effect:none;fill:none;stroke-width:13.95150109;stroke-miterlimit:4;stroke-dasharray:none"
+       style="vector-effect:none;fill:none;stroke-width:13.9515;stroke-miterlimit:4;stroke-dasharray:none"
        id="polyline578"
        points="185.995,52 578.995,52 " />
   </g>
@@ -1378,49 +1288,37 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g584"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
-  <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
-     id="g588"
-     font-style="normal"
-     font-weight="400"
-     font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
-    <polyline
-       style="vector-effect:none;fill:none"
-       id="polyline586"
-       points="578.995,52 578.978,217 " />
-  </g>
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g590"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g592"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.95150109;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.9515;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g596"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
-       style="vector-effect:none;fill:none;stroke-width:13.95150109;stroke-miterlimit:4;stroke-dasharray:none"
+       style="vector-effect:none;fill:none;stroke-width:13.9515;stroke-miterlimit:4;stroke-dasharray:none"
        id="polyline594"
        points="578.978,217 185.961,392 " />
   </g>
@@ -1430,33 +1328,21 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g600"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
-  <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
-     id="g604"
-     font-style="normal"
-     font-weight="400"
-     font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
-    <polyline
-       style="vector-effect:none;fill:none"
-       id="polyline602"
-       points="185.961,392 185.995,52 " />
-  </g>
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:url(#radialGradient2362);fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g268"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(2.29366,0,0,2.29366,123.42958,390.49558)">
+     transform="matrix(2.29366,0,0,2.29366,111.24235,397.34922)">
     <circle
        style="fill:url(#radialGradient2360)"
        id="circle266"
@@ -1470,23 +1356,23 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g608"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.95150109;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.9515;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g612"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
-       style="vector-effect:none;fill:none;stroke-width:13.95150109;stroke-miterlimit:4;stroke-dasharray:none"
+       style="vector-effect:none;fill:none;stroke-width:13.9515;stroke-miterlimit:4;stroke-dasharray:none"
        id="polyline610"
        points="578.995,52 652.995,52 " />
   </g>
@@ -1496,49 +1382,37 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g616"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
-  <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
-     id="g620"
-     font-style="normal"
-     font-weight="400"
-     font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
-    <polyline
-       style="vector-effect:none;fill:none"
-       id="polyline618"
-       points="652.995,52 652.954,464.911 " />
-  </g>
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g622"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g624"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.95150109;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.9515;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g628"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
-       style="vector-effect:none;fill:none;stroke-width:13.95150109;stroke-miterlimit:4;stroke-dasharray:none"
+       style="vector-effect:none;fill:none;stroke-width:13.9515;stroke-miterlimit:4;stroke-dasharray:none"
        id="polyline626"
        points="652.954,464.911 578.952,478.771 " />
   </g>
@@ -1548,33 +1422,21 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g632"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
-  <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
-     id="g636"
-     font-style="normal"
-     font-weight="400"
-     font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
-    <polyline
-       style="vector-effect:none;fill:none"
-       id="polyline634"
-       points="578.952,478.771 578.995,52 " />
-  </g>
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:url(#radialGradient2366);fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g276"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(2.29366,0,0,2.29366,574.13358,189.80058)">
+     transform="matrix(2.29366,0,0,2.29366,561.94635,196.65422)">
     <circle
        style="fill:url(#radialGradient2364)"
        id="circle274"
@@ -1588,23 +1450,23 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g640"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.95150109;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.9515;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g644"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
-       style="vector-effect:none;fill:none;stroke-width:13.95150109;stroke-miterlimit:4;stroke-dasharray:none"
+       style="vector-effect:none;fill:none;stroke-width:13.9515;stroke-miterlimit:4;stroke-dasharray:none"
        id="polyline642"
        points="606.953,473.527 679.954,459.854 " />
   </g>
@@ -1614,49 +1476,37 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g648"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
-  <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
-     id="g652"
-     font-style="normal"
-     font-weight="400"
-     font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
-    <polyline
-       style="vector-effect:none;fill:none"
-       id="polyline650"
-       points="679.954,459.854 679.909,906 " />
-  </g>
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g654"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g656"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.95150109;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.9515;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g660"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
-       style="vector-effect:none;fill:none;stroke-width:13.95150109;stroke-miterlimit:4;stroke-dasharray:none"
+       style="vector-effect:none;fill:none;stroke-width:13.9515;stroke-miterlimit:4;stroke-dasharray:none"
        id="polyline658"
        points="679.909,906 606.909,906 " />
   </g>
@@ -1666,33 +1516,21 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g664"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
-  <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
-     id="g668"
-     font-style="normal"
-     font-weight="400"
-     font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
-    <polyline
-       style="vector-effect:none;fill:none"
-       id="polyline666"
-       points="606.909,906 606.953,473.527 " />
-  </g>
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:url(#radialGradient2374);fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g292"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(2.29366,0,0,2.29366,606.24459,757.48058)">
+     transform="matrix(2.29366,0,0,2.29366,594.05736,764.33422)">
     <circle
        style="fill:url(#radialGradient2372)"
        id="circle290"
@@ -1706,21 +1544,21 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g672"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g676"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
        style="vector-effect:none;fill:none"
        id="polyline674"
@@ -1732,47 +1570,35 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g680"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
-  <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
-     id="g684"
-     font-style="normal"
-     font-weight="400"
-     font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
-    <polyline
-       style="vector-effect:none;fill:none"
-       id="polyline682"
-       points="979.975,251 979.96,403.663 " />
-  </g>
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g686"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g688"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g692"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
        style="vector-effect:none;fill:none"
        id="polyline690"
@@ -1784,47 +1610,35 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g696"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
-  <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
-     id="g700"
-     font-style="normal"
-     font-weight="400"
-     font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
-    <polyline
-       style="vector-effect:none;fill:none"
-       id="polyline698"
-       points="652.954,464.911 652.992,77 " />
-  </g>
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g702"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g704"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g708"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
        style="vector-effect:none;fill:none"
        id="polyline706"
@@ -1836,49 +1650,37 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g712"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
-  <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
-     id="g716"
-     font-style="normal"
-     font-weight="400"
-     font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
-    <polyline
-       style="vector-effect:none;fill:none"
-       id="polyline714"
-       points="874.939,608 874.909,906 " />
-  </g>
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g718"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g720"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.95150109;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.9515;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g724"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
-       style="vector-effect:none;fill:none;stroke-width:13.95150109;stroke-miterlimit:4;stroke-dasharray:none"
+       style="vector-effect:none;fill:none;stroke-width:13.9515;stroke-miterlimit:4;stroke-dasharray:none"
        id="polyline722"
        points="874.909,906 679.909,906 " />
   </g>
@@ -1888,21 +1690,21 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g728"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g732"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
        style="vector-effect:none;fill:none"
        id="polyline730"
@@ -1914,23 +1716,23 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g736"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.95150109;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.9515;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g740"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
-       style="vector-effect:none;fill:none;stroke-width:13.95150109;stroke-miterlimit:4;stroke-dasharray:none"
+       style="vector-effect:none;fill:none;stroke-width:13.9515;stroke-miterlimit:4;stroke-dasharray:none"
        id="polyline738"
        points="679.954,459.854 874.958,423.33 " />
   </g>
@@ -1940,49 +1742,37 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g744"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
-  <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
-     id="g748"
-     font-style="normal"
-     font-weight="400"
-     font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
-    <polyline
-       style="vector-effect:none;fill:none"
-       id="polyline746"
-       points="874.958,423.33 874.939,608 " />
-  </g>
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g750"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g752"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.95150089;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.9515;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g756"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-54.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-47.634365)">
     <polyline
-       style="vector-effect:none;fill:none;stroke-width:13.95150089;stroke-miterlimit:4;stroke-dasharray:none"
+       style="vector-effect:none;fill:none;stroke-width:13.9515;stroke-miterlimit:4;stroke-dasharray:none"
        id="polyline754"
        points="874.939,608 679.912,881 " />
   </g>
@@ -1992,33 +1782,21 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g760"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
-  <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
-     id="g764"
-     font-style="normal"
-     font-weight="400"
-     font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
-    <polyline
-       style="vector-effect:none;fill:none"
-       id="polyline762"
-       points="679.912,881 679.954,459.854 " />
-  </g>
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:url(#radialGradient2398);fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g340"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(2.29366,0,0,2.29366,689.96258,955.29459)">
+     transform="matrix(2.29366,0,0,2.29366,677.77535,962.14823)">
     <circle
        style="fill:url(#radialGradient2396)"
        id="circle338"
@@ -2032,23 +1810,23 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g768"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.95150109;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.9515;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g772"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
-       style="vector-effect:none;fill:none;stroke-width:13.95150109;stroke-miterlimit:4;stroke-dasharray:none"
+       style="vector-effect:none;fill:none;stroke-width:13.9515;stroke-miterlimit:4;stroke-dasharray:none"
        id="polyline770"
        points="874.958,423.33 1100.96,381 " />
   </g>
@@ -2058,21 +1836,21 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g776"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g780"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
        style="vector-effect:none;fill:none"
        id="polyline778"
@@ -2084,23 +1862,23 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g784"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.95150109;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.9515;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g788"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
-       style="vector-effect:none;fill:none;stroke-width:13.95150109;stroke-miterlimit:4;stroke-dasharray:none"
+       style="vector-effect:none;fill:none;stroke-width:13.9515;stroke-miterlimit:4;stroke-dasharray:none"
        id="polyline786"
        points="1100.91,906 874.909,906 " />
   </g>
@@ -2110,33 +1888,21 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g792"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
-  <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
-     id="g796"
-     font-style="normal"
-     font-weight="400"
-     font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
-    <polyline
-       style="vector-effect:none;fill:none"
-       id="polyline794"
-       points="874.909,906 874.958,423.33 " />
-  </g>
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:url(#radialGradient2394);fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g332"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(2.29366,0,0,2.29366,913.59458,642.21058)">
+     transform="matrix(2.29366,0,0,2.29366,901.40734,649.06422)">
     <circle
        style="fill:url(#radialGradient2392)"
        id="circle330"
@@ -2150,23 +1916,23 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g800"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.95150109;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.9515;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g804"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
-       style="vector-effect:none;fill:none;stroke-width:13.95150109;stroke-miterlimit:4;stroke-dasharray:none"
+       style="vector-effect:none;fill:none;stroke-width:13.9515;stroke-miterlimit:4;stroke-dasharray:none"
        id="polyline802"
        points="652.995,52 979.995,52 " />
   </g>
@@ -2176,49 +1942,37 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g808"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
-  <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
-     id="g812"
-     font-style="normal"
-     font-weight="400"
-     font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
-    <polyline
-       style="vector-effect:none;fill:none"
-       id="polyline810"
-       points="979.995,52 979.975,251 " />
-  </g>
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g814"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g816"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.95150089;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.9515;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g820"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-64.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-57.634365)">
     <polyline
-       style="vector-effect:none;fill:none;stroke-width:13.95150089;stroke-miterlimit:4;stroke-dasharray:none"
+       style="vector-effect:none;fill:none;stroke-width:13.9515;stroke-miterlimit:4;stroke-dasharray:none"
        id="polyline818"
        points="979.975,251 652.992,77 " />
   </g>
@@ -2228,21 +1982,21 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g824"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g828"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
        style="vector-effect:none;fill:none"
        id="polyline826"
@@ -2254,7 +2008,7 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(2.29366,0,0,2.29366,658.99858,23.244385)">
+     transform="matrix(2.29366,0,0,2.29366,646.81134,30.09802)">
     <circle
        style="fill:url(#radialGradient2384)"
        id="circle314"
@@ -2268,23 +2022,23 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g832"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.95150109;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.9515;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g836"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
-       style="vector-effect:none;fill:none;stroke-width:13.95150109;stroke-miterlimit:4;stroke-dasharray:none"
+       style="vector-effect:none;fill:none;stroke-width:13.9515;stroke-miterlimit:4;stroke-dasharray:none"
        id="polyline834"
        points="979.995,52 1100.99,52 " />
   </g>
@@ -2294,21 +2048,21 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g840"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g844"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
        style="vector-effect:none;fill:none"
        id="polyline842"
@@ -2320,23 +2074,23 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g848"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.95150109;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.9515;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g852"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
-       style="vector-effect:none;fill:none;stroke-width:13.95150109;stroke-miterlimit:4;stroke-dasharray:none"
+       style="vector-effect:none;fill:none;stroke-width:13.9515;stroke-miterlimit:4;stroke-dasharray:none"
        id="polyline850"
        points="1100.96,381 979.96,403.663 " />
   </g>
@@ -2346,33 +2100,21 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g856"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
-  <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
-     id="g860"
-     font-style="normal"
-     font-weight="400"
-     font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
-    <polyline
-       style="vector-effect:none;fill:none"
-       id="polyline858"
-       points="979.96,403.663 979.995,52 " />
-  </g>
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:url(#radialGradient2390);fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g324"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(2.29366,0,0,2.29366,1034.0066,222.79258)">
+     transform="matrix(2.29366,0,0,2.29366,1021.8194,229.64622)">
     <circle
        style="fill:url(#radialGradient2388)"
        id="circle322"
@@ -2386,65 +2128,65 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g864"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g870"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g872"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g878"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g880"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g886"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g888"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.95150109;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:13.9515;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g892"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)">
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)">
     <polyline
-       style="vector-effect:none;fill:none;stroke-width:13.95150109;stroke-miterlimit:4;stroke-dasharray:none"
+       style="vector-effect:none;fill:none;stroke-width:13.9515;stroke-miterlimit:4;stroke-dasharray:none"
        id="polyline890"
        points="1100.91,906 1100.99,52 " />
   </g>
@@ -2454,7 +2196,7 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(2.29366,0,0,2.29366,1172.7766,377.88058)">
+     transform="matrix(2.29366,0,0,2.29366,1160.5894,384.73422)">
     <circle
        style="fill:url(#radialGradient2380)"
        id="circle306"
@@ -2468,36 +2210,37 @@
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(1.14683,0,0,1.14683,-89.3071,-58.488)" />
+     transform="matrix(1.14683,0,0,1.14683,-101.49434,-51.634365)" />
   <g
      style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
      id="g896"
      font-style="normal"
      font-weight="400"
-     font-size="10" />
+     font-size="10"
+     transform="translate(-12.187235,6.8536352)" />
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:#ff0000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.93979037;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:#ff0000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.93979;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g332-5"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(3.0931178,0,0,3.0931177,981.9795,895.50171)">
+     transform="matrix(3.0931178,0,0,3.0931177,969.79227,902.35535)">
     <circle
-       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1.93979037;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1.93979;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="circle330-6"
        r="7.5"
        cy="0.5"
        cx="0.5" />
   </g>
   <g
-     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:#00b200;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.93979037;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:#00b200;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.93979;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g332-5-2"
      font-style="normal"
      font-weight="400"
      font-size="10"
-     transform="matrix(3.0931178,0,0,3.0931177,1098.4534,83.12056)">
+     transform="matrix(3.0931178,0,0,3.0931177,1086.2662,89.974195)">
     <circle
-       style="fill:#00b200;fill-opacity:1;stroke:#000000;stroke-width:1.93979037;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#00b200;fill-opacity:1;stroke:#000000;stroke-width:1.93979;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="circle330-6-9"
        r="7.5"
        cy="0.5"
@@ -2505,24 +2248,24 @@
   </g>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:40px;line-height:5.69999981;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-     x="1019"
-     y="915.66711"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:5.7;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="1006.8127"
+     y="922.52075"
      id="text1345"><tspan
        sodipodi:role="line"
        id="tspan1343"
-       x="1019"
-       y="915.66711"
-       style="font-size:53.33333206px">Start</tspan></text>
+       x="1006.8127"
+       y="922.52075"
+       style="font-size:53.3333px">Start</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:40px;line-height:5.69999981;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-     x="1039.7371"
-     y="164.08118"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:5.7;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="1027.5498"
+     y="170.93481"
      id="text1345-1"><tspan
        sodipodi:role="line"
        id="tspan1343-2"
-       x="1039.7371"
-       y="164.08118"
-       style="font-size:53.33333206px">Goal</tspan></text>
+       x="1027.5498"
+       y="170.93481"
+       style="font-size:53.3333px">Goal</tspan></text>
 </svg>
