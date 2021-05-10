@@ -1,8 +1,30 @@
 %
-% path optimisation
+% path-finding
 % @author Tobias Weber <tweber@ill.fr>
 % @date 2021
 % @license see 'LICENSE' file
 %
 
-TODO
+This chapter is devoted to the development of the theoretical frameworks for path-finding in a triple-axis spectrometer (TAS). 
+The path should furthermore be optimal in the sense that the instrument not only avoids obstacles like walls or equipment in 
+the experimental area, but also keeps a maximum distance from them.
+
+Before looking at the situation with TAS in section \ref{sec:tasrobot}, we review the ideas of motion planning for a point-like robot.
+
+
+
+\section{Motion planning for a point-like robot}
+\label{sec:pointrobot}
+
+The algorithm for motion planning in a point-like robot are given in Ref. \cite[Ch. 13, pp. 283-306]{Berg2008}, whose descriptions 
+we follow in this section. While the book chapter also describes polygonal robots, we limit ourselves to the parts of the chapter 
+that are relevant for the present work.
+
+
+
+
+
+\section{Motion planning for a triple-axis spectrometer}
+\label{sec:tasrobot}
+
+% TODO: moving instrument along voronoi edges
