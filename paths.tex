@@ -9,7 +9,8 @@ This chapter is devoted to the development of the theoretical frameworks for pat
 The path should furthermore be optimal in the sense that the instrument not only avoids obstacles like walls or equipment in 
 the experimental area, but also keeps a maximum distance from them.
 
-Before looking at the situation with TAS in section \ref{sec:tasrobot}, we review the ideas of motion planning for a point-like robot.
+Before looking at the situation with TAS in section \ref{sec:tasrobot}, we shortly review the ideas of motion planning for a 
+point-like robot in section \ref{sec:pointrobot}.
 
 
 
@@ -20,6 +21,35 @@ The algorithm for motion planning in a point-like robot are given in Ref. \cite[
 we follow in this section. While the book chapter also describes polygonal robots, we limit ourselves to the parts of the chapter 
 that are relevant for the present work.
 
+The movement of the point-like robot is not restricted to conventional cartesian space, its coordinates are given in configuration
+space  \cite[Ch. 13.1, pp. 284-286]{Berg2008}, which comprises its inherent degrees of freedom and can -- for instance -- include angular motion.
+
+The algorithm consists of two parts: First, the calculation of allowed space, where the robot can move without hitting an obstacle
+\cite[p. 286]{Berg2008}. The second part concerns the computation of the actual path and is given in Ref. \cite[p. 289]{Berg2008}. 
+In the first part, a trapezoidal map (explained below) is created for the configuration space containing the obstacles, 
+both of polygonal shape. The trapezoids inside the obstacles are removed form the final map as the robot has to stay clear 
+of them. The second part of the algorithm calculates the path of the robot by finding the trapezoids which contain the start 
+and goal points, and finding the edges between adjacent trapezoids from starting to ending trapezoid via a breadth-first search in the 
+trapezoidal map. The robot will thus first move to the centre of its containing trapezoid, to the centre of an edge connecting 
+the current to the next trapezoid, next to the centre of the next trapezoid, and so forth until it arrives at its goal. 
+The situation is depicted in Fig. \ref{fig:trapezoids}, where we restrict ourselves to line-like obstacles for simplicity, effectively
+only using the second part of the algorithm.
+
+Trapezoidal maps and the algorithm for their calculation are given in Ref. \cite[Ch. 6, pp. 121-146]{Berg2008}. The map of
+trapezoids is obtained by extending vertical lines from every vertex in a collection of line segments. The vertical
+extensions reach out until they intersect with another line segment of the collection, or an outer bounding box. The original line 
+segment and the intersected segment on top (or bottom, respectively) together with the vertical lines form a trapezoid, as shown in 
+Fig. \ref{fig:trapezoids}. Together with the trapezoid map, the algorithm constructs in $O \left(n \log_{2} n \right)$ time a data 
+structure, which allows querying for the trapezoid containing a given point with time complexity $O \left( \log_{2} n \right)$, 
+where $n$ is the number of line segments \cite[Theorem 6.3, pp. 133]{Berg2008}.
+
+\begin{figure*}[h]
+	\centering
+	\includegraphics[width = 0.45 \textwidth]{figures/pointrobot_walls.pdf}
+	\includegraphics[width = 0.45 \textwidth]{figures/pointrobot_walls_trapezoids.pdf}
+	\caption{.}
+	\label{fig:trapezoids}
+\end{figure*}
 
 
 
