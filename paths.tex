@@ -17,8 +17,9 @@ point-like robot in section \ref{sec:pointrobot}.
 \section{Motion planning for a point-like robot}
 \label{sec:pointrobot}
 
-The algorithm for motion planning in a point-like robot are given in Ref. \cite[Ch. 13, pp. 283-306]{Berg2008}, whose descriptions 
-we follow in this section. While the book chapter also describes polygonal robots, we limit ourselves to the parts of the chapter 
+An algorithm for motion planning in a point-like robot based on decomposing the available space into sectors is 
+given in Ref. \cite[Ch. 13, pp. 283-306]{Berg2008}, whose descriptions we follow in this section. 
+While the book chapter also describes polygonal robots, we limit ourselves to the parts of the chapter 
 that are relevant for the present work.
 
 The movement of the point-like robot is not restricted to conventional cartesian space, its coordinates are given in configuration
@@ -32,25 +33,51 @@ of them. The second part of the algorithm calculates the path of the robot by fi
 and goal points, and finding the edges between adjacent trapezoids from starting to ending trapezoid via a breadth-first search in the 
 trapezoidal map. The robot will thus first move to the centre of its containing trapezoid, to the centre of an edge connecting 
 the current to the next trapezoid, next to the centre of the next trapezoid, and so forth until it arrives at its goal. 
-The situation is depicted in Fig. \ref{fig:trapezoids}, where we restrict ourselves to line-like obstacles for simplicity, effectively
+The situation is depicted in Fig. \ref{fig:robot_trapezoids}, where we restrict ourselves to line-like obstacles for simplicity, effectively
 only using the second part of the algorithm.
 
 Trapezoidal maps and the algorithm for their calculation are given in Ref. \cite[Ch. 6, pp. 121-146]{Berg2008}. The map of
 trapezoids is obtained by extending vertical lines from every vertex in a collection of line segments. The vertical
 extensions reach out until they intersect with another line segment of the collection, or an outer bounding box. The original line 
 segment and the intersected segment on top (or bottom, respectively) together with the vertical lines form a trapezoid, as shown in 
-Fig. \ref{fig:trapezoids}. Together with the trapezoid map, the algorithm constructs in $O \left(n \log_{2} n \right)$ time a data 
+Fig. \ref{fig:robot_trapezoids}. Together with the trapezoid map, the algorithm constructs in $O \left(n \log_{2} n \right)$ time a data 
 structure, which allows querying for the trapezoid containing a given point with time complexity $O \left( \log_{2} n \right)$, 
 where $n$ is the number of line segments \cite[Theorem 6.3, pp. 133]{Berg2008}.
 
-\begin{figure*}[h]
+\begin{figure*}[htb]
 	\centering
-	\includegraphics[width = 0.45 \textwidth]{figures/pointrobot_walls.pdf}
-	\includegraphics[width = 0.45 \textwidth]{figures/pointrobot_walls_trapezoids.pdf}
-	\caption{.}
-	\label{fig:trapezoids}
+	\includegraphics[width = 0.4 \textwidth]{figures/pointrobot_walls.pdf}
+	\hspace{1 cm}
+	\includegraphics[width = 0.4 \textwidth]{figures/pointrobot_walls_trapezoids.pdf}
+	\caption{Left panel: A point-like robot has to find a way around line segments which represent obstacles. Right panel: 
+		The algorithm outlined in Ref. \cite[p. 289]{Berg2008} constructs a trapezoid map and moves the robot on the
+		shortest path from the centre of one trapezoid to the centre of the edge connecting to the next trapezoid, to the
+		centre of that trapezoid, and so forth (blue arrows).}
+	\label{fig:robot_trapezoids}
 \end{figure*}
 
+While the present algorithm can be extended towards polygonal robots \cite[Ch. 13.3, pp. 290-297]{Berg2008} and provides
+some useful ideas, it has several severe drawbacks. First and foremost, the trapezoid map cannot handle the case when
+two or more line segment vertices coincide, making it very difficult to model polygonal obstacles and not only using mere
+line segments. Second, our own implementation has shown that for the algorithm to be stable, it has to handle many 
+special cases, for example to eliminate vertices with equal $x$ coordinate components or vertical lines.
+
+\vspace{0.5cm}
+
+Apart from decomposing the available configuration space into sectors, a more direct approach can be taken. This
+approach is called the retraction method and is based on constructing the Voronoi regions of the obstacles and moving
+the robot along the Voronoi edges, which ensures that the path is optimal in the sense that the robot is always at
+the farthest distance from any obstacle \cite[p. 304]{Berg2008}. An example path for the same problem as before
+is given in Fig. \ref{fig:robot_voronoi}. It is this approach we will follow for TAS motion planning.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width = 0.4 \textwidth]{figures/pointrobot_walls_voronoi.pdf}
+	\caption{The accessible configuration space is subdivided into the Voronoi regions of the obstacles (coloured). The optimal
+		path (blue arrows) in the sense that it keeps the robot at maximum distance from any obstacle, has it move along the 
+		Voronoi edges.}
+	\label{fig:robot_voronoi}
+\end{figure}
 
 
 
