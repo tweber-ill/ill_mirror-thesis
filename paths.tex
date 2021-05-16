@@ -119,7 +119,17 @@ from the analysis, because it only rotates the sample axis, but does not move th
 positions if it rotates too far and rips out cables or tubes, but these cases we can treat as their own one-dimensional problem. 
 
 A further simplification is possible when taking into account that during a typical experiment the instrument usually only moves 
-either the monochromator or the analyser angle to choose the energy transfer, but not both. Therefore one of these angles, 
+either the monochromator or the analyser angle to choose the energy transfer, but not both. Therefore, one of these angles, 
 usually the analyser angle, rests at a constant value. In total, we are left with a two-dimensional configuration space comprised 
-of the monochromator and the sample scattering angle.
+of the monochromator and the sample scattering angle. A typical situation is shown in Fig. \ref{fig:tas_wall}. Here, the instrument 
+motion is blocked by an obstacle in the experimental zone. The configuration space image shows that the obstacle transforms
+into a non-primitive geometric object in configuration space, which does not even have to be simply-connected.
 
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width = 0.95 \textwidth]{figures/tas_wall.jpg}
+	\caption{An obstacle in the instrument space (left) and in the angular configuration space (right). In the configuration
+		space, allowed instrument angular positions are shown in white, forbidden positions in black. The outer areas
+		of disallowed positions are given either by collisions of the instrument with the outer walls or with itself.}
+	\label{fig:tas_wall}
+\end{figure}
