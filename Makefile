@@ -55,13 +55,14 @@ figures_svg2pdf: $(patsubst %.svg, %.pdf, $(wildcard figures/*.svg))
 # -----------------------------------------------------------------------------
 # special rules
 # -----------------------------------------------------------------------------
-thesis.pdf: thesis.tex thesis.bib \
-	abstract.tex acknowledgements.tex intro.tex errata.tex \
-	notation.tex publications.tex \
-	xtal.tex paths.tex
+thesis.pdf: tex/thesis.tex tex/thesis.bib \
+	tex/abstract.tex tex/acknowledgements.tex tex/intro.tex tex/errata.tex \
+	tex/notation.tex tex/publications.tex \
+	tex/xtal.tex tex/paths.tex
 	@echo "[special] Building $< -> $@..."
-	$(PDFLATEX) thesis.tex
+	$(PDFLATEX) tex/thesis.tex
 	$(BIBTEX) thesis
-	$(PDFLATEX) thesis.tex
-	$(PDFLATEX) thesis.tex
+	$(PDFLATEX) tex/thesis.tex
+	$(PDFLATEX) tex/thesis.tex
 # -----------------------------------------------------------------------------
+

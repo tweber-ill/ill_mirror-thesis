@@ -49,21 +49,21 @@
 % ====================================================================================================================================
 %\part{Front matter}
 %\addcontentsline{toc}{part}{Front matter} 
-\input{abstract.tex}
-\input{acknowledgements.tex}
+\input{tex/abstract.tex}
+\input{tex/acknowledgements.tex}
 
 
 %\part{Main part}
 
 \chapter{Introduction}
-\input{intro.tex}
+\input{tex/intro.tex}
 
 \chapter{Crystal and Instrument Coordinate Systems}
 \label{ch:xtal}
-\input{xtal.tex}
+\input{tex/xtal.tex}
 
 \chapter{Path-finding}
-\input{paths.tex}
+\input{tex/paths.tex}
 
 \chapter{Implementation}
 % library
@@ -75,13 +75,13 @@
 \appendix
 %\part{Back matter}
 %\addcontentsline{toc}{part}{Back matter} 
-\input{notation.tex}
-\input{publications.tex}
-\input{errata.tex}
+\input{tex/notation.tex}
+\input{tex/publications.tex}
+\input{tex/errata.tex}
 
 %\section{Bibliography}
 \bibliographystyle{ieeetr}
-\bibliography{\jobname.bib}
+\bibliography{tex/\jobname.bib}
 % ====================================================================================================================================
 
 \end{document}
