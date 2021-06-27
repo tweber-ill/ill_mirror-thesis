@@ -54,18 +54,11 @@
 
 
 %\part{Main part}
-
-\chapter{Introduction}
 \input{tex/intro.tex}
-
-\chapter{Crystal and Instrument Coordinate Systems}
-\label{ch:xtal}
 \input{tex/xtal.tex}
-
-\chapter{Path-finding}
 \input{tex/paths.tex}
 
-\chapter{Implementation}
+\chapter{Implementation and Algorithm Details}
 % library
 % GUI
 % Nomad interface
@@ -75,6 +68,8 @@
 \appendix
 %\part{Back matter}
 %\addcontentsline{toc}{part}{Back matter} 
+\input{tex/voronoi.tex}
+\input{tex/dijkstra.tex}
 \input{tex/notation.tex}
 \input{tex/publications.tex}
 \input{tex/errata.tex}

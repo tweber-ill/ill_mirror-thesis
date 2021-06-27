@@ -4,6 +4,7 @@
 % @date 2021
 % @license see 'LICENSE' file
 %
+\chapter{Path-finding and Algorithm Overview}
 
 This chapter is devoted to the development of the theoretical frameworks for path-finding in a triple-axis spectrometer (TAS). 
 The path should furthermore be optimal in the sense that the instrument not only avoids obstacles like walls or equipment in 
@@ -68,10 +69,11 @@ special cases, for example to eliminate vertices with equal $x$ coordinate compo
 
 \subsection*{Retraction method}
 Apart from decomposing the available configuration space into sectors, a more direct approach can be taken. This
-approach is called the retraction method and is based on constructing the Voronoi regions of the obstacles and moving
-the robot along the Voronoi edges, which ensures that the path is optimal in the sense that the robot is always at
-the farthest distance from any obstacle \cite[pp. 163 and 304]{Berg2008}. An example path for the same problem as before
-is given in Fig. \ref{fig:robot_voronoi}. It is this approach we will follow for TAS motion planning.
+approach is called the retraction method and is based on constructing the Voronoi regions (see \ref{ch:voronoi})
+of the obstacles and moving the robot along the Voronoi edges, which ensures that the path is optimal in the
+sense that the robot is always at the farthest distance from any obstacle \cite[pp. 163 and 304]{Berg2008}.
+An example path for the same problem as before is given in Fig. \ref{fig:robot_voronoi}.
+It is this approach we will follow for TAS motion planning.
 
 \begin{figure}[htb]
 	\centering
@@ -103,11 +105,12 @@ they may not even be simply-connected anymore in that space. There
 are two choices for such a configuration space: We can either use the reciprocal crystal coordinates as discussed in Ch. \ref{ch:xtal}
 or use a configuration space comprised of the instrumental angles.
 
-Using the reciprocal crystal coordinates as configuration space would need a transformation of the walls into the four-dimensional reciprocal space (three momentum and on energy coordinate). Even when taking into account that the TAS is usually restricted
+Using the reciprocal crystal coordinates as configuration space would need a transformation of the walls into the four-dimensional
+reciprocal space (three momentum and on energy coordinate). Even when taking into account that the TAS is usually restricted
 to a two-dimensional scattering plane, thereby dropping one of the momentum dimensions, the problem would still be 
 three-dimensional.
 
-\subsection*{Instrument angles configuration space}
+\subsection*{Angular configuration space}
 On the other hand, using the instrument angles seems to be even more complicated at first glance. The instrument comprises
 six angles, namely the crystal and scattering angles for the monochromator, the sample and the analyser crystals, respectively,
 leading to a six-dimensional configuration space. When can take into account that not all angles are independent of one another:
@@ -124,7 +127,8 @@ either its monochromator or analyser angle to choose the energy transfer, but no
 usually the analyser angle, rests at a constant value. In total, we are left with a two-dimensional configuration space comprised 
 of the monochromator and the sample scattering angle. A typical situation is shown in Fig. \ref{fig:tas_wall}. Here, the instrument 
 motion is blocked by an obstacle in the experimental zone. The configuration space image shows that the obstacle transforms
-into a non-primitive geometric object in configuration space, which -- as already mentioned -- does not even have to be simply-connected.
+into a non-primitive geometric object in configuration space, which -- as already mentioned -- does not even have to be
+simply-connected.
 
 \begin{figure}[htb]
 	\centering
@@ -137,5 +141,43 @@ into a non-primitive geometric object in configuration space, which -- as alread
 \end{figure}
 
 
-\section{Finding the Voronoi regions}
-TODO
+\subsection*{Overall strategy}
+
+The strategy for planning the motion of the spectrometer comprises several steps. Modifying the algorithm for
+a point-like robot described in Ref. \cite[Ch. 13, pp. 283-306]{Berg2008} (see Sec. \ref{sec:pointrobot}), we summarise the
+steps here before describing them in detail together with the actual implementation in the next chapter.
+
+Two tasks are needed. The first task is building the possible paths the instrument can move along. The second task contains the movement of the instrument on the generated paths. The two tasks comprise these following steps:
+\begin{enumerate}
+	\item Building the path.
+	\begin{enumerate}
+		\item Calculate the angular configuration space as described above.
+		\item Trace the obstacle contours in angular configuration space. This step is necessary because they can be of arbitrary
+			shape in this representation and are not necessarily geometric primitives, as seen in Fig. \ref{fig:tas_wall}.
+		\item Approximate the traced contour curves with line segments.
+		\item Simplify the line segments. This is necessary because the line segments generated in the previous step are not optimal:
+			First, they may contain back-to-back collinear lines which can be unified. Second, jagged edges and zigzag lines may be
+			produced in practice. These need to be eliminated or at least smoothed before the next step.
+		\item Split all polygonal line segments that build up the contours into convex regions. With this we can group all lines
+			in a convex region and only calculate the Voronoi diagrams for these groups instead of all line segments.
+		\item Calculate the Voronoi diagram ((see \ref{ch:voronoi})) for the line segment groups. The Voronoi edges are the
+		possible instrument paths in configuration space. Save both the Voronoi diagram as well as its representation in a graph structure.
+		\item Simplify the Voronoi diagram. For example, Voronoi vertices and edges inside obstacle regions have to be removed.
+			These are generated in the previous step because, there, no differentiation was made between the ``inside'' and
+			``outside'' regions of the convex line segment contour groups.
+	\end{enumerate}
+
+	\item Executing the instrument motion.
+	\begin{enumerate}
+		\item Convert the given crystal coordinates into instrument coordinates.
+			The user of a triple-axis spectrometer usually enters the coordinates in the crystal coordinate system
+			(see Ch. \ref{ch:xtal}). The start and end point of the instrument path have to be converted from crystal
+			coordinates into instrument angles. The instrument angles form a coordinate point in angular configuration
+			space.
+		\item Determine the Voronoi regions of the start and end coordinate points.
+		\item Move the instrument to the edge of the start Voronoi region.
+		\item Calculate the shortest path to the edge of the Voronoi region containing the end point using Dijkstra's algorithm
+			(see Ch. \ref{ch:dijkstra}) and move the instrument along that path.
+		\item Move the instrument from the edge of the Voronoi region containing the end point towards that point.
+	\end{enumerate}
+\end{enumerate}
