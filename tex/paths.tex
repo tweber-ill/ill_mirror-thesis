@@ -160,7 +160,7 @@ Two tasks are needed. The first task is building the possible paths the instrume
 			produced in practice. These need to be eliminated or at least smoothed before the next step.
 		\item Split all polygonal line segments that build up the contours into convex regions. With this we can group all lines
 			in a convex region and only calculate the Voronoi diagrams for these groups instead of all line segments.
-		\item Calculate the Voronoi diagram ((see \ref{ch:voronoi})) for the line segment groups. The Voronoi edges are the
+		\item Calculate the Voronoi diagram (see Ch. \ref{ch:voronoi}) for the line segment groups. The Voronoi edges are the
 		possible instrument paths in configuration space. Save both the Voronoi diagram as well as its representation in a graph structure.
 		\item Simplify the Voronoi diagram. For example, Voronoi vertices and edges inside obstacle regions have to be removed.
 			These are generated in the previous step because, there, no differentiation was made between the ``inside'' and
