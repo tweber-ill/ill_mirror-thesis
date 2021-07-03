@@ -97,7 +97,30 @@ The situation is depicted in Fig. \ref{fig:tas_axes}.
 \section{Path-building}
 \label{sec:buildpath}
 
+As discussed in chapter \ref{sec:tasrobot}, path-creation will be based on the angular configuration space
+(as opposed to -- for example -- crystal configuration space). The top-level C++ class for creating the path
+is named \lstinline[language=C++]|PathBuilder|. It mainly calls the low-level routines from the geometry
+library situated in the directory \lstinline|./src/libs| of the source code repository.
+
+
 \subsection{Angular configuration space}
+As the obstacles do not have any geometrically primitive shape in angular configuration space, we iterate
+through the configuration space on a two-dimensional grid and create a bitmap of allowed and forbidden
+positions. The grid extends towards the scattering angles $2\theta_S \in \left[ -180^{\circ},\, 180^{\circ} \right]$ and monochromator angles of $2\theta_M \in \left[0^{\circ},\, 180^{\circ} \right]$, where, for the monochromator, we do
+not the full angular range as this is not possible in real instruments which has the monochromator at a fixed position
+and only scatters in one direction. The sample scattering angle, on the other hand, needs the full angular range as
+scattering on both sides of the axis is done in practice.
+
+To check for the allowed positions, the instrument model as described in sec \ref{sec:tasmodel} is moved to
+each $\left( 2\theta_S,\, 2\theta_M \right)$ position on the grid and tested for collisions with the walls or with
+itself. Even though the instrument model itself is a three-dimensional representation of the spectrometer, we
+can nevertheless simplify the collision detection checks to a two-dimensional plane. The reason for this is
+that all possible obstacles in the instrument path, for instance walls and pillars, are upright and do not have
+any sloped angles. The same is true for the instrument itself.
+
+Collision calculation on the two-dimensional grid is spread out on several processor cores using 
+the \lstinline[language=C++]|thread_pool| \cite{web_boost_asio_threadpool} class from the 
+Boost.Asio \cite{web_boost_asio} asynchronous input/output library.
 
 
 \subsection{Contour tracing}
