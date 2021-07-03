@@ -8,21 +8,57 @@
 \chapter{Path-finding Details and Implementation}
 \label{ch:impl}
 
-In this chapter we describe the individual steps of our strategy (see p. \pageref{sec:strategy}) in detail
-and present an implementation in C++ \cite{Stroustrup2008, Stroustrup2018}, specifically 
-the latest version 20 of the standard \cite{ISOCPP20}. 
+In this chapter we describe the individual steps of the strategy (see p. \pageref{sec:strategy}) in detail
+and present an implementation in C++ \cite{Stroustrup2008, Stroustrup2018}. Specifically,
+the latest version 20 of the C++ standard \cite{ISOCPP20} was employed in the creation of the software
+together with the Boost C++ template libraries \cite{web_boost}. The source code for the implementation
+can be found in the directory \lstinline|./src/core| together with the library routines in \lstinline|./src/libs|
+of the repository at \url{https://code.ill.fr/scientific-software/takin/paths}. Stable versions of the
+source code have furthermore been registered under the DOI \href{https://doi.org/10.5281/zenodo.4625649}{10.5281/zenodo.4625649}.
+
 Section \ref{sec:tasmodel} is dedicated to modelling the triple-axis spectrometer (TAS), 
 section \ref{sec:buildpath} discusses the steps involved in building up the instrument path, 
 and section \ref{sec:exepath} focuses on executing the instrument motion along the path.
+The graphical user interface is presented separately, namely in chapter \ref{ch:gui}.
+
+
 
 
 
 % -----------------------------------------------------------------------------
 % instrument model
 % -----------------------------------------------------------------------------
-\section{Modelling the TAS instrument}
+\section{TAS instrument modelling}
 \label{sec:tasmodel}
 
+The instrument space comprising the triple-axis spectrometer, the walls and obstacles as well as the floor is modelled in
+the class \lstinline[language=C++]|InstrumentSpace|. It also serves as high-level interface for loading and saving
+the instrument geometry and states, signalling mechanisms for state changes using the publisher-subscribe mechanism
+via Boost.Signals2 \cite{web_boost_signals}, as well as checking the instrument for collisions.
+
+The classes \lstinline[language=C++]|Instrument| and \lstinline[language=C++]|Axis| contain the actual instrument definition.
+The spectrometer is modelled as a hierarchy of the three principal axes, namely monochromator, sample and analyser.
+Each axis has three local coordinate systems, namely the rotation relative to the incoming and outgoing vector, respectively,
+and an internal rotation which is decoupled from the other local rotations.
+Geometrical objects are derived from the abstract, purely virtual class \lstinline[language=C++]|Geometry| and can be
+coupled to any of these three local coordinate systems.
+This makes it possible to model neutron-optical components attached to the either the incoming or outgoing path of the
+neutron beam at the specific axis. It furthermore makes it possible to have components which rotate independently of
+the axis.
+The transformation matrices corresponding to the three local coordinate systems are calculated as follows:
+
+\begin{equation}
+\begin{split}
+	T_{\mathrm{in}} & \ =\  T_{out}^{\mathrm{prev}} \cdot P \cdot R\left(\theta_{\mathrm{in}}\right), \\
+	T_{\mathrm{int}} & \ =\  T_{\mathrm{in}} \cdot R\left(\theta_{\mathrm{int}}\right), \\
+	T_{\mathrm{out}} & \ =\  T_{\mathrm{in}} \cdot R\left(\theta_{\mathrm{out}}\right).
+\end{split}
+\end{equation}
+
+Here, $T_{\mathrm{in, int, out}}$ names the transformation matrix of the incoming, internal (decoupled) and outgoing
+coordinate system. $T_{out}^{\mathrm{prev}}$ is the outgoing transformation of the preceding instrument axis.
+$R\left(\theta_{\mathrm{in, int, out}}\right)$ are the corresponding rotation matrices and $P$ is the translation
+of the local coordinate origin of the axis.
 
 % -----------------------------------------------------------------------------
 
@@ -33,7 +69,7 @@ and section \ref{sec:exepath} focuses on executing the instrument motion along t
 % -----------------------------------------------------------------------------
 % path building
 % -----------------------------------------------------------------------------
-\section{Building the path}
+\section{Path-building}
 \label{sec:buildpath}
 
 \subsection{Angular configuration space}
@@ -64,7 +100,7 @@ and section \ref{sec:exepath} focuses on executing the instrument motion along t
 % -----------------------------------------------------------------------------
 % instrument motion
 % -----------------------------------------------------------------------------
-\section{Moving the instrument}
+\section{Instrument movement}
 \label{sec:exepath}
 
 
