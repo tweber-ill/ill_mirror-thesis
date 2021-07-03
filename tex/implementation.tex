@@ -33,7 +33,7 @@ The graphical user interface is presented separately, namely in chapter \ref{ch:
 
 The instrument space comprising the triple-axis spectrometer, the walls and obstacles as well as the floor is modelled in
 the class \lstinline[language=C++]|InstrumentSpace|. It also serves as high-level interface for loading and saving
-the instrument geometry and states, signalling mechanisms for state changes using the publisher-subscribe mechanism
+the instrument geometry and states, signalling mechanisms for state changes using the publish-subscribe mechanism
 via Boost.Signals2 \cite{web_boost_signals}, as well as checking the instrument for collisions.
 
 The classes \lstinline[language=C++]|Instrument| and \lstinline[language=C++]|Axis| contain the actual instrument definition.
@@ -45,20 +45,45 @@ coupled to any of these three local coordinate systems.
 This makes it possible to model neutron-optical components attached to the either the incoming or outgoing path of the
 neutron beam at the specific axis. It furthermore makes it possible to have components which rotate independently of
 the axis.
+Physically, the outgoing coordinate system is equal to the scattering angle, while the internal angle corresponds
+to the crystal rocking angle (see Ch. \ref{ch:xtal}).
 The transformation matrices corresponding to the three local coordinate systems are calculated as follows:
 
 \begin{equation}
 \begin{split}
-	T_{\mathrm{in}} & \ =\  T_{out}^{\mathrm{prev}} \cdot P \cdot R\left(\theta_{\mathrm{in}}\right), \\
-	T_{\mathrm{int}} & \ =\  T_{\mathrm{in}} \cdot R\left(\theta_{\mathrm{int}}\right), \\
-	T_{\mathrm{out}} & \ =\  T_{\mathrm{in}} \cdot R\left(\theta_{\mathrm{out}}\right).
+	T_{\mathrm{in}}^{i} & \ =\  T_{\mathrm{out}}^{i-1} \cdot P^{i} \cdot R\left(\theta_{\mathrm{in}}^{i}\right), \\
+	T_{\mathrm{int}}^{i} & \ =\  T_{\mathrm{in}}^{i} \cdot R\left(\theta_{\mathrm{int}}^{i}\right), \\
+	T_{\mathrm{out}}^{i} & \ =\  T_{\mathrm{in}}^{i} \cdot R\left(\theta_{\mathrm{out}}^{i}\right).
 \end{split}
 \end{equation}
 
-Here, $T_{\mathrm{in, int, out}}$ names the transformation matrix of the incoming, internal (decoupled) and outgoing
-coordinate system. $T_{out}^{\mathrm{prev}}$ is the outgoing transformation of the preceding instrument axis.
-$R\left(\theta_{\mathrm{in, int, out}}\right)$ are the corresponding rotation matrices and $P$ is the translation
-of the local coordinate origin of the axis.
+Here, $T_{\mathrm{in,\, int,\, out}}^{i}$ names the transformation matrices of the incoming, internal (decoupled) and outgoing
+coordinate system of axis $i$, respectively.
+$T_{out}^{i-1}$ is the outgoing transformation of the preceding instrument axis, or the identity if it is the first axis in the hierarchy.
+$R\left(\theta_{\mathrm{in,\, int,\, out}}\right)$ are the corresponding rotation matrices and $P^i$ is the translation
+of the local coordinate origin of the respective axis $i$.
+The situation is depicted in Fig. \ref{fig:tas_axes}.
+
+
+\begin{figure*}
+	\begin{minipage}{0.45 \textwidth}
+		\begin{center}
+			\includegraphics[width = 0.75 \textwidth]{figures/axis}
+		\end{center}
+	\end{minipage}
+	%\hspace{1cm}
+	\begin{minipage}{0.45 \textwidth}
+		\begin{center}
+			\includegraphics[width = 0.95 \textwidth]{figures/axes}
+		\end{center}
+	\end{minipage}
+	\caption{Left panel: Local transformations for an axis. The symbols $R_{\mathrm{x}}^i$ are shorthands
+	for the rotation matrices $R\left( \theta_{\mathrm{x}}^i \right)$, with $x = \left\{ \mathrm{in,\, int,\, out} \right\}$.
+	$P^i$ is the point of origin for the axis.
+	Right panel: Three coupled axes build up the triple-axis spectrometer, with axes 1, 2, and 3 naming the monochromator,
+	the sample, and the analyser axis, respectively.
+	\label{fig:tas_axes}}
+\end{figure*}
 
 % -----------------------------------------------------------------------------
 
