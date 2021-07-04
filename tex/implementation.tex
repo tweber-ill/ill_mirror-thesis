@@ -122,7 +122,9 @@ the \lstinline[language=C++]|thread_pool| \cite{web_boost_asio_threadpool} class
 Boost.Asio \cite{web_boost_asio} asynchronous input/output library.
 
 With the given two-dimensional simplifications, we only need to distinguish three possible intersection tests for collisions: 
-line-line intersections, line-circle intersections and circle-circle intersections.
+line-line intersections, line-circle intersections and circle-circle intersections. 
+For efficiency, the actual calculations are only made if the corresponding geometrical objects lie within 
+one another's axis-aligned bounding boxes \cite{web_aabb}.
 
 \subsubsection*{Line-line intersections}
 Given two lines $\left|x_1\right> + \lambda_1 \left|d_1\right>$ and $\left|x_2\right> + \lambda_2 \left|d_2\right>$, 
@@ -175,10 +177,35 @@ The intersection points along the line are thus given by \cite{wiki_line_sphere_
 
 
 \subsubsection*{Circle-circle intersections}
+In this case we do not need the actual intersection points, so the calculation is restricted to calculation if
+the circles overlap. This is the case when the distance of their centres $\left| x_1 \right>$ and $\left| x_2 \right>$ 
+is less than the sum of their radii, $r_1$ and $r_2$, respectively:
+
+\begin{equation}
+	\left< x_2 - x_1 \ |\ x_2 - x_1  \right> \ \leq \ \left( r_2 + r_1 \right)^2.
+\end{equation}
 
 
 
 \subsection{Contour tracing}
+Having determined a bitmap representation of allowed and forbidden regions in the angular configuration space,
+we now need to trace the boundary contour between these regions.
+To this end we use the radial sweep algorithm \cite{web_radial_sweep} whose implementation can be found
+in the function \lstinline[language=C++]|trace_boundary| in the file \lstinline|./src/libs/img.h|.
+
+The radial sweep algorithm works as given below, following the descriptions in Ref. \cite{web_radial_sweep}:
+\begin{enumerate}
+	\item Scan the bitmap line by line and row by row until a forbidden region is found. 
+		If the corresponding pixel has already been seen, continue. Otherwise mark it as start pixel.
+	\item Set an arbitrary direction vector pointing to one of the eight neighbouring pixels.
+	\item Rotate the direction vector in a given, fixed sense, i.e. either in an always clockwise or 
+		always counter-clockwise fashion, until the pixel it points to is again inside a forbidden region.
+		If a full rotation has been performed without hitting a new forbidden region, stop the algorithm.
+	\item Increment the current pixel position using the newly found direction vector. 
+		Set the new direction vector to point from the new pixel to the old one.
+		Add the line connecting the old and the new pixel to the boundary.
+	\item Repeat from step 3 until the start pixel is seen again (or no new direction vector is found).
+\end{enumerate}
 
 
 \subsection{Line-segment generation and simplification}
