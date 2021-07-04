@@ -117,10 +117,65 @@ itself. Even though the instrument model itself is a three-dimensional represent
 can nevertheless simplify the collision detection checks to a two-dimensional plane. The reason for this is
 that all possible obstacles in the instrument path, for instance walls and pillars, are upright and do not have
 any sloped angles. The same is true for the instrument itself.
-
-Collision calculation on the two-dimensional grid is spread out on several processor cores using 
+The collision calculation on the two-dimensional grid is spread out on several processor cores using 
 the \lstinline[language=C++]|thread_pool| \cite{web_boost_asio_threadpool} class from the 
 Boost.Asio \cite{web_boost_asio} asynchronous input/output library.
+
+With the given two-dimensional simplifications, we only need to distinguish three possible intersection tests for collisions: 
+line-line intersections, line-circle intersections and circle-circle intersections.
+
+\subsubsection*{Line-line intersections}
+Given two lines $\left|x_1\right> + \lambda_1 \left|d_1\right>$ and $\left|x_2\right> + \lambda_2 \left|d_2\right>$, 
+the line-line intersection can be calculated by setting their equations equal, namely as follows \cite{wiki_line_line_intersection}:
+\begin{equation}
+	\left|x_1\right> + \lambda_1 \left|d_1\right> \ =\ \left|x_2\right> + \lambda_2 \left|d_2\right>,
+\end{equation}
+\begin{equation}
+	\left|x_1\right> - \left|x_2\right> \ =\  \lambda_2 \left|d_2\right> - \lambda_1 \left|d_1\right>,
+\end{equation}
+\begin{equation}
+	\left|x_1\right> - \left|x_2\right> \ =\  D \cdot \left| \lambda \right>,
+	\label{eq:line_line_inters}
+\end{equation}
+where, in the last step, the matrix $D$ is composed of the direction vectors in its columns, $D = \left( d_2 \ |\  -d_1 \right)$, 
+and the vector $\left| \lambda \right>$ has the two individual line parameter $\lambda_1$ and $\lambda_2$ in its rows, $\left| \lambda \right> = \left( \lambda_2 \ |\  \lambda_1 \right)^T$.
+
+For the given two-dimensional case, one can now directly solve for the $\lambda$s by left-multiplying with $D^{-1}$.
+As the routine is also used by other code parts, we also include the general $n$-dimensional case in the implementation, 
+determining the closest point between the two lines if no intersection exists.
+This is done using the normal equation of the least-squares problem \cite[p. 793]{Arens2015}; 
+the approximate version of Eq. \ref{eq:line_line_inters} thus reads \cite{wiki_line_line_intersection}: 
+\begin{equation}
+	D^T \left(\left|x_1\right> - \left|x_2\right>\right) \ =\  D^T D \cdot \left| \lambda \right>,
+\end{equation}
+\begin{equation}
+	\left| \lambda \right> \ =\  \left( D^T D \right)^{-1} D^T \cdot \left( \left|x_1\right> - \left|x_2\right> \right).
+\end{equation}
+
+The intersection point (or the closest point) is thus be found by inserting the $\lambda$ parameters in the respective line equation. 
+Testing for the intersection of line segments instead of infinite lines is done by keeping the $\lambda$ parameters inside a given range.
+
+For an efficient handling of multiple line segment intersections, the decision for which lines to test for intersections is
+performed using a line-sweep algorithm [TODO].
+
+
+\subsubsection*{Line-circle intersections}
+As with the line-line intersection, we keep the problem general and directly look at the $n$-dimensional problem.
+The intersection points between a line and an $n$-sphere are found by inserting the line equation 
+$\left|p\right> = \left|x_1\right> + \lambda \left|d\right>$ into the sphere equation 
+$\left< p-x_2 \ |\  p-x_2 \right> = r^2$, where $x_1$ names an arbitrary point on the line, $d$ its normalised 
+direction vector, $x_2$ is the centre of the sphere/circle, and $r$ its radius \cite{wiki_line_sphere_intersection}.
+The intersection points along the line are thus given by \cite{wiki_line_sphere_intersection}:
+\begin{equation}
+	\lambda \ =\ \left< x_2 - x_1 \  |\  d \right>
+		\ \pm\ \sqrt{ \left< x_2 - x_1 \  |\  d \right>^2 
+			+ r^2 - \left< x_2 - x_1 \ |\  x_2 - x_1 \right>}.
+\end{equation}
+
+
+
+\subsubsection*{Circle-circle intersections}
+
 
 
 \subsection{Contour tracing}
