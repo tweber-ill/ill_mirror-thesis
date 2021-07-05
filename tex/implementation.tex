@@ -158,7 +158,33 @@ The intersection point (or the closest point) is thus be found by inserting the 
 Testing for the intersection of line segments instead of infinite lines is done by keeping the $\lambda$ parameters inside a given range.
 
 For an efficient handling of multiple line segment intersections, the decision for which lines to test for intersections is
-performed using a line-sweep algorithm [TODO].
+performed using the line segment sweep algorithm from Ref. \cite[pp. 69-80]{FUH_geo2020} whose C++ implementation can be
+found in the function \lstinline[language=C++]|intersect_sweep| of the file \lstinline|./src/libs/lines.h|.
+We shortly summarise the algorithm and our implementation, following the description in \cite[pp. 69-80]{FUH_geo2020}:
+\begin{enumerate}
+	\item Possible events are kept in an event structure. Before the sweep, this is initialised with all the line segment
+		endpoints. The structure itself is a priority queue which sorts its elements by their $x$ coordinate in ascending order.
+		In the implementation we use the \lstinline[language=C++]|std::priority_queue| of the C++ standard library.
+	\item The line sweep is performed by iteratively taking the top element from the event structure's priority queue until
+		the latter is empty, in which case the algorithm terminates.
+		Depending on the type of the current element on top of the event structure, the following actions are performed:
+		\begin{itemize}
+			\item If the current event is the left endpoint of a line segment, the newly encountered line segment is
+				inserted into the sweep status structure and is tested for intersections against its preceding and succeeding
+				line segment in the status structure. Potential intersections are inserted into the event structure.
+				The sweep status structure sorts the line segments according to their $y$ order at the current $x$ position
+				of the sweep line. It is implemented using Boost.Intrusive's \cite{web_boost_intrusive}
+				AVL tree class \cite{web_boost_intrusive_avltree} and can be found in the file \lstinline|./src/libs/trees.h|.
+			\item If the current event is the right endpoint of a line segment, the now inactive line segment is
+				removed from the sweep status structure and its preceding and succeeding line segments are tested
+				for intersection. A potential intersection is inserted into the event structure.
+			\item If the current event is an intersection point, the involved line segments are reported as intersecting
+				and, as they cross at this point, their order is flipped in the event structure.
+				After the flip, the intersecting line segments are tested against intersection with their new neighbours
+				and the possible intersection points are inserted into the event structure.
+		\end{itemize}
+	\item Repeat from step 2.
+\end{enumerate}
 
 
 \subsubsection*{Line-circle intersections}
@@ -191,7 +217,7 @@ is less than the sum of their radii, $r_1$ and $r_2$, respectively:
 Having determined a bitmap representation of allowed and forbidden regions in the angular configuration space,
 we now need to trace the boundary contour between these regions.
 To this end we use the radial sweep algorithm \cite{web_radial_sweep} whose implementation can be found
-in the function \lstinline[language=C++]|trace_boundary| in the file \lstinline|./src/libs/img.h|.
+in the function \lstinline[language=C++]|trace_boundary| located in the file \lstinline|./src/libs/img.h|.
 
 The radial sweep algorithm works as given below, following the descriptions in Ref. \cite{web_radial_sweep}:
 \begin{enumerate}
