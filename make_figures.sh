@@ -16,6 +16,12 @@ if [ "$CONVERTER" = "" ]; then
 fi
 
 
+# check if the --export-filename option exists
+$CONVERTER --without-gui --export-filename
+CONVERTER_OLD_ARGS=$?
+#echo -e "return value: $CONVERTER_OLD_ARGS"
+
+
 for fig_svg in figures_svg/*.svg; do
 	# change ending
 	fig_pdf_meta="${fig_svg%\.svg}.pdf"
@@ -34,6 +40,11 @@ for fig_svg in figures_svg/*.svg; do
 	echo -e "$fig_svg -> $fig_pdf"
 
 	#convert -render $fig_svg $fig_pdf
-	$CONVERTER --export-type=pdf --export-pdf-version=1.4 \
-		--export-filename=$fig_pdf $fig_svg
+
+	if [ $CONVERTER_OLD_ARGS != "0" ]; then
+		$CONVERTER --without-gui --export-pdf-version=1.4 --export-pdf=$fig_pdf $fig_svg
+	else
+		$CONVERTER --without-gui --export-type=pdf --export-pdf-version=1.4 \
+			--export-filename=$fig_pdf $fig_svg
+	fi
 done
