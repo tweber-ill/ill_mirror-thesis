@@ -17,7 +17,7 @@ fi
 
 
 # check if the --export-filename option exists
-$CONVERTER --without-gui --export-filename
+$CONVERTER --help | grep export-filename > /dev/null
 CONVERTER_OLD_ARGS=$?
 #echo -e "return value: $CONVERTER_OLD_ARGS"
 
@@ -42,9 +42,10 @@ for fig_svg in figures_svg/*.svg; do
 	#convert -render $fig_svg $fig_pdf
 
 	if [ $CONVERTER_OLD_ARGS != "0" ]; then
-		$CONVERTER --without-gui --export-pdf-version=1.4 --export-pdf=$fig_pdf $fig_svg
+		$CONVERTER --without-gui --export-pdf-version=1.4 \
+			--export-pdf=$fig_pdf $fig_svg
 	else
-		$CONVERTER --without-gui --export-type=pdf --export-pdf-version=1.4 \
+		$CONVERTER --export-type=pdf --export-pdf-version=1.4 \
 			--export-filename=$fig_pdf $fig_svg
 	fi
 done
