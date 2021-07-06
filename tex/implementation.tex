@@ -34,7 +34,7 @@ The graphical user interface is presented separately, namely in chapter \ref{ch:
 The instrument space comprising the triple-axis spectrometer, the walls and obstacles as well as the floor is modelled in
 the class \lstinline[language=C++]|InstrumentSpace|. It also serves as high-level interface for loading and saving
 the instrument geometry and states, signalling mechanisms for state changes using the publish-subscribe mechanism
-via Boost.Signals2 \cite{web_boost_signals}, as well as checking the instrument for collisions.
+via \textit{Boost.Signals2} \cite{web_boost_signals}, as well as checking the instrument for collisions.
 
 The classes \lstinline[language=C++]|Instrument| and \lstinline[language=C++]|Axis| contain the actual instrument definition.
 The spectrometer is modelled as a hierarchy of the three principal axes, namely monochromator, sample and analyser.
@@ -106,7 +106,8 @@ library situated in the directory \lstinline|./src/libs| of the source code repo
 \subsection{Angular configuration space}
 As the obstacles do not have any geometrically primitive shape in angular configuration space, we iterate
 through the configuration space on a two-dimensional grid and create a bitmap of allowed and forbidden
-positions. The grid extends towards the scattering angles $2\theta_S \in \left[ -180^{\circ},\, 180^{\circ} \right]$ and monochromator angles of $2\theta_M \in \left[0^{\circ},\, 180^{\circ} \right]$, where, for the monochromator, we do
+positions. The grid extends towards the scattering angles $2\theta_S \in \left[ -180^{\circ},\, 180^{\circ} \right]$
+and monochromator angles of $2\theta_M \in \left[0^{\circ},\, 180^{\circ} \right]$, where, for the monochromator, we do
 not the full angular range as this is not possible in real instruments which has the monochromator at a fixed position
 and only scatters in one direction. The sample scattering angle, on the other hand, needs the full angular range as
 scattering on both sides of the axis is done in practice.
@@ -119,7 +120,7 @@ that all possible obstacles in the instrument path, for instance walls and pilla
 any sloped angles. The same is true for the instrument itself.
 The collision calculation on the two-dimensional grid is spread out on several processor cores using 
 the \lstinline[language=C++]|thread_pool| \cite{web_boost_asio_threadpool} class from the 
-Boost.Asio \cite{web_boost_asio} asynchronous input/output library.
+\textit{Boost.Asio} \cite{web_boost_asio} asynchronous input/output library.
 
 With the given two-dimensional simplifications, we only need to distinguish three possible intersection tests for collisions: 
 line-line intersections, line-circle intersections and circle-circle intersections. 
@@ -140,7 +141,8 @@ the line-line intersection can be calculated by setting their equations equal, n
 	\label{eq:line_line_inters}
 \end{equation}
 where, in the last step, the matrix $D$ is composed of the direction vectors in its columns, $D = \left( d_2 \ |\  -d_1 \right)$, 
-and the vector $\left| \lambda \right>$ has the two individual line parameter $\lambda_1$ and $\lambda_2$ in its rows, $\left| \lambda \right> = \left( \lambda_2 \ |\  \lambda_1 \right)^T$.
+and the vector $\left| \lambda \right>$ has the two individual line parameter $\lambda_1$ and $\lambda_2$ in its
+rows, $\left| \lambda \right> = \left( \lambda_2 \ |\  \lambda_1 \right)^T$.
 
 For the given two-dimensional case, one can now directly solve for the $\lambda$s by left-multiplying with $D^{-1}$.
 As the routine is also used by other code parts, we also include the general $n$-dimensional case in the implementation, 
@@ -173,7 +175,7 @@ We shortly summarise the algorithm and our implementation, following the descrip
 				inserted into the sweep status structure and is tested for intersections against its preceding and succeeding
 				line segment in the status structure. Potential intersections are inserted into the event structure.
 				The sweep status structure sorts the line segments according to their $y$ order at the current $x$ position
-				of the sweep line. It is implemented using Boost.Intrusive's \cite{web_boost_intrusive}
+				of the sweep line. It is implemented using \textit{Boost.Intrusive}'s \cite{web_boost_intrusive}
 				AVL tree class \cite{web_boost_intrusive_avltree} and can be found in the file \lstinline|./src/libs/trees.h|.
 			\item If the current event is the right endpoint of a line segment, the now inactive line segment is
 				removed from the sweep status structure and its preceding and succeeding line segments are tested
@@ -248,22 +250,48 @@ As we are interested in the instrument path that is at the farthest position fro
 the Voronoi diagrams for the line segments that constitute these obstacles. In a second step, we group line
 segments into objects in to remove bisecting lines coming from the same object.
 
-Voronoi diagrams are described in a general fashion in \cite[Ch. 7, pp. 147f]{Berg2008}, a description of the special
-case of Voronoi diagrams for line segments can be found in \cite[Ch. 7.3, pp. 160-163]{Berg2008}.
+\subsubsection*{Line segment Voronoi diagrams}
+Voronoi diagrams are described in a general fashion in \cite[Ch. 7, pp. 147f]{Berg2008} and in
+\cite[Ch. 5, pp. 209f]{Berg2008}, a description of the special case of Voronoi diagrams for line segments can be
+found in \cite[Ch. 7.3, pp. 160-163]{Berg2008} and in \cite[pp. 242-247]{FUH_geo2020}.
 
 The Voronoi region of a line $l_i$ consists of all points in $\mathbb{R}^2$ that are closest to $l_i$. 
 The boundary between the Voronoi regions of two line segments $l_i$ and $l_j$, $i \neq j$ , 
 is called bisector and is the curve of equal distance between the two line segments $l_i$ and $l_j$.
-Its shape is either linear or quadratic, where, in the linear case, the bisector curve can also be either finite or infinite.
+Its shape is either linear or quadratic, where, in the linear case, the bisector curve can also be either
+finite or infinite \cite[pp. 243-244]{FUH_geo2020}.
 
 A linear bisector is obtained for the distance calculated between two line segment endpoints or between two inner 
 points on the line segments which are not the endpoints.
 This can easily be seen, because, (a) in the case of two endpoints, the middle perpendicular line between these 
 two points is equidistant to them; and (b) in the case of two line segments, the angular bisector of the two lines is
-equidistant to them.
+equidistant to them \cite[pp. 243-244]{FUH_geo2020}.
 On the other hand, the bisector curve segment follows a parabolic shape if the distance is calculated 
-between a line segment endpoint and one inner point of the other segment.
+between a line segment endpoint and one inner point of the other segment. This is the same as the bisector between
+a point and a line and it parabolic distance is shown in \cite[pp. 260-261]{FUH_geo2020}.
 An example of two or several line segments and their bisectors is shown in Fig. \ref{fig:linesegs_voro}.
+
+For the calculation of the line segment Voronoi diagrams in the present implementation, the Voronoi extensions
+\cite{web_boost_polygon_voronoi} of the \textit{Boost.Polygon} \cite{web_boost_polygon, Simonson2009} C++ library are used.
+\textit{Boost.Polygon} uses Fortune's sweep algorithm \cite{Fortune1987} to construct the Voronoi diagram and is
+internally based on integers coordinates \cite{web_boost_polygon}.
+The reliance on integer coordinate representation is also responsible for \textit{Boost.Polygon}'s inability to handle
+intersecting lines, because the intersection point may be at a non-integer coordinate. Intersecting lines need
+to be carefully filtered out, because they can cause the library to either crash, hang, or yield wrong bisectors.
+
+Several alternative libraries for calculating the line segment Voronoi diagrams exist,
+noteworthy are \textit{VRONI} by M. Held \cite{Held2001}, \textit{OpenVoronoi} by A. E. Wallin \cite{web_openvoronoi}
+and TODO.
+A further possible C/C++ library, the popular and very high-quality \textit{QHull} by C. B. Barber \cite{web_qhull},
+only calculates the Voronoi diagrams for vertices, not for line segments.
+None of the above is feasible for the present project, though: \textit{VRONI} is neither freely available nor under a
+suitable open-source license.
+The opposite is true for \textit{OpenVoronoi}: It is available under an open-source license, but our first tests
+deemed it too unstable for use in a production-quality software. The source code for our test can be found in
+the function \lstinline[language=C++]|calc_voro_ovd|, which resided in file \lstinline|./src/libs/hull.h|.
+The source code for the test tool itself is located in: \lstinline|./src/tools/lines.cpp|.
+
+
 
 \label{sec:voronoi}
 \begin{figure*}
@@ -282,9 +310,12 @@ An example of two or several line segments and their bisectors is shown in Fig. 
 	Bottom panel: Voronoi regions for five line segments, $l_1,\, l_2,\, ...,\, l_5$.
 	The line segments and their endpoints are marked in blue. The small red points represent the Voronoi vertices.
 	The black lines are the bisectors of the Voronoi regions, where the solid lines delimit finite and the dashed lines
-	infinite regions. Helper lines are marked in red.
+	infinite regions. Helper lines are marked in red. The figure has been calculated using the \textit{Boost.Polygon} library \cite{web_boost_polygon_voronoi} and the source code in \lstinline|./src/tools/lines.cpp|.
 	\label{fig:linesegs_voro}}
 \end{figure*}
+
+
+\subsubsection*{Polygon Voronoi diagrams}
 
 
 

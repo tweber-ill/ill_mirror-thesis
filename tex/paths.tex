@@ -8,7 +8,9 @@
 \chapter{Path-finding Strategy}
 \label{ch:paths}
 
-This chapter is devoted to the development of the theoretical idea for path-finding in a triple-axis spectrometer (TAS). The path should be optimal in the sense that the instrument not only avoids obstacles like walls or equipment in the experimental area, but also keeps a maximum distance from them. This chapter tries to keep its descriptions ``high level'', the details
+This chapter is devoted to the development of the theoretical idea for path-finding in a triple-axis spectrometer (TAS).
+The path should be optimal in the sense that the instrument not only avoids obstacles like walls or equipment in the experimental area,
+but also keeps a maximum distance from them. This chapter tries to keep its descriptions ``high level'', the details
 and the implementation of the algorithm will be presented in the next chapter.
 
 Before looking at the situation with TAS in section \ref{sec:tasrobot}, we shortly review the ideas of motion planning for a 
@@ -74,7 +76,7 @@ approach is called the retraction method and is based on constructing the Vorono
 of the obstacles and moving the robot along the Voronoi edges, which ensures that the path is optimal in the
 sense that the robot is always at the farthest distance from any obstacle \cite[pp. 163 and 304]{Berg2008}.
 An example path for the same problem as before is given in Fig. \ref{fig:robot_voronoi}.
-It is this approach we will follow for TAS motion planning.
+This approach is described in detail in \cite[pp. 247-251]{FUH_geo2020}, which we will follow for TAS motion planning.
 
 \begin{figure}[htb]
 	\centering
@@ -146,11 +148,13 @@ simply-connected.
 \label{sec:strategy}
 
 The strategy for planning the motion of the spectrometer comprises several steps. Modifying the algorithm for
-a point-like robot described in Ref. \cite[Ch. 13, pp. 283-306]{Berg2008} (see Sec. \ref{sec:pointrobot}) and the retraction algorithm
-for finding a path using line-segment Voronoi diagrams as presented in \cite[p. 163]{Berg2008}, we summarise the
-steps here before describing them in detail together with the actual implementation in the next chapter.
+a point-like robot described in Ref. \cite[Ch. 13, pp. 283-306]{Berg2008} (see Sec. \ref{sec:pointrobot}) and the retraction
+algorithm for finding a path using line-segment Voronoi diagrams as presented in \cite[p. 163]{Berg2008} and
+\cite[pp. 247-251]{FUH_geo2020}, we summarise the steps here before describing them in detail together with the actual
+implementation in the next chapter.
 
-Two tasks are needed. The first task is building the possible paths the instrument can move along. The second task contains the movement of the instrument on the generated paths. The two tasks comprise these following steps:
+Two tasks are needed. The first task is building the possible paths the instrument can move along. The second task contains
+the movement of the instrument on the generated paths. The two tasks comprise these following steps:
 \begin{enumerate}
 	\item Building the path.
 	\begin{enumerate}
@@ -165,7 +169,7 @@ Two tasks are needed. The first task is building the possible paths the instrume
 			in a convex region and only calculate the Voronoi diagrams for these groups instead of all line segments.
 		\item Calculate the Voronoi diagram for the line segment groups. The Voronoi edges are the
 			possible instrument paths in configuration space. Save both the Voronoi diagram as well as its representation 
-			in a graph structure, similar to \cite[p. 163]{Berg2008}.
+			in a graph structure, as in \cite[p. 163]{Berg2008}.
 		\item Simplify the Voronoi diagram. For example, Voronoi vertices and edges inside obstacle regions have to be removed.
 			These are generated in the previous step because, there, no differentiation was made between the ``inside'' and
 			``outside'' regions of the convex line segment contour groups.
@@ -180,7 +184,8 @@ Two tasks are needed. The first task is building the possible paths the instrume
 			space.
 		\item Determine the Voronoi regions of the start and end coordinate points.
 		\item Move the instrument to the edge of the start Voronoi region.
-		\item Calculate the shortest path to the edge of the Voronoi region containing the end point using Dijkstra's algorithm and move the instrument along that path.
+		\item Calculate the shortest path to the edge of the Voronoi region containing the end point using Dijkstra's algorithm
+			and move the instrument along that path.
 		\item Move the instrument from the edge of the Voronoi region containing the end point towards that point.
 	\end{enumerate}
 \end{enumerate}
