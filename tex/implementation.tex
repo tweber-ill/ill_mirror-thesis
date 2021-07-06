@@ -234,13 +234,34 @@ The radial sweep algorithm works as given below, following the descriptions in R
 \end{enumerate}
 
 
+
 \subsection{Line-segment generation and simplification}
+
 
 
 \subsection{Generation of convex regions}
 
 
+
 \subsection{Calculation of the Voronoi diagram}
+As we are interested in the instrument path that is at the farthest position from walls, we need to calculate
+the Voronoi diagrams for the line segments that constitute these obstacles. In a second step, we group line
+segments into objects in to remove bisecting lines coming from the same object.
+
+\subsubsection*{Voronoi diagram for line segments}
+Voronoi diagrams are described in a general fashion in \cite[Ch. 7, pp. 147f]{Berg2008}, a description of the special
+case of Voronoi diagrams for line segments can be found in \cite[Ch. 7.3, pp. 160-163]{Berg2008}.
+
+The Voronoi region of a line $l_i$ consists of all points in $\mathbb{R}^2$ that are closest to $l_i$. 
+The boundary between the Voronoi regions of two line segments $l_i$ and $l_j$, $i \neq j$ , 
+is called bisector and is the curve of equal distance between the two line segments $l_i$ and $l_j$.
+Its shape is either linear or quadratic, in the linear case the bisector curve can also be finite or infinite.
+The linear form is achieved if the distance is calculated between two line segment endpoints or between two inner 
+points on the line segments which are not the endpoints.
+The bisector curve segment follows a parabolic shape if the distance is calculated between a line segment endpoint
+and one inner point.
+An example of two or several line segments and their bisectors is shown in Fig. \ref{fig:linesegs_voro}.
+
 \label{sec:voronoi}
 \begin{figure*}
 	\begin{minipage}{1 \textwidth}
@@ -261,6 +282,10 @@ The radial sweep algorithm works as given below, following the descriptions in R
 	infinite regions. Helper lines are marked in red.
 	\label{fig:linesegs_voro}}
 \end{figure*}
+
+
+\subsubsection*{Voronoi diagram for line segment groups and solid objects}
+
 
 
 \subsection{Simplification of the Voronoi diagram}
