@@ -146,7 +146,8 @@ simply-connected.
 \label{sec:strategy}
 
 The strategy for planning the motion of the spectrometer comprises several steps. Modifying the algorithm for
-a point-like robot described in Ref. \cite[Ch. 13, pp. 283-306]{Berg2008} (see Sec. \ref{sec:pointrobot}), we summarise the
+a point-like robot described in Ref. \cite[Ch. 13, pp. 283-306]{Berg2008} (see Sec. \ref{sec:pointrobot}) and the retraction algorithm
+for finding a path using line-segment Voronoi diagrams as presented in \cite[p. 163]{Berg2008}, we summarise the
 steps here before describing them in detail together with the actual implementation in the next chapter.
 
 Two tasks are needed. The first task is building the possible paths the instrument can move along. The second task contains the movement of the instrument on the generated paths. The two tasks comprise these following steps:
@@ -163,13 +164,14 @@ Two tasks are needed. The first task is building the possible paths the instrume
 		\item Split all polygonal line segments that build up the contours into convex regions. With this we can group all lines
 			in a convex region and only calculate the Voronoi diagrams for these groups instead of all line segments.
 		\item Calculate the Voronoi diagram for the line segment groups. The Voronoi edges are the
-		possible instrument paths in configuration space. Save both the Voronoi diagram as well as its representation in a graph structure.
+			possible instrument paths in configuration space. Save both the Voronoi diagram as well as its representation 
+			in a graph structure, similar to \cite[p. 163]{Berg2008}.
 		\item Simplify the Voronoi diagram. For example, Voronoi vertices and edges inside obstacle regions have to be removed.
 			These are generated in the previous step because, there, no differentiation was made between the ``inside'' and
 			``outside'' regions of the convex line segment contour groups.
 	\end{enumerate}
 
-	\item Executing the instrument motion.
+	\item Executing the instrument motion, this is the point-like limiting case of the algorithm in \cite[p. 163]{Berg2008}.
 	\begin{enumerate}
 		\item Convert the given crystal coordinates into instrument coordinates.
 			The user of a triple-axis spectrometer usually enters the coordinates in the crystal coordinate system
