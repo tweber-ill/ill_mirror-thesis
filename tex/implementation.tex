@@ -281,7 +281,7 @@ to be carefully filtered out, because they can cause the library to either crash
 
 Several alternative libraries for calculating the line segment Voronoi diagrams exist,
 noteworthy are \textit{VRONI} by M. Held \cite{Held2001}, \textit{OpenVoronoi} by A. E. Wallin \cite{web_openvoronoi}
-and TODO.
+and \textit{VoroLS} by W. Schumann \cite{DiplomaSchumann}.
 A further possible C/C++ library, the popular and very high-quality \textit{QHull} by C. B. Barber \cite{web_qhull},
 only calculates the Voronoi diagrams for vertices, not for line segments.
 None of the above is feasible for the present project, though: \textit{VRONI} is neither freely available nor under a
@@ -290,7 +290,7 @@ The opposite is true for \textit{OpenVoronoi}: It is available under an open-sou
 deemed it too unstable for use in a production-quality software. The source code for our test can be found in
 the function \lstinline[language=C++]|calc_voro_ovd|, which resided in file \lstinline|./src/libs/hull.h|.
 The source code for the test tool itself is located in: \lstinline|./src/tools/lines.cpp|.
-
+\textit{VoroLS} is stable and does even handle intersecting lines, but is a \textit{Java} software, not a library, and is not under an open-source license.
 
 
 \label{sec:voronoi}
