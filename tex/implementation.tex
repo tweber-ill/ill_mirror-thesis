@@ -299,23 +299,44 @@ The source code for the test tool itself is located in: \lstinline|./src/tools/l
 		\begin{center}
 			\includegraphics[width = 0.75 \textwidth]{figures/linesegs}
 		\end{center}
+		\vspace{0.25cm}
 	\end{minipage}
-	\vspace{1cm}
 	\begin{minipage}{1 \textwidth}
+		\vspace{0.25cm}
 		\begin{center}
 			\includegraphics[width = 0.95 \textwidth]{figures/linesegs2}
 		\end{center}
 	\end{minipage}
 	\caption{Top panel: Voronoi regions for two line segments, $l_1$ and $l_2$.
-	Bottom panel: Voronoi regions for five line segments, $l_1,\, l_2,\, ...,\, l_5$.
-	The line segments and their endpoints are marked in blue. The small red points represent the Voronoi vertices.
-	The black lines are the bisectors of the Voronoi regions, where the solid lines delimit finite and the dashed lines
-	infinite regions. Helper lines are marked in red. The figure has been calculated using the \textit{Boost.Polygon} library \cite{web_boost_polygon_voronoi} and the source code in \lstinline|./src/tools/lines.cpp|.
-	\label{fig:linesegs_voro}}
+		Bottom panel: Voronoi regions for five line segments, $l_1,\, l_2,\, ...,\, l_5$.
+		The line segments and their endpoints are marked in blue. The small red points represent the Voronoi vertices.
+		The black lines are the bisectors of the Voronoi regions, where the solid lines delimit finite and the dashed lines
+		infinite regions. Helper lines are marked in red. The figure has been calculated using the \textit{Boost.Polygon} library
+		\cite{web_boost_polygon_voronoi} and the source code in \lstinline|./src/tools/lines.cpp|.
+		\label{fig:linesegs_voro}}
 \end{figure*}
 
 
 \subsubsection*{Polygon Voronoi diagrams}
+
+
+\label{sec:voronoi}
+\begin{figure*}
+	\begin{minipage}{0.5 \textwidth}
+		\begin{center}
+			\includegraphics[width = 1 \textwidth]{figures/linesegs_ungrouped}
+		\end{center}
+	\end{minipage}
+	\begin{minipage}{0.5 \textwidth}
+		\begin{center}
+			\includegraphics[width = 1 \textwidth]{figures/linesegs_grouped}
+		\end{center}
+	\end{minipage}
+	\caption{Left panel: Ungrouped line segments and their Voronoi bisectors.
+		Right panel: The same line segments, but with each polygonal region grouped.
+		The Voronoi diagram is only calculated between groups, not within the same group.
+		\label{fig:linesegs_grouped_voro}}
+\end{figure*}
 
 
 
