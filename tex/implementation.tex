@@ -290,7 +290,8 @@ The opposite is true for \textit{OpenVoronoi}: It is available under an open-sou
 deemed it too unstable for use in a production-quality software. The source code for our test can be found in
 the function \lstinline[language=C++]|calc_voro_ovd|, which resided in file \lstinline|./src/libs/hull.h|.
 The source code for the test tool itself is located in: \lstinline|./src/tools/lines.cpp|.
-\textit{VoroLS} is stable and does even handle intersecting lines, but is a \textit{Java} software, not a library, and is not under an open-source license.
+\textit{VoroLS} is stable and does even handle intersecting lines, but is a \textit{Java} software, not a library, 
+and is not under an open-source license.
 
 
 \label{sec:voronoi}
@@ -317,7 +318,16 @@ The source code for the test tool itself is located in: \lstinline|./src/tools/l
 \end{figure*}
 
 
+
 \subsubsection*{Polygon Voronoi diagrams}
+
+As it is not sufficient to represent the walls as isolated line segments, but rather as concave regions, which -- as we saw before --
+are not necessarily simply-connected, we group all line segments that form the boundary of each simply-connected region.
+The Voronoi diagrams only need to be calculated between such regions, the bisectors from line segments belonging to the
+same region are discarded. Fig. \ref{fig:linesegs_grouped_voro} shows an example of the same line segments, which are not
+grouped in the first case and grouped into regions in the second case. The remaining bisectors do not touch any region and
+the resulting path is what is called the ``contour-parallel tool path'' in the terms of CNC (computer numerical control) 
+milling machines \cite{Jeong1998, wiki_milling}.
 
 
 \label{sec:voronoi}
