@@ -321,13 +321,34 @@ and is not under an open-source license.
 
 \subsubsection*{Polygon Voronoi diagrams}
 
-As it is not sufficient to represent the walls as isolated line segments, but rather as concave regions, which -- as we saw before --
-are not necessarily simply-connected, we group all line segments that form the boundary of each simply-connected region.
-The Voronoi diagrams only need to be calculated between such regions, the bisectors from line segments belonging to the
-same region are discarded. Fig. \ref{fig:linesegs_grouped_voro} shows an example of the same line segments, which are not
-grouped in the first case and grouped into regions in the second case. The remaining bisectors do not touch any region and
-the resulting path is what is called the ``contour-parallel tool path'' in the terms of CNC (computer numerical control) 
-milling machines \cite{Jeong1998, wiki_milling}.
+It is not sufficient to represent the walls as isolated line segments, because -- 
+as we saw before -- they are not necessarily simply-connected. 
+We rather represent them as concave or convex regions, of which we group all 
+line segments that form the boundary of a simply-connected region.
+
+The Voronoi diagrams only need to be calculated between such regions, 
+the bisectors from line segments belonging to the same region are discarded. 
+Fig. \ref{fig:linesegs_grouped_voro} shows an example of line segments and several
+possibilities of grouping them. 
+In case (a) they are not grouped and the Voronoi diagram is just the line 
+segment Voronoi diagram. This case cannot be used for the paths of the spectrometer,
+since the bisectors enter the forbidden region inside a wall.
+In case (b) collections of line segments, which form arbitrary concave polygons, 
+are grouped grouped into regions. Here, the bisectors do not touch any region 
+and the resulting path is what is called the ``contour-parallel tool path'' in 
+the terms of CNC (computer numerical control) milling machines \cite{Jeong1998, wiki_milling}, where these are utilised. While the bisectors of this case could 
+be used for the spectrometer path mesh, a problem remains: In contrast to a milling
+machine the spectrometer is not supposed to be at the furthest distance of any
+polygonal region at all times, but has a starting and ending position which can 
+be close to one of these walls or be at a position near a concave corner which
+is not directly accessible from the present bisector configuration. This problem
+is solved in case (c).
+In case (c) the concave polygonal regions are split into convex sub-regions.
+The bisectors form what is called a skeletal bisector configuration [TODO: cite].
+Here, each part of the instrumental configuration space can be reached from the
+bisector mesh and no bisectors inside forbidden regions exits. This configuration
+will be used in the software for calculating the bisector path mesh for instrument
+movement.
 
 
 \label{sec:voronoi}
