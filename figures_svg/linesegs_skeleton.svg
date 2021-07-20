@@ -11,11 +11,11 @@
    width="352.98306mm"
    height="283.9718mm"
    version="1.2"
-   id="svg774"
-   sodipodi:docname="linesegs_grouped.svg"
+   id="svg1804"
+   sodipodi:docname="linesegs_skeleton.svg"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15)">
   <metadata
-     id="metadata778">
+     id="metadata1808">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -40,26 +40,26 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="976"
+     inkscape:window-width="1366"
      inkscape:window-height="719"
-     id="namedview776"
+     id="namedview1806"
      showgrid="false"
-     inkscape:zoom="0.89095522"
-     inkscape:cx="266.99475"
-     inkscape:cy="330.6822"
+     inkscape:zoom="0.63000049"
+     inkscape:cx="390.28615"
+     inkscape:cy="224.36905"
      inkscape:window-x="0"
      inkscape:window-y="26"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="svg774"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1804"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:document-rotation="0" />
   <desc
-     id="desc4">Generated with Qt</desc>
+     id="desc782">Generated with Qt</desc>
   <defs
-     id="defs146">
+     id="defs924">
     <radialGradient
        gradientUnits="userSpaceOnUse"
        cx="0"
@@ -72,12 +72,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop6" />
+         id="stop784" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop8" />
+         id="stop786" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -91,12 +91,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop11" />
+         id="stop789" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop13" />
+         id="stop791" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -110,12 +110,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop16" />
+         id="stop794" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop18" />
+         id="stop796" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -129,12 +129,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop21" />
+         id="stop799" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop23" />
+         id="stop801" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -148,12 +148,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop26" />
+         id="stop804" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop28" />
+         id="stop806" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -167,12 +167,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop31" />
+         id="stop809" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop33" />
+         id="stop811" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -186,12 +186,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop36" />
+         id="stop814" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop38" />
+         id="stop816" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -205,12 +205,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop41" />
+         id="stop819" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop43" />
+         id="stop821" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -224,12 +224,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop46" />
+         id="stop824" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop48" />
+         id="stop826" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -243,12 +243,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop51" />
+         id="stop829" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop53" />
+         id="stop831" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -262,12 +262,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop56" />
+         id="stop834" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop58" />
+         id="stop836" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -281,12 +281,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop61" />
+         id="stop839" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop63" />
+         id="stop841" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -300,12 +300,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop66" />
+         id="stop844" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop68" />
+         id="stop846" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -319,12 +319,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop71" />
+         id="stop849" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop73" />
+         id="stop851" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -338,12 +338,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop76" />
+         id="stop854" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop78" />
+         id="stop856" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -357,12 +357,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop81" />
+         id="stop859" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop83" />
+         id="stop861" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -376,12 +376,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop86" />
+         id="stop864" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop88" />
+         id="stop866" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -395,12 +395,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop91" />
+         id="stop869" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop93" />
+         id="stop871" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -414,12 +414,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop96" />
+         id="stop874" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop98" />
+         id="stop876" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -433,12 +433,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop101" />
+         id="stop879" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop103" />
+         id="stop881" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -452,12 +452,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop106" />
+         id="stop884" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop108" />
+         id="stop886" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -471,12 +471,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop111" />
+         id="stop889" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop113" />
+         id="stop891" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -490,12 +490,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop116" />
+         id="stop894" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop118" />
+         id="stop896" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -509,12 +509,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop121" />
+         id="stop899" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop123" />
+         id="stop901" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -528,12 +528,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop126" />
+         id="stop904" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop128" />
+         id="stop906" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -547,12 +547,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop131" />
+         id="stop909" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop133" />
+         id="stop911" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -566,12 +566,12 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop136" />
+         id="stop914" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop138" />
+         id="stop916" />
     </radialGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
@@ -585,17 +585,17 @@
          offset="0"
          stop-color="#0000ff"
          stop-opacity="1"
-         id="stop141" />
+         id="stop919" />
       <stop
          offset="1"
          stop-color="#000000"
          stop-opacity="1"
-         id="stop143" />
+         id="stop921" />
     </radialGradient>
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient1"
-       id="radialGradient3874"
+       id="radialGradient3324"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -605,7 +605,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient1"
-       id="radialGradient3876"
+       id="radialGradient3326"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -615,7 +615,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient2"
-       id="radialGradient3878"
+       id="radialGradient3328"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -625,7 +625,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient2"
-       id="radialGradient3880"
+       id="radialGradient3330"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -635,7 +635,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient3"
-       id="radialGradient3882"
+       id="radialGradient3332"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -645,7 +645,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient3"
-       id="radialGradient3884"
+       id="radialGradient3334"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -655,7 +655,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient4"
-       id="radialGradient3886"
+       id="radialGradient3336"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -665,7 +665,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient4"
-       id="radialGradient3888"
+       id="radialGradient3338"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -675,7 +675,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient5"
-       id="radialGradient3890"
+       id="radialGradient3340"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -685,7 +685,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient5"
-       id="radialGradient3892"
+       id="radialGradient3342"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -695,7 +695,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient6"
-       id="radialGradient3894"
+       id="radialGradient3344"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -705,7 +705,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient6"
-       id="radialGradient3896"
+       id="radialGradient3346"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -715,7 +715,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient7"
-       id="radialGradient3898"
+       id="radialGradient3348"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -725,7 +725,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient7"
-       id="radialGradient3900"
+       id="radialGradient3350"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -735,7 +735,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient8"
-       id="radialGradient3902"
+       id="radialGradient3352"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -745,7 +745,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient8"
-       id="radialGradient3904"
+       id="radialGradient3354"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -755,7 +755,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient9"
-       id="radialGradient3906"
+       id="radialGradient3356"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -765,7 +765,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient9"
-       id="radialGradient3908"
+       id="radialGradient3358"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -775,7 +775,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient10"
-       id="radialGradient3910"
+       id="radialGradient3360"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -785,7 +785,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient10"
-       id="radialGradient3912"
+       id="radialGradient3362"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -795,7 +795,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient11"
-       id="radialGradient3914"
+       id="radialGradient3364"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -805,7 +805,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient11"
-       id="radialGradient3916"
+       id="radialGradient3366"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -815,7 +815,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient12"
-       id="radialGradient3918"
+       id="radialGradient3368"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -825,7 +825,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient12"
-       id="radialGradient3920"
+       id="radialGradient3370"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -835,7 +835,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient13"
-       id="radialGradient3922"
+       id="radialGradient3372"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -845,7 +845,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient13"
-       id="radialGradient3924"
+       id="radialGradient3374"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -855,7 +855,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient14"
-       id="radialGradient3926"
+       id="radialGradient3376"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -865,7 +865,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient14"
-       id="radialGradient3928"
+       id="radialGradient3378"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -875,7 +875,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient15"
-       id="radialGradient3930"
+       id="radialGradient3380"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -885,7 +885,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient15"
-       id="radialGradient3932"
+       id="radialGradient3382"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -895,7 +895,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient16"
-       id="radialGradient3934"
+       id="radialGradient3384"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -905,7 +905,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient16"
-       id="radialGradient3936"
+       id="radialGradient3386"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -915,7 +915,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient17"
-       id="radialGradient3938"
+       id="radialGradient3388"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -925,7 +925,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient17"
-       id="radialGradient3940"
+       id="radialGradient3390"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -935,7 +935,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient18"
-       id="radialGradient3942"
+       id="radialGradient3392"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -945,7 +945,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient18"
-       id="radialGradient3944"
+       id="radialGradient3394"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -955,7 +955,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient19"
-       id="radialGradient3946"
+       id="radialGradient3396"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -965,7 +965,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient19"
-       id="radialGradient3948"
+       id="radialGradient3398"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -975,7 +975,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient20"
-       id="radialGradient3950"
+       id="radialGradient3400"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -985,7 +985,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient20"
-       id="radialGradient3952"
+       id="radialGradient3402"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -995,7 +995,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient21"
-       id="radialGradient3954"
+       id="radialGradient3404"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -1005,7 +1005,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient21"
-       id="radialGradient3956"
+       id="radialGradient3406"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -1015,7 +1015,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient22"
-       id="radialGradient3958"
+       id="radialGradient3408"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -1025,7 +1025,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient22"
-       id="radialGradient3960"
+       id="radialGradient3410"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -1035,7 +1035,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient23"
-       id="radialGradient3962"
+       id="radialGradient3412"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -1045,7 +1045,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient23"
-       id="radialGradient3964"
+       id="radialGradient3414"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -1055,7 +1055,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient24"
-       id="radialGradient3966"
+       id="radialGradient3416"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -1065,7 +1065,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient24"
-       id="radialGradient3968"
+       id="radialGradient3418"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -1075,7 +1075,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient25"
-       id="radialGradient3970"
+       id="radialGradient3420"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -1085,7 +1085,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient25"
-       id="radialGradient3972"
+       id="radialGradient3422"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -1095,7 +1095,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient26"
-       id="radialGradient3974"
+       id="radialGradient3424"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -1105,7 +1105,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient26"
-       id="radialGradient3976"
+       id="radialGradient3426"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -1115,7 +1115,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient27"
-       id="radialGradient3978"
+       id="radialGradient3428"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -1125,7 +1125,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient27"
-       id="radialGradient3980"
+       id="radialGradient3430"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -1135,7 +1135,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient28"
-       id="radialGradient3982"
+       id="radialGradient3432"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -1145,7 +1145,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#gradient28"
-       id="radialGradient3984"
+       id="radialGradient3434"
        gradientUnits="userSpaceOnUse"
        cx="0"
        cy="0"
@@ -1164,7 +1164,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g148"
+     id="g926"
      style="fill-rule:evenodd"
      transform="translate(0.554965,0.554965)" />
   <g
@@ -1179,7 +1179,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g150"
+     id="g928"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1193,7 +1193,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g156"
+     id="g934"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1207,7 +1207,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g158"
+     id="g936"
      style="fill-rule:evenodd" />
   <g
      fill="url(#gradient1)"
@@ -1221,14 +1221,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g162"
-     style="fill:url(#radialGradient3876);fill-rule:evenodd">
+     id="g940"
+     style="fill:url(#radialGradient3326);fill-rule:evenodd">
     <circle
        cx="0"
        cy="0"
        r="8"
-       id="circle160"
-       style="fill:url(#radialGradient3874)" />
+       id="circle938"
+       style="fill:url(#radialGradient3324)" />
   </g>
   <g
      fill="none"
@@ -1242,7 +1242,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g164"
+     id="g942"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1256,7 +1256,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g166"
+     id="g944"
      style="fill-rule:evenodd" />
   <g
      fill="url(#gradient2)"
@@ -1270,14 +1270,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g170"
-     style="fill:url(#radialGradient3880);fill-rule:evenodd">
+     id="g948"
+     style="fill:url(#radialGradient3330);fill-rule:evenodd">
     <circle
        cx="0"
        cy="0"
        r="8"
-       id="circle168"
-       style="fill:url(#radialGradient3878)" />
+       id="circle946"
+       style="fill:url(#radialGradient3328)" />
   </g>
   <g
      fill="none"
@@ -1291,7 +1291,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g172"
+     id="g950"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1305,7 +1305,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g174"
+     id="g952"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1319,7 +1319,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g180"
+     id="g958"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1333,7 +1333,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g182"
+     id="g960"
      style="fill-rule:evenodd" />
   <g
      fill="url(#gradient4)"
@@ -1347,14 +1347,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g186"
-     style="fill:url(#radialGradient3888);fill-rule:evenodd">
+     id="g964"
+     style="fill:url(#radialGradient3338);fill-rule:evenodd">
     <circle
        cx="0"
        cy="0"
        r="8"
-       id="circle184"
-       style="fill:url(#radialGradient3886)" />
+       id="circle962"
+       style="fill:url(#radialGradient3336)" />
   </g>
   <g
      fill="none"
@@ -1368,7 +1368,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g188"
+     id="g966"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1382,7 +1382,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g190"
+     id="g968"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1396,7 +1396,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g196"
+     id="g974"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1410,7 +1410,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g198"
+     id="g976"
      style="fill-rule:evenodd" />
   <g
      fill="url(#gradient6)"
@@ -1424,14 +1424,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g202"
-     style="fill:url(#radialGradient3896);fill-rule:evenodd">
+     id="g980"
+     style="fill:url(#radialGradient3346);fill-rule:evenodd">
     <circle
        cx="0"
        cy="0"
        r="8"
-       id="circle200"
-       style="fill:url(#radialGradient3894)" />
+       id="circle978"
+       style="fill:url(#radialGradient3344)" />
   </g>
   <g
      fill="none"
@@ -1445,7 +1445,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g204"
+     id="g982"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1459,7 +1459,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g206"
+     id="g984"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1473,7 +1473,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g212"
+     id="g990"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1487,7 +1487,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g214"
+     id="g992"
      style="fill-rule:evenodd" />
   <g
      fill="url(#gradient8)"
@@ -1501,14 +1501,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g218"
-     style="fill:url(#radialGradient3904);fill-rule:evenodd">
+     id="g996"
+     style="fill:url(#radialGradient3354);fill-rule:evenodd">
     <circle
        cx="0"
        cy="0"
        r="8"
-       id="circle216"
-       style="fill:url(#radialGradient3902)" />
+       id="circle994"
+       style="fill:url(#radialGradient3352)" />
   </g>
   <g
      fill="none"
@@ -1522,7 +1522,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g220"
+     id="g998"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1536,7 +1536,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g222"
+     id="g1000"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1550,7 +1550,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g228"
+     id="g1006"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1564,7 +1564,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g230"
+     id="g1008"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1578,7 +1578,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g236"
+     id="g1014"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1592,7 +1592,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g238"
+     id="g1016"
      style="fill-rule:evenodd" />
   <g
      fill="url(#gradient11)"
@@ -1606,14 +1606,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g242"
-     style="fill:url(#radialGradient3916);fill-rule:evenodd">
+     id="g1020"
+     style="fill:url(#radialGradient3366);fill-rule:evenodd">
     <circle
        cx="0"
        cy="0"
        r="8"
-       id="circle240"
-       style="fill:url(#radialGradient3914)" />
+       id="circle1018"
+       style="fill:url(#radialGradient3364)" />
   </g>
   <g
      fill="none"
@@ -1627,7 +1627,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g244"
+     id="g1022"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1641,7 +1641,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g246"
+     id="g1024"
      style="fill-rule:evenodd" />
   <g
      fill="url(#gradient12)"
@@ -1655,14 +1655,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g250"
-     style="fill:url(#radialGradient3920);fill-rule:evenodd">
+     id="g1028"
+     style="fill:url(#radialGradient3370);fill-rule:evenodd">
     <circle
        cx="0"
        cy="0"
        r="8"
-       id="circle248"
-       style="fill:url(#radialGradient3918)" />
+       id="circle1026"
+       style="fill:url(#radialGradient3368)" />
   </g>
   <g
      fill="none"
@@ -1676,7 +1676,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g252"
+     id="g1030"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1690,7 +1690,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g254"
+     id="g1032"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1704,7 +1704,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g260"
+     id="g1038"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1718,7 +1718,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g262"
+     id="g1040"
      style="fill-rule:evenodd" />
   <g
      fill="url(#gradient14)"
@@ -1732,14 +1732,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g266"
-     style="fill:url(#radialGradient3928);fill-rule:evenodd">
+     id="g1044"
+     style="fill:url(#radialGradient3378);fill-rule:evenodd">
     <circle
        cx="0"
        cy="0"
        r="8"
-       id="circle264"
-       style="fill:url(#radialGradient3926)" />
+       id="circle1042"
+       style="fill:url(#radialGradient3376)" />
   </g>
   <g
      fill="none"
@@ -1753,7 +1753,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g268"
+     id="g1046"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1767,7 +1767,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g270"
+     id="g1048"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1781,7 +1781,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g276"
+     id="g1054"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1795,7 +1795,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g278"
+     id="g1056"
      style="fill-rule:evenodd" />
   <g
      fill="url(#gradient16)"
@@ -1809,14 +1809,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g282"
-     style="fill:url(#radialGradient3936);fill-rule:evenodd">
+     id="g1060"
+     style="fill:url(#radialGradient3386);fill-rule:evenodd">
     <circle
        cx="0"
        cy="0"
        r="8"
-       id="circle280"
-       style="fill:url(#radialGradient3934)" />
+       id="circle1058"
+       style="fill:url(#radialGradient3384)" />
   </g>
   <g
      fill="none"
@@ -1830,7 +1830,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g284"
+     id="g1062"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1844,7 +1844,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g286"
+     id="g1064"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1858,7 +1858,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g292"
+     id="g1070"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1872,7 +1872,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g294"
+     id="g1072"
      style="fill-rule:evenodd" />
   <g
      fill="url(#gradient18)"
@@ -1886,14 +1886,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g298"
-     style="fill:url(#radialGradient3944);fill-rule:evenodd">
+     id="g1076"
+     style="fill:url(#radialGradient3394);fill-rule:evenodd">
     <circle
        cx="0"
        cy="0"
        r="8"
-       id="circle296"
-       style="fill:url(#radialGradient3942)" />
+       id="circle1074"
+       style="fill:url(#radialGradient3392)" />
   </g>
   <g
      fill="none"
@@ -1907,7 +1907,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g300"
+     id="g1078"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1921,7 +1921,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g302"
+     id="g1080"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1935,7 +1935,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g308"
+     id="g1086"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1949,7 +1949,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g310"
+     id="g1088"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1963,7 +1963,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g316"
+     id="g1094"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -1977,7 +1977,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g318"
+     id="g1096"
      style="fill-rule:evenodd" />
   <g
      fill="url(#gradient21)"
@@ -1991,14 +1991,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g322"
-     style="fill:url(#radialGradient3956);fill-rule:evenodd">
+     id="g1100"
+     style="fill:url(#radialGradient3406);fill-rule:evenodd">
     <circle
        cx="0"
        cy="0"
        r="8"
-       id="circle320"
-       style="fill:url(#radialGradient3954)" />
+       id="circle1098"
+       style="fill:url(#radialGradient3404)" />
   </g>
   <g
      fill="none"
@@ -2012,7 +2012,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g324"
+     id="g1102"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2026,7 +2026,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g326"
+     id="g1104"
      style="fill-rule:evenodd" />
   <g
      fill="url(#gradient22)"
@@ -2040,14 +2040,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g330"
-     style="fill:url(#radialGradient3960);fill-rule:evenodd">
+     id="g1108"
+     style="fill:url(#radialGradient3410);fill-rule:evenodd">
     <circle
        cx="0"
        cy="0"
        r="8"
-       id="circle328"
-       style="fill:url(#radialGradient3958)" />
+       id="circle1106"
+       style="fill:url(#radialGradient3408)" />
   </g>
   <g
      fill="none"
@@ -2061,7 +2061,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g332"
+     id="g1110"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2075,7 +2075,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g334"
+     id="g1112"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2089,7 +2089,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g340"
+     id="g1118"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2103,7 +2103,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g342"
+     id="g1120"
      style="fill-rule:evenodd" />
   <g
      fill="url(#gradient24)"
@@ -2117,14 +2117,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g346"
-     style="fill:url(#radialGradient3968);fill-rule:evenodd">
+     id="g1124"
+     style="fill:url(#radialGradient3418);fill-rule:evenodd">
     <circle
        cx="0"
        cy="0"
        r="8"
-       id="circle344"
-       style="fill:url(#radialGradient3966)" />
+       id="circle1122"
+       style="fill:url(#radialGradient3416)" />
   </g>
   <g
      fill="none"
@@ -2138,7 +2138,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g348"
+     id="g1126"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2152,7 +2152,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g350"
+     id="g1128"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2166,7 +2166,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g356"
+     id="g1134"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2180,7 +2180,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g358"
+     id="g1136"
      style="fill-rule:evenodd" />
   <g
      fill="url(#gradient26)"
@@ -2194,14 +2194,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g362"
-     style="fill:url(#radialGradient3976);fill-rule:evenodd">
+     id="g1140"
+     style="fill:url(#radialGradient3426);fill-rule:evenodd">
     <circle
        cx="0"
        cy="0"
        r="8"
-       id="circle360"
-       style="fill:url(#radialGradient3974)" />
+       id="circle1138"
+       style="fill:url(#radialGradient3424)" />
   </g>
   <g
      fill="none"
@@ -2215,7 +2215,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g364"
+     id="g1142"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2229,7 +2229,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g366"
+     id="g1144"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2243,7 +2243,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g372"
+     id="g1150"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2257,7 +2257,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g374"
+     id="g1152"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2271,7 +2271,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g380"
+     id="g1158"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2285,7 +2285,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g382"
+     id="g1160"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2299,13 +2299,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g386"
+     id="g1164"
      style="fill-rule:evenodd;stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none">
     <polyline
        fill="none"
        vector-effect="none"
        points="170,250 170,500 "
-       id="polyline384"
+       id="polyline1162"
        style="stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
@@ -2320,7 +2320,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g388"
+     id="g1166"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2334,7 +2334,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g390"
+     id="g1168"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2348,35 +2348,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g394"
+     id="g1172"
      style="fill-rule:evenodd;stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none">
     <polyline
        fill="none"
        vector-effect="none"
        points="170,500 350,600 "
-       id="polyline392"
+       id="polyline1170"
        style="stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none" />
-  </g>
-  <g
-     fill="url(#gradient3)"
-     stroke="#000000"
-     stroke-opacity="1"
-     stroke-width="1"
-     stroke-linecap="square"
-     stroke-linejoin="bevel"
-     transform="matrix(1.10991,0,0,1.10991,181.46996,508.89296)"
-     font-family="'DejaVu Sans'"
-     font-size="8px"
-     font-weight="400"
-     font-style="normal"
-     id="g178"
-     style="fill:url(#radialGradient3884);fill-rule:evenodd">
-    <circle
-       cx="0"
-       cy="0"
-       r="8"
-       id="circle176"
-       style="fill:url(#radialGradient3882)" />
   </g>
   <g
      fill="none"
@@ -2390,7 +2369,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g396"
+     id="g1174"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2404,7 +2383,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g398"
+     id="g1176"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2418,35 +2397,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g402"
+     id="g1180"
      style="fill-rule:evenodd;stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none">
     <polyline
        fill="none"
        vector-effect="none"
        points="350,600 300,400 "
-       id="polyline400"
+       id="polyline1178"
        style="stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none" />
-  </g>
-  <g
-     fill="url(#gradient5)"
-     stroke="#000000"
-     stroke-opacity="1"
-     stroke-width="1"
-     stroke-linecap="square"
-     stroke-linejoin="bevel"
-     transform="matrix(1.10991,0,0,1.10991,381.25396,619.88396)"
-     font-family="'DejaVu Sans'"
-     font-size="8px"
-     font-weight="400"
-     font-style="normal"
-     id="g194"
-     style="fill:url(#radialGradient3892);fill-rule:evenodd">
-    <circle
-       cx="0"
-       cy="0"
-       r="8"
-       id="circle192"
-       style="fill:url(#radialGradient3890)" />
   </g>
   <g
      fill="none"
@@ -2460,7 +2418,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g404"
+     id="g1182"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2474,7 +2432,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g406"
+     id="g1184"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2488,35 +2446,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g410"
+     id="g1188"
      style="fill-rule:evenodd;stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none">
     <polyline
        fill="none"
        vector-effect="none"
        points="300,400 450,300 "
-       id="polyline408"
+       id="polyline1186"
        style="stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none" />
-  </g>
-  <g
-     fill="url(#gradient7)"
-     stroke="#000000"
-     stroke-opacity="1"
-     stroke-width="1"
-     stroke-linecap="square"
-     stroke-linejoin="bevel"
-     transform="matrix(1.10991,0,0,1.10991,325.75796,397.90196)"
-     font-family="'DejaVu Sans'"
-     font-size="8px"
-     font-weight="400"
-     font-style="normal"
-     id="g210"
-     style="fill:url(#radialGradient3900);fill-rule:evenodd">
-    <circle
-       cx="0"
-       cy="0"
-       r="8"
-       id="circle208"
-       style="fill:url(#radialGradient3898)" />
   </g>
   <g
      fill="none"
@@ -2530,7 +2467,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g412"
+     id="g1190"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2544,7 +2481,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g414"
+     id="g1192"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2558,56 +2495,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g418"
+     id="g1196"
      style="fill-rule:evenodd;stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none">
     <polyline
        fill="none"
        vector-effect="none"
        points="450,300 170,250 "
-       id="polyline416"
+       id="polyline1194"
        style="stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none" />
-  </g>
-  <g
-     fill="url(#gradient9)"
-     stroke="#000000"
-     stroke-opacity="1"
-     stroke-width="1"
-     stroke-linecap="square"
-     stroke-linejoin="bevel"
-     transform="matrix(1.10991,0,0,1.10991,492.24396,286.91096)"
-     font-family="'DejaVu Sans'"
-     font-size="8px"
-     font-weight="400"
-     font-style="normal"
-     id="g226"
-     style="fill:url(#radialGradient3908);fill-rule:evenodd">
-    <circle
-       cx="0"
-       cy="0"
-       r="8"
-       id="circle224"
-       style="fill:url(#radialGradient3906)" />
-  </g>
-  <g
-     fill="url(#gradient10)"
-     stroke="#000000"
-     stroke-opacity="1"
-     stroke-width="1"
-     stroke-linecap="square"
-     stroke-linejoin="bevel"
-     transform="matrix(1.10991,0,0,1.10991,181.46996,231.41596)"
-     font-family="'DejaVu Sans'"
-     font-size="8px"
-     font-weight="400"
-     font-style="normal"
-     id="g234"
-     style="fill:url(#radialGradient3912);fill-rule:evenodd;stroke-width:1.00008109;stroke-miterlimit:4;stroke-dasharray:none">
-    <circle
-       cx="0"
-       cy="0"
-       r="8"
-       id="circle232"
-       style="fill:url(#radialGradient3910);stroke-width:1.00008109;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
      fill="none"
@@ -2621,7 +2516,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g420"
+     id="g1198"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2635,7 +2530,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g422"
+     id="g1200"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2649,13 +2544,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g426"
+     id="g1204"
      style="fill-rule:evenodd;stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none">
     <polyline
        fill="none"
        vector-effect="none"
        points="750,400 850,600 "
-       id="polyline424"
+       id="polyline1202"
        style="stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
@@ -2670,7 +2565,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g428"
+     id="g1206"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2684,7 +2579,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g430"
+     id="g1208"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2698,35 +2593,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g434"
+     id="g1212"
      style="fill-rule:evenodd;stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none">
     <polyline
        fill="none"
        vector-effect="none"
        points="850,600 1000,500 "
-       id="polyline432"
+       id="polyline1210"
        style="stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none" />
-  </g>
-  <g
-     fill="url(#gradient13)"
-     stroke="#000000"
-     stroke-opacity="1"
-     stroke-width="1"
-     stroke-linecap="square"
-     stroke-linejoin="bevel"
-     transform="matrix(1.10991,0,0,1.10991,936.20797,619.88396)"
-     font-family="'DejaVu Sans'"
-     font-size="8px"
-     font-weight="400"
-     font-style="normal"
-     id="g258"
-     style="fill:url(#radialGradient3924);fill-rule:evenodd">
-    <circle
-       cx="0"
-       cy="0"
-       r="8"
-       id="circle256"
-       style="fill:url(#radialGradient3922)" />
   </g>
   <g
      fill="none"
@@ -2740,7 +2614,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g436"
+     id="g1214"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2754,7 +2628,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g438"
+     id="g1216"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2768,35 +2642,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g442"
+     id="g1220"
      style="fill-rule:evenodd;stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none">
     <polyline
        fill="none"
        vector-effect="none"
        points="1000,500 900,250 "
-       id="polyline440"
+       id="polyline1218"
        style="stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none" />
-  </g>
-  <g
-     fill="url(#gradient15)"
-     stroke="#000000"
-     stroke-opacity="1"
-     stroke-width="1"
-     stroke-linecap="square"
-     stroke-linejoin="bevel"
-     transform="matrix(1.10991,0,0,1.10991,1102.695,508.89296)"
-     font-family="'DejaVu Sans'"
-     font-size="8px"
-     font-weight="400"
-     font-style="normal"
-     id="g274"
-     style="fill:url(#radialGradient3932);fill-rule:evenodd">
-    <circle
-       cx="0"
-       cy="0"
-       r="8"
-       id="circle272"
-       style="fill:url(#radialGradient3930)" />
   </g>
   <g
      fill="none"
@@ -2810,7 +2663,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g444"
+     id="g1222"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2824,7 +2677,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g446"
+     id="g1224"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2838,35 +2691,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g450"
+     id="g1228"
      style="fill-rule:evenodd;stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none">
     <polyline
        fill="none"
        vector-effect="none"
        points="900,250 900,400 "
-       id="polyline448"
+       id="polyline1226"
        style="stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none" />
-  </g>
-  <g
-     fill="url(#gradient17)"
-     stroke="#000000"
-     stroke-opacity="1"
-     stroke-width="1"
-     stroke-linecap="square"
-     stroke-linejoin="bevel"
-     transform="matrix(1.10991,0,0,1.10991,991.70297,231.41596)"
-     font-family="'DejaVu Sans'"
-     font-size="8px"
-     font-weight="400"
-     font-style="normal"
-     id="g290"
-     style="fill:url(#radialGradient3940);fill-rule:evenodd">
-    <circle
-       cx="0"
-       cy="0"
-       r="8"
-       id="circle288"
-       style="fill:url(#radialGradient3938)" />
   </g>
   <g
      fill="none"
@@ -2880,7 +2712,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g452"
+     id="g1230"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2894,7 +2726,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g454"
+     id="g1232"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2908,56 +2740,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g458"
+     id="g1236"
      style="fill-rule:evenodd;stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none">
     <polyline
        fill="none"
        vector-effect="none"
        points="900,400 750,400 "
-       id="polyline456"
+       id="polyline1234"
        style="stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none" />
-  </g>
-  <g
-     fill="url(#gradient19)"
-     stroke="#000000"
-     stroke-opacity="1"
-     stroke-width="1"
-     stroke-linecap="square"
-     stroke-linejoin="bevel"
-     transform="matrix(1.10991,0,0,1.10991,991.70297,397.90196)"
-     font-family="'DejaVu Sans'"
-     font-size="8px"
-     font-weight="400"
-     font-style="normal"
-     id="g306"
-     style="fill:url(#radialGradient3948);fill-rule:evenodd">
-    <circle
-       cx="0"
-       cy="0"
-       r="8"
-       id="circle304"
-       style="fill:url(#radialGradient3946)" />
-  </g>
-  <g
-     fill="url(#gradient20)"
-     stroke="#000000"
-     stroke-opacity="1"
-     stroke-width="1"
-     stroke-linecap="square"
-     stroke-linejoin="bevel"
-     transform="matrix(1.10991,0,0,1.10991,825.21697,397.90196)"
-     font-family="'DejaVu Sans'"
-     font-size="8px"
-     font-weight="400"
-     font-style="normal"
-     id="g314"
-     style="fill:url(#radialGradient3952);fill-rule:evenodd">
-    <circle
-       cx="0"
-       cy="0"
-       r="8"
-       id="circle312"
-       style="fill:url(#radialGradient3950)" />
   </g>
   <g
      fill="none"
@@ -2971,7 +2761,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g460"
+     id="g1238"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2985,7 +2775,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g462"
+     id="g1240"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -2999,13 +2789,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g466"
+     id="g1244"
      style="fill-rule:evenodd;stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none">
     <polyline
        fill="none"
        vector-effect="none"
        points="15,50 1200,50 "
-       id="polyline464"
+       id="polyline1242"
        style="stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
@@ -3020,7 +2810,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g468"
+     id="g1246"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3034,7 +2824,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g470"
+     id="g1248"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3048,35 +2838,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g474"
+     id="g1252"
      style="fill-rule:evenodd;stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none">
     <polyline
        fill="none"
        vector-effect="none"
        points="1200,50 1200,1000 "
-       id="polyline472"
+       id="polyline1250"
        style="stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none" />
-  </g>
-  <g
-     fill="url(#gradient23)"
-     stroke="#000000"
-     stroke-opacity="1"
-     stroke-width="1"
-     stroke-linecap="square"
-     stroke-linejoin="bevel"
-     transform="matrix(1.10991,0,0,1.10991,1324.675,9.434235)"
-     font-family="'DejaVu Sans'"
-     font-size="8px"
-     font-weight="400"
-     font-style="normal"
-     id="g338"
-     style="fill:url(#radialGradient3964);fill-rule:evenodd">
-    <circle
-       cx="0"
-       cy="0"
-       r="8"
-       id="circle336"
-       style="fill:url(#radialGradient3962)" />
   </g>
   <g
      fill="none"
@@ -3090,7 +2859,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g476"
+     id="g1254"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3104,7 +2873,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g478"
+     id="g1256"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3118,35 +2887,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g482"
+     id="g1260"
      style="fill-rule:evenodd;stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none">
     <polyline
        fill="none"
        vector-effect="none"
        points="1200,1000 15,1000 "
-       id="polyline480"
+       id="polyline1258"
        style="stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none" />
-  </g>
-  <g
-     fill="url(#gradient25)"
-     stroke="#000000"
-     stroke-opacity="1"
-     stroke-width="1"
-     stroke-linecap="square"
-     stroke-linejoin="bevel"
-     transform="matrix(1.10991,0,0,1.10991,1324.675,1063.845)"
-     font-family="'DejaVu Sans'"
-     font-size="8px"
-     font-weight="400"
-     font-style="normal"
-     id="g354"
-     style="fill:url(#radialGradient3972);fill-rule:evenodd">
-    <circle
-       cx="0"
-       cy="0"
-       r="8"
-       id="circle352"
-       style="fill:url(#radialGradient3970)" />
   </g>
   <g
      fill="none"
@@ -3160,7 +2908,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g484"
+     id="g1262"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3174,7 +2922,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g486"
+     id="g1264"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3188,35 +2936,83 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g490"
+     id="g1268"
      style="fill-rule:evenodd;stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none">
     <polyline
        fill="none"
        vector-effect="none"
        points="15,1000 15,50 "
-       id="polyline488"
+       id="polyline1266"
        style="stroke-width:7.20779;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
-     fill="url(#gradient27)"
+     fill="none"
      stroke="#000000"
      stroke-opacity="1"
      stroke-width="1"
      stroke-linecap="square"
      stroke-linejoin="bevel"
-     transform="matrix(1.10991,0,0,1.10991,9.434235,1063.845)"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
      font-family="'DejaVu Sans'"
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g370"
-     style="fill:url(#radialGradient3980);fill-rule:evenodd">
-    <circle
-       cx="0"
-       cy="0"
-       r="8"
-       id="circle368"
-       style="fill:url(#radialGradient3978)" />
+     id="g1270"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1274"
+     style="fill-rule:evenodd">
+    <polyline
+       fill="none"
+       vector-effect="none"
+       points="121.002,156.002 15,50 "
+       id="polyline1272" />
+  </g>
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1276"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1280"
+     style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
+    <polyline
+       fill="none"
+       vector-effect="none"
+       points="15,50 121.002,156.002 "
+       id="polyline1278"
+       style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
      fill="url(#gradient28)"
@@ -3230,14 +3026,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g378"
-     style="fill:url(#radialGradient3984);fill-rule:evenodd">
+     id="g1156"
+     style="fill:url(#radialGradient3434);fill-rule:evenodd">
     <circle
        cx="0"
        cy="0"
        r="8"
-       id="circle376"
-       style="fill:url(#radialGradient3982)" />
+       id="circle1154"
+       style="fill:url(#radialGradient3432)" />
   </g>
   <g
      fill="none"
@@ -3251,7 +3047,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g492"
+     id="g1282"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3265,13 +3061,103 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g496"
+     id="g1286"
+     style="fill-rule:evenodd">
+    <polyline
+       fill="none"
+       vector-effect="none"
+       points="232.117,782.883 15,1000 "
+       id="polyline1284" />
+  </g>
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1288"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1292"
+     style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
+    <polyline
+       fill="none"
+       vector-effect="none"
+       points="15,1000 232.117,782.883 "
+       id="polyline1290"
+       style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
+  </g>
+  <g
+     fill="url(#gradient27)"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,9.434235,1063.845)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1148"
+     style="fill:url(#radialGradient3430);fill-rule:evenodd">
+    <circle
+       cx="0"
+       cy="0"
+       r="8"
+       id="circle1146"
+       style="fill:url(#radialGradient3428)" />
+  </g>
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1294"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1298"
      style="fill-rule:evenodd">
     <polyline
        fill="none"
        vector-effect="none"
        points="92.5,500 92.5,250 "
-       id="polyline494" />
+       id="polyline1296" />
   </g>
   <g
      fill="none"
@@ -3285,7 +3171,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g498"
+     id="g1300"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3299,13 +3185,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g502"
+     id="g1304"
      style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
     <polyline
        fill="none"
        vector-effect="none"
        points="92.5,250 92.5,500 "
-       id="polyline500"
+       id="polyline1302"
        style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
@@ -3320,7 +3206,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g504"
+     id="g1306"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3334,13 +3220,111 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g508"
+     id="g1312"
+     style="fill-rule:evenodd" />
+  <g
+     fill="url(#gradient10)"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,181.46996,231.41596)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1012"
+     style="fill:url(#radialGradient3362);fill-rule:evenodd">
+    <circle
+       cx="0"
+       cy="0"
+       r="8"
+       id="circle1010"
+       style="fill:url(#radialGradient3360)" />
+  </g>
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1318"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1324"
+     style="fill-rule:evenodd" />
+  <g
+     fill="url(#gradient3)"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,181.46996,508.89296)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g956"
+     style="fill:url(#radialGradient3334);fill-rule:evenodd">
+    <circle
+       cx="0"
+       cy="0"
+       r="8"
+       id="circle954"
+       style="fill:url(#radialGradient3332)" />
+  </g>
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1330"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1334"
      style="fill-rule:evenodd">
     <polyline
        fill="none"
        vector-effect="none"
        points="232.117,782.883 119.332,591.203 "
-       id="polyline506" />
+       id="polyline1332" />
   </g>
   <g
      fill="none"
@@ -3354,7 +3338,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g510"
+     id="g1336"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3368,13 +3352,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g514"
+     id="g1340"
      style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
     <polyline
        fill="none"
        vector-effect="none"
        points="119.332,591.203 232.117,782.883 "
-       id="polyline512"
+       id="polyline1338"
        style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
@@ -3389,7 +3373,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g516"
+     id="g1342"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3403,13 +3387,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g520"
+     id="g1346"
      style="fill-rule:evenodd">
     <polyline
        fill="none"
        vector-effect="none"
        points="472.146,175.981 187.717,150.785 "
-       id="polyline518" />
+       id="polyline1344" />
   </g>
   <g
      fill="none"
@@ -3423,7 +3407,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g522"
+     id="g1348"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3437,13 +3421,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g526"
+     id="g1352"
      style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
     <polyline
        fill="none"
        vector-effect="none"
        points="187.717,150.785 472.146,175.981 "
-       id="polyline524"
+       id="polyline1350"
        style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
@@ -3458,7 +3442,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g528"
+     id="g1354"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3472,13 +3456,229 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g532"
+     id="g1358"
+     style="fill-rule:evenodd">
+    <polyline
+       fill="none"
+       vector-effect="none"
+       points="551.89,497.382 300,400 "
+       id="polyline1356" />
+  </g>
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1360"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1364"
+     style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
+    <polyline
+       fill="none"
+       vector-effect="none"
+       points="300,400 551.89,497.382 "
+       id="polyline1362"
+       style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
+  </g>
+  <g
+     fill="url(#gradient7)"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,325.75796,397.90196)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g988"
+     style="fill:url(#radialGradient3350);fill-rule:evenodd">
+    <circle
+       cx="0"
+       cy="0"
+       r="8"
+       id="circle986"
+       style="fill:url(#radialGradient3348)" />
+  </g>
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1366"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1372"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1378"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1384"
+     style="fill-rule:evenodd" />
+  <g
+     fill="url(#gradient5)"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,381.25396,619.88396)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g972"
+     style="fill:url(#radialGradient3342);fill-rule:evenodd">
+    <circle
+       cx="0"
+       cy="0"
+       r="8"
+       id="circle970"
+       style="fill:url(#radialGradient3340)" />
+  </g>
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1390"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1396"
+     style="fill-rule:evenodd" />
+  <g
+     fill="url(#gradient9)"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,492.24396,286.91096)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1004"
+     style="fill:url(#radialGradient3358);fill-rule:evenodd">
+    <circle
+       cx="0"
+       cy="0"
+       r="8"
+       id="circle1002"
+       style="fill:url(#radialGradient3356)" />
+  </g>
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1402"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1406"
      style="fill-rule:evenodd">
     <polyline
        fill="none"
        vector-effect="none"
        points="246.35,786.571 232.117,782.883 "
-       id="polyline530" />
+       id="polyline1404" />
   </g>
   <g
      fill="none"
@@ -3492,7 +3692,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g534"
+     id="g1408"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3506,13 +3706,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g538"
+     id="g1412"
      style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
     <polyline
        fill="none"
        vector-effect="none"
        points="232.117,782.883 246.35,786.571 "
-       id="polyline536"
+       id="polyline1410"
        style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
@@ -3527,7 +3727,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g540"
+     id="g1414"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3541,13 +3741,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g544"
+     id="g1418"
      style="fill-rule:evenodd">
     <polyline
        fill="none"
        vector-effect="none"
        points="635.414,243.757 561.111,466.667 "
-       id="polyline542" />
+       id="polyline1416" />
   </g>
   <g
      fill="none"
@@ -3561,7 +3761,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g546"
+     id="g1420"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3575,13 +3775,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g550"
+     id="g1424"
      style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
     <polyline
        fill="none"
        vector-effect="none"
        points="561.111,466.667 635.414,243.757 "
-       id="polyline548"
+       id="polyline1422"
        style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
@@ -3596,7 +3796,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g552"
+     id="g1426"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3610,13 +3810,41 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g556"
+     id="g1432"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1438"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1442"
      style="fill-rule:evenodd">
     <polyline
        fill="none"
        vector-effect="none"
        points="569.544,545.114 552.41,498.795 "
-       id="polyline554" />
+       id="polyline1440" />
   </g>
   <g
      fill="none"
@@ -3630,7 +3858,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g558"
+     id="g1444"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3644,13 +3872,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g562"
+     id="g1448"
      style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
     <polyline
        fill="none"
        vector-effect="none"
        points="552.41,498.795 569.544,545.114 "
-       id="polyline560"
+       id="polyline1446"
        style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
@@ -3665,7 +3893,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g564"
+     id="g1450"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3679,13 +3907,62 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g568"
+     id="g1456"
+     style="fill-rule:evenodd" />
+  <g
+     fill="url(#gradient13)"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,936.20797,619.88396)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1036"
+     style="fill:url(#radialGradient3374);fill-rule:evenodd">
+    <circle
+       cx="0"
+       cy="0"
+       r="8"
+       id="circle1034"
+       style="fill:url(#radialGradient3372)" />
+  </g>
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1462"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1466"
      style="fill-rule:evenodd">
     <polyline
        fill="none"
        vector-effect="none"
        points="602.786,723.607 599.992,721.88 "
-       id="polyline566" />
+       id="polyline1464" />
   </g>
   <g
      fill="none"
@@ -3699,7 +3976,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g570"
+     id="g1468"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3713,13 +3990,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g574"
+     id="g1472"
      style="fill-rule:evenodd">
     <polyline
        fill="none"
        vector-effect="none"
        points="599.992,721.88 602.786,723.607 "
-       id="polyline572" />
+       id="polyline1470" />
   </g>
   <g
      fill="none"
@@ -3733,7 +4010,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g576"
+     id="g1474"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3747,13 +4024,319 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g580"
+     id="g1478"
+     style="fill-rule:evenodd">
+    <polyline
+       fill="none"
+       vector-effect="none"
+       points="725.834,225.834 750,250 "
+       id="polyline1476" />
+  </g>
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1480"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1484"
+     style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
+    <polyline
+       fill="none"
+       vector-effect="none"
+       points="750,250 725.834,225.834 "
+       id="polyline1482"
+       style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
+  </g>
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1486"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1490"
+     style="fill-rule:evenodd">
+    <polyline
+       fill="none"
+       vector-effect="none"
+       points="900,400 750,250 "
+       id="polyline1488" />
+  </g>
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1492"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1496"
+     style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
+    <polyline
+       fill="none"
+       vector-effect="none"
+       points="750,250 900,400 "
+       id="polyline1494"
+       style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
+  </g>
+  <g
+     fill="url(#gradient20)"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,825.21697,397.90196)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1092"
+     style="fill:url(#radialGradient3402);fill-rule:evenodd">
+    <circle
+       cx="0"
+       cy="0"
+       r="8"
+       id="circle1090"
+       style="fill:url(#radialGradient3400)" />
+  </g>
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1498"
+     style="fill-rule:evenodd" />
+  <g
+     fill="url(#gradient19)"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,991.70297,397.90196)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1084"
+     style="fill:url(#radialGradient3398);fill-rule:evenodd">
+    <circle
+       cx="0"
+       cy="0"
+       r="8"
+       id="circle1082"
+       style="fill:url(#radialGradient3396)" />
+  </g>
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1504"
+     style="fill-rule:evenodd" />
+  <g
+     fill="url(#gradient17)"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,991.70297,231.41596)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1068"
+     style="fill:url(#radialGradient3390);fill-rule:evenodd">
+    <circle
+       cx="0"
+       cy="0"
+       r="8"
+       id="circle1066"
+       style="fill:url(#radialGradient3388)" />
+  </g>
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1510"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1516"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1522"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1528"
+     style="fill-rule:evenodd" />
+  <g
+     fill="url(#gradient15)"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,1102.695,508.89296)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1052"
+     style="fill:url(#radialGradient3382);fill-rule:evenodd">
+    <circle
+       cx="0"
+       cy="0"
+       r="8"
+       id="circle1050"
+       style="fill:url(#radialGradient3380)" />
+  </g>
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1534"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1538"
      style="fill-rule:evenodd">
     <polyline
        fill="none"
        vector-effect="none"
        points="1046.59,203.409 1035.41,195.837 "
-       id="polyline578" />
+       id="polyline1536" />
   </g>
   <g
      fill="none"
@@ -3767,7 +4350,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g582"
+     id="g1540"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3781,13 +4364,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g586"
+     id="g1544"
      style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
     <polyline
        fill="none"
        vector-effect="none"
        points="1035.41,195.837 1046.59,203.409 "
-       id="polyline584"
+       id="polyline1542"
        style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
@@ -3802,7 +4385,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g588"
+     id="g1546"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3816,13 +4399,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g592"
+     id="g1550"
      style="fill-rule:evenodd">
     <polyline
        fill="none"
        vector-effect="none"
        points="979.212,779.212 971.11,781.665 "
-       id="polyline590" />
+       id="polyline1548" />
   </g>
   <g
      fill="none"
@@ -3836,7 +4419,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g594"
+     id="g1552"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3850,13 +4433,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g598"
+     id="g1556"
      style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
     <polyline
        fill="none"
        vector-effect="none"
        points="971.11,781.665 979.212,779.212 "
-       id="polyline596"
+       id="polyline1554"
        style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
@@ -3871,7 +4454,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g600"
+     id="g1558"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3885,13 +4468,103 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g604"
+     id="g1562"
+     style="fill-rule:evenodd">
+    <polyline
+       fill="none"
+       vector-effect="none"
+       points="1046.59,203.409 1200,50 "
+       id="polyline1560" />
+  </g>
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1564"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1568"
+     style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
+    <polyline
+       fill="none"
+       vector-effect="none"
+       points="1200,50 1046.59,203.409 "
+       id="polyline1566"
+       style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
+  </g>
+  <g
+     fill="url(#gradient23)"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,1324.675,9.434235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1116"
+     style="fill:url(#radialGradient3414);fill-rule:evenodd">
+    <circle
+       cx="0"
+       cy="0"
+       r="8"
+       id="circle1114"
+       style="fill:url(#radialGradient3412)" />
+  </g>
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1570"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1574"
      style="fill-rule:evenodd">
     <polyline
        fill="none"
        vector-effect="none"
        points="1096.29,461.484 1046.59,203.409 "
-       id="polyline602" />
+       id="polyline1572" />
   </g>
   <g
      fill="none"
@@ -3905,7 +4578,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g606"
+     id="g1576"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3919,13 +4592,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g610"
+     id="g1580"
      style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
     <polyline
        fill="none"
        vector-effect="none"
        points="1046.59,203.409 1096.29,461.484 "
-       id="polyline608"
+       id="polyline1578"
        style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
@@ -3940,7 +4613,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g612"
+     id="g1582"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3954,13 +4627,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g616"
+     id="g1586"
      style="fill-rule:evenodd">
     <polyline
        fill="none"
        vector-effect="none"
        points="979.212,779.212 1071.36,607.037 "
-       id="polyline614" />
+       id="polyline1584" />
   </g>
   <g
      fill="none"
@@ -3974,7 +4647,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g618"
+     id="g1588"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -3988,13 +4661,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g622"
+     id="g1592"
      style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
     <polyline
        fill="none"
        vector-effect="none"
        points="1071.36,607.037 979.212,779.212 "
-       id="polyline620"
+       id="polyline1590"
        style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
@@ -4009,7 +4682,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g624"
+     id="g1594"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4023,13 +4696,103 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g628"
+     id="g1598"
+     style="fill-rule:evenodd">
+    <polyline
+       fill="none"
+       vector-effect="none"
+       points="1200,1000 979.212,779.212 "
+       id="polyline1596" />
+  </g>
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1600"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1604"
+     style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
+    <polyline
+       fill="none"
+       vector-effect="none"
+       points="979.212,779.212 1200,1000 "
+       id="polyline1602"
+       style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
+  </g>
+  <g
+     fill="url(#gradient25)"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,1324.675,1063.845)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1132"
+     style="fill:url(#radialGradient3422);fill-rule:evenodd">
+    <circle
+       cx="0"
+       cy="0"
+       r="8"
+       id="circle1130"
+       style="fill:url(#radialGradient3420)" />
+  </g>
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1606"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1610"
      style="fill-rule:evenodd">
     <path
        vector-effect="none"
        fill-rule="evenodd"
        d="m 121.002,156.002 -1.754,2.937 -1.697,2.938 -1.643,2.937 -1.586,2.938 -1.531,2.937 -1.475,2.938 -1.42,2.937 -1.364,2.938 -1.308,2.937 -1.252,2.937 -1.197,2.938 -1.141,2.937 -1.086,2.938 -1.03,2.937 -0.974,2.938 -0.9185,2.937 -0.8629,2.937 -0.8071,2.938 -0.7516,2.937 -0.6958,2.938 -0.6402,2.937 -0.5845,2.938 -0.5288,2.937 -0.4732,2.938 -0.4175,2.937 -0.3619,2.937 -0.3062,2.938 -0.2505,2.937 -0.1948,2.938 -0.1392,2.937 -0.0835,2.938 L 92.5,250"
-       id="path626" />
+       id="path1608" />
   </g>
   <g
      fill="none"
@@ -4043,7 +4806,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g630"
+     id="g1612"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4057,13 +4820,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g634"
+     id="g1616"
      style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
     <path
        vector-effect="none"
        fill-rule="evenodd"
        d="m 92.5,250 0.0278,-2.937 0.0835,-2.938 0.1392,-2.937 0.1948,-2.938 0.2505,-2.937 0.3062,-2.938 0.3619,-2.937 0.4175,-2.937 0.4732,-2.938 0.5288,-2.937 0.5845,-2.938 0.6402,-2.937 0.6958,-2.938 0.7516,-2.937 0.8071,-2.938 0.8629,-2.937 0.9185,-2.937 0.974,-2.938 1.03,-2.937 1.086,-2.938 1.141,-2.937 1.197,-2.938 1.252,-2.937 1.308,-2.937 1.364,-2.938 1.42,-2.937 1.475,-2.938 1.531,-2.937 1.586,-2.938 1.643,-2.937 1.697,-2.938 1.754,-2.937"
-       id="path632"
+       id="path1614"
        style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
@@ -4078,7 +4841,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g636"
+     id="g1618"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4092,13 +4855,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g640"
+     id="g1622"
      style="fill-rule:evenodd">
     <path
        vector-effect="none"
        fill-rule="evenodd"
        d="m 119.332,591.203 -1.651,-2.851 -1.598,-2.85 -1.546,-2.85 -1.494,-2.85 -1.441,-2.85 -1.389,-2.85 -1.336,-2.85 -1.284,-2.85 -1.232,-2.85 -1.179,-2.85 -1.126,-2.85 -1.075,-2.85 -1.022,-2.851 -0.969,-2.85 -0.917,-2.85 -0.865,-2.85 -0.8123,-2.85 -0.7599,-2.85 -0.7075,-2.85 -0.6551,-2.85 -0.6026,-2.85 -0.5503,-2.85 -0.4979,-2.85 -0.4454,-2.85 -0.3931,-2.85 -0.3406,-2.851 -0.2882,-2.85 -0.2359,-2.85 -0.1834,-2.85 -0.131,-2.85 -0.0786,-2.85 L 92.5,500"
-       id="path638" />
+       id="path1620" />
   </g>
   <g
      fill="none"
@@ -4112,7 +4875,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g642"
+     id="g1624"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4126,13 +4889,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g646"
+     id="g1628"
      style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
     <path
        vector-effect="none"
        fill-rule="evenodd"
        d="m 92.5,500 0.0262,2.85 0.0786,2.85 0.131,2.85 0.1834,2.85 0.2359,2.85 0.2882,2.85 0.3406,2.851 0.3931,2.85 0.4454,2.85 0.4979,2.85 0.5503,2.85 0.6026,2.85 0.6551,2.85 0.7075,2.85 0.7599,2.85 0.8123,2.85 0.865,2.85 0.917,2.85 0.969,2.85 1.022,2.851 1.075,2.85 1.126,2.85 1.179,2.85 1.232,2.85 1.284,2.85 1.336,2.85 1.389,2.85 1.441,2.85 1.494,2.85 1.546,2.85 1.598,2.85 1.651,2.851"
-       id="path644"
+       id="path1626"
        style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
@@ -4147,7 +4910,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g648"
+     id="g1630"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4161,13 +4924,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g652"
+     id="g1634"
      style="fill-rule:evenodd">
     <path
        vector-effect="none"
        fill-rule="evenodd"
        d="m 187.717,150.785 -2.085,-0.174 -2.085,-0.152 -2.085,-0.131 -2.084,-0.108 -2.085,-0.087 -2.085,-0.065 -2.085,-0.044 -2.085,-0.021 h -2.085 l -2.084,0.022 -2.085,0.043 -2.085,0.065 -2.085,0.087 -2.085,0.109 -2.085,0.13 -2.084,0.153 -2.085,0.173 -2.085,0.196 -2.085,0.217 -2.085,0.24 -2.085,0.26 -2.085,0.283 -2.084,0.304 -2.085,0.326 -2.085,0.348 -2.085,0.37 -2.085,0.391 -2.085,0.413 -2.084,0.435 -2.085,0.456 -2.085,0.478 -2.085,0.5"
-       id="path650" />
+       id="path1632" />
   </g>
   <g
      fill="none"
@@ -4181,7 +4944,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g654"
+     id="g1636"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4195,13 +4958,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g658"
+     id="g1640"
      style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
     <path
        vector-effect="none"
        fill-rule="evenodd"
        d="m 121.002,156.002 2.085,-0.5 2.085,-0.478 2.085,-0.456 2.084,-0.435 2.085,-0.413 2.085,-0.391 2.085,-0.37 2.085,-0.348 2.085,-0.326 2.084,-0.304 2.085,-0.283 2.085,-0.26 2.085,-0.24 2.085,-0.217 2.085,-0.196 2.085,-0.173 2.084,-0.153 2.085,-0.13 2.085,-0.109 2.085,-0.087 2.085,-0.065 2.085,-0.043 2.084,-0.022 h 2.085 l 2.085,0.021 2.085,0.044 2.085,0.065 2.085,0.087 2.084,0.108 2.085,0.131 2.085,0.152 2.085,0.174"
-       id="path656"
+       id="path1638"
        style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
@@ -4216,7 +4979,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g660"
+     id="g1642"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4230,13 +4993,69 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g664"
+     id="g1648"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1654"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1660"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1666"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1670"
      style="fill-rule:evenodd">
     <path
        vector-effect="none"
        fill-rule="evenodd"
        d="m 599.992,721.88 -5.525,3.415 -5.526,3.339 -5.526,3.263 -5.525,3.186 -5.526,3.11 -5.526,3.033 -5.525,2.958 -5.526,2.881 -5.526,2.804 -5.525,2.729 -5.526,2.652 -5.526,2.575 -5.525,2.499 -5.526,2.423 -5.526,2.347 -5.525,2.27 -5.526,2.194 -5.526,2.118 -5.525,2.041 -5.526,1.965 -5.526,1.889 -5.525,1.812 -5.526,1.736 -5.526,1.66 -5.525,1.583 -5.526,1.507 -5.526,1.43 -5.525,1.355 -5.526,1.278 -5.526,1.201 -5.525,1.126 -5.526,1.049 -5.526,0.972 -5.525,0.896 -5.526,0.82 -5.526,0.744 -5.525,0.667 -5.526,0.591 -5.526,0.515 -5.525,0.438 -5.526,0.362 -5.526,0.286 -5.525,0.209 -5.526,0.133 -5.526,0.057 -5.525,-0.02 -5.526,-0.096 -5.526,-0.172 -5.525,-0.249 -5.526,-0.325 -5.526,-0.401 -5.525,-0.478 -5.526,-0.554 -5.526,-0.63 -5.525,-0.707 -5.526,-0.783 -5.526,-0.859 -5.525,-0.936 -5.526,-1.012 -5.526,-1.089 -5.525,-1.164 -5.526,-1.241 -5.526,-1.318 -5.525,-1.393"
-       id="path662" />
+       id="path1668" />
   </g>
   <g
      fill="none"
@@ -4250,7 +5069,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g666"
+     id="g1672"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4264,13 +5083,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g670"
+     id="g1676"
      style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
     <path
        vector-effect="none"
        fill-rule="evenodd"
        d="m 246.35,786.571 5.525,1.393 5.526,1.318 5.526,1.241 5.525,1.164 5.526,1.089 5.526,1.012 5.525,0.936 5.526,0.859 5.526,0.783 5.525,0.707 5.526,0.63 5.526,0.554 5.525,0.478 5.526,0.401 5.526,0.325 5.525,0.249 5.526,0.172 5.526,0.096 5.525,0.02 5.526,-0.057 5.526,-0.133 5.525,-0.209 5.526,-0.286 5.526,-0.362 5.525,-0.438 5.526,-0.515 5.526,-0.591 5.525,-0.667 5.526,-0.744 5.526,-0.82 5.525,-0.896 5.526,-0.972 5.526,-1.049 5.525,-1.126 5.526,-1.201 5.526,-1.278 5.525,-1.355 5.526,-1.43 5.526,-1.507 5.525,-1.583 5.526,-1.66 5.526,-1.736 5.525,-1.812 5.526,-1.889 5.526,-1.965 5.525,-2.041 5.526,-2.118 5.526,-2.194 5.525,-2.27 5.526,-2.347 5.526,-2.423 5.525,-2.499 5.526,-2.575 5.526,-2.652 5.525,-2.729 5.526,-2.804 5.526,-2.881 5.525,-2.958 5.526,-3.033 5.526,-3.11 5.525,-3.186 5.526,-3.263 5.526,-3.339 5.525,-3.415"
-       id="path668"
+       id="path1674"
        style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
@@ -4285,7 +5104,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g672"
+     id="g1678"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4299,13 +5118,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g676"
+     id="g1682"
      style="fill-rule:evenodd">
     <path
        vector-effect="none"
        fill-rule="evenodd"
        d="m 635.414,243.757 -2.551,-1.879 -2.551,-1.853 -2.551,-1.827 -2.551,-1.801 -2.551,-1.775 -2.551,-1.749 -2.551,-1.722 -2.551,-1.697 -2.551,-1.671 -2.551,-1.645 -2.551,-1.618 -2.551,-1.593 -2.551,-1.567 -2.552,-1.54 -2.551,-1.515 -2.551,-1.488 -2.551,-1.463 -2.551,-1.436 -2.551,-1.411 -2.551,-1.384 -2.551,-1.358 -2.551,-1.333 -2.551,-1.306 -2.551,-1.28 -2.551,-1.255 -2.551,-1.228 -2.551,-1.202 -2.551,-1.176 -2.552,-1.15 -2.551,-1.124 -2.551,-1.098 -2.551,-1.072 -2.551,-1.046 -2.551,-1.02 -2.551,-0.994 -2.551,-0.968 -2.551,-0.942 -2.551,-0.916 -2.551,-0.89 -2.551,-0.863 -2.551,-0.838 -2.551,-0.812 -2.551,-0.785 -2.551,-0.76 -2.552,-0.734 -2.551,-0.707 -2.551,-0.682 -2.551,-0.655 -2.551,-0.63 -2.551,-0.603 -2.551,-0.578 -2.551,-0.551 -2.551,-0.525 -2.551,-0.5 -2.551,-0.473 -2.551,-0.447 -2.551,-0.421 -2.551,-0.396 -2.551,-0.369 -2.551,-0.343 -2.552,-0.317 -2.551,-0.291 -2.551,-0.265 -2.551,-0.239"
-       id="path674" />
+       id="path1680" />
   </g>
   <g
      fill="none"
@@ -4319,7 +5138,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g678"
+     id="g1684"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4333,13 +5152,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g682"
+     id="g1688"
      style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
     <path
        vector-effect="none"
        fill-rule="evenodd"
        d="m 472.146,175.981 2.551,0.239 2.551,0.265 2.551,0.291 2.552,0.317 2.551,0.343 2.551,0.369 2.551,0.396 2.551,0.421 2.551,0.447 2.551,0.473 2.551,0.5 2.551,0.525 2.551,0.551 2.551,0.578 2.551,0.603 2.551,0.63 2.551,0.655 2.551,0.682 2.551,0.707 2.552,0.734 2.551,0.76 2.551,0.785 2.551,0.812 2.551,0.838 2.551,0.863 2.551,0.89 2.551,0.916 2.551,0.942 2.551,0.968 2.551,0.994 2.551,1.02 2.551,1.046 2.551,1.072 2.551,1.098 2.551,1.124 2.552,1.15 2.551,1.176 2.551,1.202 2.551,1.228 2.551,1.255 2.551,1.28 2.551,1.306 2.551,1.333 2.551,1.358 2.551,1.384 2.551,1.411 2.551,1.436 2.551,1.463 2.551,1.488 2.551,1.515 2.552,1.54 2.551,1.567 2.551,1.593 2.551,1.618 2.551,1.645 2.551,1.671 2.551,1.697 2.551,1.722 2.551,1.749 2.551,1.775 2.551,1.801 2.551,1.827 2.551,1.853 2.551,1.879"
-       id="path680"
+       id="path1686"
        style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
@@ -4354,7 +5173,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g684"
+     id="g1690"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4368,13 +5187,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g688"
+     id="g1694"
      style="fill-rule:evenodd">
     <path
        vector-effect="none"
        fill-rule="evenodd"
        d="m 551.89,497.382 1.079,-3.95 1.099,-3.919 1.121,-3.887 1.142,-3.856 1.163,-3.823 1.185,-3.792 1.205,-3.76 1.227,-3.728"
-       id="path686" />
+       id="path1692" />
   </g>
   <g
      fill="none"
@@ -4388,7 +5207,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g690"
+     id="g1696"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4402,13 +5221,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g694"
+     id="g1700"
      style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
     <path
        vector-effect="none"
        fill-rule="evenodd"
        d="m 561.111,466.667 -1.227,3.728 -1.205,3.76 -1.185,3.792 -1.163,3.823 -1.142,3.856 -1.121,3.887 -1.099,3.919 -1.079,3.95"
-       id="path692"
+       id="path1698"
        style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
@@ -4423,7 +5242,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g696"
+     id="g1702"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4437,13 +5256,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g700"
+     id="g1706"
      style="fill-rule:evenodd">
     <path
        vector-effect="none"
        fill-rule="evenodd"
        d="m 552.41,498.795 -0.52,-1.413"
-       id="path698" />
+       id="path1704" />
   </g>
   <g
      fill="none"
@@ -4457,7 +5276,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g702"
+     id="g1708"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4471,13 +5290,14 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g706"
-     style="fill-rule:evenodd">
+     id="g1712"
+     style="fill-rule:evenodd;stroke-width:1.80195;stroke-miterlimit:4;stroke-dasharray:none">
     <path
        vector-effect="none"
        fill-rule="evenodd"
        d="m 551.89,497.382 0.52,1.413"
-       id="path704" />
+       id="path1710"
+       style="stroke-width:1.80195;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
      fill="none"
@@ -4491,7 +5311,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g708"
+     id="g1714"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4505,13 +5325,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g712"
+     id="g1718"
      style="fill-rule:evenodd">
     <path
        vector-effect="none"
        fill-rule="evenodd"
        d="m 599.992,721.88 -0.059,-5.97 -0.116,-5.942 -0.174,-5.913 -0.232,-5.883 -0.289,-5.856 -0.346,-5.826 -0.405,-5.797 -0.462,-5.769 -0.519,-5.74 -0.577,-5.711 -0.635,-5.682 -0.692,-5.654 -0.75,-5.625 -0.808,-5.596 -0.865,-5.567 -0.923,-5.538 -0.98,-5.51 -1.038,-5.48 -1.095,-5.452 -1.153,-5.424 -1.211,-5.394 -1.268,-5.365 -1.326,-5.337 -1.384,-5.308 -1.441,-5.279 -1.498,-5.251 -1.556,-5.221 -1.614,-5.193 -1.672,-5.164 -1.729,-5.135 -1.786,-5.107 -1.845,-5.077"
-       id="path710" />
+       id="path1716" />
   </g>
   <g
      fill="none"
@@ -4525,7 +5345,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g714"
+     id="g1720"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4539,13 +5359,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g718"
+     id="g1724"
      style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
     <path
        vector-effect="none"
        fill-rule="evenodd"
        d="m 569.544,545.114 1.845,5.077 1.786,5.107 1.729,5.135 1.672,5.164 1.614,5.193 1.556,5.221 1.498,5.251 1.441,5.279 1.384,5.308 1.326,5.337 1.268,5.365 1.211,5.394 1.153,5.424 1.095,5.452 1.038,5.48 0.98,5.51 0.923,5.538 0.865,5.567 0.808,5.596 0.75,5.625 0.692,5.654 0.635,5.682 0.577,5.711 0.519,5.74 0.462,5.769 0.405,5.797 0.346,5.826 0.289,5.856 0.232,5.883 0.174,5.913 0.116,5.942 0.059,5.97"
-       id="path716"
+       id="path1722"
        style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
@@ -4560,7 +5380,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g720"
+     id="g1726"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4574,13 +5394,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g724"
+     id="g1730"
      style="fill-rule:evenodd">
     <path
        vector-effect="none"
        fill-rule="evenodd"
        d="m 725.834,225.834 -2.825,0.207 -2.826,0.229 -2.826,0.252 -2.825,0.275 -2.826,0.298 -2.825,0.32 -2.826,0.344 -2.826,0.366 -2.825,0.389 -2.826,0.412 -2.826,0.434 -2.825,0.458 -2.826,0.48 -2.825,0.503 -2.826,0.526 -2.826,0.549 -2.825,0.571 -2.826,0.594 -2.826,0.618 -2.825,0.64 -2.826,0.662 -2.825,0.686 -2.826,0.708 -2.826,0.731 -2.825,0.754 -2.826,0.777 -2.826,0.8 -2.825,0.822 -2.826,0.845 -2.825,0.868 -2.826,0.891 -2.826,0.914"
-       id="path722" />
+       id="path1728" />
   </g>
   <g
      fill="none"
@@ -4594,7 +5414,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g726"
+     id="g1732"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4608,13 +5428,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g730"
+     id="g1736"
      style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
     <path
        vector-effect="none"
        fill-rule="evenodd"
        d="m 635.414,243.757 2.826,-0.914 2.826,-0.891 2.825,-0.868 2.826,-0.845 2.825,-0.822 2.826,-0.8 2.826,-0.777 2.825,-0.754 2.826,-0.731 2.826,-0.708 2.825,-0.686 2.826,-0.662 2.825,-0.64 2.826,-0.618 2.826,-0.594 2.825,-0.571 2.826,-0.549 2.826,-0.526 2.825,-0.503 2.826,-0.48 2.825,-0.458 2.826,-0.434 2.826,-0.412 2.825,-0.389 2.826,-0.366 2.826,-0.344 2.825,-0.32 2.826,-0.298 2.825,-0.275 2.826,-0.252 2.826,-0.229 2.825,-0.207"
-       id="path728"
+       id="path1734"
        style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
@@ -4629,7 +5449,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g732"
+     id="g1738"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4643,13 +5463,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g736"
+     id="g1742"
      style="fill-rule:evenodd">
     <path
        vector-effect="none"
        fill-rule="evenodd"
        d="m 971.11,781.665 -5.755,1.701 -5.755,1.619 -2.877,0.778 -2.878,0.757 -2.877,0.737 -2.878,0.716 -2.878,0.695 -2.877,0.675 -2.878,0.654 -2.877,0.633 -2.878,0.612 -2.877,0.592 -2.878,0.571 -2.877,0.551 -2.878,0.529 -2.877,0.509 -2.878,0.489 -2.877,0.467 -2.878,0.447 -2.877,0.426 -2.878,0.406 -2.877,0.385 -2.878,0.364 -2.878,0.343 -2.877,0.323 -2.878,0.302 -2.877,0.281 -2.878,0.261 -2.877,0.239 -2.878,0.22 -2.877,0.198 -2.878,0.178 -2.877,0.157 -2.878,0.136 -2.877,0.116 -2.878,0.095 -2.877,0.074 -2.878,0.054 -2.877,0.033 -2.878,0.012 -2.878,-0.009 -2.877,-0.029 -2.878,-0.05 -2.877,-0.07 -2.878,-0.092 -2.877,-0.112 -2.878,-0.132 -2.877,-0.154 -2.878,-0.174 -2.877,-0.195 -2.878,-0.215 -2.877,-0.237 -2.878,-0.257 -2.877,-0.277 -2.878,-0.298 -2.877,-0.32 -2.878,-0.339 -2.878,-0.361 -2.877,-0.381 -2.878,-0.402 -2.877,-0.422 -2.878,-0.443 -2.877,-0.464 -2.878,-0.485 -2.877,-0.505 -2.878,-0.526 -2.877,-0.547 -2.878,-0.567 -2.877,-0.589 -2.878,-0.608 -2.877,-0.63 -2.878,-0.65 -2.878,-0.671 -2.877,-0.692 -2.878,-0.712 -2.877,-0.733 -2.878,-0.754 -2.877,-0.774 -5.755,-1.611 -5.755,-1.694 -5.755,-1.777 -5.755,-1.859 -5.755,-1.942 -5.756,-2.025 -5.755,-2.108 -5.755,-2.191 -5.755,-2.273 -5.755,-2.356 -5.755,-2.439 -5.755,-2.522 -5.755,-2.605 -5.755,-2.687 -5.755,-2.77 -5.755,-2.853 -5.755,-2.936 -5.755,-3.019 -5.755,-3.101 -5.755,-3.184 -5.755,-3.267 -5.755,-3.35 -5.756,-3.433 -5.755,-3.515"
-       id="path734" />
+       id="path1740" />
   </g>
   <g
      fill="none"
@@ -4663,7 +5483,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g738"
+     id="g1744"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4677,13 +5497,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g742"
+     id="g1748"
      style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
     <path
        vector-effect="none"
        fill-rule="evenodd"
        d="m 602.786,723.607 5.755,3.515 5.756,3.433 5.755,3.35 5.755,3.267 5.755,3.184 5.755,3.101 5.755,3.019 5.755,2.936 5.755,2.853 5.755,2.77 5.755,2.687 5.755,2.605 5.755,2.522 5.755,2.439 5.755,2.356 5.755,2.273 5.755,2.191 5.755,2.108 5.756,2.025 5.755,1.942 5.755,1.859 5.755,1.777 5.755,1.694 5.755,1.611 2.877,0.774 2.878,0.754 2.877,0.733 2.878,0.712 2.877,0.692 2.878,0.671 2.878,0.65 2.877,0.63 2.878,0.608 2.877,0.589 2.878,0.567 2.877,0.547 2.878,0.526 2.877,0.505 2.878,0.485 2.877,0.464 2.878,0.443 2.877,0.422 2.878,0.402 2.877,0.381 2.878,0.361 2.878,0.339 2.877,0.32 2.878,0.298 2.877,0.277 2.878,0.257 2.877,0.237 2.878,0.215 2.877,0.195 2.878,0.174 2.877,0.154 2.878,0.132 2.877,0.112 2.878,0.092 2.877,0.07 2.878,0.05 2.877,0.029 2.878,0.009 2.878,-0.012 2.877,-0.033 2.878,-0.054 2.877,-0.074 2.878,-0.095 2.877,-0.116 2.878,-0.136 2.877,-0.157 2.878,-0.178 2.877,-0.198 2.878,-0.22 2.877,-0.239 2.878,-0.261 2.877,-0.281 2.878,-0.302 2.877,-0.323 2.878,-0.343 2.878,-0.364 2.877,-0.385 2.878,-0.406 2.877,-0.426 2.878,-0.447 2.877,-0.467 2.878,-0.489 2.877,-0.509 2.878,-0.529 2.877,-0.551 2.878,-0.571 2.877,-0.592 2.878,-0.612 2.877,-0.633 2.878,-0.654 2.877,-0.675 2.878,-0.695 2.878,-0.716 2.877,-0.737 2.878,-0.757 2.877,-0.778 5.755,-1.619 5.755,-1.701"
-       id="path740"
+       id="path1746"
        style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
@@ -4698,7 +5518,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g744"
+     id="g1750"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4712,13 +5532,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g748"
+     id="g1754"
      style="fill-rule:evenodd">
     <path
        vector-effect="none"
        fill-rule="evenodd"
        d="m 1035.41,195.837 -2.42,-1.622 -2.42,-1.594 -2.42,-1.564 -2.42,-1.535 -2.42,-1.506 -2.41,-1.477 -2.42,-1.447 -2.42,-1.418 -2.42,-1.389 -2.42,-1.36 -2.42,-1.33 -2.42,-1.301 -2.41,-1.272 -2.42,-1.242 -2.421,-1.214 -2.419,-1.184 -2.418,-1.155 -2.419,-1.125 -2.419,-1.097 -2.418,-1.067 -2.419,-1.038 -2.418,-1.008 -2.419,-0.98 -2.418,-0.95 -2.419,-0.921 -2.418,-0.891 -2.419,-0.863 -2.418,-0.833 -2.419,-0.804 -2.418,-0.775 -2.419,-0.745 -2.418,-0.716 -2.419,-0.687 -2.419,-0.658 -2.418,-0.628 -2.419,-0.599 -2.418,-0.57 -2.419,-0.541 -2.418,-0.511 -2.419,-0.482 -2.418,-0.453 -2.419,-0.424 -2.418,-0.395 -2.419,-0.365 -2.418,-0.336 -2.419,-0.306 -2.418,-0.278 -2.419,-0.248 -2.419,-0.219 -2.418,-0.19 -2.419,-0.16 -2.418,-0.132 -2.419,-0.102 -2.418,-0.072 -2.419,-0.044 -2.418,-0.014 -2.419,0.015 -2.418,0.044 -2.419,0.074 -2.418,0.102 -2.419,0.132 -2.419,0.162 -2.418,0.19 -2.419,0.22 -2.418,0.249 -2.419,0.278 -2.418,0.308 -2.419,0.336 -2.418,0.366 -2.419,0.395 -2.418,0.425 -2.419,0.454 -2.418,0.483 -2.419,0.512 -2.418,0.541 -2.419,0.571 -2.419,0.6 -2.418,0.629 -2.419,0.658 -2.418,0.688 -2.419,0.717 -2.418,0.746 -2.419,0.776 -2.418,0.804 -2.419,0.834 -2.418,0.863 -2.419,0.893 -2.418,0.921 -2.419,0.951 -2.418,0.98 -2.419,1.01 -2.419,1.038 -2.418,1.068 -2.419,1.097 -2.418,1.127 -2.419,1.155 -2.418,1.185 -2.419,1.214 -2.418,1.244 -2.419,1.272 -2.418,1.302 -2.419,1.331 -2.418,1.361 -2.419,1.389 -2.418,1.419 -2.419,1.448 -2.419,1.477 -2.418,1.507 -2.419,1.536 -2.418,1.565 -2.419,1.594 -2.418,1.624 -2.419,1.653 -2.418,1.682 -2.419,1.711 -2.418,1.74 -2.419,1.77 -2.418,1.799 -2.419,1.829 -2.418,1.857 -2.419,1.887 -2.419,1.916 -2.418,1.945 -2.419,1.975 -2.418,2.003 -2.419,2.033 -2.418,2.063 -2.419,2.091"
-       id="path746" />
+       id="path1752" />
   </g>
   <g
      fill="none"
@@ -4732,7 +5552,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g750"
+     id="g1756"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4746,13 +5566,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g754"
+     id="g1760"
      style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
     <path
        vector-effect="none"
        fill-rule="evenodd"
        d="m 725.834,225.834 2.419,-2.091 2.418,-2.063 2.419,-2.033 2.418,-2.003 2.419,-1.975 2.418,-1.945 2.419,-1.916 2.419,-1.887 2.418,-1.857 2.419,-1.829 2.418,-1.799 2.419,-1.77 2.418,-1.74 2.419,-1.711 2.418,-1.682 2.419,-1.653 2.418,-1.624 2.419,-1.594 2.418,-1.565 2.419,-1.536 2.418,-1.507 2.419,-1.477 2.419,-1.448 2.418,-1.419 2.419,-1.389 2.418,-1.361 2.419,-1.331 2.418,-1.302 2.419,-1.272 2.418,-1.244 2.419,-1.214 2.418,-1.185 2.419,-1.155 2.418,-1.127 2.419,-1.097 2.418,-1.068 2.419,-1.038 2.419,-1.01 2.418,-0.98 2.419,-0.951 2.418,-0.921 2.419,-0.893 2.418,-0.863 2.419,-0.834 2.418,-0.804 2.419,-0.776 2.418,-0.746 2.419,-0.717 2.418,-0.688 2.419,-0.658 2.418,-0.629 2.419,-0.6 2.419,-0.571 2.418,-0.541 2.419,-0.512 2.418,-0.483 2.419,-0.454 2.418,-0.425 2.419,-0.395 2.418,-0.366 2.419,-0.336 2.418,-0.308 2.419,-0.278 2.418,-0.249 2.419,-0.22 2.418,-0.19 2.419,-0.162 2.419,-0.132 2.418,-0.102 2.419,-0.074 2.418,-0.044 2.419,-0.015 2.418,0.014 2.419,0.044 2.418,0.072 2.419,0.102 2.418,0.132 2.419,0.16 2.418,0.19 2.419,0.219 2.419,0.248 2.418,0.278 2.419,0.306 2.418,0.336 2.419,0.365 2.418,0.395 2.419,0.424 2.418,0.453 2.419,0.482 2.418,0.511 2.419,0.541 2.418,0.57 2.419,0.599 2.418,0.628 2.419,0.658 2.419,0.687 2.418,0.716 2.419,0.745 2.418,0.775 2.419,0.804 2.418,0.833 2.419,0.863 2.418,0.891 2.419,0.921 2.418,0.95 2.419,0.98 2.418,1.008 2.419,1.038 2.418,1.067 2.419,1.097 2.419,1.125 2.418,1.155 2.419,1.184 2.421,1.214 2.42,1.242 2.41,1.272 2.42,1.301 2.42,1.33 2.42,1.36 2.42,1.389 2.42,1.418 2.42,1.447 2.41,1.477 2.42,1.506 2.42,1.535 2.42,1.564 2.42,1.594 2.42,1.622"
-       id="path752"
+       id="path1758"
        style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
@@ -4767,7 +5587,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g756"
+     id="g1762"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4781,13 +5601,69 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g760"
+     id="g1768"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1774"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1780"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1786"
+     style="fill-rule:evenodd" />
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-opacity="1"
+     stroke-width="1"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     transform="matrix(1.10991,0,0,1.10991,-7.214395,-46.061235)"
+     font-family="'DejaVu Sans'"
+     font-size="8px"
+     font-weight="400"
+     font-style="normal"
+     id="g1790"
      style="fill-rule:evenodd">
     <path
        vector-effect="none"
        fill-rule="evenodd"
        d="m 1071.36,607.037 1.2,-2.275 1.18,-2.274 1.15,-2.274 1.13,-2.274 1.1,-2.275 1.08,-2.274 1.04,-2.274 1.03,-2.274 0.99,-2.275 0.98,-2.274 0.94,-2.274 0.92,-2.274 0.9,-2.275 0.86,-2.274 0.85,-2.274 0.81,-2.275 0.79,-2.274 0.77,-2.274 0.74,-2.274 0.71,-2.275 0.69,-2.274 0.66,-2.274 0.63,-2.274 0.61,-2.275 0.58,-2.274 0.56,-2.274 0.53,-2.275 0.51,-2.274 0.48,-2.274 0.45,-2.274 0.43,-2.275 0.41,-2.274 0.37,-2.274 0.35,-2.274 0.33,-2.275 0.3,-2.274 0.27,-2.274 0.25,-2.274 0.22,-2.275 0.19,-2.274 0.17,-2.274 0.15,-2.275 0.12,-2.274 0.09,-2.274 0.06,-2.274 0.05,-2.275 0.01,-2.274 -0.01,-2.274 -0.04,-2.274 -0.06,-2.275 -0.09,-2.274 -0.12,-2.274 -0.14,-2.275 -0.16,-2.274 -0.19,-2.274 -0.22,-2.274 -0.25,-2.275 -0.27,-2.274 -0.29,-2.274 -0.32,-2.274 -0.35,-2.275 -0.37,-2.274 -0.4,-2.274 -0.43,-2.274"
-       id="path758" />
+       id="path1788" />
   </g>
   <g
      fill="none"
@@ -4801,7 +5677,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g762"
+     id="g1792"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4815,13 +5691,13 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g766"
+     id="g1796"
      style="fill-rule:evenodd;stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none">
     <path
        vector-effect="none"
        fill-rule="evenodd"
        d="m 1096.29,461.484 0.43,2.274 0.4,2.274 0.37,2.274 0.35,2.275 0.32,2.274 0.29,2.274 0.27,2.274 0.25,2.275 0.22,2.274 0.19,2.274 0.16,2.274 0.14,2.275 0.12,2.274 0.09,2.274 0.06,2.275 0.04,2.274 0.01,2.274 -0.01,2.274 -0.05,2.275 -0.06,2.274 -0.09,2.274 -0.12,2.274 -0.15,2.275 -0.17,2.274 -0.19,2.274 -0.22,2.275 -0.25,2.274 -0.27,2.274 -0.3,2.274 -0.33,2.275 -0.35,2.274 -0.37,2.274 -0.41,2.274 -0.43,2.275 -0.45,2.274 -0.48,2.274 -0.51,2.274 -0.53,2.275 -0.56,2.274 -0.58,2.274 -0.61,2.275 -0.63,2.274 -0.66,2.274 -0.69,2.274 -0.71,2.275 -0.74,2.274 -0.77,2.274 -0.79,2.274 -0.81,2.275 -0.85,2.274 -0.86,2.274 -0.9,2.275 -0.92,2.274 -0.94,2.274 -0.98,2.274 -0.99,2.275 -1.03,2.274 -1.04,2.274 -1.08,2.274 -1.1,2.275 -1.13,2.274 -1.15,2.274 -1.18,2.274 -1.2,2.275"
-       id="path764"
+       id="path1794"
        style="stroke-width:3.6039;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
@@ -4836,7 +5712,7 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g768"
+     id="g1798"
      style="fill-rule:evenodd" />
   <g
      fill="none"
@@ -4849,55 +5725,60 @@
      font-size="8px"
      font-weight="400"
      font-style="normal"
-     id="g770"
+     id="g1800"
      style="fill-rule:evenodd"
      transform="translate(0.554965,0.554965)" />
   <text
      xml:space="preserve"
      style="font-size:53.3333px;line-height:120%;font-family:'Nimbus Sans';-inkscape-font-specification:'Nimbus Sans';letter-spacing:0px;word-spacing:0px;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="36.386673"
-     y="962.26813"
+     x="226.6772"
+     y="901.97876"
      id="text2442-3"><tspan
        sodipodi:role="line"
-       x="36.386673"
-       y="962.26813"
+       x="226.6772"
+       y="901.97876"
        style="font-size:53.3333px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-opacity:1"
-       id="tspan2468">polygon</tspan><tspan
+       id="tspan2468">inverted</tspan><tspan
        sodipodi:role="line"
-       x="36.386673"
-       y="1026.2681"
+       x="226.6772"
+       y="965.9787"
+       style="font-size:53.3333px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-opacity:1"
+       id="tspan631">polygon</tspan><tspan
+       sodipodi:role="line"
+       x="226.6772"
+       y="1029.9786"
        style="font-size:53.3333px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-opacity:1"
        id="tspan2472">region 1</tspan></text>
   <text
      xml:space="preserve"
      style="font-size:53.3333px;line-height:120%;font-family:'Nimbus Sans';-inkscape-font-specification:'Nimbus Sans';letter-spacing:0px;word-spacing:0px;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="777.08148"
-     y="299.15027"
+     x="841.37195"
+     y="684.8609"
      id="text2442-3-3"><tspan
        sodipodi:role="line"
-       x="777.08148"
-       y="299.15027"
+       x="841.37195"
+       y="684.8609"
        style="font-size:53.3333px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-opacity:1"
        id="tspan2468-6">polygon</tspan><tspan
        sodipodi:role="line"
-       x="777.08148"
-       y="363.15024"
+       x="841.37195"
+       y="748.86084"
        style="font-size:53.3333px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-opacity:1"
        id="tspan2472-7">region 3</tspan></text>
   <text
      xml:space="preserve"
      style="font-size:53.3333px;line-height:120%;font-family:'Nimbus Sans';-inkscape-font-specification:'Nimbus Sans';letter-spacing:0px;word-spacing:0px;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="367.87537"
-     y="428.67398"
+     x="402.16589"
+     y="554.38464"
      id="text2442-3-5"><tspan
        sodipodi:role="line"
-       x="367.87537"
-       y="428.67398"
+       x="402.16589"
+       y="554.38464"
        style="font-size:53.3333px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-opacity:1"
        id="tspan2468-3">polygon</tspan><tspan
        sodipodi:role="line"
-       x="367.87537"
-       y="492.67395"
+       x="402.16589"
+       y="618.38458"
        style="font-size:53.3333px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-opacity:1"
        id="tspan2472-5">region 2</tspan></text>
   <text
@@ -4910,5 +5791,5 @@
        x="92.366669"
        y="74.379974"
        style="font-weight:bold;font-size:53.3333px;fill:#000000;fill-opacity:1;stroke:none;stroke-opacity:1"
-       id="tspan2472-5-7">(b)</tspan></text>
+       id="tspan2472-5-7">(c)</tspan></text>
 </svg>

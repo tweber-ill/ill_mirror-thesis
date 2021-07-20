@@ -342,9 +342,16 @@ milling machines \cite{Jeong1998, wiki_milling}.
 			\includegraphics[width = 1 \textwidth]{figures/linesegs_grouped}
 		\end{center}
 	\end{minipage}
-	\caption{Left panel: Ungrouped line segments and their Voronoi bisectors.
-		Right panel: The same line segments, but with each polygonal region grouped.
+	\begin{minipage}{0.5 \textwidth}
+		\begin{center}
+			\includegraphics[width = 1 \textwidth]{figures/linesegs_skeleton}
+		\end{center}
+	\end{minipage}
+	\caption{Panel (a): Ungrouped line segments and their Voronoi bisectors.
+		Panel (b): The same line segments, but with each polygonal region grouped.
 		The Voronoi diagram is only calculated between groups, not within the same group.
+		Panel (c): A mixture of the first two cases, where not entire regions are grouped
+		as in case (b), but where each convex sub-region forms its own group.
 		\label{fig:linesegs_grouped_voro}}
 \end{figure*}
 
