@@ -5,6 +5,38 @@
 % @license see 'LICENSE' file
 %
 
-\chapter{Graphical User Interface}
+\chapter{User Interfaces}
 \label{ch:gui}
 
+The software has been realised in a modular fashion, it comprises a core
+and a library module (see chapter \ref{ch:impl}), which can be easily linked 
+into external C++ applications. Such a library usage will be important in the
+future when the software will be integrated as a plug-in module to the instrument
+control software \textit{NOMAD} \cite{NOMAD} that is employed at the Institut 
+Laue-Langevin.
+
+Furthermore, a graphical user interface (GUI) has been implemented for a visual
+and interactive representation of the instrument and the underlying algorithms.
+The GUI is described in detail in section \ref{sec:gui}.
+
+Finally, the software allows scripting via \textit{Python} \cite{Python}. 
+Apart from simply setting up a workflow and plotting the results, the \textit{Python}
+interface will allow the usage of the software in \textit{Python}-based instrument
+control systems such as \textit{NICOS} \cite{NICOS}, which is used at the 
+Forschungsreaktor M\"unchen II (FRM-II). 
+Details on the scripting interface can be found in section \ref{sec:scripting}.
+
+
+
+
+
+\section{Graphical User Interface}
+\label{sec:gui}
+
+
+
+
+
+
+\section{Python Scripting Interface}
+\label{sec:scripting}

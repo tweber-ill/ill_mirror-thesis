@@ -243,6 +243,7 @@ The radial sweep algorithm works as given below, following the descriptions in R
 
 
 \subsection{Generation of convex regions}
+\label{sec:convex_regions}
 
 
 
@@ -290,7 +291,7 @@ None of the above is feasible for the present project, though: \textit{VRONI} is
 suitable open-source license.
 The opposite is true for \textit{OpenVoronoi}: It is available under an open-source license, but our first tests
 deemed it too unstable for use in a production-quality software. The source code for our test can be found in
-the function \lstinline[language=C++]|calc_voro_ovd|, which resided in file \lstinline|./src/libs/hull.h|.
+the function \lstinline[language=C++]|calc_voro_ovd|, which resides in file \lstinline|./src/libs/hull.h|.
 The source code for the test tool itself is located in: \lstinline|./src/tools/lines.cpp|.
 \textit{VoroLS} is stable and does even handle intersecting lines, but is a \textit{Java}
 software, not a library, and is not under an open-source license.
@@ -345,7 +346,8 @@ polygonal region at all times, but has a starting and ending position which can
 be close to one of these walls or be at a position near a concave corner which
 is not directly accessible from the present bisector configuration. This problem
 is solved in case (c).
-In case (c) the concave polygonal regions are split into convex sub-regions.
+In case (c) the concave polygonal regions are split into convex sub-regions, see
+section \ref{sec:convex_regions}.
 The bisectors form what is called a skeletal bisector configuration [TODO: cite].
 Here, each part of the instrumental configuration space can be reached from the
 bisector mesh and no bisectors inside forbidden regions exits. This configuration
@@ -366,7 +368,7 @@ whereas regions 2 and 3 are non-inverted, meaning they enclose forbidden regions
 
 The collection of normal and inverted regions is calculated in the member function
 \lstinline[language=C++]|CalculateLineSegments| of the \lstinline[language=C++]|PathsBuilder|
-class, which resided in file \lstinline|./src/core/PathsBuilder.cpp|. 
+class, which resides in file \lstinline|./src/core/PathsBuilder.cpp|. 
 The Voronoi diagram of these regions is calculated in the member function
 \lstinline[language=C++]|PathsBuilder::CalculateVoronoi|.
 
