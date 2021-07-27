@@ -240,10 +240,26 @@ The radial sweep algorithm works as given below, following the descriptions in R
 
 \subsection{Line-segment generation and simplification}
 
+After creating the line segments from the traced contour lines, they have to be cleaned up and simplified,
+because the quantity of superfluous vertices would considerably slow down the generation of the Voronoi 
+diagram in one of the next steps.
+In the function \lstinline[language=C++]|simplify_contour|, which resides in the file \lstinline|./src/libs/hull.h|,
+we perform two simplification steps:
+
+First, ``staircase artefacts'' are removed. These kinds of artefacts originate from tracing diagonal or sloped lines.
+The quantification of the obstacles on a grid and the subsequent run of the contour tracer (section \ref{sec:contourtracing})
+create a succession of horizontal and vertical line segments in lieu of the actual diagonal.
+The first simplification step looks for these line segments and replaces them with proper diagonal lines.
+
+A second simplification step replaces collections of short collinear line segments with larger ones.
+To that end, we iterate through the vertices on the contour line and remove any vertices whose line segment angles 
+involving the previous and the next vertex, respectively, are below a given epsilon value.
+
 
 
 \subsection{Generation of convex regions}
 \label{sec:convex_regions}
+
 
 
 
