@@ -17,8 +17,8 @@ of the repository at \url{https://code.ill.fr/scientific-software/takin/paths}. 
 source code have furthermore been registered under the DOI \href{https://doi.org/10.5281/zenodo.4625649}{10.5281/zenodo.4625649}.
 
 Section \ref{sec:tasmodel} is dedicated to modelling the triple-axis spectrometer (TAS), 
-section \ref{sec:buildpath} discusses the steps involved in building up the instrument path, 
-and section \ref{sec:exepath} focuses on executing the instrument motion along the path.
+section \ref{sec:buildpath} discusses the steps involved in building up the mesh of possible instrument paths, 
+and section \ref{sec:exepath} focuses on finding one specific path and executing the instrument motion along it.
 The graphical user interface is presented separately, namely in chapter \ref{ch:gui}.
 
 
@@ -94,13 +94,16 @@ The situation is depicted in Fig. \ref{fig:tas_axes}.
 % -----------------------------------------------------------------------------
 % path building
 % -----------------------------------------------------------------------------
-\section{Path-building}
+\section{Construction of the path mesh}
 \label{sec:buildpath}
+This section is dedicated to calculating the path mesh, which consists of all possible instrument paths between
+convex regions in configuration space.
 
-As discussed in chapter \ref{sec:tasrobot}, path-creation will be based on the angular configuration space
-(as opposed to -- for example -- crystal configuration space). The top-level C++ class for creating the path
-is named \lstinline[language=C++]|PathBuilder|. It mainly calls the low-level routines from the geometry
-library situated in the directory \lstinline|./src/libs| of the source code repository.
+As discussed in chapter \ref{sec:tasrobot}, path-mesh creation will be based on the angular configuration space
+(as opposed to -- for example -- crystal coordinates configuration space). 
+The top-level C++ class for creating the path is named \lstinline[language=C++]|PathBuilder|. 
+It mainly calls the low-level routines from the geometry library situated in the directory \lstinline|./src/libs| of 
+the source code repository.
 
 
 \subsection{Angular configuration space}
@@ -381,7 +384,8 @@ since the bisectors enter the forbidden region inside a wall.
 In case (b) collections of line segments, which form arbitrary concave polygons, 
 are grouped grouped into regions. Here, the bisectors do not touch any region 
 and the resulting path is what is called the ``contour-parallel tool path'' in 
-the terms of CNC (computer numerical control) milling machines \cite{Jeong1998, wiki_milling}, where these are utilised. While the bisectors of this case could 
+the terms of CNC (computer numerical control) milling machines \cite{Jeong1998, wiki_milling}, 
+where these are utilised. While the bisectors of this case could 
 be used for the spectrometer path mesh, a problem remains: In contrast to a milling
 machine the spectrometer is not supposed to be at the furthest distance of any
 polygonal region at all times, but has a starting and ending position which can 
@@ -408,11 +412,18 @@ Panel (c) of Fig. \ref{fig:linesegs_grouped_voro} shows the distinction:
 The contour of region 1 is an inverted one, as it encloses an allowed region,
 whereas regions 2 and 3 are non-inverted, meaning they enclose forbidden regions.
 
+Together with the calculation of the Voronoi diagram, a graph is constructed whose
+vertices correspond to the Voronoi vertices of the diagram and whose edges correspond
+to the Voronoi bisectors. This graph is used in the path-finding step described in 
+section \ref{sec:exepath}.
+
 The collection of normal and inverted regions is calculated in the member function
 \lstinline[language=C++]|CalculateLineSegments| of the \lstinline[language=C++]|PathsBuilder|
 class, which resides in file \lstinline|./src/core/PathsBuilder.cpp|. 
 The Voronoi diagram of these regions is calculated in the member function
 \lstinline[language=C++]|PathsBuilder::CalculateVoronoi|.
+It calls the backend function \lstinline[language=C++]|calc_voro|, which is part
+of the library and can be found in the file \lstinline|./src/libs/voronoi_lines.h|.
 
 
 \label{sec:voronoi}
@@ -440,8 +451,6 @@ The Voronoi diagram of these regions is calculated in the member function
 		\label{fig:linesegs_grouped_voro}}
 \end{figure*}
 
-
-
 % -----------------------------------------------------------------------------
 
 
@@ -451,16 +460,25 @@ The Voronoi diagram of these regions is calculated in the member function
 % -----------------------------------------------------------------------------
 % instrument motion
 % -----------------------------------------------------------------------------
-\section{Instrument movement}
+\section{Finding the shortest path and instrument motion}
 \label{sec:exepath}
+
+So far we have constructed a mesh of possible paths along which the instrument can move
+from one convex region to another convex region of the angular configuration space.
+In the present section we describe the algorithm to find a possible start position on the
+path mesh to which the instrument can move from its initial configuration, which is
+not necessarily on the path mesh (section \ref{sec:startend}).
+Analogously we determine the end position on the path mesh in proximity to the desired target
+instrument position.
+A concrete path is then determined between the calculated start and end positions (section \ref{sec:optimalpath}).
 
 
 \subsection{Determination of the start and end coordinates}
+\label{sec:startend}
 
 
-
-\subsection{Calculation of Dijkstra's shortest path}
-\label{sec:dijkstra}
+\subsection{Calculation of the optimal path}
+\label{sec:optimalpath}
 
 
 % -----------------------------------------------------------------------------
