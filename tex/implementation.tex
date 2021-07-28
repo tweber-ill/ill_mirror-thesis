@@ -368,6 +368,7 @@ software, not a library, and is not under an open-source license.
 
 
 \subsubsection*{Polygon Voronoi diagrams}
+\label{sec:polygonal_voronoi_diagram}
 
 It is not sufficient to represent the walls as isolated line segments, because -- 
 as we saw before -- they are not necessarily simply-connected. 
@@ -438,6 +439,8 @@ of the library and can be found in the file \lstinline|./src/libs/voronoi_lines.
 			\includegraphics[width = 1 \textwidth]{figures/linesegs_grouped}
 		\end{center}
 	\end{minipage}
+	\vspace{0.25cm}
+
 	\begin{minipage}{0.5 \textwidth}
 		\begin{center}
 			\includegraphics[width = 1 \textwidth]{figures/linesegs_skeleton}
@@ -460,7 +463,7 @@ of the library and can be found in the file \lstinline|./src/libs/voronoi_lines.
 % -----------------------------------------------------------------------------
 % instrument motion
 % -----------------------------------------------------------------------------
-\section{Finding the shortest path and instrument motion}
+\section{Finding the shortest path and the instrument motion}
 \label{sec:exepath}
 
 So far we have constructed a mesh of possible paths along which the instrument can move
@@ -470,15 +473,43 @@ path mesh to which the instrument can move from its initial configuration, which
 not necessarily on the path mesh (section \ref{sec:startend}).
 Analogously we determine the end position on the path mesh in proximity to the desired target
 instrument position.
-A concrete path is then determined between the calculated start and end positions (section \ref{sec:optimalpath}).
+A concrete path is then determined between the calculated start and end positions
+(section \ref{sec:optimalpath}).
 
 
-\subsection{Determination of the start and end coordinates}
+\subsection{Determination of the start and target coordinates}
 \label{sec:startend}
+
+For the start and target coordinate position, which have their respective representation as large
+red and green points in Fig. \ref{fig:linesegs_path}, we find the closest points on the
+nearest Voronoi bisector and save these point as vertices on the generated path curve.
+The closest point between a point and a line can be determined by dropping a perpendicular
+from the point to the line \cite{TODO}.
 
 
 \subsection{Calculation of the optimal path}
 \label{sec:optimalpath}
+
+Having found the closest points to the start and target positions on the bisectors, we can
+proceed with calculating the optimal path on the path mesh formed by all Voronoi edges.
+To this end we make use of the graph representation of the Voronoi diagram that we calculated
+in a previous step (section \ref{sec:polygonal_voronoi_diagram}) together with the diagram.
+The graph's vertices and edges correspond to the Voronoi vertices and edges, respectively,
+and a possible optimal path is the shortest distance between the start and target coordinates.
+The shortest distance can readily be calculated using Dijkstra's algorithm \cite{TODO},
+which we show in Fig. \ref{fig:linesegs_path}.
+
+
+\label{sec:voronoi}
+\begin{figure*}
+	\begin{center}
+		\includegraphics[width = 0.66 \textwidth]{figures/linesegs_path}
+	\end{center}
+	\caption{The final path (orange) between the start and target positions (large red and green points, respectively).
+		As before, the line segment vertices are depicted as blue points, the line segments as blue lines.
+		The thin black lines represent the bisectors of the Voronoi diagram, the red points are the Voronoi vertices.
+		\label{fig:linesegs_path}}
+\end{figure*}
 
 
 % -----------------------------------------------------------------------------
