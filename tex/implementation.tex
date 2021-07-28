@@ -240,21 +240,47 @@ The radial sweep algorithm works as given below, following the descriptions in R
 
 \subsection{Line-segment generation and simplification}
 
+Panel (a) of Fig. \ref{fig:contour_simplification} shows a typical contour created by the previous step.
+Line segments are now created between successive vertices, where one vertex is created for each pixel of the
+quantified contour. The situation is shown in panel (b).
+
 After creating the line segments from the traced contour lines, they have to be cleaned up and simplified,
 because the quantity of superfluous vertices would considerably slow down the generation of the Voronoi 
-diagram in one of the next steps.
+diagram in one of the next steps of the algorithm.
 In the function \lstinline[language=C++]|simplify_contour|, which resides in the file \lstinline|./src/libs/hull.h|,
 we perform two simplification steps:
 
 First, ``staircase artefacts'' are removed. These kinds of artefacts originate from tracing diagonal or sloped lines.
 The quantification of the obstacles on a grid and the subsequent run of the contour tracer (section \ref{sec:contourtracing})
-create a succession of horizontal and vertical line segments in lieu of the actual diagonal.
-The first simplification step looks for these line segments and replaces them with proper diagonal lines.
+create a succession of horizontal and vertical line segments in lieu of an actual diagonal.
+The first simplification step, which is illustrated in panel (c) of Fig. \ref{fig:contour_simplification}, looks
+for horizontal or vertical line segments between sloped line segments and removed the inner vertices and thus the
+horizontal or vertical segments.
 
-A second simplification step replaces collections of short collinear line segments with larger ones.
-To that end, we iterate through the vertices on the contour line and remove any vertices whose line segment angles 
-involving the previous and the next vertex, respectively, are below a given epsilon value.
+The second simplification step replaces collections of short collinear line segments with larger ones,
+thus replacing the staircase artefacts that the quantification step of the contour tracer had created,
+with proper diagonal lines. This is depicted in panel (d) of Fig. \ref{fig:contour_simplification}.
+To that end, we iterate through the vertices on the contour line and remove any vertices whose line segment angles
+involving the previous and the next vertex, respectively, are below a given small scalar value $\epsilon$, with $\epsilon > 0$.
 
+
+\begin{figure*}
+	\includegraphics[width = 0.5 \textwidth]{figures/simplification_contour}
+	\hspace{0.1cm}
+	\includegraphics[width = 0.5 \textwidth]{figures/simplification_linesegments}
+
+	\vspace{0.25cm}
+
+	\includegraphics[width = 0.5 \textwidth]{figures/simplification_step1}
+	\hspace{0.1cm}
+	\includegraphics[width = 0.5 \textwidth]{figures/simplification_step2}
+	\caption{Typical example of a contour line segment generation and simplification.
+		Panel (a): A contour line (green) separating two regions (blue and red) that has been found using the tracing algorithm (section \ref{sec:contourtracing}).
+		Panel (b): Vertices (while circles) are generated for each pixel and connected by line segments (black lines).
+		Panel (c): Staircase artefacts are removed from the line segment collection.
+		Panel (d): Collinear line segments are merged and unnecessary vertices removed.
+		\label{fig:contour_simplification}}
+\end{figure*}
 
 
 \subsection{Generation of convex regions}
