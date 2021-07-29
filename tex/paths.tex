@@ -50,7 +50,7 @@ Fig. \ref{fig:robot_trapezoids}. Together with the trapezoid map, the algorithm 
 structure, which allows querying for the trapezoid containing a given point with time complexity $O \left( \log_{2} n \right)$, 
 where $n$ is the number of line segments \cite[Theorem 6.3, p. 133]{Berg2008}.
 
-\begin{figure*}[htb]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width = 0.4 \textwidth]{figures/pointrobot_walls.pdf}
 	\hspace{1 cm}
@@ -60,7 +60,7 @@ where $n$ is the number of line segments \cite[Theorem 6.3, p. 133]{Berg2008}.
 		shortest path from the centre of one trapezoid to the centre of the edge connecting to the next trapezoid, to the
 		centre of that trapezoid, and so forth (blue arrows).}
 	\label{fig:robot_trapezoids}
-\end{figure*}
+\end{figure}
 
 While the present algorithm can be extended towards polygonal robots \cite[Ch. 13.3, pp. 290-297]{Berg2008} and provides
 some useful ideas, it has several severe drawbacks. First and foremost, the trapezoid map cannot handle the case when

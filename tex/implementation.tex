@@ -65,7 +65,7 @@ of the local coordinate origin of the respective axis $i$.
 The situation is depicted in Fig. \ref{fig:tas_axes}.
 
 
-\begin{figure*}
+\begin{figure}
 	\begin{minipage}{0.45 \textwidth}
 		\begin{center}
 			\includegraphics[width = 0.75 \textwidth]{figures/axis}
@@ -83,7 +83,7 @@ The situation is depicted in Fig. \ref{fig:tas_axes}.
 	Right panel: Three coupled axes build up the triple-axis spectrometer, with axes 1, 2, and 3 naming the monochromator,
 	the sample, and the analyser axis, respectively.
 	\label{fig:tas_axes}}
-\end{figure*}
+\end{figure}
 
 % -----------------------------------------------------------------------------
 
@@ -267,23 +267,23 @@ To that end, we iterate through the vertices on the contour line and remove any 
 involving the previous and the next vertex, respectively, are below a given small scalar value $\epsilon$, with $\epsilon > 0$.
 
 
-\begin{figure*}
-	\includegraphics[width = 0.49 \textwidth]{figures/simplification_contour}
+\begin{figure}
+	\includegraphics[width = 0.49 \textwidth, trim=0.25cm 0 0 0, clip]{figures/simplification_contour}
 	\hspace{0.1cm}
-	\includegraphics[width = 0.49 \textwidth]{figures/simplification_linesegments}
+	\includegraphics[width = 0.49 \textwidth, trim=0.25cm 0 0 0, clip]{figures/simplification_linesegments}
 
 	\vspace{0.25cm}
 
-	\includegraphics[width = 0.49 \textwidth]{figures/simplification_step1}
+	\includegraphics[width = 0.49 \textwidth, trim=0.25cm 0 0 0, clip]{figures/simplification_step1}
 	\hspace{0.1cm}
-	\includegraphics[width = 0.49 \textwidth]{figures/simplification_step2}
+	\includegraphics[width = 0.49 \textwidth, trim=0.25cm 0 0 0, clip]{figures/simplification_step2}
 	\caption{Typical example of a contour line segment generation and simplification.
 		Panel (a): A contour line (green) separating two regions (blue and red) that has been found using the tracing algorithm (section \ref{sec:contourtracing}).
 		Panel (b): Vertices (while circles) are generated for each pixel and connected by line segments (black lines).
 		Panel (c): Staircase artefacts are removed from the line segment collection.
 		Panel (d): Collinear line segments are merged and unnecessary vertices removed.
 		\label{fig:contour_simplification}}
-\end{figure*}
+\end{figure}
 
 
 \subsection{Generation of convex regions}
@@ -343,7 +343,7 @@ software, not a library, and is not under an open-source license.
 
 
 \label{sec:voronoi}
-\begin{figure*}
+\begin{figure}
 	\begin{minipage}{1 \textwidth}
 		\begin{center}
 			\includegraphics[width = 0.75 \textwidth]{figures/linesegs}
@@ -363,7 +363,7 @@ software, not a library, and is not under an open-source license.
 		infinite regions. Helper lines are marked in red. The figure has been calculated using the \textit{Boost.Polygon} library
 		\cite{web_boost_polygon_voronoi} and the source code in \lstinline|./src/tools/lines.cpp|.
 		\label{fig:linesegs_voro}}
-\end{figure*}
+\end{figure}
 
 
 
@@ -428,7 +428,7 @@ of the library and can be found in the file \lstinline|./src/libs/voronoi_lines.
 
 
 \label{sec:voronoi}
-\begin{figure*}
+\begin{figure}
 	\begin{minipage}{0.5 \textwidth}
 		\begin{center}
 			\includegraphics[width = 1 \textwidth]{figures/linesegs_ungrouped}
@@ -452,7 +452,7 @@ of the library and can be found in the file \lstinline|./src/libs/voronoi_lines.
 		Panel (c): A mixture of the first two cases, where not entire regions are grouped
 		as in case (b), but where each convex sub-region forms its own group.
 		\label{fig:linesegs_grouped_voro}}
-\end{figure*}
+\end{figure}
 
 % -----------------------------------------------------------------------------
 
@@ -483,8 +483,25 @@ A concrete path is then determined between the calculated start and end position
 For the start and target coordinate position, which have their respective representation as large
 red and green points in Fig. \ref{fig:linesegs_path}, we find the closest points on the
 nearest Voronoi bisector and save these point as vertices on the generated path curve.
-The closest point between a point and a line can be determined by dropping a perpendicular
-from the point to the line \cite{TODO}.
+In general, the closest point $\left|q\right>$ between a point $\left|p\right>$ and a line
+$l\left(\lambda\right) = \left|x\right> + \lambda \cdot \left|d\right>$ is determined by
+dropping a perpendicular from the point to the line \cite{wiki_proj}:
+\begin{equation}
+	\left|q\right> \ =\  \left<d  \ |\  p - x \right> \cdot \left|d\right>,
+\end{equation}
+where $\left|d\right>$ is the normalised direction vector of the line as depicted in
+Fig. \ref{fig:dropped_perpendicular}.
+By reshuffling the equation, we can alternatively regard $\left|d\right> \left<d\right|$
+as the operator projecting $\left| p - x \right>$ onto $\left|d\right>$, see \cite[p. 814]{Arens2015}.
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[width = 0.25 \textwidth]{figures/dropped_perpendicular}
+	\end{center}
+	\caption{Projection of point $p$ onto line $l$.
+		\label{fig:dropped_perpendicular}}
+\end{figure}
+
 
 
 \subsection{Calculation of the optimal path}
@@ -510,7 +527,7 @@ using the standard C++ functions \lstinline[language=C++]|std::make_heap()| and
 
 
 \label{sec:voronoi}
-\begin{figure*}
+\begin{figure}
 	\begin{center}
 		\includegraphics[width = 0.66 \textwidth]{figures/linesegs_path}
 	\end{center}
@@ -518,7 +535,7 @@ using the standard C++ functions \lstinline[language=C++]|std::make_heap()| and
 		As before, the line segment vertices are depicted as blue points, the line segments as blue lines.
 		The thin black lines represent the bisectors of the Voronoi diagram, the red points are the Voronoi vertices.
 		\label{fig:linesegs_path}}
-\end{figure*}
+\end{figure}
 
 
 % -----------------------------------------------------------------------------
