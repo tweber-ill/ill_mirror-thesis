@@ -1,5 +1,5 @@
 %
-% path-finding
+% path-finding implementation
 % @author Tobias Weber <tweber@ill.fr>
 % @date 2021
 % @license see 'LICENSE' file
@@ -164,12 +164,12 @@ Testing for the intersection of line segments instead of infinite lines is done 
 
 For an efficient handling of multiple line segment intersections, the decision for which lines to test for intersections is
 performed using the line segment sweep algorithm from Ref. \cite[pp. 69-80]{FUH_geo2020} whose C++ implementation can be
-found in the function \lstinline[language=C++]|intersect_sweep| of the file \lstinline|./src/libs/lines.h|.
+found in the function \lstinline[language=C++]|intersect_sweep()| of the file \lstinline|./src/libs/lines.h|.
 We shortly summarise the algorithm and our implementation, following the description in \cite[pp. 69-80]{FUH_geo2020}:
 \begin{enumerate}
 	\item Possible events are kept in an event structure. Before the sweep, this is initialised with all the line segment
 		endpoints. The structure itself is a priority queue which sorts its elements by their $x$ coordinate in ascending order.
-		In the implementation we use the \lstinline[language=C++]|std::priority_queue| of the C++ standard library.
+		In the implementation we use the \lstinline[language=C++]|std::priority_queue| class of the C++ standard library.
 	\item The line sweep is performed by iteratively taking the top element from the event structure's priority queue until
 		the latter is empty, in which case the algorithm terminates.
 		Depending on the type of the current element on top of the event structure, the following actions are performed:
@@ -223,7 +223,7 @@ is less than the sum of their radii, $r_1$ and $r_2$, respectively:
 Having determined a bitmap representation of allowed and forbidden regions in the angular configuration space,
 we now need to trace the boundary contour between these regions.
 To this end we use the radial sweep algorithm \cite{web_radial_sweep} whose implementation can be found
-in the function \lstinline[language=C++]|trace_boundary| located in the file \lstinline|./src/libs/img.h|.
+in the function \lstinline[language=C++]|trace_boundary()| located in the file \lstinline|./src/libs/img.h|.
 
 The radial sweep algorithm works as given below, following the descriptions in Ref. \cite{web_radial_sweep}:
 \begin{enumerate}
@@ -250,7 +250,7 @@ quantified contour. The situation is shown in panel (b).
 After creating the line segments from the traced contour lines, they have to be cleaned up and simplified,
 because the quantity of superfluous vertices would considerably slow down the generation of the Voronoi 
 diagram in one of the next steps of the algorithm.
-In the function \lstinline[language=C++]|simplify_contour|, which resides in the file \lstinline|./src/libs/hull.h|,
+In the function \lstinline[language=C++]|simplify_contour()|, which resides in the file \lstinline|./src/libs/hull.h|,
 we perform two simplification steps:
 
 First, ``staircase artefacts'' are removed. These kinds of artefacts originate from tracing diagonal or sloped lines.
@@ -268,15 +268,15 @@ involving the previous and the next vertex, respectively, are below a given smal
 
 
 \begin{figure*}
-	\includegraphics[width = 0.5 \textwidth]{figures/simplification_contour}
+	\includegraphics[width = 0.49 \textwidth]{figures/simplification_contour}
 	\hspace{0.1cm}
-	\includegraphics[width = 0.5 \textwidth]{figures/simplification_linesegments}
+	\includegraphics[width = 0.49 \textwidth]{figures/simplification_linesegments}
 
 	\vspace{0.25cm}
 
-	\includegraphics[width = 0.5 \textwidth]{figures/simplification_step1}
+	\includegraphics[width = 0.49 \textwidth]{figures/simplification_step1}
 	\hspace{0.1cm}
-	\includegraphics[width = 0.5 \textwidth]{figures/simplification_step2}
+	\includegraphics[width = 0.49 \textwidth]{figures/simplification_step2}
 	\caption{Typical example of a contour line segment generation and simplification.
 		Panel (a): A contour line (green) separating two regions (blue and red) that has been found using the tracing algorithm (section \ref{sec:contourtracing}).
 		Panel (b): Vertices (while circles) are generated for each pixel and connected by line segments (black lines).
@@ -336,7 +336,7 @@ None of the above is feasible for the present project, though: \textit{VRONI} is
 suitable open-source license.
 The opposite is true for \textit{OpenVoronoi}: It is available under an open-source license, but our first tests
 deemed it too unstable for use in a production-quality software. The source code for our test can be found in
-the function \lstinline[language=C++]|calc_voro_ovd|, which resides in file \lstinline|./src/libs/hull.h|.
+the function \lstinline[language=C++]|calc_voro_ovd()|, which resides in file \lstinline|./src/libs/hull.h|.
 The source code for the test tool itself is located in: \lstinline|./src/tools/lines.cpp|.
 \textit{VoroLS} is stable and does even handle intersecting lines, but is a \textit{Java}
 software, not a library, and is not under an open-source license.
@@ -419,10 +419,10 @@ to the Voronoi bisectors. This graph is used in the path-finding step described 
 section \ref{sec:exepath}.
 
 The collection of normal and inverted regions is calculated in the member function
-\lstinline[language=C++]|CalculateLineSegments| of the \lstinline[language=C++]|PathsBuilder|
+\lstinline[language=C++]|CalculateLineSegments()| of the \lstinline[language=C++]|PathsBuilder|
 class, which resides in file \lstinline|./src/core/PathsBuilder.cpp|. 
 The Voronoi diagram of these regions is calculated in the member function
-\lstinline[language=C++]|PathsBuilder::CalculateVoronoi|.
+\lstinline[language=C++]|PathsBuilder::CalculateVoronoi()|.
 It calls the backend function \lstinline[language=C++]|calc_voro|, which is part
 of the library and can be found in the file \lstinline|./src/libs/voronoi_lines.h|.
 
@@ -496,8 +496,17 @@ To this end we make use of the graph representation of the Voronoi diagram that 
 in a previous step (section \ref{sec:polygonal_voronoi_diagram}) together with the diagram.
 The graph's vertices and edges correspond to the Voronoi vertices and edges, respectively,
 and a possible optimal path is the shortest distance between the start and target coordinates.
-The shortest distance can readily be calculated using Dijkstra's algorithm \cite[unit 4, p. 17]{FUH_algo2021},
-which we show in Fig. \ref{fig:linesegs_path}.
+The shortest distance can readily be calculated using Dijkstra's algorithm \cite{wiki_dijkstra},
+which is shown in Fig. \ref{fig:linesegs_path}.
+
+Specifically, our implementation of Dijkstra's algorithm, which can be found in the function 
+\lstinline[language=C++]|dijk()| of the file \lstinline|./src/libs/graphs.h|, is based on the pseudo-code 
+given in \cite[unit 4, p. 17]{FUH_algo2021}. Dijkstra's algorithm is at its core a breath-first
+search of a graph, where the next neighbour vertex to visit is chosen by the lowest weight
+factor of the connecting edges. In the present implementation, this search for the next neighbour
+to visit is performed using a heap data structure, whose construction and query is performed
+using the standard C++ functions \lstinline[language=C++]|std::make_heap()| and 
+\lstinline[language=C++]|std::pop_heap()|, respectively.
 
 
 \label{sec:voronoi}
