@@ -29,15 +29,17 @@ Details on the scripting interface can be found in section \ref{sec:scripting}.
 
 
 
-
 \section{Graphical User Interface}
 \label{sec:gui}
 
-The software's main graphical user interface (GUI), as it is depicted in Fig. \ref{fig:gui},
-is based on the \textit{Qt} framework \cite{web_Qt}, which allows for an easy and rapid
-cross-platform GUI development in \textit{C++}. We support both current releases of \textit{Qt},
-namely version 5 and version 6.
-
+The software's main graphical user interface (GUI), for which a typical session is depicted
+in Fig. \ref{fig:gui}, is based on the \textit{Qt} framework \cite{web_Qt}, which allows
+for an easy and rapid cross-platform GUI development in \textit{C++}. We support both
+current releases of \textit{Qt}, namely version 5 and version 6.
+Similar to the core calculation module, the GUI is written in the recent \textit{C++20}
+standard \cite{ISOCPP20} of the C++ language family \cite{Stroustrup2008, Stroustrup2018}.
+The source code of the GUI module can be found in the directory \lstinline|./src/gui| of the
+source repository, see chapter \ref{ch:online} for more information.
 
 \begin{figure}[htb]
 		\begin{center}
@@ -50,6 +52,18 @@ namely version 5 and version 6.
 		and the wall segments, can be moved or manipulated using the mouse.
 		\label{fig:gui}}
 \end{figure}
+
+The GUI allows the set-up of an instrument configuration and a crystal $UB$ matrix from a
+sample definition according to the formalism described in chapter \ref{ch:xtal}.
+All calculation is performed in the core module, which is described in chapter \ref{ch:impl}
+and to which the GUI is just that, an interface. By the same token, the core module itself is
+completely independent of the GUI, or any other interface code, and the full functionality
+of the software, except GUI-specific visualisations, is equally accessible from the other
+alternative interface modules, e.g. the \textit{Python} interface described in section
+\ref{sec:scripting}, or the raw \textit{C++} library interface. Graphical display of the
+instrument and the walls as well as the interaction with these elements is performed
+using \textit{OpenGL} \cite{web_OpenGL} via Qt's \lstinline[language=C++]|QOpenGLWidget|
+\cite{web_QOpenGLWidget} class.
 
 
 
