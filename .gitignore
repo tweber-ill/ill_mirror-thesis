@@ -43,5 +43,9 @@ build/**
 *.blg
 *.fls
 *.fdb_latexmk
+*.lof
+*.lol
+*.lot
 
 *.pdf
+!figures/pyworkflow.pdf

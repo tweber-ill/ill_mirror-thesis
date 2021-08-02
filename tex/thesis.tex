@@ -22,8 +22,17 @@
 \usepackage{listings}
 \usepackage[numbib, chapter]{tocbibind}
 \usepackage[colorlinks=true, linkcolor=black, citecolor=blue, urlcolor=blue, unicode=true]{hyperref}
+
 \usepackage[a4paper]{geometry}
 \geometry{tmargin=2.5cm, bmargin=2.5cm, lmargin=2cm, rmargin=2cm}
+
+\usepackage{float}
+%\floatstyle{plain}
+%\floatstyle{boxed}
+\floatstyle{ruled}
+\newfloat{listing}{htb}{lol}[chapter]
+\floatname{listing}{Listing}
+
 
 \renewcommand{\arraystretch}{1.25}
 
@@ -77,6 +86,14 @@
 %\bibliographystyle{ieeetr}
 \bibliographystyle{libs/thesis_bibstyle.bst}
 \bibliography{tex/\jobname.bib}
+
+% TODO: add chapter letters
+\listoffigures{}
+%\listoftables{}
+\addcontentsline{toc}{chapter}{List of Listings}
+\listof{listing}{List of Listings}
+%\lstlistoflistings{}
+
 % ====================================================================================================================================
 
 \end{document}

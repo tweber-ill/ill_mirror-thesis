@@ -8,28 +8,27 @@
 \chapter{User Interfaces}
 \label{ch:gui}
 
-The software has been realised in a modular fashion, it comprises a core
-and a library module (see chapter \ref{ch:impl}), which can be easily linked 
-into external C++ applications. Such a library usage will be important in the
-future when we plan to utilise the software as a plug-in module to the instrument
-control software \textit{NOMAD} \cite{web_NOMAD} that is employed at the Institut 
-Laue-Langevin.
+The software of the present work has been realised in a modular fashion, it comprises a core
+module (see chapter \ref{ch:impl}), which can be easily used as a library and linked into 
+external C++ applications. More details on the core library can be found in section \ref{sec:library}.
+Such a library usage will be important in the future when we plan to utilise the software as a 
+plug-in module to the instrument control software \textit{NOMAD} \cite{web_NOMAD} that is 
+employed at the Institut Laue-Langevin.
 
-Furthermore, a graphical user interface (GUI) has been implemented for a visual
-and interactive representation of the instrument and the underlying algorithms.
+Furthermore, a graphical user interface (GUI) has been implemented for a visual and interactive 
+representation of the instrument and the underlying algorithms. 
 The GUI is described in detail in section \ref{sec:gui}.
 
 Finally, the software allows scripting via \textit{Python} \cite{Rossum2011, web_python}. 
-Apart from simply setting up a workflow and plotting the results, the \textit{Python}
-interface will allow the usage of the software in \textit{Python}-based instrument
-control systems such as \textit{NICOS} \cite{web_NICOS}, which is used at the 
-Forschungsreaktor M\"unchen II (FRM-II). 
+Apart from simply setting up a workflow and plotting the results, the \textit{Python} interface 
+will allow the usage of the software in \textit{Python}-based instrument control systems such as 
+\textit{NICOS} \cite{web_NICOS}, which is used at the Forschungsreaktor M\"unchen II (FRM-II). 
 Details on the scripting interface can be found in section \ref{sec:scripting}.
 
 
 
 
-\section{Graphical User Interface}
+\section{Graphical user interface}
 \label{sec:gui}
 
 The software's main graphical user interface (GUI), for which a typical session is depicted
@@ -45,7 +44,7 @@ source repository, see chapter \ref{ch:online} for more information.
 		\begin{center}
 			\includegraphics[width = 1 \textwidth]{figures/gui}
 		\end{center}
-	\caption{Main GUI. Here, instrument and sample crystal properties can be set up,
+	\caption[Main program GUI.]{Main GUI. Here, instrument and sample crystal properties can be set up,
 		walls can be added and moved and paths around them be calculated.
 		The central view provides a three-dimensional visualisation of the instrument
 		configuration and is fully dynamic: Every element, including the instrument
@@ -71,7 +70,7 @@ using \textit{OpenGL} \cite{web_OpenGL} via Qt's \lstinline[language=C++]|QOpenG
 		\begin{center}
 			\includegraphics[width = 0.66 \textwidth]{figures/gui_configspace}
 		\end{center}
-	\caption{Angular configuration space and path calculation. The figure plots all
+	\caption[Configuration space dialog.]{Angular configuration space and path calculation. The figure plots all
 	possible instrument positions for the monochromator and sample scattering angles,
 	$2\theta_M$ and $2\theta_S$, respectively. Forbidden positions are shown in red.
 	These can be invalid angles as well as collisions of the instrument with walls
@@ -84,6 +83,263 @@ using \textit{OpenGL} \cite{web_OpenGL} via Qt's \lstinline[language=C++]|QOpenG
 
 
 
+\section{C++ library}
+\label{sec:library}
 
-\section{Python Scripting Interface}
+
+
+\section{Python scripting interface}
 \label{sec:scripting}
+
+In order to allow for a simple inclusion of the core module (see section \ref{sec:library} and 
+chapter \ref{ch:impl}) of the present software in other tools, a scripting interface has been developed 
+using the interface generator \textit{SWIG} \cite{web_swig}. 
+\textit{SWIG} is a tool which parses \textit{C} or \textit{C++} header files and creates a native interface 
+for several possible scripting languages, of which we opted for \textit{Python} \cite{Rossum2011, web_python} 
+as it has become the most popular in neutron science over the last decade.
+As the core module already has the structure of a library, the effort to offer scripting functionality
+was minimal. Only a few helper functions had to be included in several classes, because \textit{SWIG}
+is not yet fully \textit{C++20} compliant and had some problems with new language features such as 
+template concepts \cite{TODO}.
+The \textit{SWIG} interface definition can be found in the file \lstinline|./scripting/taspaths.i| of
+the source repository.
+
+An example of the full workflow of loading an instrument definition file, creating a path mesh and finding
+the path from a start position in crystal coordinates to a target position is given in listings \ref{lst:pyworkflow1}, \ref{lst:pyworkflow2} and \ref{lst:pyworkflow3}.
+The results of the script are shown in Fig. \ref{fig:pyworkflow}, where we employ \textit{Matplotlib} \cite{web_matplotlib} to plot the calculated path and the obstacles in configuration space.
+
+\begin{figure}[htb]
+		\begin{center}
+			\includegraphics[width = 0.66 \textwidth]{figures/pyworkflow}
+		\end{center}
+	\caption[Python workflow results.]{Results from the \textit{Python} workflow example of listings
+		\ref{lst:pyworkflow1}, \ref{lst:pyworkflow2} and \ref{lst:pyworkflow3}, directly plotted 
+		in \textit{Python} using \textit{Matplotlib} \cite{web_matplotlib}.
+		The obstacles are shown as red regions, the calculated instrument path is shown as a blue curve.
+		\label{fig:pyworkflow}}
+\end{figure}
+
+
+\begin{listing}[htb]
+	\begin{lstlisting} [language = Python, 
+		basicstyle = {\scriptsize},
+		breaklines = true, tabsize = 4,
+		numbers = left, firstnumber = 1, numberstyle={\scriptsize}]
+import sys
+import os
+import math as m
+
+cwd = os.getcwd()
+sys.path.append(cwd)
+
+# import native C++ core module
+import taspaths as tas
+
+# -----------------------------------------------------------------------------
+# helper functions
+# -----------------------------------------------------------------------------
+def error(msg):
+	print("Error: %s" % msg)
+	exit(-1)
+
+def warning(msg):
+	print("Warning: %s" % msg)
+# -----------------------------------------------------------------------------
+
+# -----------------------------------------------------------------------------
+# options
+# -----------------------------------------------------------------------------
+write_pathmesh = False
+write_path = False
+show_plot = True
+file_name = "../res/instrument.taspaths"
+# -----------------------------------------------------------------------------
+
+# -----------------------------------------------------------------------------
+# load instrument
+# -----------------------------------------------------------------------------
+print("Loading instrument definition...")
+
+# create the instrument space and load an instrument definition
+instrspace = tas.InstrumentSpace()
+[file_ok, file_date] = tas.InstrumentSpace.load(file_name, instrspace)
+
+if file_ok:
+	print("Loaded \"%s\", dated %s." % (file_name, file_date))
+else:
+	error("Could not load \"%s\"." % (file_name))
+
+print("Instrument definition loaded.\n")
+# -----------------------------------------------------------------------------
+
+# -----------------------------------------------------------------------------
+# set-up a sample single-crystal
+# -----------------------------------------------------------------------------
+tascalc = tas.TasCalculator()
+tascalc.SetScatteringSenses(True, False, True)
+tascalc.SetSampleLatticeConstants(5, 5, 5)
+tascalc.SetSampleLatticeAngles(90, 90, 90, True)
+tascalc.UpdateB()
+tascalc.UpdateUB()
+# -----------------------------------------------------------------------------
+	\end{lstlisting}
+	\caption[Python workflow example 1/3.]{Script showing an example workflow in \textit{Python}.
+	Part 1 of 3: Set-up of the instrument and the sample crystal.
+	\label{lst:pyworkflow1}}
+\end{listing}
+
+
+
+\begin{listing}[htb]
+	\begin{lstlisting} [language = Python, 
+		basicstyle = {\scriptsize},
+		breaklines = true, tabsize = 4,
+		numbers = left, firstnumber = 58, numberstyle={\scriptsize}]
+# -----------------------------------------------------------------------------
+# build path mesh
+# -----------------------------------------------------------------------------
+print("Building path mesh...")
+
+# set instrument scattering senses
+mem = tas.MemManager()
+senses = mem.NewRealArray(3)
+mem.SetRealArray(senses, 0, 1)
+mem.SetRealArray(senses, 1, -1)
+mem.SetRealArray(senses, 2, 1)
+
+# create the paths builder object
+builder = tas.PathsBuilder()
+builder.AddConsoleProgressHandler()
+builder.SetInstrumentSpace(instrspace)
+builder.SetScatteringSenses(senses)
+print("Path builder uses %d threads." % builder.GetMaxNumThreads())
+
+# angular ranges to probe
+angle_padding = 4.
+a2_delta = 1./180.*m.pi
+a4_delta = 2./180.*m.pi
+a2_begin = 0. - angle_padding*a2_delta
+a2_end = m.pi + angle_padding*a2_delta
+a4_begin = -m.pi - angle_padding*a4_delta
+a4_end = m.pi + angle_padding*a4_delta
+
+if not builder.CalculateConfigSpace(
+	a2_delta, a4_delta,
+	a2_begin, a2_end,
+	a4_begin, a4_end):
+	error("Angular configuration space could not be calculated.")
+
+if not builder.CalculateWallContours(True, False):
+	error("Obstacle contours could not be calculated.")
+
+if not builder.CalculateLineSegments():
+	error("Line segments could not be calculated.")
+
+if not builder.CalculateVoronoi(False):
+	error("Voronoi diagram could not be calculated.")
+
+print("Finished building path mesh.\n")
+# -----------------------------------------------------------------------------
+
+# -----------------------------------------------------------------------------
+# set-up the start and target coordinates of a path
+# -----------------------------------------------------------------------------
+print("Calculating path...")
+
+tascalc.SetKf(1.4)
+start_angles = tascalc.GetAngles(0.5, 0., 0., 1.)
+target_angles = tascalc.GetAngles(1.5, -0.5, 0., 2.5)
+
+# take absolute angles
+start_angles.monoXtalAngle = abs(start_angles.monoXtalAngle)
+start_angles.sampleXtalAngle = abs(start_angles.sampleXtalAngle)
+start_angles.sampleScatteringAngle = abs(start_angles.sampleScatteringAngle)
+target_angles.monoXtalAngle = abs(target_angles.monoXtalAngle)
+target_angles.sampleXtalAngle = abs(target_angles.sampleXtalAngle)
+target_angles.sampleScatteringAngle = abs(target_angles.sampleScatteringAngle)
+
+print("Start angles: a1 = %.2f deg, a5 = %.2f deg, a3 = %.2f deg, a4 = %.2f deg." % (
+	start_angles.monoXtalAngle / m.pi*180.,
+	start_angles.anaXtalAngle / m.pi*180.,
+	start_angles.sampleXtalAngle / m.pi*180.,
+	start_angles.sampleScatteringAngle / m.pi*180.))
+
+print("Target angles: a1 = %.2f deg, a5 = %.2f deg, a3 = %.2f deg, a4 = %.2f deg." % (
+	target_angles.monoXtalAngle / m.pi*180.,
+	target_angles.anaXtalAngle / m.pi*180.,
+	target_angles.sampleXtalAngle / m.pi*180.,
+	target_angles.sampleScatteringAngle / m.pi*180.))
+# -----------------------------------------------------------------------------
+	\end{lstlisting}
+	\caption[Python workflow example 2/3.]{Script showing an example workflow in \textit{Python}.
+	Part 2 of 3: Calculation of the path mesh and the start and target positions from their crystal coordinates.
+	\label{lst:pyworkflow2}}
+\end{listing}
+
+
+\begin{listing}[htb]
+	\begin{lstlisting} [language = Python, 
+		basicstyle = {\scriptsize},
+		breaklines = true, tabsize = 4,
+		numbers = left, firstnumber = 133, numberstyle={\scriptsize}]
+# -----------------------------------------------------------------------------
+# find path
+# -----------------------------------------------------------------------------
+path = builder.FindPath(
+		start_angles.monoXtalAngle * 2., start_angles.sampleScatteringAngle,
+		target_angles.monoXtalAngle * 2., target_angles.sampleScatteringAngle)
+if not path.ok:
+	error("No path could be found.")
+
+builder.SetSubdivisionLength(0.5)
+vertices = builder.GetPathVerticesAsPairs(path, True, True)
+
+print("Finished calculating path.\n")
+# -----------------------------------------------------------------------------
+
+# -----------------------------------------------------------------------------
+# output and plotting
+# -----------------------------------------------------------------------------
+# write the path mesh vertices to a file
+if write_pathmesh:
+	if not builder.SaveToLinesTool("lines.xml"):
+		warning("Could not save line segment diagram.")
+
+# write the path vertices to a file
+if write_path:
+	with open("path.dat", "w") as datafile:
+		for vertex in vertices:
+			datafile.write("%.4f %.4f\n" % (vertex[0], vertex[1]))
+
+# plot the angular configuration space
+if show_plot:
+	import matplotlib.pyplot as plt
+
+	# plot obstacles
+	numgroups = builder.GetNumberOfLineSegmentRegions()
+	print("Number of regions: %d." % numgroups)
+	for regionidx in range(numgroups):
+		region = builder.GetLineSegmentRegionAsArray(regionidx)
+		x1, y1, x2, y2 = zip(*region)
+		plt.fill(x1, y1, "-", linewidth = 1,
+			fill = not builder.IsRegionInverted(regionidx), 
+			color = "#ff0000")
+
+	# plot path
+	x, y = zip(*vertices)
+	plt.xlabel("Sample Scattering Angle 2\u03b8_S (deg)")
+	plt.ylabel("Monochromator Scattering Angle 2\u03b8_M (deg)")
+	plt.plot(x, y, "-", linewidth=2)
+
+	plt.show()
+# -----------------------------------------------------------------------------
+
+	\end{lstlisting}
+	\caption[Python workflow example 3/3.]{Script showing an example workflow in \textit{Python}.
+	Part 3 of 3: Calculation of the path between the start end target positions and plotting.
+	\label{lst:pyworkflow3}}
+\end{listing}
+
+
+\section{Summary}
+TODO

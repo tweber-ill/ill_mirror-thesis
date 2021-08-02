@@ -26,7 +26,8 @@ all: thesis.pdf
 clean:
 	find . \( -name "*.aux" -o -name "*.out" \
 		-o -name "*.bbl" -o -name "*.blg" \
-		-o -name "*.toc" -o -name "*.log" \) \
+		-o -name "*.toc" -o -name "*.log" \
+		-o -name "*.lof" -o -name "*.lol" -o -name "*.lot" \) \
 			-exec rm -fv {} \;
 	rm -fv thesis.pdf
 

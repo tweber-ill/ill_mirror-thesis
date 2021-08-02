@@ -55,7 +55,8 @@ where $n$ is the number of line segments \cite[Theorem 6.3, p. 133]{Berg2008}.
 	\includegraphics[width = 0.4 \textwidth]{figures/pointrobot_walls.pdf}
 	\hspace{1 cm}
 	\includegraphics[width = 0.4 \textwidth]{figures/pointrobot_walls_trapezoids.pdf}
-	\caption{Left panel: A point-like robot has to find a way around line segments which represent obstacles. Right panel: 
+	\caption[Path-finding using trapezoid maps.]{
+		Left panel: A point-like robot has to find a way around line segments which represent obstacles. Right panel: 
 		The algorithm outlined in Ref. \cite[p. 289]{Berg2008} constructs a trapezoid map and moves the robot on the
 		shortest path from the centre of one trapezoid to the centre of the edge connecting to the next trapezoid, to the
 		centre of that trapezoid, and so forth (blue arrows).}
@@ -81,7 +82,8 @@ This approach is described in detail in \cite[pp. 247-251]{FUH_geo2020}, which w
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width = 0.4 \textwidth]{figures/pointrobot_walls_voronoi.pdf}
-	\caption{The accessible configuration space is subdivided into the Voronoi regions of the obstacles (coloured). The optimal
+	\caption[Path-finding using Voronoi diagrams.]{
+		The accessible configuration space is subdivided into the Voronoi regions of the obstacles (coloured). The optimal
 		path (blue arrows) in the sense that it keeps the robot at maximum distance from any obstacle, has it move along the 
 		Voronoi edges.}
 	\label{fig:robot_voronoi}
@@ -136,7 +138,8 @@ simply-connected.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width = 0.95 \textwidth]{figures/tas_wall.jpg}
-	\caption{An obstacle as it appears in the instrument space (left) and in the angular configuration space (right). 
+	\caption[TAS angular configuration space.]{
+		An obstacle as it appears in the instrument space (left) and in the angular configuration space (right). 
 		In the configuration space, allowed instrument angular positions are shown in white, forbidden positions in black. 
 		The outer areas of disallowed positions are given either by collisions of the instrument with the outer walls or 
 		with itself.}
