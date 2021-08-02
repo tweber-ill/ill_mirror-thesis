@@ -111,9 +111,10 @@ instances of its classes are generated for the individual functionalities.
 Specifically, the instrument space class from chapter \ref{sec:tasmodel}, which is the representation of the instrument 
 and which is furthermore responsible for the local instrument axis coordinate systems, collision detection, as well as 
 loading and saving of instrument configurations, is created on line 37. 
-Next, the triple-axis and single-crystal calculator class from chapter \ref{ch:xtal}) is created on line 51 and is 
+Next, the triple-axis and single-crystal calculator class from chapter \ref{ch:xtal} is created on line 51 and is 
 used to set-up the instrument scattering senses and a single-crystal coordinate system.
-Finally, the path builder class is created on line 64 and used in the rest of the script to calculate the path mesh as
+Finally, the path builder class, which has been described in chapter \ref{sec:buildpath}, is created on line 64 
+and used in the rest of the script to calculate the path mesh as
 well as the concrete path between the given crystal coordinate points.
 The results of the script are shown in Fig. \ref{fig:pyworkflow}, where we employ \textit{Matplotlib} \cite{web_matplotlib} 
 to plot the calculated path and the obstacles in configuration space.
