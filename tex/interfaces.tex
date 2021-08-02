@@ -96,17 +96,27 @@ chapter \ref{ch:impl}) of the present software in other tools, a scripting inter
 using the interface generator \textit{SWIG} \cite{web_swig}. 
 \textit{SWIG} is a tool which parses \textit{C} or \textit{C++} header files and creates a native interface 
 for several possible scripting languages, of which we opted for \textit{Python} \cite{Rossum2011, web_python} 
-as it has become the most popular in neutron science over the last decade.
+as it has become the most popular programming language in neutron science over the last decade.
 As the core module already has the structure of a library, the effort to offer scripting functionality
 was minimal. Only a few helper functions had to be included in several classes, because \textit{SWIG}
 is not yet fully \textit{C++20} compliant and had some problems with new language features such as 
 template concepts \cite{TODO}.
-The \textit{SWIG} interface definition can be found in the file \lstinline|./scripting/taspaths.i| of
-the source repository.
+The \textit{SWIG} interface definition, which maps the \textit{C++} classes to corresponding Python classes of the same name, 
+can be found in the file \lstinline|./scripting/taspaths.i| of the source repository.
 
 An example of the full workflow of loading an instrument definition file, creating a path mesh and finding
 the path from a start position in crystal coordinates to a target position is given in listings \ref{lst:pyworkflow1}, \ref{lst:pyworkflow2} and \ref{lst:pyworkflow3}.
-The results of the script are shown in Fig. \ref{fig:pyworkflow}, where we employ \textit{Matplotlib} \cite{web_matplotlib} to plot the calculated path and the obstacles in configuration space.
+The native core module is imported into \textit{Python} as the name \lstinline[language=C++]|tas| on line 9 of the script,
+instances of its classes are generated for the individual functionalities.
+Specifically, the instrument space class from chapter \ref{sec:tasmodel}, which is the representation of the instrument 
+and which is furthermore responsible for the local instrument axis coordinate systems, collision detection, as well as 
+loading and saving of instrument configurations, is created on line 37. 
+Next, the triple-axis and single-crystal calculator class from chapter \ref{ch:xtal}) is created on line 51 and is 
+used to set-up the instrument scattering senses and a single-crystal coordinate system.
+Finally, the path builder class is created on line 64 and used in the rest of the script to calculate the path mesh as
+well as the concrete path between the given crystal coordinate points.
+The results of the script are shown in Fig. \ref{fig:pyworkflow}, where we employ \textit{Matplotlib} \cite{web_matplotlib} 
+to plot the calculated path and the obstacles in configuration space.
 
 \begin{figure}[htb]
 		\begin{center}
@@ -200,18 +210,11 @@ tascalc.UpdateUB()
 # -----------------------------------------------------------------------------
 print("Building path mesh...")
 
-# set instrument scattering senses
-mem = tas.MemManager()
-senses = mem.NewRealArray(3)
-mem.SetRealArray(senses, 0, 1)
-mem.SetRealArray(senses, 1, -1)
-mem.SetRealArray(senses, 2, 1)
-
 # create the paths builder object
 builder = tas.PathsBuilder()
 builder.AddConsoleProgressHandler()
 builder.SetInstrumentSpace(instrspace)
-builder.SetScatteringSenses(senses)
+builder.SetScatteringSenses(tascalc.GetScatteringSenses())
 print("Path builder uses %d threads." % builder.GetMaxNumThreads())
 
 # angular ranges to probe
@@ -281,7 +284,7 @@ print("Target angles: a1 = %.2f deg, a5 = %.2f deg, a3 = %.2f deg, a4 = %.2f deg
 	\begin{lstlisting} [language = Python, 
 		basicstyle = {\scriptsize},
 		breaklines = true, tabsize = 4,
-		numbers = left, firstnumber = 133, numberstyle={\scriptsize}]
+		numbers = left, firstnumber = 126, numberstyle={\scriptsize}]
 # -----------------------------------------------------------------------------
 # find path
 # -----------------------------------------------------------------------------
