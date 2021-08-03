@@ -27,6 +27,45 @@ Details on the scripting interface can be found in section \ref{sec:scripting}.
 
 
 
+\section{Core module and C++ library}
+\label{sec:library}
+The core module comprises all necessary calculation as well as input and output sub-modules. 
+Here, we only describe the latter two, since the computation functionality of the core module 
+has already been treated in chapter \ref{ch:impl}.
+
+The instrument configuration is read from an \textit{XML} file whose hierarchical structure
+mirrors the internal data organisation of the core module and its class hierarchy.
+The \textit{XML} file is parsed using the \textit{Boost.PropertyTree} library \cite{web_boost_proptree}
+and objects are created of the respective classes once the corresponding section in the \textit{XML}
+structure is discovered. An \textit{XML} section is handed down to the corresponding \textit{C++} object,
+so that each object only receives the portions of the \textit{XML} configuration it is responsible for.
+Editing the \textit{XML} instrument configurations can be done using the GUI module of section \ref{sec:gui}.
+
+While the central \lstinline[language=C++]|PathBuilder| class offers getter functions for all intermediate
+data that is generated during each step of the calculation workflow, the final results are output using
+the classes derived from the purely virtual class \lstinline[language=C++]|PathsExporterBase| that resides
+in the files \lstinline|./src/core/PathsExporter[.h,.cpp]|. Currently, three possible output classes
+are available:
+\begin{itemize}
+	\item \lstinline[language=C++]|PathsExporterRaw|, which outputs the vertices of the calculated 
+		final instrument path in a raw text format.
+	\item \lstinline[language=C++]|PathsExporterNomad|, which writes out commands for driving the
+		motors of instruments which are controlled by the \textit{NOMAD} software \cite{web_NOMAD}.
+	\item \lstinline[language=C++]|PathsExporterNicos|, which generates \textit{Python} code to
+		be used for driving the instrument using the \textit{NICOS} \cite{web_NICOS} control system.
+\end{itemize}
+For easy extensibility and to isolate the \lstinline[language=C++]|PathBuilder| class from the output
+code, the output class hierarchy is realised using the Visitor pattern \cite{wiki_visitor}, where
+the \lstinline[language=C++]|PathBuilder| accepts the output base class and dispatches to the
+desired child object.
+
+The core module functionality is self-contained and does, for instance, not depend on any GUI code.
+It is therefore straightforward to statically or dynamically link it to external applications which 
+wish to use the path-finding functionality. To avoid exposing the user to the complexities of 
+the \textit{C++} language, a more comfortable approach is provided by both the graphical as well 
+as the \textit{Python} interface, which are described in the following sections.
+
+
 
 \section{Graphical user interface}
 \label{sec:gui}
@@ -83,17 +122,13 @@ using \textit{OpenGL} \cite{web_OpenGL} via Qt's \lstinline[language=C++]|QOpenG
 
 
 
-\section{C++ library}
-\label{sec:library}
-
 
 
 \section{Python scripting interface}
 \label{sec:scripting}
 
-In order to allow for a simple inclusion of the core module (see section \ref{sec:library} and 
-chapter \ref{ch:impl}) of the present software in other tools, a scripting interface has been developed 
-using the interface generator \textit{SWIG} \cite{web_swig}. 
+In order to allow for a simple inclusion of the core module (see section \ref{sec:library}) of the present 
+software in other tools, a scripting interface has been developed using the interface generator \textit{SWIG} \cite{web_swig}. 
 \textit{SWIG} is a tool which parses \textit{C} or \textit{C++} header files and creates a native interface 
 for several possible scripting languages, of which we opted for \textit{Python} \cite{Rossum2011, web_python} 
 as it has become the most popular programming language in neutron science over the last decade.
@@ -215,7 +250,7 @@ print("Building path mesh...")
 builder = tas.PathsBuilder()
 builder.AddConsoleProgressHandler()
 builder.SetInstrumentSpace(instrspace)
-builder.SetScatteringSenses(tascalc.GetScatteringSenses())
+builder.SetTasCalculator(tascalc)
 print("Path builder uses %d threads." % builder.GetMaxNumThreads())
 
 # angular ranges to probe
