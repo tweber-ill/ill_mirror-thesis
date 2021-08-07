@@ -71,7 +71,7 @@ as the \textit{Python} interface, which are described in the following sections.
 \label{sec:gui}
 
 The software's main graphical user interface (GUI), for which a typical session is depicted
-in Fig. \ref{fig:gui}, is based on the \textit{Qt} framework \cite{web_Qt}, which allows
+in Fig. \ref{fig:gui}, is based on the \textit{Qt} framework \cite{web_Qt}, that allows
 for an easy and rapid cross-platform GUI development in \textit{C++}. We support both
 current releases of \textit{Qt}, namely version 5 and version 6.
 Similar to the core calculation module, the GUI is written in the recent \textit{C++20}
@@ -88,20 +88,83 @@ source repository, see chapter \ref{ch:online} for more information.
 		The central view provides a three-dimensional visualisation of the instrument
 		configuration and is fully dynamic: Every element, including the instrument
 		and the wall segments, can be moved or manipulated using the mouse.
+		See the text for a description of each interface element.
 		\label{fig:gui}}
 \end{figure}
 
-The GUI allows the set-up of an instrument configuration and a crystal $UB$ matrix from a
-sample definition according to the formalism described in chapter \ref{ch:xtal}.
-All calculation is performed in the core module, which is described in chapter \ref{ch:impl}
-and to which the GUI is just that, an interface. By the same token, the core module itself is
-completely independent of the GUI, or any other interface code, and the full functionality
-of the software, except GUI-specific visualisations, is equally accessible from the other
-alternative interface modules, e.g. the \textit{Python} interface described in section
-\ref{sec:scripting}, or the raw \textit{C++} library interface. Graphical display of the
-instrument and the walls as well as the interaction with these elements is performed
-using \textit{OpenGL} \cite{web_OpenGL} via Qt's \lstinline[language=C++]|QOpenGLWidget|
-\cite{web_QOpenGLWidget} class.
+The functions of the individual control elements of the main GUI, which are marked as (a)-(f)
+is explained in the following sections. Each of the panels corresponds to a specific
+functionality. Hereby, all calculation is performed in the core module, which is described in
+chapter \ref{ch:impl} and to which the GUI is just that, an interface.
+By the same token, the core module itself is completely independent of the GUI, or any other
+interface code, and the full functionality of the software, except GUI-specific visualisations,
+is equally accessible from the other alternative interface modules, e.g. the \textit{Python}
+interface described in section \ref{sec:scripting}, or the raw \textit{C++} library interface.
+
+
+\subsection{Crystal definition dock window}
+\begin{wrapfigure}{r}{0.46 \textwidth}
+	\vspace{-0.5cm}
+	\includegraphics[width = 0.45 \textwidth]{figures/gui_xtal}
+	\caption[Crystal definition window]{Crystal definition window (a).
+		\label{fig:gui_xtal}}
+\end{wrapfigure}
+
+Dock window (a) of the main GUI (Fig. \ref{fig:gui}) sets up the crystal $UB$ matrix
+from a sample definition according to the formalism described in chapter \ref{ch:xtal}.
+The window is magnified in Fig. \ref{fig:gui_xtal}. As seen before, this matrix transforms
+the crystal coordinate system into the instrument's laboratory coordinate system.
+The necessary information for the $B$ matrix comprise the axis lengths of the sample lattice's
+unit cell as well as the axis angles for the non-Cartesian crystal coordinate system.
+The $UB$ matrix rotates the crystal coordinate system so that the $x$ and $y$ axes correspond
+to the 2-d scattering plane accessible by the instrument, see chapter \ref{ch:xtal}
+for more information.
+Finally, the $B$ and $UB$ matrices for the entered crystal information are shown in the
+floating window right of (a).
+
+
+\subsection{Instrument properties dock window}
+%\begin{wrapfigure}{l}{0.26 \textwidth}
+%	\vspace{-0.5cm}
+%	\includegraphics[width = 0.25 \textwidth]{figures/gui_instrument}
+%	\caption[Instrument properties window]{Crystal properties window (b).
+%		\label{fig:gui_xtal}}
+%\end{wrapfigure}
+
+
+\subsection{Main workspace}
+
+The largest portion of the screen is reserved for the workspace.
+A typical view is shown in element (c) of Fig. \ref{fig:gui}.
+Here, a graphical representation of the instrument and the walls as well as the interaction
+with these elements is performed using \textit{OpenGL} \cite{web_OpenGL} via \textit{Qt}'s
+\lstinline[language=C++]|QOpenGLWidget| \cite{web_QOpenGLWidget} class.
+The current view of the instrument is controlled by moving the mouse while holding the right button.
+The camera position, viewing angle and direction as well as the kind of projection are displayed in dock
+window (f) and can also be entered directly.
+The workspace is not restricted to a passive view of the instrument, but also functions as an editor.
+as it allows for an easy insertion, editing and removal of wall segments. The segments as well as the
+instrument axes themselves can be dynamically moved by dragging them using the mouse.
+
+
+\subsection{Crystal coordinates dock window}
+
+%\begin{wrapfigure}{r}{0.26 \textwidth}
+%	\vspace{-0.5cm}
+%	\includegraphics[width = 0.25 \textwidth]{figures/gui_xtalcoords}
+%	\caption[Crystal coordinates window]{Crystal coordinates window (d).
+%		\label{fig:gui_xtal}}
+%\end{wrapfigure}
+
+
+\subsection{Path properties dock window}
+
+%\begin{wrapfigure}{l}{0.26 \textwidth}
+%	\vspace{-0.5cm}
+%	\includegraphics[width = 0.25 \textwidth]{figures/gui_path}
+%	\caption[Path properties window]{Path properties window (e).
+%		\label{fig:gui_xtal}}
+%\end{wrapfigure}
 
 
 
@@ -109,9 +172,10 @@ using \textit{OpenGL} \cite{web_OpenGL} via Qt's \lstinline[language=C++]|QOpenG
 		\begin{center}
 			\includegraphics[width = 0.66 \textwidth]{figures/gui_configspace}
 		\end{center}
-	\caption[Configuration space dialog.]{Angular configuration space and path calculation. The figure plots all
-	possible instrument positions for the monochromator and sample scattering angles,
-	$2\theta_M$ and $2\theta_S$, respectively. Forbidden positions are shown in red.
+	\caption[Configuration space dialog.]{Angular configuration space and path calculation.
+	The figure plots all possible instrument positions for the monochromator and sample
+	scattering angles, $2\theta_M$ and $2\theta_S$, respectively. Forbidden positions
+	are shown in red.
 	These can be invalid angles as well as collisions of the instrument with walls
 	(here, specifically, the pillar from Fig \ref{fig:gui}), or with itself.
 	Allowed positions are drawn in blue. The mesh of all possible instrument
