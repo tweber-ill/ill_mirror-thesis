@@ -69,7 +69,6 @@ as the \textit{Python} interface, which are described in the following sections.
 
 \section{Graphical user interface}
 \label{sec:gui}
-
 The software's main graphical user interface (GUI), for which a typical session is depicted
 in Fig. \ref{fig:gui}, is based on the \textit{Qt} framework \cite{web_Qt}, that allows
 for an easy and rapid cross-platform GUI development in \textit{C++}. We support both
@@ -103,8 +102,10 @@ interface described in section \ref{sec:scripting}, or the raw \textit{C++} libr
 
 
 \subsection{Crystal definition dock window}
+\begin{minipage}{1 \textwidth}
+\setlength{\intextsep}{0cm}
 \begin{wrapfigure}{r}{0.46 \textwidth}
-	\vspace{-0.5cm}
+	%\vspace{-0.5cm}
 	\includegraphics[width = 0.45 \textwidth]{figures/gui_xtal}
 	\caption[Crystal definition window]{Crystal definition window (a).
 		\label{fig:gui_xtal}}
@@ -121,19 +122,41 @@ to the 2-d scattering plane accessible by the instrument, see chapter \ref{ch:xt
 for more information.
 Finally, the $B$ and $UB$ matrices for the entered crystal information are shown in the
 floating window right of (a).
+\end{minipage}
+\vspace{0.5cm}
 
 
 \subsection{Instrument properties dock window}
-%\begin{wrapfigure}{l}{0.26 \textwidth}
-%	\vspace{-0.5cm}
-%	\includegraphics[width = 0.25 \textwidth]{figures/gui_instrument}
-%	\caption[Instrument properties window]{Crystal properties window (b).
-%		\label{fig:gui_xtal}}
-%\end{wrapfigure}
+\begin{minipage}{1 \textwidth}
+\setlength{\intextsep}{0cm}
+\begin{wrapfigure}{l}{0.3 \textwidth}
+	%\vspace{-0.5cm}
+	\includegraphics[width = 0.25 \textwidth]{figures/gui_instrument}
+	\caption[Instrument properties window]{Instrument properties window (b).
+		\label{fig:gui_instr}}
+\end{wrapfigure}
+
+The raw instrument properties, which are agnostic of any sample crystal coordinates, are set 
+using the dock window shown in Fig. \ref{fig:gui_instr}. It displays and lets the user modify
+any crystal rotation angles, both the rocking angles of the crystals around their own axes
+as well as the scattering angle with respect to the following axis. These angles and their
+use in diffraction (two-axis) and spectroscopy (three-axis) instruments is described in chapters
+\ref{ch:intro} and \ref{ch:xtal}. 
+The fields names ``$d$ spacings'' correspond to the spacing of the crystal planes in the 
+monochromator and analyser crystals. In our examples we use the value of $d=3.355 \AA{}$
+which corresponds to scattering on the $\left(002\right)$ Bragg reflection of highly oriented
+pyrolithic graphite (HOPG) \cite{TODO}, which is one of the standard crystals used in a monochromator
+at a TAS instrument.
+Finally, the check boxes named ``scattering senses'' control the sign of the scattering angles.
+If the box is checked, a positive angle corresponds to a mathematically positive sense 
+(counterclockwise), or to a negative sense (clockwise) when unchecked.
+From the standpoint of the physics to be studied in the sample, these signs have no influence
+in practice. They do, however, strongly affect the resolution of the instrument \cite{TODO}
+and have to be considered carefully in the set-up of an experiment.
+\end{minipage}
 
 
 \subsection{Main workspace}
-
 The largest portion of the screen is reserved for the workspace.
 A typical view is shown in element (c) of Fig. \ref{fig:gui}.
 Here, a graphical representation of the instrument and the walls as well as the interaction
@@ -148,23 +171,30 @@ instrument axes themselves can be dynamically moved by dragging them using the m
 
 
 \subsection{Crystal coordinates dock window}
+\begin{minipage}{1 \textwidth}
+\setlength{\intextsep}{0cm}
+\begin{wrapfigure}{r}{0.26 \textwidth}
+	%\vspace{-0.5cm}
+	\includegraphics[width = 0.25 \textwidth]{figures/gui_xtalcoords}
+	\caption[Crystal coordinates window]{Crystal coordinates window (d).
+		\label{fig:gui_xtalcoords}}
+\end{wrapfigure}
 
-%\begin{wrapfigure}{r}{0.26 \textwidth}
-%	\vspace{-0.5cm}
-%	\includegraphics[width = 0.25 \textwidth]{figures/gui_xtalcoords}
-%	\caption[Crystal coordinates window]{Crystal coordinates window (d).
-%		\label{fig:gui_xtal}}
-%\end{wrapfigure}
+\end{minipage}
+
 
 
 \subsection{Path properties dock window}
+\begin{minipage}{1 \textwidth}
+\setlength{\intextsep}{0cm}
+\begin{wrapfigure}{l}{0.26 \textwidth}
+	%\vspace{-0.5cm}
+	\includegraphics[width = 0.25 \textwidth]{figures/gui_path}
+	\caption[Path properties window]{Path properties window (e).
+		\label{fig:gui_path}}
+\end{wrapfigure}
 
-%\begin{wrapfigure}{l}{0.26 \textwidth}
-%	\vspace{-0.5cm}
-%	\includegraphics[width = 0.25 \textwidth]{figures/gui_path}
-%	\caption[Path properties window]{Path properties window (e).
-%		\label{fig:gui_xtal}}
-%\end{wrapfigure}
+\end{minipage}
 
 
 
