@@ -101,11 +101,13 @@ is equally accessible from the other alternative interface modules, e.g. the \te
 interface described in section \ref{sec:scripting}, or the raw \textit{C++} library interface.
 
 
+
 \subsection{Crystal definition dock window}
+\label{sec:gui_xtal}
 \begin{minipage}{1 \textwidth}
-\setlength{\intextsep}{0cm}
+\setlength{\intextsep}{0.25cm}
 \begin{wrapfigure}{r}{0.46 \textwidth}
-	%\vspace{-0.5cm}
+	\vspace{-0.25cm}
 	\includegraphics[width = 0.45 \textwidth]{figures/gui_xtal}
 	\caption[Crystal definition window]{Crystal definition window (a).
 		\label{fig:gui_xtal}}
@@ -126,11 +128,12 @@ floating window right of (a).
 \vspace{0.5cm}
 
 
+
 \subsection{Instrument properties dock window}
 \begin{minipage}{1 \textwidth}
-\setlength{\intextsep}{0cm}
+\setlength{\intextsep}{0.25cm}
 \begin{wrapfigure}{l}{0.3 \textwidth}
-	%\vspace{-0.5cm}
+	\vspace{-0.25cm}
 	\includegraphics[width = 0.25 \textwidth]{figures/gui_instrument}
 	\caption[Instrument properties window]{Instrument properties window (b).
 		\label{fig:gui_instr}}
@@ -156,6 +159,7 @@ and have to be considered carefully in the set-up of an experiment.
 \end{minipage}
 
 
+
 \subsection{Main workspace}
 The largest portion of the screen is reserved for the workspace.
 A typical view is shown in element (c) of Fig. \ref{fig:gui}.
@@ -170,29 +174,71 @@ as it allows for an easy insertion, editing and removal of wall segments. The se
 instrument axes themselves can be dynamically moved by dragging them using the mouse.
 
 
+
 \subsection{Crystal coordinates dock window}
+\label{sec:gui_xtalcoords}
 \begin{minipage}{1 \textwidth}
-\setlength{\intextsep}{0cm}
+\setlength{\intextsep}{0.25cm}
 \begin{wrapfigure}{r}{0.26 \textwidth}
-	%\vspace{-0.5cm}
+	\vspace{-0.25cm}
 	\includegraphics[width = 0.25 \textwidth]{figures/gui_xtalcoords}
 	\caption[Crystal coordinates window]{Crystal coordinates window (d).
 		\label{fig:gui_xtalcoords}}
 \end{wrapfigure}
 
+Using the $UB$ transformation matrix that has been set up before (sec. \ref{sec:gui_xtal}),
+an instrument position can be entered in the crystal coordinates dock window, which is
+shown in Fig. \ref{fig:gui_xtalcoords}.
+At triple-axis spectrometers, coordinates are given as four-dimensional tuples of the
+form $\left(h\  k\  l\  E \right)^t$, where the three-dimensional momentum transfer
+vector in the coordinate system of the instrument and its relation to the initial and final
+wavevectors $\underline{k}_i$ and $\underline{k}_f$, is thus \cite[p. 11]{Shirane2002} \cite{Lumsden2005}
+\begin{equation}
+	\underline{Q}\ =\ UB\cdot \left(\begin{array}{c} h \\ k \\ l \end{array}\right) \ \equiv\ \underline{k}_i - \underline{k}_f.
+\end{equation}
+The fourth coordinate component, namely the energy transferred to the crystal, is \cite[p. 11]{Shirane2002}
+\begin{equation}
+	E \ =\ \frac{\left( \hbar k_i \right)^2}{2 m_n} - \frac{\left( \hbar k_f \right)^2}{2 m_n}.
+\end{equation}
+The checkbox labelled ``keep $k_f$ = const'' selects which one of the two wavenumbers, $k_i$ or $k_f$,
+is kept constant to effectuate the energy transfer.
+Please refer to chapters \ref{ch:intro} and \ref{ch:xtal} for details on the calculations and physics.
+
+The button labelled ``jump to coordinates'' sets the current (and initial path position)
+of the instrument to the given crystal coordinates, whereas the ``set target angles'' button
+sets the target position on the instrument path.
+
 \end{minipage}
 
 
 
-\subsection{Path properties dock window}
+\subsection{Path properties dock window and dialog}
 \begin{minipage}{1 \textwidth}
-\setlength{\intextsep}{0cm}
+\setlength{\intextsep}{0.25cm}
 \begin{wrapfigure}{l}{0.26 \textwidth}
-	%\vspace{-0.5cm}
+	\vspace{-0.25cm}
 	\includegraphics[width = 0.25 \textwidth]{figures/gui_path}
 	\caption[Path properties window]{Path properties window (e).
 		\label{fig:gui_path}}
 \end{wrapfigure}
+
+Finally, the calculation of the instrument path is done using the path properties dock window
+given in Fig. \ref{fig:gui_path}. Here, the target scattering angles are calculated from the crystal
+coordinates and set by the previous step (sec. \ref{sec:gui_xtalcoords}). For direct positioning,
+the angles can also be entered manually, thereby overriding the crystal coordinate calculations.
+
+The button labelled ``calculate path mesh'' starts the calculation of the skeletal bisectors that are
+described in chapter \ref{sec:polygonal_voronoi_diagram}.
+The ``calculate path'' button finds the optimal path on the mesh and invokes the core library
+functions described in chapter \ref{sec:exepath}.
+Once a path has been calculated, its positions can be tracked using the progress bar at the bottom
+of the dock window.
+
+Details on the path calculations, including the path mesh, are displayed in the angular configuration
+space dialog that is depicted in Fig. \ref{fig:gui_configspace}.
+Here, the start and target positions can also be directly dragged and dropped via mouse and the
+effects on the calculation are visualised live.
+The library \textit{QCustomPlot} \cite{web_QCustomPlot} is used for plotting.
 
 \end{minipage}
 
