@@ -16,6 +16,7 @@ In this chapter we review the theory for conversion between crystal coordinates 
 
 We begin by presenting the so-called $UB$ matrix formalism to convert between relative lattice units of a crystal and laboratory coordinates used in instrument space. This method has been described in \cite{Lumsden2005}. The derivation of the transformation matrices, $A$ and $B$, describing fractional crystal coordinates, can be found in \cite{wiki_fractional}, which we follow here.
 
+\subsection{$A$ and $B$ matrices}
 The unit cell of the crystal is spanned by its three basis vectors $\left| a \right>$, $\left| b \right>$, and $\left| c \right>$, which -- in general -- are not perpendicular to one another, but instead enclose angles of $\alpha$, $\beta$, and $\gamma$, respectively, as shown in Fig. \ref{fig:cell}. 
 To calculate the crystallographic $A$ matrix which transforms non-orthogonal crystal to orthogonal lab units, we first need to reduce the number of parameters.
 The respective relations between the basis vectors and their angles can be directly obtained via the cosine theorem:
@@ -38,53 +39,53 @@ The respective relations between the basis vectors and their angles can be direc
 The next goal is to explicitly write the components of the vectors $\left| a \right>$, $\left| b \right>$, and $\left| c \right>$ in terms of their (scalar) lengths $a = \sqrt{\left< a | a \right>}$, $b = \sqrt{\left< b | b \right>}$, $c = \sqrt{\left< c | c \right>}$, and the three angles.
 To that end, we first choose -- without loss of generality -- $\left| a \right>$ along the $x$ axis, $\left| b \right>$ in the $xy$ plane, and $\left| c \right>$ in general:
 \begin{equation} 
-	\boxed{ \left| a \right> = \left( \begin{array}{c} a_1 = a \\ 0 \\ 0 \end{array} \right), }
-	\hspace{0.5cm} \left| b \right> = \left( \begin{array}{c} b_1 \\ b_2 \\ 0 \end{array} \right),
-	\hspace{0.5cm} \left| c \right> = \left( \begin{array}{c} c_1 \\ c_2 \\ c_3 \end{array} \right).
+	\boxed{ \left| a \right> \ =\  \left( \begin{array}{c} a_1 = a \\ 0 \\ 0 \end{array} \right), }
+	\hspace{0.5cm} \left| b \right> \ =\  \left( \begin{array}{c} b_1 \\ b_2 \\ 0 \end{array} \right),
+	\hspace{0.5cm} \left| c \right> \ =\  \left( \begin{array}{c} c_1 \\ c_2 \\ c_3 \end{array} \right).
 \end{equation}
 
 
 Inserting $\left| a \right>$ and $\left| b \right>$ into Eq. \ref{ab} gives:
 
-\begin{equation} \left< a | b \right > = a_1 b_1 = ab \cos \gamma, \end{equation}
-\begin{equation} b_1 = b \cos \gamma. \end{equation}
+\begin{equation} \left< a | b \right > \ =\  a_1 b_1 \ =\  ab \cos \gamma, \end{equation}
+\begin{equation} b_1 \ =\  b \cos \gamma. \end{equation}
 
 
 Using the cross product between $\left| a \right>$ and $\left| b \right>$, we get:
 \begin{equation} 
-	\left\Vert \left| a \right> \times \left| b \right> \right\Vert =
-	\left\Vert \left( \begin{array}{c} 0 \\ 0 \\ a_1 b_2 \end{array} \right) \right\Vert =
+	\left\Vert \left| a \right> \times \left| b \right> \right\Vert \ =\ 
+	\left\Vert \left( \begin{array}{c} 0 \\ 0 \\ a_1 b_2 \end{array} \right) \right\Vert \ =\ 
 	ab \sin \gamma, \label{crossab}
 \end{equation}
-\begin{equation} b_2 = b \sin \gamma, \end{equation}
+\begin{equation} b_2 \ =\  b \sin \gamma, \end{equation}
 \begin{equation} 
-\boxed{ \left| b \right> = \left( \begin{array}{c} b \cos \gamma \\ b \sin \gamma \\ 0 \end{array} \right). } 
+\boxed{ \left| b \right> \ =\  \left( \begin{array}{c} b \cos \gamma \\ b \sin \gamma \\ 0 \end{array} \right). } 
 \label{bvec} 
 \end{equation}
 
 
 Inserting $\left| a \right>$ and $\left| c \right>$ into Eq. \ref{ac} gives:
 
-\begin{equation} \left< a | c \right > = a_1 c_1 = ac \cos \beta, \end{equation}
-\begin{equation} c_1 = c \cos \beta. \end{equation}
+\begin{equation} \left< a | c \right > \ =\  a_1 c_1 \ =\  ac \cos \beta, \end{equation}
+\begin{equation} c_1 \ =\  c \cos \beta. \end{equation}
 
 
 
 Inserting $\left| b \right>$ and $\left| c \right>$ into Eq. \ref{bc} gives:
 
-\begin{equation} \left< b | c \right > = b_1 c_1 + b_2 c_2 = bc \cos \alpha, \end{equation}
-\begin{equation} b \cos \gamma \cdot c \cos \beta + b \sin \gamma \cdot c_2 = bc \cos \alpha, \end{equation}
-\begin{equation} c_2 = \frac{c \cos \alpha - c \cos \gamma \cos \beta}{\sin \gamma}. \end{equation}
+\begin{equation} \left< b | c \right > \ =\  b_1 c_1 + b_2 c_2 \ =\  bc \cos \alpha, \end{equation}
+\begin{equation} b \cos \gamma \cdot c \cos \beta + b \sin \gamma \cdot c_2 \ =\  bc \cos \alpha, \end{equation}
+\begin{equation} c_2 \ =\  \frac{c \cos \alpha - c \cos \gamma \cos \beta}{\sin \gamma}. \end{equation}
 
 
 
 The last component, $c_3$, can be obtained from the vector length normalisation, $ \left< c | c \right> = c^2 $:
-\begin{equation} \left< c | c \right > = c_1^2 + c_2^2 + c_3^2 = c^2, \end{equation}
-\begin{equation} c_3^2 = c^2 - c_1^2 - c_2^2, \end{equation}
+\begin{equation} \left< c | c \right > \ =\  c_1^2 + c_2^2 + c_3^2 \ =\  c^2, \end{equation}
+\begin{equation} c_3^2 \ =\  c^2 - c_1^2 - c_2^2, \end{equation}
 \begin{equation} 
-	c_3^2 = c^2 \left[1 - \cos^2 \beta - \left(\frac{\cos \alpha - \cos \gamma \cos \beta}{\sin \gamma} \right)^2 \right], 
+	c_3^2 \ =\  c^2 \left[1 - \cos^2 \beta - \left(\frac{\cos \alpha - \cos \gamma \cos \beta}{\sin \gamma} \right)^2 \right], 
 \end{equation}
-\begin{equation} \boxed{ \left| c \right> = \left( \begin{array}{c}
+\begin{equation} \boxed{ \left| c \right> \ =\  \left( \begin{array}{c}
 	c \cdot \cos \beta \\
 	c \cdot \frac{\cos \alpha - \cos \gamma \cos \beta}{\sin \gamma} \\
 	c \cdot \sqrt{ \sin^2 \beta - \left(\frac{\cos \alpha - \cos \gamma \cos \beta}{\sin \gamma} \right)^2 }
@@ -94,35 +95,74 @@ The last component, $c_3$, can be obtained from the vector length normalisation,
 
 The crystallographic $A$ matrix, which transforms real-space fractional to lab coordinates (\AA), is formed with the basis vectors in its columns:
 \begin{equation}
-	A = \left(
+	A \ =\  \left(
 		\begin{array}{ccc}
 			\left| a \right> & \left| b \right> & \left| c \right>
 		\end{array}
 	\right).
 \end{equation}
+Explicitly written out using the basis vectors, the matrix reads \cite{wiki_fractional}:
+\begin{equation}
+	A \ =\  \left(
+		\begin{array}{ccc}
+			\begin{array}{c} a \\ 0 \\ 0 \end{array}
+			& 
+			\begin{array}{c} b \cos \gamma \\ b \sin \gamma \\ 0 \end{array} 
+			& 
+			\begin{array}{c}
+				c \cdot \cos \beta \\
+				c \cdot \frac{\cos \alpha - \cos \gamma \cos \beta}{\sin \gamma} \\
+				c \cdot \sqrt{ \sin^2 \beta - \left(\frac{\cos \alpha - \cos \gamma \cos \beta}{\sin \gamma} \right)^2 }
+			\end{array}
+		\end{array}
+	\right).
+\end{equation}
+
+
 The $B$ matrix, which transforms reciprocal-space relative lattice units (rlu) to lab coordinates (1/\AA), is:
-\begin{equation} B = 2 \pi A^{-t}, \end{equation}
+\begin{equation} B \ =\  2 \pi A^{-t}, \end{equation}
 where $-t$ denotes the transposed inverse.
 We can now also determine the metric tensor corresponding to the coordinate system defined by the $B$ transformation matrix, it reads \cite[p. 808]{Arens2015}:
 \begin{equation}
-	\left(g_{ij}\right) = \left<\underline{b}_i | \underline{b}_j \right> = B^T B,
+	\left(g_{ij}\right) \ =\  \left<\underline{b}_i | \underline{b}_j \right> \ =\  B^T B,
 \end{equation}
 where the reciprocal basis vectors $\left| \underline{b}_i \right>$ form the columns of $B$.
 
 
-\subsection*{Example: lengths and angles in the reciprocal lattice}
+\subsection{Example: lengths and angles in the reciprocal lattice}
 Having a metric makes it straightforward to calculate lengths and angles.
 The length of a reciprocal lattice vector $\left| G \right>$ seen from the lab system is (in 1/\AA{} units) \cite[p. 808]{Arens2015}:
 \begin{equation}
-	\left\Vert \left< G | G \right> \right\Vert = \sqrt{\left< G | G \right>} = \sqrt{G_i G^i} = \sqrt{g_{ij} G^i G^j}.
+	\left\Vert \left< G | G \right> \right\Vert \ =\  \sqrt{\left< G | G \right>} \ =\  \sqrt{G_i G^i} \ =\  \sqrt{g_{ij} G^i G^j}.
 \end{equation}
 The angle $\theta$ between two Bragg peaks $\left| G \right>$ and $\left| H \right>$ is given by their dot product \cite[p. 808]{Arens2015}:
 \begin{equation}
-	\frac{\left< G | H \right>}{\left\Vert \left< G | G \right> \right\Vert \cdot \left\Vert \left< H | H \right> \right\Vert} = 
-	\frac{g_{ij} G^i H^j }{\sqrt{g_{ij} G^i G^j} \sqrt{g_{ij} H^i H^j}} = \cos \theta.
+	\frac{\left< G | H \right>}{\left\Vert \left< G | G \right> \right\Vert \cdot \left\Vert \left< H | H \right> \right\Vert} \ =\  
+	\frac{g_{ij} G^i H^j }{\sqrt{g_{ij} G^i G^j} \sqrt{g_{ij} H^i H^j}} \ =\  \cos \theta.
 \end{equation}
 
 Please note that if an index appears twice, both as subscript as well as a superscript, a summation over it is implied, see Ref. \cite{wiki_summation}.
+
+
+\subsection{$U$ matrix}
+The $B$ matrix alone yields the transformation from the non-orthogonal and reciprocal crystal coordinate system into the orthogonal lab units.
+However, it does not yet take into account the actual rotation of the crystal so that a specific plane, the so-called scattering plane, 
+can be accessed by the two-dimensional movements of the instrument. 
+Such a rotation is performed by the $U$ matrix, whose rows contain two vectors inside the desired scattering plane and the plane normal. 
+These basis vectors are usually chosen along two orientation Bragg reflections and are expressed in the orthogonal lab system, i.e. they are
+pre-multiplied by $B$.
+For $U$ to be a rotation matrix, these basis vectors are normalised using, for instance, the Gram-Schmidt algorithm \cite[p. 744]{Arens2015} or 
+QR decomposition \cite[pp. 269-272]{Scarpino2011}.
+
+In summary, a coordinate point $\left|Q_{\mathrm{rlu}}\right>$, which is given in relative lattice units of the reciprocal crystal, 
+is transformed by the $B$ matrix into the orthogonal lab units used at the instrument. 
+It is then rotated by the $U$ matrix to account for the actual crystal orientation:
+\begin{equation}
+	\left|Q_{\mathrm{lab}}\right> \ =\  U \cdot B \cdot \left|Q_{\mathrm{rlu}}\right>.
+\end{equation}
+In the rest of this work we will not use the $U$ matrix explicitly, though, but instead directly work with its basis vectors.
+This is just a formality though, the mathematics are the same.
+
 % ------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -140,15 +180,15 @@ The monochromator and analyser scattering angles follow directly from Bragg's eq
 
 \begin{minipage}{0.45\textwidth}
 	\centering
-	\begin{equation} 2 d_{M}\sin \theta_{M} = n \lambda_{i}, \end{equation}
-	\begin{equation} 2 k_{i} \sin \theta_{M} = 2 \pi n / d_{M}, \end{equation}
-	\begin{equation} \boxed{ \theta_{M} = \arcsin \left( \frac{\pi n}{d_{M} \cdot k_{i}} \right). } \end{equation}
+	\begin{equation} 2 d_{M}\sin \theta_{M} \ =\  n \lambda_{i}, \end{equation}
+	\begin{equation} 2 k_{i} \sin \theta_{M} \ =\  2 \pi n / d_{M}, \end{equation}
+	\begin{equation} \boxed{ \theta_{M} \ =\  \arcsin \left( \frac{\pi n}{d_{M} \cdot k_{i}} \right). } \end{equation}
 \end{minipage}
 \begin{minipage}{0.45\textwidth}
 	\centering
-	\begin{equation} 2 d_{A}\sin \theta_{A} = n \lambda_{f}, \end{equation}
-	\begin{equation} 2 k_{f} \sin \theta_{A} = 2 \pi n / d_{A}, \end{equation}
-	\begin{equation} \boxed{ \theta_{A} = \arcsin \left( \frac{\pi n}{d_{A} \cdot k_{f}} \right). } \end{equation}
+	\begin{equation} 2 d_{A}\sin \theta_{A} \ =\  n \lambda_{f}, \end{equation}
+	\begin{equation} 2 k_{f} \sin \theta_{A} \ =\  2 \pi n / d_{A}, \end{equation}
+	\begin{equation} \boxed{ \theta_{A} \ =\  \arcsin \left( \frac{\pi n}{d_{A} \cdot k_{f}} \right). } \end{equation}
 \end{minipage}
 
 \vspace{0.5cm}
@@ -167,19 +207,19 @@ For that, we have a look at the incoming and final neutron wavevectors $\left| k
 
 We can calculate $2 \theta_S$ by forming the scalar product of $\left| Q \right>$ with itself.
 \begin{equation} 
-	\left| Q \right> = \left| k_i \right> - \left| k_f \right> \\ 
+	\left| Q \right> \ =\  \left| k_i \right> - \left| k_f \right> \\ 
 \end{equation}
 \begin{equation} 
-	\left< Q | Q \right> = \left( \left< k_i \right| - \left< k_f \right| \right) \cdot \left( \left| k_i \right> - \left| k_f \right> \right)
+	\left< Q | Q \right> \ =\  \left( \left< k_i \right| - \left< k_f \right| \right) \cdot \left( \left| k_i \right> - \left| k_f \right> \right)
 \end{equation}
 \begin{equation} 
-	\left< Q | Q \right> = \left< k_i | k_i \right> + \left< k_f | k_f \right> - 2 \left< k_i | k_f \right> 
+	\left< Q | Q \right> \ =\  \left< k_i | k_i \right> + \left< k_f | k_f \right> - 2 \left< k_i | k_f \right> 
 \end{equation}
 \begin{equation} 
-	Q^2 = k_i^2 + k_f^2 - 2 k_i k_f \cos \left( 2 \theta_S \right) 
+	Q^2 \ =\  k_i^2 + k_f^2 - 2 k_i k_f \cos \left( 2 \theta_S \right) 
 \end{equation}
 \begin{equation}
-	\boxed{ 2 \theta_S = \sigma_s \cdot \arccos \left( \frac{k_i^2 + k_f^2 - Q^2}{2 k_i k_f} \right) } 
+	\boxed{ 2 \theta_S \ =\  \sigma_s \cdot \arccos \left( \frac{k_i^2 + k_f^2 - Q^2}{2 k_i k_f} \right) } 
 \end{equation}
 
 As we could scatter in either clockwise or counterclockwise direction, $2 \theta_S$ can be positive or negative.
@@ -190,10 +230,10 @@ The sign of $2 \theta_S$ is given by the sample scattering sense $\sigma_s = \pm
 
 
 The final and most complicated angle to determine is the sample rotation $\Theta_S$.
-It is given by the angle of the incoming wavevector $\left| k_i \right>$ to an (arbitrary) direction $\left| a \right>$ which is known from sample orientation, this is usually a Bragg peak. 
+It is given by the angle of the incoming wavevector $\left| k_i \right>$ to an (arbitrary) direction $\left| a \right>$ which is known from sample orientation, this is usually a Bragg peak. If we were to explicitly use the $U$ matrix here, this vector would be one of its rows.
 The situation is shown in the right panel of Fig. \ref{fig:scattering_triangle}.
 We split $\Theta_S$ into the angle $\psi$ between $\left| k_i \right>$ and $\left| Q \right>$ and the angle $\xi$ between $\left| k_i \right>$ and $\left| a \right>$:
-\begin{equation} \boxed{ \Theta_S = 180^{\circ} - \left( \psi + \xi \right) } \end{equation}
+\begin{equation} \boxed{ \Theta_S \ =\  180^{\circ} - \left( \psi + \xi \right) } \end{equation}
 
 
 \vspace{0.5cm}
@@ -201,19 +241,19 @@ We split $\Theta_S$ into the angle $\psi$ between $\left| k_i \right>$ and $\lef
 
 The angle $\psi$ between $\left| k_i \right>$ and $\left| Q \right>$ is determined from the scattering triangle, as before:
 \begin{equation}
-	\left| k_f \right> = \left| k_i \right> - \left| Q \right> 
+	\left| k_f \right> \ =\  \left| k_i \right> - \left| Q \right> 
 \end{equation}
 \begin{equation} 
-	\left< k_f | k_f \right> = \left( \left< k_i \right| - \left< Q \right| \right) \cdot \left( \left| k_i \right> - \left| Q \right> \right)
+	\left< k_f | k_f \right> \ =\  \left( \left< k_i \right| - \left< Q \right| \right) \cdot \left( \left| k_i \right> - \left| Q \right> \right)
 \end{equation}
 \begin{equation}
-	\left< k_f | k_f \right> = \left< k_i | k_i \right> + \left< Q | Q \right> - 2 \left< k_i | Q \right>
+	\left< k_f | k_f \right> \ =\  \left< k_i | k_i \right> + \left< Q | Q \right> - 2 \left< k_i | Q \right>
 \end{equation}
 \begin{equation}
-	k_f^2 = k_i^2 + Q^2 - 2 k_i Q \cos \psi 
+	k_f^2 \ =\  k_i^2 + Q^2 - 2 k_i Q \cos \psi 
 \end{equation}
 \begin{equation}
-	\boxed{ \psi = \sigma_s \cdot \arccos \left( \frac{k_i^2 + Q^2 - k_f^2}{2 k_i Q} \right) }
+	\boxed{ \psi \ =\  \sigma_s \cdot \arccos \left( \frac{k_i^2 + Q^2 - k_f^2}{2 k_i Q} \right) }
 \end{equation}
 
 
@@ -223,8 +263,8 @@ The angle $\psi$ between $\left| k_i \right>$ and $\left| Q \right>$ is determin
 The angle $\xi$ between $\left| Q \right>$ and orientation vector $\left| a \right>$ is also determined from the properties of the scalar product.
 Here we have to use the covariant form, because $\left| a \right>$ is a coordinate in crystal space naming a Bragg reflection, while $\left| Q \right>$ lives, as before in instrument space.
 \begin{equation} 
-	\boxed{ \xi = 
-\sigma_{\mathrm{side}} \cdot \arccos \left( \frac{ \left< Q | a \right> }{ \sqrt{\left< Q | Q \right>} \sqrt{\left< a | a \right>} } \right) = 
+	\boxed{ \xi \ =\  
+\sigma_{\mathrm{side}} \cdot \arccos \left( \frac{ \left< Q | a \right> }{ \sqrt{\left< Q | Q \right>} \sqrt{\left< a | a \right>} } \right) \ =\  
 \sigma_{\mathrm{side}} \cdot \arccos \left( \frac{ Q^i g_{ij} a^j }{ \sqrt{Q^i g_{ij} Q^j} \sqrt{a^i g_{ij} a^j} } \right) } 
 \label{eq:xi}
 \end{equation}
@@ -233,11 +273,11 @@ The sign, $\sigma_{\mathrm{side}}$, of $\xi$ depends on which side of the orient
 The sign can be found by calculating the (covariant) cross product of $\left| a \right>$ and $\left| Q \right>$ to give an out-of-plane vector $\left| x \right>$ which can be compared with the given scattering plane up vector.
 The covariant cross-product is calculated as \cite[p. 815]{Arens2015}:
 \begin{equation}
-	x^l = g^{li} \epsilon_{ijk} a^j Q^k,
+	x^l \ =\  g^{li} \epsilon_{ijk} a^j Q^k,
 \end{equation}
 where $\epsilon_{ijk}$ is the general Levi-Civita symbol formed from the determinant of the basis vectors $\left| \underline{b}_i \right>$, see Ref. \cite[p. 815]{Arens2015}:
 \begin{equation}
-	\epsilon_{ijk} = \left|
+	\epsilon_{ijk} \ =\  \left|
 		\begin{array}{ccc} \left| 
 			\underline{b}_i \right> & \left| \underline{b}_j \right> & \left| \underline{b}_k \right>
 		\end{array} \right|.
@@ -249,6 +289,6 @@ where $\epsilon_{ijk}$ is the general Levi-Civita symbol formed from the determi
 For cubic crystals with $\alpha = \beta = \gamma = 90^{\circ}$ and the lattice constants all equal, $a = b = c$, the metric tensor is diagonal, $g_{ij} = \delta_{ij} \cdot \left( 2\pi / a \right)^2$.
 With that, Eq. \ref{eq:xi} simplifies to:
 \begin{equation}
-	\xi = \sigma_{\mathrm{side}} \cdot \arccos \left( \frac{ Q_i a^i }{ \sqrt{Q_i Q^i} \sqrt{a_i a^i} } \right).
+	\xi \ =\  \sigma_{\mathrm{side}} \cdot \arccos \left( \frac{ Q_i a^i }{ \sqrt{Q_i Q^i} \sqrt{a_i a^i} } \right).
 \end{equation}
 % ------------------------------------------------------------------------------------------------------------------------------------
