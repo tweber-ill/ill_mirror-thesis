@@ -25,7 +25,6 @@ The graphical user interface is presented separately, namely in chapter \ref{ch:
 
 
 
-
 % -----------------------------------------------------------------------------
 % instrument model
 % -----------------------------------------------------------------------------
@@ -418,8 +417,10 @@ whereas regions 2 and 3 are non-inverted, meaning they enclose forbidden regions
 
 Together with the calculation of the Voronoi diagram, a graph is constructed whose
 vertices correspond to the Voronoi vertices of the diagram and whose edges correspond
-to the Voronoi bisectors. This graph is used in the path-finding step described in 
-section \ref{sec:exepath}.
+to the Voronoi bisectors. 
+Together with the graph, a spatial index tree is created from the Voronoi vertices,
+specifically we use the R-tree implementation from Boost.Geometry \cite{web_boost_geometry}.
+The graph and the R-tree are used in the path-finding step described in section \ref{sec:exepath}.
 
 The collection of normal and inverted regions is calculated in the member function
 \lstinline[language=C++]|CalculateLineSegments()| of the \lstinline[language=C++]|PathsBuilder|

@@ -122,8 +122,8 @@ we will follow for our TAS motion planning approach.
 
 As it is imperative that the instrument not move into any walls, we choose the 
 retraction method using the obstacles' Voronoi regions.
-As for a TAS several coordinate systems are available (refer to chapter \ref{ch:xtal}), 
-we have several equivalent possibilities to describe its movement. 
+Several coordinate systems are available for a TAS (refer to chapter \ref{ch:xtal}), 
+for this reason we have got several equivalent possibilities to describe its movement. 
 
 
 \subsection{Instrument positions configuration space}
@@ -142,7 +142,7 @@ A better way is to employ a configuration space where the instrument is represen
 as a single point in that space. 
 This comes at the cost of the shape of the walls becoming more complicated when 
 transformed into configuration space, they may not even be simply-connected 
-anymore in that space. 
+any more in that space. 
 There are two choices for such a configuration space: We can either use the 
 reciprocal crystal coordinates as discussed in chapter \ref{ch:xtal} or use a 
 configuration space comprised of the instrumental angles.
@@ -158,7 +158,9 @@ A typical situation is shown in Fig. \ref{fig:tas_wall} (a and b).
 Here, the instrument motion is blocked by an obstacle in the experimental zone
 as well as outer walls (marked in red in panel (a)).
 The crystal configuration space, panel (b), shows the allowed and forbidden
-coordinates that result from the obstacles.
+coordinates that result from the obstacles. The natural units in such a
+configuration space are the relative lattice units (rlu) of the reciprocal
+crystal lattice (see chapter \ref{ch:xtal}).
 In the figure, the crystal configuration space seems to be simple enough for 
 further consideration, but it has several disadvantages: Shown here is merely
 a two-dimensional slice at $E = 0$ of the true configuration space.
@@ -171,8 +173,9 @@ plane.
 
 
 \subsection{Angular configuration space}
-On the other hand, using the instrument angles seems to be even more complicated 
-at first glance. The instrument comprises six angles, namely the crystal and 
+On the other hand, using the instrument angles as natural units for a configuration
+space seems to be even more complicated at first glance. 
+The instrument comprises six angles, namely the crystal and 
 scattering angles for the monochromator, the sample and the analyser crystals, 
 respectively, leading to a six-dimensional configuration space. 
 When can take into account that not all angles are independent of one another:
@@ -229,7 +232,10 @@ implementation in the next chapter.
 Two tasks are needed. The first task is building the mesh of possible paths the 
 instrument can move along. 
 The second task concerns finding one specific path on the path mesh and moving
-the instrument on that path. The two tasks comprise these following steps:
+the instrument on that path. 
+Splitting the work into a pre-built path mesh that can be used for live calculations
+is an approach that is commonly used in path-finding problems \cite{Hwang2003}.
+The two tasks comprise these following steps:
 \begin{enumerate}
 	\item Building the path mesh.
 	\begin{enumerate}
@@ -253,6 +259,12 @@ the instrument on that path. The two tasks comprise these following steps:
 			The Voronoi edges are the possible instrument paths in configuration 
 			space. Save both the Voronoi diagram as well as its representation 
 			in a graph structure, as in \cite[p. 163]{Berg2008}.
+			For quick access to the closest positions, the positions of the
+			Voronoi vertices are additionally saved in a spatial index tree such as a 
+			k-d tree \cite{TODO}, an R-tree \cite{TODO}, a BSP tree \cite{TODO}, 
+			or a quadtree \cite{TODO}. 
+			Such an approach is, for instance, used in the work by 
+			Hwang \textit{et al}. \cite{Hwang2003}.
 		\item Simplify the Voronoi diagram. For example, Voronoi vertices and 
 			edges inside obstacle regions have to be removed.
 			These are generated in the previous step because, there, no 
@@ -262,18 +274,26 @@ the instrument on that path. The two tasks comprise these following steps:
 
 	\item Finding the instrument path and executing its motion, this is the point-like limiting case of the algorithm in \cite[p. 163]{Berg2008}.
 	\begin{enumerate}
-		\item Convert the given crystal coordinates into instrument coordinates.
-			The user of a triple-axis spectrometer usually enters the coordinates 
+		\item The user of a triple-axis spectrometer usually enters the coordinates 
 			in the crystal coordinate system (see chapter \ref{ch:xtal}). The start 
 			and end point of the instrument path have to be converted from crystal
 			coordinates into instrument angles. The instrument angles form a 
 			coordinate point in angular configuration space.
-		\item Determine the Voronoi regions of the start and end coordinate points.
+		\item Determine the Voronoi regions of the start and end coordinate points
+			using the spatial index tree that was generated during the creation
+			of the path mesh.
 		\item Move the instrument to the edge of the start Voronoi region.
 		\item Calculate the shortest path to the edge of the Voronoi region 
 			containing the end point using Dijkstra's algorithm \cite{wiki_dijkstra}
 			and move the instrument along that path.
+			Dijkstra's algorithm or algorithms based on it are commonly used
+			in literature \cite{Hwang2003, Singal2014}.
 		\item Move the instrument from the edge of the Voronoi region containing 
 			the end point towards that point.
 	\end{enumerate}
 \end{enumerate}
+
+
+\section{Summary}
+
+TODO
