@@ -46,7 +46,7 @@ This makes it possible to model neutron-optical components attached to the eithe
 neutron beam at the specific axis. It furthermore makes it possible to have components which rotate independently of
 the axis.
 Physically, the outgoing coordinate system is equal to the scattering angle, while the internal angle corresponds
-to the crystal rocking angle (see Ch. \ref{ch:xtal}).
+to the crystal rocking angle (see chapter \ref{ch:xtal}).
 The transformation matrices corresponding to the three local coordinate systems are calculated as follows:
 
 \begin{equation}
@@ -419,8 +419,9 @@ Together with the calculation of the Voronoi diagram, a graph is constructed who
 vertices correspond to the Voronoi vertices of the diagram and whose edges correspond
 to the Voronoi bisectors. 
 Together with the graph, a spatial index tree is created from the Voronoi vertices,
-specifically we use the R-tree implementation from Boost.Geometry \cite{web_boost_geometry}.
-The graph and the R-tree are used in the path-finding step described in section \ref{sec:exepath}.
+specifically we use the R*-tree implementation from Boost.Geometry's \cite{web_boost_geometry} \lstinline[language=C++]|boost::geometry::index::rtree| 
+class \cite{web_boost_geometry_rtree}.
+The graph and the R*-tree are queried in the path-finding step described in section \ref{sec:exepath}.
 
 The collection of normal and inverted regions is calculated in the member function
 \lstinline[language=C++]|CalculateLineSegments()| of the \lstinline[language=C++]|PathsBuilder|
@@ -475,8 +476,8 @@ from one convex region to another convex region of the angular configuration spa
 In the present section we describe the algorithm to find a possible start position on the
 path mesh to which the instrument can move from its initial configuration, which is
 not necessarily on the path mesh (section \ref{sec:startend}).
-Analogously we determine the end position on the path mesh in proximity to the desired target
-instrument position.
+Analogously we determine the end position on the path mesh in proximity to the 
+desired target instrument position.
 A concrete path is then determined between the calculated start and end positions
 (section \ref{sec:optimalpath}).
 
@@ -484,17 +485,22 @@ A concrete path is then determined between the calculated start and end position
 \subsection{Determination of the start and target coordinates}
 \label{sec:startend}
 
-For the start and target coordinate position, which have their respective representation as large
-red and green points in Fig. \ref{fig:linesegs_path}, we find the closest points on the
-nearest Voronoi bisector and save these point as vertices on the generated path curve.
-In general, the closest point $\left|q\right>$ between a point $\left|p\right>$ and a line
-$l\left(\lambda\right) = \left|x\right> + \lambda \cdot \left|d\right>$ is determined by
-dropping a perpendicular from the point to the line \cite{wiki_proj}:
+For the start and target coordinate position, which have their respective 
+representation as large red and green points in Fig. \ref{fig:linesegs_path}, 
+we find the closest points on the respective nearest Voronoi bisector and save 
+these points as vertices on the generated path curve.
+The closest Voronoi vertices to which these Voronoi edges belong are found by 
+querying the R*-tree that has been created in the mesh-building step of section
+\ref{sec:polygonal_voronoi_diagram}.
+
+In general, the closest point $\left|q\right>$ between a point $\left|p\right>$ 
+and a line $l\left(\lambda\right) = \left|x\right> + \lambda \cdot \left|d\right>$ 
+is determined by dropping a perpendicular from the point to the line \cite{wiki_proj}:
 \begin{equation}
 	\left|q\right> \ =\  \left<d  \ |\  p - x \right> \cdot \left|d\right>,
 \end{equation}
-where $\left|d\right>$ is the normalised direction vector of the line as depicted in
-Fig. \ref{fig:dropped_perpendicular}.
+where $\left|d\right>$ is the normalised direction vector of the line as depicted 
+in Fig. \ref{fig:dropped_perpendicular}.
 By reshuffling the equation, we can alternatively regard $\left|d\right> \left<d\right|$
 as the operator projecting $\left| p - x \right>$ onto $\left|d\right>$, see \cite[p. 814]{Arens2015}.
 
