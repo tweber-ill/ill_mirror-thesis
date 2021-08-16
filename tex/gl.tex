@@ -13,7 +13,7 @@ This appendix chapter adds technical details to the general descriptions in chap
 
 
 
-\section{Coordinate Systems and Transformations}
+\section{Coordinate systems and transformations}
 
 To draw a three-dimensional object onto the screen, three principal coordinate systems are typically maintained,
 namely the coordinate system of the object, the system of the camera, and screen coordinates.
@@ -41,14 +41,14 @@ in the shaders by the user.
 
 
 
-\subsection{3-d transformations}
+\section{3-d transformations}
 
 To simplify the calculations when translations are involved, \textit{OpenGL} uses homogeneous coordinates.
 Homogeneous coordinates append a fourth component to the three-dimensional vectors, which is set to zero for
 directions and to one for vertices.
 
 
-\subsubsection{Translation}
+\subsection{Translation}
 Vertices can thus be translated by left-multiplying with a matrix whose fourth column represents the translation
 vector:
 \begin{equation}
@@ -65,7 +65,7 @@ vector:
 Not that direction vectors, which have their fourth component zero, are not affected by a translation.
 
 
-\subsubsection{Scaling}
+\subsection{Scaling}
 By the same token, scaling along the principal axes is performed by setting the diagonal matrix elements:
 \begin{equation}
 	\left( \begin{array}{c} s_x \cdot x \\ s_y \cdot y \\ s_z \cdot z \\ 1 \end{array} \right) 
@@ -80,24 +80,30 @@ By the same token, scaling along the principal axes is performed by setting the 
 \end{equation}
 
 
-\subsubsection{Rotation}
+\subsection{Rotation}
 The set of rotations in three-dimensional space forms an algebraic group, the special orthogonal group $\mathrm{SO\left(3\right)}$,
 which comprises all orthogonal matrices with determinant 1.
 There are two popular ways to describe rotations $R \in \mathrm{SO\left(3\right)}$ given the rotation axis and angle, 
 namely the Rodrigues formalism and quaternions. 
 As they are both ubiquitous in computer graphics, we describe each of them briefly in the following paragraphs.
+For clarity, we only write out the left-upper 3x3 part of the homogeneous 4x4 matrices.
 
-\paragraph{Rodrigues formalism}
+\subsubsection{Rodrigues formalism}
 For the derivation in this section we follow Refs. \cite[p. 718, p. 816]{Arens2015} and \cite{wiki_rodrigues}.
 The matrix $R$ describing the rotation about a normalised vector $\left|v\right>$ under an angle $\alpha$ can be decomposed into
 three projections onto the rotated coordinate system \cite[p. 718, p. 816]{Arens2015}:
 \begin{equation}
-	R \ = \ P_{||} + P_{\perp} \cos \alpha + P_{\times} \sin \alpha.
+	\boxed{R \ = \ P_{||} + P_{\perp} \cos \alpha + P_{\times} \sin \alpha.}
 	\label{eq:rodrigues}
 \end{equation}
 Here, $P_{||}$ is the projector onto the axis itself, which remains invariant under a rotation and is written as \cite[p. 814]{Arens2015}:
 \begin{equation}
-	P_{||} \ =\ \left|v\right> \left<v\right|.
+	P_{||} \ =\ \left|v\right> \left<v\right| \ =\ 
+		\left( \begin{array}{ccc} 
+			v_1^2    &    v_1 v_2 &       v_1 v_3 \\
+			v_2 v_1 &       v_2^2 &       v_2 v_3 \\
+			v_3 v_1 &    v_3 v_2 &          v_3^2
+		\end{array} \right).
 \end{equation}
 To see that this is the case, one can apply a the projector to a test vector $\left| x \right>$ resulting in $\left|v\right> \left<v | x \right>$,
 which is the projection of $\left| x \right>$ onto $\left| v \right>$ in the direction of $\left| v \right>$ \cite[p. 814]{Arens2015}.
@@ -105,7 +111,12 @@ which is the projection of $\left| x \right>$ onto $\left| v \right>$ in the dir
 The second axis for rotation is found by applying $P_{\perp}$, the orthogonal projector onto the plane, 
 whose normal is given by $\left|v\right>$, and which reads \cite[p. 814]{Arens2015}
 \begin{equation}
-	P_{\perp} \ =\ 1 - \left|v\right> \left<v\right|.
+	P_{\perp} \ =\ 1 - \left|v\right> \left<v\right| \ =\ 
+		\left( \begin{array}{ccc} 
+			1 - v_1^2    &      - v_1 v_2 &         - v_1 v_3 \\
+			   - v_2 v_1 &      1 - v_2^2 &         - v_2 v_3 \\
+			   - v_3 v_1 &      - v_3 v_2 &         1 - v_3^2
+		\end{array} \right).
 \end{equation}
 Here, $1$ names the unit matrix, and the equation is derived from completeness relation of the vector space under
 a basis $\left| v_i \right>$ \cite[p. 814]{Arens2015}:
@@ -118,45 +129,66 @@ This is the matrix which -- when applied to a vector $\left|x\right>$ -- gives t
 and it reads \cite{wiki_skewsymm}:
 \begin{equation}
 	P_{\times} \ =\ 
-		\left( \begin{array}{cccc} 
-			0       & -v_3 & v_2  & 0 \\
-			v_3   & 0      & -v_1 & 0 \\
-			-v_2  & v_1  & 0      & 0 \\
-			0       & 0      & 0      & 1
+		\left( \begin{array}{ccc} 
+			0       & -v_3 &  v_2 \\
+			v_3   & 0      & -v_1 \\
+			-v_2  & v_1  & 0
 		\end{array} \right).
 \end{equation}
 
-Writing Eq. \ref{eq:rodrigues} explicitly and using the canonical coordinate basis vectors $\left| x \right>$, $\left| y \right>$,
-and $\left| z \right>$, respectively, we reproduce the simple rotation matrices \cite{TODO}:
+Writing Eq. \ref{eq:rodrigues} explicitly thus yields \cite[p. 718, p. 816]{Arens2015}:
+\begin{equation}
+	R \ = \ 
+		\left( \begin{array}{ccc} 
+			v_1^2    &    v_1 v_2 &       v_1 v_3 \\
+			v_2 v_1 &       v_2^2 &       v_2 v_3 \\
+			v_3 v_1 &    v_3 v_2 &          v_3^2
+		\end{array} \right)
+	+ 	\left( \begin{array}{ccc} 
+			1 - v_1^2    &      - v_1 v_2 &         - v_1 v_3 \\
+			   - v_2 v_1 &      1 - v_2^2 &         - v_2 v_3 \\
+			   - v_3 v_1 &      - v_3 v_2 &         1 - v_3^2
+		\end{array} \right)
+		\cos \alpha 
+	 + 
+		\left( \begin{array}{ccc} 
+			0       & -v_3 &  v_2 \\
+			v_3   & 0      & -v_1 \\
+			-v_2  & v_1  & 0
+		\end{array} \right)
+		\sin \alpha.
+	\label{eq:rodrigues}
+\end{equation}
+
+Using the canonical coordinate basis vectors $\left| x \right> = \left( 1\,0\,0 \right)^t$, $\left| y \right> = \left( 0\,1\,0 \right)^t$,
+and $\left| z \right> = \left( 0\,0\,1 \right)^t$, respectively, we reproduce the well-known simple rotation matrices as 
+special cases \cite{TODO}:
 \begin{equation}
 	R_x \ =\ 
-		\left( \begin{array}{cccc} 
-			1 &                0 &                 0  & 0 \\
-			0 & \cos \alpha & -\sin \alpha  & 0 \\
-			0 & \sin \alpha  &  \cos \alpha  & 0 \\
-			0 &                0 &                  0  & 1
+		\left( \begin{array}{ccc} 
+			1 &                0 &                 0  \\
+			0 & \cos \alpha & -\sin \alpha  \\
+			0 & \sin \alpha  &  \cos \alpha
 		\end{array} \right),\,
 	R_y \ =\ 
-		\left( \begin{array}{cccc} 
-			 \cos \alpha &         0 &   \sin \alpha &                 0 \\
-			               0  &         1 &                  0 &                 0 \\
-			-\sin \alpha  &         0 &  \cos \alpha &                 0 \\
-			                 0 &         0 &                  0 &                1
-		\end{array} \right).
+		\left( \begin{array}{ccc} 
+			 \cos \alpha &         0 &   \sin \alpha \\
+			               0  &         1 &                  0 \\
+			-\sin \alpha  &         0 &  \cos \alpha
+		\end{array} \right),\,
 	R_z \ =\ 
-		\left( \begin{array}{cccc} 
-			\cos \alpha & -\sin \alpha &                 0  & 0 \\
-			\sin \alpha  & \cos \alpha &                 0  & 0 \\
-			               0 &                 0 &                 1  & 0 \\
-			               0 &                 0 &                 0  & 1
+		\left( \begin{array}{ccc} 
+			\cos \alpha & -\sin \alpha &                 0  \\
+			\sin \alpha  & \cos \alpha &                 0  \\
+			               0 &                 0 &                 1  
 		\end{array} \right).
 \end{equation}
 
 
-\paragraph{Quaternions}
+\subsubsection{Quaternions}
 
 
-\subsection{3-d to 2-d projections}
+\section{3-d to 2-d projections}
 
 \subsubsection{Parallel projection}
 
