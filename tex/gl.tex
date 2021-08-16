@@ -1,0 +1,48 @@
+%
+% gl
+% @author Tobias Weber <tweber@ill.fr>
+% @date aug-2021
+% @license see 'LICENSE' file
+%
+
+\chapter{3-d Rendering and OpenGL}
+\label{ch:gl}
+
+The software of this work uses \textit{OpenGL} \cite{web_OpenGL} as its main graphical user interface (GUI).
+This appendix chapter adds technical details to the general descriptions in chapter \ref{sec:gui_gl}.
+
+
+
+\section{Coordinate Systems and Transformations}
+
+To draw a three-dimensional object onto the screen, three principal coordinate systems are typically maintained,
+namely the coordinate system of the object, the system of the camera, and screen coordinates.
+The vertices of the 3-d object, $\left|x\right>$ , are thus transformed onto the screen by using three
+transformation matrices,
+\begin{equation}
+	\left|x_{\mathrm{screen}}\right> \ =\ P \cdot V \cdot  M \cdot  \left| x \right>,
+	\label{eq:gl_mvp}
+\end{equation}
+where $M$ represents the model's local matrix (used, for example, to spin the object around one of its axes),
+$V$ is the view matrix given by the camera's coordinate system which transforms local object coordinates into
+a global coordinate system, and $P$ finally projects the three-dimensional scene onto the two-dimensional plane
+representing the screen.
+
+Historically, \textit{OpenGL} used a fixed transformation and lighting pipeline \cite{wiki_gl_history} for
+these transformations. The pipeline maintained different stacks of matrices for the combined model-view and
+projection matrices \cite{web_gl_matrixmode}.
+Modern \textit{OpenGL} versions do not use internal matrix stacks anymore, instead all transformation
+and lighting operations are programmable through small \textit{shader} programs that are directly executed on
+the graphics processing unit (GPU) \cite{wiki_gl_history}. These programs are written in the
+\textit{OpenGL Shading Language} (\textit{GLSL}), which belongs to the \textit{C} family of languages, but
+only uses a subset of \textit{C} \cite{wiki_glsl}.
+While the transformation given by Eq. \ref{eq:gl_mvp} is not fixed anymore, its form is usually maintained
+in the shaders by the user.
+
+
+
+\subsection{3-d transformations}
+
+
+
+\subsection{3-d to 2-d projections}
