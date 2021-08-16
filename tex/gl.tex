@@ -20,13 +20,15 @@ namely the coordinate system of the object, the system of the camera, and screen
 The vertices of the 3-d object, $\left|x\right>$ , are thus transformed onto the screen by using three
 transformation matrices,
 \begin{equation}
-	\left|x_{\mathrm{screen}}\right> \ =\ P \cdot V \cdot  M \cdot  \left| x_{\mathrm{model}} \right>,
+	\boxed{\left|x_{\mathrm{viewport}}\right> \ =\ W \cdot P \cdot V \cdot  M \cdot  \left| x_{\mathrm{model}} \right>,}
 	\label{eq:gl_mvp}
 \end{equation}
 where $M$ represents the model's local matrix (used, for example, to spin the object around one of its axes),
 $V$ is the view matrix given by the camera's coordinate system which transforms local object coordinates into
-a global coordinate system, and $P$ finally projects the three-dimensional scene onto the two-dimensional plane
-representing the screen.
+a global coordinate system, $P$ projects the three-dimensional scene onto the two-dimensional plane
+representing the screen \cite{web_gl_ortho, web_gl_perspective}, and finally, $W$ is the window or viewport 
+matrix which scales and translates the projected screen coordinates into the pixel coordinates of the 
+display window \cite{web_gl_viewport}.
 
 Historically, \textit{OpenGL} used a fixed transformation and lighting pipeline \cite{wiki_gl_history} for
 these transformations. The pipeline maintained different stacks of matrices for the combined model-view and
@@ -38,6 +40,15 @@ the graphics processing unit (GPU) \cite{wiki_gl_history}. These programs are wr
 only uses a subset of \textit{C} \cite{wiki_glsl}.
 While the transformation given by Eq. \ref{eq:gl_mvp} is not fixed anymore, its form is usually maintained
 in the shaders by the user.
+
+The transformation inverse to Eq. \ref{eq:gl_mvp} is of importance to be able to select objects in the three-dimensional
+scene by mouse. To that end, a line is calculated by ``unprojecting'' the mouse position in window coordinates
+onto the near and far planes of the view frustum and calculating the intersection of the line through these
+two points with the scene geometry \cite{web_gl_unproject}. The operation is given by:
+\begin{equation}
+	\left|x_{\mathrm{model}}\right> \ =\ M^{-1} \cdot V^{-1} \cdot P^{-1} \cdot  W^{-1} \cdot  \left| x_{\mathrm{viewport}} \right>,
+\end{equation}
+and normalising $\left|x_{\mathrm{model}}\right>$ by its fourth (homogeneous) coordinate \cite{web_gl_unproject}.
 
 
 
