@@ -20,7 +20,7 @@ namely the coordinate system of the object, the system of the camera, and screen
 The vertices of the 3-d object, $\left|x\right>$ , are thus transformed onto the screen by using three
 transformation matrices,
 \begin{equation}
-	\left|x_{\mathrm{screen}}\right> \ =\ P \cdot V \cdot  M \cdot  \left| x \right>,
+	\left|x_{\mathrm{screen}}\right> \ =\ P \cdot V \cdot  M \cdot  \left| x_{\mathrm{model}} \right>,
 	\label{eq:gl_mvp}
 \end{equation}
 where $M$ represents the model's local matrix (used, for example, to spin the object around one of its axes),
@@ -43,6 +43,59 @@ in the shaders by the user.
 
 \subsection{3-d transformations}
 
+To simplify the calculations when translations are involved, \textit{OpenGL} uses homogeneous coordinates.
+Homogeneous coordinates append a fourth component to the three-dimensional vectors, which is set to zero for
+directions and to one for vertices.
+
+
+\subsubsection{Translation}
+Vertices can thus be translated by left-multiplying with a matrix whose fourth column represents the translation
+vector:
+\begin{equation}
+	\left( \begin{array}{c} x + t_x \\ y + t_y \\ z + t_z \\ 1 \end{array} \right) 
+	\ =\  
+	\left( \begin{array}{cccc} 
+		1 & 0 & 0 & t_x \\
+		0 & 1 & 0 & t_y \\
+		0 & 0 & 1 & t_z \\
+		0 & 0 & 0 & 1
+	\end{array} \right) \cdot
+	\left( \begin{array}{c} x \\ y \\ z \\ 1 \end{array} \right).
+\end{equation}
+Not that direction vectors, which have their fourth component zero, are not affected by a translation.
+
+
+\subsubsection{Scaling}
+By the same token, scaling along the principal axes is performed by setting the diagonal matrix elements:
+\begin{equation}
+	\left( \begin{array}{c} s_x \cdot x \\ s_y \cdot y \\ s_z \cdot z \\ 1 \end{array} \right) 
+	\ =\  
+	\left( \begin{array}{cccc} 
+		s_x & 0 & 0 & 0 \\
+		0 & s_y & 0 & 0 \\
+		0 & 0 & s_z & 0 \\
+		0 & 0 & 0 & 1
+	\end{array} \right) \cdot
+	\left( \begin{array}{c} x \\ y \\ z \\ 1 \end{array} \right).
+\end{equation}
+
+
+\subsubsection{Rotation}
+The set of rotations in three-dimensional space forms an algebraic group, the special orthogonal group $\mathrm{SO\left(3\right)}$,
+which comprises all orthogonal matrices with determinant 1.
+There are two popular ways to describe rotations $R \in \mathrm{SO\left(3\right)}$ given the rotation axis and angle, 
+namely the Euler-Rodrigues formalism and quaternions. 
+As they are both ubiquitous in computer graphics, we describe each of them briefly in the following paragraphs.
+
+\paragraph{Euler-Rodrigues formula}
+
+
+\paragraph{Quaternions}
 
 
 \subsection{3-d to 2-d projections}
+
+\subsubsection{Parallel projection}
+
+\subsubsection{Perspective projection}
+
