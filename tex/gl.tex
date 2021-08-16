@@ -84,10 +84,73 @@ By the same token, scaling along the principal axes is performed by setting the 
 The set of rotations in three-dimensional space forms an algebraic group, the special orthogonal group $\mathrm{SO\left(3\right)}$,
 which comprises all orthogonal matrices with determinant 1.
 There are two popular ways to describe rotations $R \in \mathrm{SO\left(3\right)}$ given the rotation axis and angle, 
-namely the Euler-Rodrigues formalism and quaternions. 
+namely the Rodrigues formalism and quaternions. 
 As they are both ubiquitous in computer graphics, we describe each of them briefly in the following paragraphs.
 
-\paragraph{Euler-Rodrigues formula}
+\paragraph{Rodrigues formalism}
+For the derivation in this section we follow Refs. \cite[p. 718, p. 816]{Arens2015} and \cite{wiki_rodrigues}.
+The matrix $R$ describing the rotation about a normalised vector $\left|v\right>$ under an angle $\alpha$ can be decomposed into
+three projections onto the rotated coordinate system \cite[p. 718, p. 816]{Arens2015}:
+\begin{equation}
+	R \ = \ P_{||} + P_{\perp} \cos \alpha + P_{\times} \sin \alpha.
+	\label{eq:rodrigues}
+\end{equation}
+Here, $P_{||}$ is the projector onto the axis itself, which remains invariant under a rotation and is written as \cite[p. 814]{Arens2015}:
+\begin{equation}
+	P_{||} \ =\ \left|v\right> \left<v\right|.
+\end{equation}
+To see that this is the case, one can apply a the projector to a test vector $\left| x \right>$ resulting in $\left|v\right> \left<v | x \right>$,
+which is the projection of $\left| x \right>$ onto $\left| v \right>$ in the direction of $\left| v \right>$ \cite[p. 814]{Arens2015}.
+
+The second axis for rotation is found by applying $P_{\perp}$, the orthogonal projector onto the plane, 
+whose normal is given by $\left|v\right>$, and which reads \cite[p. 814]{Arens2015}
+\begin{equation}
+	P_{\perp} \ =\ 1 - \left|v\right> \left<v\right|.
+\end{equation}
+Here, $1$ names the unit matrix, and the equation is derived from completeness relation of the vector space under
+a basis $\left| v_i \right>$ \cite[p. 814]{Arens2015}:
+\begin{equation}
+	1 \ =\  \sum_i \left| v_i \right> \left< v_i \right|.
+\end{equation}
+
+Finally, the third axis is found by applying $P_{\times}$, the skew-symmetric matrix for $\left|v\right>$.
+This is the matrix which -- when applied to a vector $\left|x\right>$ -- gives the cross product of $\left|v\right>$ and $\left|x\right>$, 
+and it reads \cite{wiki_skewsymm}:
+\begin{equation}
+	P_{\times} \ =\ 
+		\left( \begin{array}{cccc} 
+			0       & -v_3 & v_2  & 0 \\
+			v_3   & 0      & -v_1 & 0 \\
+			-v_2  & v_1  & 0      & 0 \\
+			0       & 0      & 0      & 1
+		\end{array} \right).
+\end{equation}
+
+Writing Eq. \ref{eq:rodrigues} explicitly and using the canonical coordinate basis vectors $\left| x \right>$, $\left| y \right>$,
+and $\left| z \right>$, respectively, we reproduce the simple rotation matrices \cite{TODO}:
+\begin{equation}
+	R_x \ =\ 
+		\left( \begin{array}{cccc} 
+			1 &                0 &                 0  & 0 \\
+			0 & \cos \alpha & -\sin \alpha  & 0 \\
+			0 & \sin \alpha  &  \cos \alpha  & 0 \\
+			0 &                0 &                  0  & 1
+		\end{array} \right),\,
+	R_y \ =\ 
+		\left( \begin{array}{cccc} 
+			 \cos \alpha &         0 &   \sin \alpha &                 0 \\
+			               0  &         1 &                  0 &                 0 \\
+			-\sin \alpha  &         0 &  \cos \alpha &                 0 \\
+			                 0 &         0 &                  0 &                1
+		\end{array} \right).
+	R_z \ =\ 
+		\left( \begin{array}{cccc} 
+			\cos \alpha & -\sin \alpha &                 0  & 0 \\
+			\sin \alpha  & \cos \alpha &                 0  & 0 \\
+			               0 &                 0 &                 1  & 0 \\
+			               0 &                 0 &                 0  & 1
+		\end{array} \right).
+\end{equation}
 
 
 \paragraph{Quaternions}
