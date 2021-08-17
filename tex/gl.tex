@@ -48,7 +48,7 @@ two points with the scene geometry \cite{web_gl_unproject}. The operation is giv
 \begin{equation}
 	\left|x_{\mathrm{model}}\right> \ =\ M^{-1} \cdot V^{-1} \cdot P^{-1} \cdot  W^{-1} \cdot  \left| x_{\mathrm{viewport}} \right>,
 \end{equation}
-and normalising $\left|x_{\mathrm{model}}\right>$ by its fourth (homogeneous) coordinate \cite{web_gl_unproject}.
+and normalising $\left|x_{\mathrm{model}}\right>$ by its fourth (homogeneous) component \cite{web_gl_unproject}.
 
 
 
@@ -111,9 +111,9 @@ Here, $P_{||}$ is the projector onto the axis itself, which remains invariant un
 \begin{equation}
 	P_{||} \ =\ \left|v\right> \left<v\right| \ =\ 
 		\left( \begin{array}{ccc} 
-			v_1^2    &    v_1 v_2 &       v_1 v_3 \\
-			v_2 v_1 &       v_2^2 &       v_2 v_3 \\
-			v_3 v_1 &    v_3 v_2 &          v_3^2
+			v_1^2   &    v_1 v_2 &       v_1 v_3 \\
+			v_2 v_1 &      v_2^2 &       v_2 v_3 \\
+			v_3 v_1 &    v_3 v_2 &         v_3^2
 		\end{array} \right).
 \end{equation}
 To see that this is the case, one can apply a the projector to a test vector $\left| x \right>$ resulting in $\left|v\right> \left<v | x \right>$,
@@ -141,8 +141,8 @@ and it reads \cite{wiki_skewsymm}:
 \begin{equation}
 	P_{\times} \ =\ 
 		\left( \begin{array}{ccc} 
-			0       & -v_3 &  v_2 \\
-			v_3   & 0      & -v_1 \\
+			0     & -v_3 &  v_2 \\
+			v_3   & 0    & -v_1 \\
 			-v_2  & v_1  & 0
 		\end{array} \right).
 \end{equation}
@@ -151,9 +151,9 @@ Writing Eq. \ref{eq:rodrigues} explicitly thus yields \cite[p. 718, p. 816]{Aren
 \begin{equation}
 	R \ = \ 
 		\left( \begin{array}{ccc} 
-			v_1^2    &    v_1 v_2 &       v_1 v_3 \\
-			v_2 v_1 &       v_2^2 &       v_2 v_3 \\
-			v_3 v_1 &    v_3 v_2 &          v_3^2
+			v_1^2   &    v_1 v_2 &       v_1 v_3 \\
+			v_2 v_1 &      v_2^2 &       v_2 v_3 \\
+			v_3 v_1 &    v_3 v_2 &         v_3^2
 		\end{array} \right)
 	+ 	\left( \begin{array}{ccc} 
 			1 - v_1^2    &      - v_1 v_2 &         - v_1 v_3 \\
@@ -163,8 +163,8 @@ Writing Eq. \ref{eq:rodrigues} explicitly thus yields \cite[p. 718, p. 816]{Aren
 		\cos \alpha 
 	 + 
 		\left( \begin{array}{ccc} 
-			0       & -v_3 &  v_2 \\
-			v_3   & 0      & -v_1 \\
+			0     & -v_3 &  v_2 \\
+			v_3   & 0    & -v_1 \\
 			-v_2  & v_1  & 0
 		\end{array} \right)
 		\sin \alpha.
@@ -177,21 +177,21 @@ special cases \cite{TODO}:
 \begin{equation}
 	R_x \ =\ 
 		\left( \begin{array}{ccc} 
-			1 &                0 &                 0  \\
-			0 & \cos \alpha & -\sin \alpha  \\
+			1 &            0 &            0  \\
+			0 &  \cos \alpha & -\sin \alpha  \\
 			0 & \sin \alpha  &  \cos \alpha
 		\end{array} \right),\,
 	R_y \ =\ 
 		\left( \begin{array}{ccc} 
-			 \cos \alpha &         0 &   \sin \alpha \\
-			               0  &         1 &                  0 \\
+			  \cos \alpha &         0 &  \sin \alpha \\
+			           0  &         1 &            0 \\
 			-\sin \alpha  &         0 &  \cos \alpha
 		\end{array} \right),\,
 	R_z \ =\ 
 		\left( \begin{array}{ccc} 
-			\cos \alpha & -\sin \alpha &                 0  \\
-			\sin \alpha  & \cos \alpha &                 0  \\
-			               0 &                 0 &                 1  
+			 \cos \alpha & -\sin \alpha &             0  \\
+			\sin \alpha  &  \cos \alpha &             0  \\
+			           0 &            0 &             1
 		\end{array} \right).
 \end{equation}
 
@@ -199,9 +199,39 @@ special cases \cite{TODO}:
 \subsubsection{Quaternions}
 
 
+
 \section{3-d to 2-d projections}
 
+
 \subsubsection{Parallel projection}
+The standard orthogonal projection matrix is given as \cite{web_gl_ortho}:
+\begin{equation}
+	P_{\mathrm{ortho}} \ =\
+		\left( \begin{array}{cccc}
+			\frac{2}{r-l} &                             0 &                             0 &  \frac{l+r}{l-r}                  \\
+			            0 &  \sigma_y \cdot \frac{2}{t-b} &                             0 &  \sigma_y \cdot \frac{b+t}{b-t}   \\
+			            0 &                             0 &  \sigma_z \cdot \frac{s}{n-f} &  \sigma_z \cdot \frac{n+f_0}{n-f} \\
+			            0 &                             0 &                             0 &  1
+		\end{array} \right),
+\end{equation}
+where $l$, $r$, $b$, $t$, $n$ and $f$ are the distances of the left, right, bottom, top, near and far planes, respectively.
+The $\sigma_{y,\, z}$ are sign factors depending on the definition of the coordinate system and its handedness,
+$s$ and $f_0$ are scaling factors.
+
+
 
 \subsubsection{Perspective projection}
+The standard perspective projection matrix is given as \cite{web_gl_perspective}:
+\begin{equation}
+	P_{\mathrm{ortho}} \ =\
+		\left( \begin{array}{cccc}
+			\frac{\rho}{\tan\left(\phi/2 \right)} &                                                  0 &                                 0 &  0                 \\
+			                                    0 &  \sigma_y \cdot \frac{1}{\tan\left(\phi/2 \right)} &                                 0 &  0                 \\
+			                                    0 &                                                  0 &  \sigma_z \cdot \frac{n_0+f}{n-f} &  \frac{s n f}{n-f} \\
+			                                    0 &                                                  0 &                         -\sigma_z &  0
+		\end{array} \right),
+\end{equation}
+where the variables have the same meaning as in the orthogonal projection case.
+Additionally, $\phi$ names the field of view angle and $\rho$ is the screen ratio (e.g. 9/16 or 3/4).
+$n_0$ is a scaling factor.
 
