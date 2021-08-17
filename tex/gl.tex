@@ -225,11 +225,17 @@ Here we only present some important results, please refer to \cite{Kuipers2002} 
 The product of two quaternions $\left( w_1,\,\underline{v_1} \right),\ \left( w_2,\,\underline{v_2} \right) \in \mathbb{H}$ 
 derives from the basic algebraic property (Eq. \ref{eq:quat_basic}) and is \cite[pp. 106-110]{Kuipers2002}:
 \begin{equation}
-	\left( w_1, \,\underline{v_1} \right) \cdot \left( w_2, \;\underline{v_2} \right) \ =\ 
+	\left( w_1, \,\underline{v_1} \right) \cdot \left( w_2, \;\underline{v_2} \right) \ \equiv \ 
 	\left( w_1 w_2 - \underline{v_1} \cdot \underline{v_2}, \;\underline{v_1} \times \underline{v_2} + w_1 \underline{v_2} + w_2 \underline{v_1}\right).
 \end{equation}
-Multiplying a quaternion with a vector $\underline{v}$ reduces to the above case when we identify $\underline{v}$
-as the quaternion $\left( 0,\,\underline{v} \right)$ \cite{TODO}.
+Multiplying a quaternion $q = \left( r,\, \underline{s} \right) \in \mathbb{H}$ with a vector 
+$\underline{v} \in \mathbb{R}^3$  reduces to two quaternion multiplications and is done by \cite[p. 127]{Kuipers2002}:
+\begin{equation}
+	q \cdot \underline{v} \ =\ 
+	q \cdot \left(0,\ \underline{v} \right) \cdot q^{*} \ =\ 
+	\left( r,\, \underline{s} \right) \cdot \left(0,\ \underline{v} \right) \cdot \left( r,\, -\underline{s} \right).
+\end{equation}
+where $q^{*} = \left( r,\, -\underline{s} \right)$ is the complex conjugate quaternion \cite[pp. 110-111]{Kuipers2002}.
 
 \paragraph{SO(3)}
 The special orthogonal group $\mathrm{SO\left(3\right)}$, which comprises rotations in three-dimensional space by an angle
