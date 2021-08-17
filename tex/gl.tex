@@ -14,7 +14,6 @@ This appendix chapter adds technical details to the general descriptions in chap
 
 
 \section{Coordinate systems and transformations}
-
 To draw a three-dimensional object onto the screen, three principal coordinate systems are typically maintained,
 namely the coordinate system of the object, the system of the camera, and screen coordinates.
 The vertices of the 3-d object, $\left|x\right>$ , are thus transformed onto the screen by using three
@@ -53,12 +52,14 @@ and normalising $\left|x_{\mathrm{model}}\right>$ by its fourth (homogeneous) co
 
 
 \section{3-d transformations}
-
 To simplify the calculations when translations are involved, \textit{OpenGL} uses homogeneous coordinates.
 Homogeneous coordinates append a fourth component to the three-dimensional vectors, which is set to zero for
 directions and to one for vertices.
 
 
+% -----------------------------------------------------------------------------
+% scaling
+% -----------------------------------------------------------------------------
 \subsection{Translation}
 Vertices can thus be translated by left-multiplying with a matrix whose fourth column represents the translation
 vector:
@@ -74,8 +75,12 @@ vector:
 	\left( \begin{array}{c} x \\ y \\ z \\ 1 \end{array} \right).
 \end{equation}
 Not that direction vectors, which have their fourth component zero, are not affected by a translation.
+% -----------------------------------------------------------------------------
 
 
+% -----------------------------------------------------------------------------
+% scaling
+% -----------------------------------------------------------------------------
 \subsection{Scaling}
 By the same token, scaling along the principal axes is performed by setting the diagonal matrix elements:
 \begin{equation}
@@ -89,15 +94,20 @@ By the same token, scaling along the principal axes is performed by setting the 
 	\end{array} \right) \cdot
 	\left( \begin{array}{c} x \\ y \\ z \\ 1 \end{array} \right).
 \end{equation}
+% -----------------------------------------------------------------------------
 
 
+% -----------------------------------------------------------------------------
+% rotation
+% -----------------------------------------------------------------------------
 \subsection{Rotation}
 The set of rotations in three-dimensional space forms an algebraic group, the special orthogonal group $\mathrm{SO\left(3\right)}$,
 which comprises all orthogonal matrices with determinant 1.
 There are two popular ways to describe rotations $R \in \mathrm{SO\left(3\right)}$ given the rotation axis and angle, 
 namely the Rodrigues formalism and quaternions. 
-As they are both ubiquitous in computer graphics, we describe each of them briefly in the following paragraphs.
+% As they are both ubiquitous in computer graphics, we describe each of them briefly in the following paragraphs.
 For clarity, we only write out the left-upper 3x3 part of the homogeneous 4x4 matrices.
+
 
 \subsubsection{Rodrigues formalism}
 For the derivation in this section we follow Refs. \cite[p. 718, p. 816]{Arens2015} and \cite{wiki_rodrigues}.
@@ -168,7 +178,7 @@ Explicitly writing Eq. \ref{eq:rodrigues} thus yields the full Rodrigues formula
 			-v_2  & v_1  & 0
 		\end{array} \right)
 		\sin \alpha.
-	\label{eq:rodrigues}
+	\label{eq:rodrigues_expl}
 \end{equation}
 
 Using the canonical coordinate basis vectors $\left| x \right> = \left( 1\,0\,0 \right)^t$, $\left| y \right> = \left( 0\,1\,0 \right)^t$,
@@ -197,17 +207,46 @@ special cases \cite{TODO}:
 
 
 \subsubsection{Quaternions}
-Quaternions are hyper-complex numbers of the form $w + x \cdot i + \cdot j + \cdot k$ with one real component, $w$, 
-and three imaginary components, $x$, $y$, and $z$. 
-Algebraically, they form a division ring, named $\mathbb{H}$ after William Rowan Hamilton, using the basic 
-properties of the three imaginary units, $i$, $j$, and $k$:
+Quaternions are hyper-complex numbers of the form $w + x \cdot i + y \cdot j + z \cdot k$, possessing one real 
+component, $w$, and three imaginary components, $x$, $y$, and $z$. 
+Usually, quaternions are written as tuples $\left( w,\,x,\,y,\,z \right) = \left( w,\,\underline{v} \right) \in \mathbb{H}$,
+where the three imaginary components are treated as a vector component.
+Algebraically, quaternions form the division ring $\mathbb{H}$, named after William Rowan Hamilton, which follows from the 
+basic properties of the three imaginary units, $i$, $j$, and $k$:
 \begin{equation}
 	i^2 \ =\ j^2 \ =\ k^2 \ =\ ijk \ =\ -1.
+	\label{eq:quat_basic}
 \end{equation}
-A very good in-depth treatise of Quaternion algebra and analysis can be found in the book by Kuipers \cite{Kuipers2002}, 
+A very good in-depth treatise of quaternion algebra and analysis can be found in the book by Kuipers \cite{Kuipers2002},
 which we follow in this section.
+Here we only present some important results, please refer to \cite{Kuipers2002} for the derivations.
+
+\paragraph{Quaternion multiplication}
+The product of two quaternions $\left( w_1,\,\underline{v_1} \right),\ \left( w_2,\,\underline{v_2} \right) \in \mathbb{H}$ 
+derives from the basic algebraic property (Eq. \ref{eq:quat_basic}) and is \cite[pp. 106-110]{Kuipers2002}:
+\begin{equation}
+	\left( w_1, \,\underline{v_1} \right) \cdot \left( w_2, \;\underline{v_2} \right) \ =\ 
+	\left( w_1 w_2 - \underline{v_1} \cdot \underline{v_2}, \;\underline{v_1} \times \underline{v_2} + w_1 \underline{v_2} + w_2 \underline{v_1}\right).
+\end{equation}
+Multiplying a quaternion with a vector $\underline{v}$ reduces to the above case when we identify $\underline{v}$
+as the quaternion $\left( 0,\,\underline{v} \right)$ \cite{TODO}.
+
+\paragraph{SO(3)}
+The special orthogonal group $\mathrm{SO\left(3\right)}$, which comprises rotations in three-dimensional space by an angle
+$\alpha$ around a normalised vector $\underline{v}$, can be directly written in quaternion form in an analogy to 
+Euler's formula for complex numbers \cite{wiki_quatrot}:
+\begin{equation}
+	\boxed{
+	q_{\mathrm{rot}} \ =\ \left(\cos\left(\alpha/2 \right),\; \sin\left(\alpha/2 \right) \cdot \underline{v} \right).
+	}
+\end{equation}
+This is the quaternion equivalent of Eq. \ref{eq:rodrigues}.
+% -----------------------------------------------------------------------------
 
 
+% -----------------------------------------------------------------------------
+% projections
+% -----------------------------------------------------------------------------
 \section{3-d to 2-d projections}
 
 
@@ -264,3 +303,4 @@ $n_0$ is a scaling factor. Typical values are given in table \ref{tab:gl_constan
 \end{table}
 
 TODO
+% -----------------------------------------------------------------------------
