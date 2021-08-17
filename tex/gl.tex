@@ -5,10 +5,10 @@
 % @license see 'LICENSE' file
 %
 
-\chapter{3-d Rendering and OpenGL}
+\chapter{Mathematics for 3-d Graphics}
 \label{ch:gl}
 
-The software of this work uses \textit{OpenGL} \cite{web_OpenGL} as its main graphical user interface (GUI).
+The software of this work uses \textit{OpenGL} \cite{web_OpenGL} in its main graphical user interface (GUI).
 This appendix chapter adds technical details to the general descriptions in chapter \ref{sec:gui_gl}.
 
 
@@ -33,11 +33,11 @@ display window \cite{web_gl_viewport}.
 Historically, \textit{OpenGL} used a fixed transformation and lighting pipeline \cite{wiki_gl_history} for
 these transformations. The pipeline maintained different stacks of matrices for the combined model-view and
 projection matrices \cite{web_gl_matrixmode}.
-Modern \textit{OpenGL} versions do not use internal matrix stacks anymore, instead all transformation
-and lighting operations are programmable through small \textit{shader} programs that are directly executed on
-the graphics processing unit (GPU) \cite{wiki_gl_history}. These programs are written in the
-\textit{OpenGL Shading Language} (\textit{GLSL}), which belongs to the \textit{C} family of languages, but
-only uses a subset of \textit{C} \cite{wiki_glsl}.
+Modern \textit{OpenGL} \cite{web_OpenGL} versions and its successor \textit{Vulkan} \cite{web_Vulkan} do not 
+use internal matrix stacks anymore, instead all transformation and lighting operations are programmable through 
+small \textit{shader} programs that are directly executed on the graphics processing unit (GPU) \cite{wiki_gl_history}. 
+These programs are written in the \textit{OpenGL Shading Language} (\textit{GLSL}), which belongs to the 
+\textit{C} family of languages, but only uses a subset of \textit{C} \cite{wiki_glsl}.
 While the transformation given by Eq. \ref{eq:gl_mvp} is not fixed anymore, its form is usually maintained
 in the shaders by the user.
 
@@ -147,7 +147,7 @@ and it reads \cite{wiki_skewsymm}:
 		\end{array} \right).
 \end{equation}
 
-Writing Eq. \ref{eq:rodrigues} explicitly thus yields \cite[p. 718, p. 816]{Arens2015}:
+Explicitly writing Eq. \ref{eq:rodrigues} thus yields the full Rodrigues formula \cite[p. 718, p. 816]{Arens2015}:
 \begin{equation}
 	R \ = \ 
 		\left( \begin{array}{ccc} 
@@ -197,7 +197,15 @@ special cases \cite{TODO}:
 
 
 \subsubsection{Quaternions}
-
+Quaternions are hyper-complex numbers of the form $w + x \cdot i + \cdot j + \cdot k$ with one real component, $w$, 
+and three imaginary components, $x$, $y$, and $z$. 
+Algebraically, they form a division ring, named $\mathbb{H}$ after William Rowan Hamilton, using the basic 
+properties of the three imaginary units, $i$, $j$, and $k$:
+\begin{equation}
+	i^2 \ =\ j^2 \ =\ k^2 \ =\ ijk \ =\ -1.
+\end{equation}
+A very good in-depth treatise of Quaternion algebra and analysis can be found in the book by Kuipers \cite{Kuipers2002}, 
+which we follow in this section.
 
 
 \section{3-d to 2-d projections}
@@ -216,7 +224,7 @@ The standard orthogonal projection matrix is given as \cite{web_gl_ortho}:
 \end{equation}
 where $l$, $r$, $b$, $t$, $n$ and $f$ are the distances of the left, right, bottom, top, near and far planes, respectively.
 The $\sigma_{y,\, z}$ are sign factors depending on the definition of the coordinate system and its handedness,
-$s$ and $f_0$ are scaling factors.
+$s$ and $f_0$ are scaling factors. The values for these constants are given in table \ref{tab:gl_constants}.
 
 
 
@@ -233,5 +241,26 @@ The standard perspective projection matrix is given as \cite{web_gl_perspective}
 \end{equation}
 where the variables have the same meaning as in the orthogonal projection case.
 Additionally, $\phi$ names the field of view angle and $\rho$ is the screen ratio (e.g. 9/16 or 3/4).
-$n_0$ is a scaling factor.
+$n_0$ is a scaling factor. Typical values are given in table \ref{tab:gl_constants}.
 
+
+\begin{table}[htb]
+	\centering
+	\begin{tabular}{|c|cc|}
+		\hline
+		    Constant &  \textit{OpenGL} &   \textit{Vulkan} \tabularnewline
+		\hline
+		  $\sigma_y$ &              $1$ &              $-1$ \tabularnewline
+		  $\sigma_z$ &              $1$ &               $1$ \tabularnewline
+		       $n_0$ &              $n$ &               $0$ \tabularnewline
+		       $f_0$ &              $f$ &               $0$ \tabularnewline
+		         $s$ &              $2$ &               $1$ \tabularnewline
+		\hline
+	\end{tabular}
+	\caption[Projection matrix constants]{
+		Constant values for the perspective and orthogonal projection matrices used in the
+		\textit{OpenGL} \cite{web_OpenGL} and \textit{Vulkan} \cite{web_Vulkan} graphics libraries.}
+	\label{tab:gl_constants}
+\end{table}
+
+TODO
