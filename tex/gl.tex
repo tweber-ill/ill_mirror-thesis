@@ -10,13 +10,14 @@
 
 The software of this work uses \textit{OpenGL} \cite{web_OpenGL} in its main graphical user interface (GUI).
 This appendix chapter adds technical details to the general descriptions in chapter \ref{sec:gui_gl}.
+A comprehensive overview of \textit{OpenGL} and the mathematics involved can be found in Ref. \cite{TODO}.
 
 
 
 \section{Coordinate systems and transformations}
 To draw a three-dimensional object onto the screen, three principal coordinate systems are typically maintained,
-namely the coordinate system of the object, the system of the camera, and screen coordinates.
-The vertices of the 3-d object, $\left|x\right>$ , are thus transformed onto the screen by using three
+namely the coordinate system of the object, the system of the camera, as well as screen and window coordinates.
+The vertices of the 3-d object, $\left|x\right>$ , are thus transformed into a window's 2-d pixels by using four
 transformation matrices,
 \begin{equation}
 	\boxed{\left|x_{\mathrm{viewport}}\right> \ =\ W \cdot P \cdot V \cdot  M \cdot  \left| x_{\mathrm{model}} \right>,}
@@ -24,10 +25,10 @@ transformation matrices,
 \end{equation}
 where $M$ represents the model's local matrix (used, for example, to spin the object around one of its axes),
 $V$ is the view matrix given by the camera's coordinate system which transforms local object coordinates into
-a global coordinate system, $P$ projects the three-dimensional scene onto the two-dimensional plane
-representing the screen \cite{web_gl_ortho, web_gl_perspective}, and finally, $W$ is the window or viewport 
-matrix which scales and translates the projected screen coordinates into the pixel coordinates of the 
-display window \cite{web_gl_viewport}.
+a global coordinate system. These matrices take the form described in section \ref{sec:gl_trafos}.
+$P$ projects the three-dimensional scene onto the two-dimensional plane representing the screen \cite{web_gl_ortho, web_gl_perspective} and is described in section \ref{sec:gl_projs}. 
+Finally, $W$ is the window or viewport matrix which scales and translates the projected screen coordinates 
+into the pixel coordinates of the display window \cite{web_gl_viewport}, it is discussed in section \ref{sec:gl_viewport}.
 
 Historically, \textit{OpenGL} used a fixed transformation and lighting pipeline \cite{wiki_gl_history} for
 these transformations. The pipeline maintained different stacks of matrices for the combined model-view and
@@ -38,7 +39,8 @@ small \textit{shader} programs that are directly executed on the graphics proces
 These programs are written in the \textit{OpenGL Shading Language} (\textit{GLSL}), which belongs to the 
 \textit{C} family of languages, but only uses a subset of \textit{C} \cite{wiki_glsl}.
 While the transformation given by Eq. \ref{eq:gl_mvp} is not fixed anymore, its form is usually maintained
-in the shaders by the user.
+in the shaders by the user. More information on the rendering pipeline and the shaders is given in 
+section \ref{sec:gl_shaders}.
 
 The transformation inverse to Eq. \ref{eq:gl_mvp} is of importance to be able to select objects in the three-dimensional
 scene by mouse. To that end, a line is calculated by ``unprojecting'' the mouse position in window coordinates
@@ -52,6 +54,7 @@ and normalising $\left|x_{\mathrm{model}}\right>$ by its fourth (homogeneous) co
 
 
 \section{3-d transformations}
+\label{sec:gl_trafos}
 To simplify the calculations when translations are involved, \textit{OpenGL} uses homogeneous coordinates.
 Homogeneous coordinates append a fourth component to the three-dimensional vectors, which is set to zero for
 directions and to one for vertices.
@@ -234,6 +237,7 @@ $\underline{v} \in \mathbb{R}^3$  reduces to two quaternion multiplications and 
 	q \cdot \underline{v} \ =\ 
 	q \cdot \left(0,\ \underline{v} \right) \cdot q^{*} \ =\ 
 	\left( r,\, \underline{s} \right) \cdot \left(0,\ \underline{v} \right) \cdot \left( r,\, -\underline{s} \right).
+	\label{eq:mult_quat_vec}
 \end{equation}
 where $q^{*} = \left( r,\, -\underline{s} \right)$ is the complex conjugate quaternion \cite[pp. 110-111]{Kuipers2002}.
 
@@ -245,8 +249,15 @@ Euler's formula for complex numbers \cite{wiki_quatrot}:
 	\boxed{
 	q_{\mathrm{rot}} \ =\ \left(\cos\left(\alpha/2 \right),\; \sin\left(\alpha/2 \right) \cdot \underline{v} \right).
 	}
+	\label{eq:quatrot}
 \end{equation}
-This is the quaternion equivalent of Eq. \ref{eq:rodrigues}.
+This is the quaternion equivalent of Eq. \ref{eq:rodrigues}. One can readily prove that Eqs. \ref{eq:rodrigues} and \ref{eq:quatrot} are equal by applying both formulas to a test vector (using the multiplication rule of Eq.
+\ref{eq:mult_quat_vec} in the  latter case), simplifying occurring expressions using trigonometric 
+identities \cite{wiki_trig} and triple vector products of the form 
+$\left(\underline{a} \times \underline{b}\right) \times \underline{c} = 
+	\left( \underline{c}\cdot \underline{a} \right) \underline{b} - 
+	\left( \underline{c}\cdot \underline{b} \right) \underline{a}$ \cite{wiki_tripleprod},
+and verifying that the results are equal in both cases.
 % -----------------------------------------------------------------------------
 
 
@@ -254,7 +265,7 @@ This is the quaternion equivalent of Eq. \ref{eq:rodrigues}.
 % projections
 % -----------------------------------------------------------------------------
 \section{3-d to 2-d projections}
-
+\label{sec:gl_projs}
 
 \subsubsection{Parallel projection}
 The standard orthogonal projection matrix is given as \cite{web_gl_ortho}:
@@ -307,6 +318,52 @@ $n_0$ is a scaling factor. Typical values are given in table \ref{tab:gl_constan
 		\textit{OpenGL} \cite{web_OpenGL} and \textit{Vulkan} \cite{web_Vulkan} graphics libraries.}
 	\label{tab:gl_constants}
 \end{table}
+% -----------------------------------------------------------------------------
 
-TODO
+
+
+% -----------------------------------------------------------------------------
+% window/viewport trafo
+% -----------------------------------------------------------------------------
+\section{Window transformation}
+\label{sec:gl_viewport}
+Scaling the projected screen coordinates into the graphics window with width $w$, height $h$, near
+$z$ value $n$ and far $z$ value $f$ is done by the following matrix \cite{web_gl_viewport}:
+\begin{equation}
+	W \ =\ 
+	\left( \begin{array}{cccc} 
+		w/2 &   0 &                  0 &                w/2 \\
+		  0 & h/2 &                  0 &                h/2 \\
+		  0 &   0 & \left(f-n\right)/2 & \left(f+n\right)/2 \\
+		  0 &   0 &                  0 &                  1
+	\end{array} \right) \cdot
+\end{equation}
+% -----------------------------------------------------------------------------
+
+
+
+% -----------------------------------------------------------------------------
+% rendering / shaders
+% -----------------------------------------------------------------------------
+\section{Rendering}
+\label{sec:gl_shaders}
+Rendering in \textit{OpenGL} is performed using shaders -- small \textit{C}-like programs that are executed on 
+the GPU -- where a minimum rendering pipeline consists of at least a vertex and a fragment shader. 
+Vertex shaders are called for each vertex of a given geometry composed of triangles.
+They are responsible for the transformations of the vertices from object into screen space as described above.
+Fragment shaders are used for the rasterisation of triangles, i.e. drawing all its pixels on the screen. 
+They are, for instance, used to apply colours and textures to polygons.
+
+Constant values, such as the transformation and projection matrices mentioned above, can be propagated from the 
+user (CPU) program to the shaders. To that end, \textit{OpenGL} provides API functions that allow the user 
+program to write to shader variables that have been declared with the keyword \lstinline[language=C]|uniform|.
+
+The actual geometric information such as vertex positions, vertex normals, but also colours, are declared as
+input attributes to the vertex shader using the keyword \lstinline[language=C]|in|.
+Attributes can be set from the user program by binding a vertex array to them. 
+Such an array has the exact configuration that is given by the vertex shader's order of \lstinline[language=C]|in| variables.
+The elements of the vertex array are each transformed by the vertex shader program, which stores the resulting 
+transformed and projected screen space position in a reserved variable named \lstinline[language=C]|gl_Position|.
+Further results can be output from the shader by declaring \lstinline[language=C]|out| variables.
+These variables are connected to the inputs of the next shader in the rendering pipeline.
 % -----------------------------------------------------------------------------
