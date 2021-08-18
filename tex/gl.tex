@@ -35,9 +35,8 @@ these transformations. The pipeline maintained different stacks of matrices for 
 projection matrices \cite{web_gl_matrixmode}.
 Modern \textit{OpenGL} \cite{web_OpenGL} versions and its successor \textit{Vulkan} \cite{web_Vulkan} do not 
 use internal matrix stacks anymore, instead all transformation and lighting operations are programmable through 
-small \textit{shader} programs that are directly executed on the graphics processing unit (GPU) \cite{wiki_gl_history}. 
-These programs are written in the \textit{OpenGL Shading Language} (\textit{GLSL}), which belongs to the 
-\textit{C} family of languages, but only uses a subset of \textit{C} \cite{wiki_glsl}.
+small \textit{shader} programs that are directly executed on the graphics processing unit (GPU) \cite{wiki_gl_history}
+and are written in a \textit{C}-like language \cite{wiki_glsl}.
 While the transformation given by Eq. \ref{eq:gl_mvp} is not fixed anymore, its form is usually maintained
 in the shaders by the user. More information on the rendering pipeline and the shaders is given in 
 section \ref{sec:gl_shaders}.
@@ -347,8 +346,9 @@ $z$ value $n$ and far $z$ value $f$ is done by the following matrix \cite{web_gl
 % -----------------------------------------------------------------------------
 \section{Rendering}
 \label{sec:gl_shaders}
-Rendering in \textit{OpenGL} is performed using shaders -- small \textit{C}-like programs that are executed on 
-the GPU -- where a minimum rendering pipeline consists of at least a vertex and a fragment shader. 
+Rendering in \textit{OpenGL} is performed using shaders -- small programs that are executed on 
+the GPU are are written in the \textit{OpenGL Shading Language} (\textit{GLSL}) \cite{wiki_glsl} -- 
+where a minimum rendering pipeline consists of at least a so-called vertex and a fragment shader. 
 Vertex shaders are called for each vertex of a given geometry composed of triangles.
 They are responsible for the transformations of the vertices from object into screen space as described above.
 Fragment shaders are used for the rasterisation of triangles, i.e. drawing all its pixels on the screen. 
