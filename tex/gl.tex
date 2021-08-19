@@ -10,7 +10,8 @@
 
 The software of this work uses \textit{OpenGL} \cite{web_OpenGL} in its main graphical user interface (GUI).
 This appendix chapter adds technical details to the general descriptions in chapter \ref{sec:gui_gl}.
-A comprehensive overview of \textit{OpenGL} and the mathematics involved can be found in Ref. \cite{TODO}.
+Here, we mainly describe the most important mathematical aspects of 3-d graphics, a comprehensive overview of 
+\textit{OpenGL} and the mathematics involved can be found in Ref. \cite{Sellers2002}.
 
 
 
@@ -20,7 +21,7 @@ namely the coordinate system of the object, the system of the camera, as well as
 The vertices of the 3-d object, $\left|x\right>$ , are thus transformed into a window's 2-d pixels by using four
 transformation matrices,
 \begin{equation}
-	\boxed{\left|x_{\mathrm{viewport}}\right> \ =\ W \cdot P \cdot V \cdot  M \cdot  \left| x_{\mathrm{model}} \right>,}
+	\boxed{\left|x_{\mathrm{window}}\right> \ =\ W \cdot P \cdot V \cdot  M \cdot  \left| x_{\mathrm{model}} \right>,}
 	\label{eq:gl_mvp}
 \end{equation}
 where $M$ represents the model's local matrix (used, for example, to spin the object around one of its axes),
@@ -41,12 +42,16 @@ While the transformation given by Eq. \ref{eq:gl_mvp} is not fixed anymore, its 
 in the shaders by the user. More information on the rendering pipeline and the shaders is given in 
 section \ref{sec:gl_shaders}.
 
-The transformation inverse to Eq. \ref{eq:gl_mvp} is of importance to be able to select objects in the three-dimensional
-scene by mouse. To that end, a line is calculated by ``unprojecting'' the mouse position in window coordinates
-onto the near and far planes of the view frustum and calculating the intersection of the line through these
-two points with the scene geometry \cite{web_gl_unproject}. The operation is given by:
+The transformation inverse to Eq. \ref{eq:gl_mvp} is of importance to be able to select objects in the 
+three-dimensional scene by mouse. 
+To that end, a line is calculated by ``unprojecting'' two homogeneous $\left|x_{\mathrm{window}}\right>$ vectors
+having the same mouse position as their $x$ and $y$ components and the distance of the 
+near and far planes of the view frustum as two different $z$ coordinate components.
+Finally, the intersection of the line through these two unprojected $\left|x_{\mathrm{model}}\right>$ points 
+with the scene geometry is calculated. 
+The unprojection operation is given by \cite{web_gl_unproject}:
 \begin{equation}
-	\left|x_{\mathrm{model}}\right> \ =\ M^{-1} \cdot V^{-1} \cdot P^{-1} \cdot  W^{-1} \cdot  \left| x_{\mathrm{viewport}} \right>,
+	\left|x_{\mathrm{model}}\right> \ =\ M^{-1} \cdot V^{-1} \cdot P^{-1} \cdot  W^{-1} \cdot  \left| x_{\mathrm{window}} \right>,
 \end{equation}
 and normalising $\left|x_{\mathrm{model}}\right>$ by its fourth (homogeneous) component \cite{web_gl_unproject}.
 
@@ -64,7 +69,7 @@ directions and to one for vertices.
 % -----------------------------------------------------------------------------
 \subsection{Translation}
 Vertices can thus be translated by left-multiplying with a matrix whose fourth column represents the translation
-vector:
+vector \cite{web_gl_translate}:
 \begin{equation}
 	\left( \begin{array}{c} x + t_x \\ y + t_y \\ z + t_z \\ 1 \end{array} \right) 
 	\ =\  
@@ -84,7 +89,8 @@ Not that direction vectors, which have their fourth component zero, are not affe
 % scaling
 % -----------------------------------------------------------------------------
 \subsection{Scaling}
-By the same token, scaling along the principal axes is performed by setting the diagonal matrix elements:
+By the same token, scaling along the principal axes is performed by setting the diagonal matrix 
+elements \cite{web_gl_scale}:
 \begin{equation}
 	\left( \begin{array}{c} s_x \cdot x \\ s_y \cdot y \\ s_z \cdot z \\ 1 \end{array} \right) 
 	\ =\  
@@ -179,9 +185,10 @@ Explicitly writing Eq. \ref{eq:rodrigues} thus yields the full Rodrigues formula
 			v_3   & 0    & -v_1 \\
 			-v_2  & v_1  & 0
 		\end{array} \right)
-		\sin \alpha.
+		\sin \alpha,
 	\label{eq:rodrigues_expl}
 \end{equation}
+which is, for example, used in \textit{OpenGL}'s  \lstinline[language=C]|glRotate| functions \cite{web_gl_rotate}.
 
 Using the canonical coordinate basis vectors $\left| x \right> = \left( 1\,0\,0 \right)^t$, $\left| y \right> = \left( 0\,1\,0 \right)^t$,
 and $\left| z \right> = \left( 0\,0\,1 \right)^t$, respectively, we reproduce the well-known simple rotation matrices as 
