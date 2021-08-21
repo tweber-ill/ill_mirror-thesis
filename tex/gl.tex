@@ -16,17 +16,19 @@ Here, we mainly describe the most important mathematical aspects of 3-d graphics
 
 
 \section{Coordinate systems and transformations}
-To draw a three-dimensional object onto the screen, three principal coordinate systems are typically maintained,
-namely the coordinate system of the object, the system of the camera, as well as screen and window coordinates.
+To draw a three-dimensional object onto the screen, several principal coordinate systems are typically maintained,
+namely the coordinate system of the 3-d object, a global coordinate system common for all objects in scene, the
+system of the camera, as well as screen (device) and window coordinates \cite[pp. 63-66]{Sellers2002}.
 The vertices of the 3-d object, $\left|x\right>$ , are thus transformed into a window's 2-d pixels by using four
-transformation matrices,
+matrices transforming from one coordinate system to the next,
 \begin{equation}
 	\boxed{\left|x_{\mathrm{window}}\right> \ =\ W \cdot P \cdot V \cdot  M \cdot  \left| x_{\mathrm{model}} \right>,}
 	\label{eq:gl_mvp}
 \end{equation}
-where $M$ represents the model's local matrix (used, for example, to spin the object around one of its axes),
-$V$ is the view matrix given by the camera's coordinate system which transforms local object coordinates into
-a global coordinate system. These matrices take the form described in section \ref{sec:gl_trafos}.
+where $M$ is a matrix transforming the model's local system (used, for example, to spin the object around one of
+its axes) into the global coordinate system, $V$ is the view matrix given by the camera's coordinate system
+which transforms global object coordinates into the camera's viewing frame. These matrices take the form
+described in section \ref{sec:gl_trafos}.
 $P$ projects the three-dimensional scene onto the two-dimensional plane representing the screen \cite{web_gl_ortho, web_gl_perspective} and is described in section \ref{sec:gl_projs}. 
 Finally, $W$ is the window or viewport matrix which scales and translates the projected screen coordinates 
 into the pixel coordinates of the display window \cite{web_gl_viewport}, it is discussed in section \ref{sec:gl_viewport}.
@@ -34,10 +36,12 @@ into the pixel coordinates of the display window \cite{web_gl_viewport}, it is d
 Historically, \textit{OpenGL} used a fixed transformation and lighting pipeline \cite{wiki_gl_history} for
 these transformations. The pipeline maintained different stacks of matrices for the combined model-view and
 projection matrices \cite{web_gl_matrixmode}.
-Modern \textit{OpenGL} \cite{web_OpenGL} versions and its successor \textit{Vulkan} \cite{web_Vulkan} do not 
-use internal matrix stacks anymore, instead all transformation and lighting operations are programmable through 
-small \textit{shader} programs that are directly executed on the graphics processing unit (GPU) \cite{wiki_gl_history}
+Modern \textit{OpenGL} \cite{web_OpenGL} versions do not use internal matrix stacks anymore, instead all
+transformation and lighting operations of the rendering pipeline are programmable through small \textit{shader}
+programs that are directly executed on the graphics processing unit (GPU) \cite{wiki_gl_history}
 and are written in a \textit{C}-like language \cite{wiki_glsl}.
+Going even further than \textit{OpenGL}, its successor \textit{Vulkan} \cite{web_Vulkan} makes the pipeline
+itself dynamic and programmable, not only the shaders of its individual steps.
 While the transformation given by Eq. \ref{eq:gl_mvp} is not fixed anymore, its form is usually maintained
 in the shaders by the user. More information on the rendering pipeline and the shaders is given in 
 section \ref{sec:gl_shaders}.
@@ -45,7 +49,7 @@ section \ref{sec:gl_shaders}.
 The transformation inverse to Eq. \ref{eq:gl_mvp} is of importance to be able to select objects in the 
 three-dimensional scene by mouse. 
 To that end, a line is calculated by ``unprojecting'' two homogeneous $\left|x_{\mathrm{window}}\right>$ vectors
-having the same mouse position as their $x$ and $y$ components and the distance of the 
+(see next section) having the same mouse position as their $x$ and $y$ components and the distance of the
 near and far planes of the view frustum as two different $z$ coordinate components.
 Finally, the intersection of the line through these two unprojected $\left|x_{\mathrm{model}}\right>$ points 
 with the scene geometry is calculated. 
@@ -61,7 +65,8 @@ and normalising $\left|x_{\mathrm{model}}\right>$ by its fourth (homogeneous) co
 \label{sec:gl_trafos}
 To simplify the calculations when translations are involved, \textit{OpenGL} uses homogeneous coordinates.
 Homogeneous coordinates append a fourth component to the three-dimensional vectors, which is set to zero for
-directions and to one for vertices.
+directions and non-zero for vertices, where the original vertex coordinates are recovered by normalising this
+fourth component to one \cite[pp. 235, 357]{Bronstein2008}.
 
 
 % -----------------------------------------------------------------------------
@@ -192,7 +197,7 @@ which is, for example, used in \textit{OpenGL}'s  \lstinline[language=C]|glRotat
 
 Using the canonical coordinate basis vectors $\left| x \right> = \left( 1\,0\,0 \right)^t$, $\left| y \right> = \left( 0\,1\,0 \right)^t$,
 and $\left| z \right> = \left( 0\,0\,1 \right)^t$, respectively, we reproduce the well-known simple rotation matrices as 
-special cases \cite{TODO}:
+special cases \cite[p. 238]{Bronstein2008}:
 \begin{equation}
 	R_x \ =\ 
 		\left( \begin{array}{ccc} 
@@ -353,22 +358,29 @@ $z$ value $n$ and far $z$ value $f$ is done by the following matrix \cite{web_gl
 % -----------------------------------------------------------------------------
 \section{Rendering}
 \label{sec:gl_shaders}
-Rendering in \textit{OpenGL} is performed using shaders -- small programs that are executed on 
-the GPU are are written in the \textit{OpenGL Shading Language} (\textit{GLSL}) \cite{wiki_glsl} -- 
-where a minimum rendering pipeline consists of at least a so-called vertex and a fragment shader. 
-Vertex shaders are called for each vertex of a given geometry composed of triangles.
-They are responsible for the transformations of the vertices from object into screen space as described above.
+Rendering in \textit{OpenGL} is performed as pipeline operations comprised of so-called shaders.
+Shaders are small programs that are executed on the GPU are are written in the
+\textit{OpenGL Shading Language} (\textit{GLSL}) \cite{wiki_glsl}
+The pipeline passes buffered vertex data to the vertex shader, performs tessellation steps to triangulate
+the resulting geometry, passes this data to a geometry shader, and rasterises it with the help
+of a fragment shader \cite[p. 6]{Sellers2002}.
+A minimum rendering pipeline to display geometry on the screen consists of at least a vertex and
+a fragment shader.
+Vertex shaders are called for each vertex of a given geometry and are responsible for the transformations
+of the vertices from object into screen space as described above.
 Fragment shaders are used for the rasterisation of triangles, i.e. drawing all its pixels on the screen. 
 They are, for instance, used to apply colours and textures to polygons.
 
 Constant values, such as the transformation and projection matrices mentioned above, can be propagated from the 
 user (CPU) program to the shaders. To that end, \textit{OpenGL} provides API functions that allow the user 
-program to write to shader variables that have been declared with the keyword \lstinline[language=C]|uniform|.
+program to write to shader variables that have been declared with the keyword \lstinline[language=C]|uniform|,
+see Ref. \cite[pp. 103-126]{Sellers2002}.
 
 The actual geometric information such as vertex positions, vertex normals, but also colours, are declared as
 input attributes to the vertex shader using the keyword \lstinline[language=C]|in|.
-Attributes can be set from the user program by binding a vertex array to them. 
-Such an array has the exact configuration that is given by the vertex shader's order of \lstinline[language=C]|in| variables.
+Attributes can be set from the user program by binding a vertex array object to them,
+where the array has the exact configuration that is given by the vertex shader's order of \lstinline[language=C]|in|
+variables \cite[pp. 97-102]{Sellers2002}.
 The elements of the vertex array are each transformed by the vertex shader program, which stores the resulting 
 transformed and projected screen space position in a reserved variable named \lstinline[language=C]|gl_Position|.
 Further results can be output from the shader by declaring \lstinline[language=C]|out| variables.
