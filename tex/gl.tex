@@ -304,7 +304,7 @@ $\left(2/w, \, 2\sigma/h, \, s/(n-f) \right)^t$
 followed by a translation by $\left( 0, \, 0, \, (n+f_0)/(n-f) \right)^t$,
 which map the $\left[-w/2, \, w/h\right]$, $\left[-h/2, \, h/2\right]$ and $\left[n,\,f\right]$ ranges into their respective
 normalised ranges, namely $\left[-1,\, 1\right]$ for \textit{OpenGL}.
-
+A comprehensive derivation of this matrix can be found in Ref. \cite{web_webgl_ortho}.
 
 
 
@@ -333,7 +333,9 @@ are fulfilled.
 The variables have the same meaning as in the orthogonal projection case.
 Additionally, $\phi$ names the field of view angle and $\rho$ is the screen ratio (e.g. 9/16 or 3/4).
 $n_0$ is a scaling factor. Typical values are given in table \ref{tab:gl_constants}.
-A full derivation of this matrix is given in Ref. \cite[pp. 350-351]{Kuipers2002}.
+A full derivation of this matrix is given in Ref. \cite[pp. 350-351]{Kuipers2002}
+for a simplified case, and in Ref. \cite{web_webgl_perspective} for the full
+problem.
 
 
 \begin{table}[htb]
@@ -376,6 +378,7 @@ following matrix \cite{web_gl_viewport}:
 	\end{array} \right),
 \end{equation}
 where $z$ represents the values for the $z$ buffer.
+A formal derivation of this transformation is given in Ref. \cite{web_webgl_viewport}.
 % -----------------------------------------------------------------------------
 
 
