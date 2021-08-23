@@ -277,36 +277,61 @@ and verifying that the results are equal in both cases.
 % -----------------------------------------------------------------------------
 \section{3-d to 2-d projections}
 \label{sec:gl_projs}
+To be able to display it in 2-d, the 3-d scene needs to be projected onto a plane representing the screen.
+For \textit{OpenGL} these screen coordinates have to be normalised to $x, y \in \left[-1,\, 1\right]$,
+as well as $z \in \left[-1,\, 1\right]$ (alternatively, $z \in \left[0,\, 1\right]$ for \textit{Vulkan}),
+where $z$ represents the value for the $z$ buffer.
 
 \subsubsection{Parallel projection}
-The standard orthogonal projection matrix is given as \cite{web_gl_ortho}:
+The standard orthogonal projection matrix fulfilling these requirements is given as
+\cite{web_gl_ortho} \cite[p. 82]{Sellers2002}:
 \begin{equation}
 	P_{\mathrm{ortho}} \ =\
 		\left( \begin{array}{cccc}
-			\frac{2}{r-l} &                             0 &                             0 &  \frac{l+r}{l-r}                  \\
-			            0 &  \sigma_y \cdot \frac{2}{t-b} &                             0 &  \sigma_y \cdot \frac{b+t}{b-t}   \\
-			            0 &                             0 &  \sigma_z \cdot \frac{s}{n-f} &  \sigma_z \cdot \frac{n+f_0}{n-f} \\
-			            0 &                             0 &                             0 &  1
+			\frac{2}{r-l} &                             0 &              0 &  \frac{l+r}{l-r}                  \\
+			            0 &  \sigma_y \cdot \frac{2}{t-b} &              0 &  \sigma_y \cdot \frac{b+t}{b-t}   \\
+			            0 &                             0 &  \frac{s}{n-f} &  \frac{n+f_0}{n-f}                \\
+			            0 &                             0 &              0 &  1
 		\end{array} \right),
 \end{equation}
-where $l$, $r$, $b$, $t$, $n$ and $f$ are the distances of the left, right, bottom, top, near and far planes, respectively.
-The $\sigma_{y,\, z}$ are sign factors depending on the definition of the coordinate system and its handedness,
+where $l$, $r$, $b$, $t$, $n$ and $f$ are the distances of the left, right, bottom, top, near and far planes,
+respectively.
+The $\sigma_y$ is a sign factor depending on the coordinate system handedness, it is left-handed for
+\textit{OpenGL} and right-handed for \textit{Vulkan},
 $s$ and $f_0$ are scaling factors. The values for these constants are given in table \ref{tab:gl_constants}.
+As can be directly read off, the matrix consists of a scaling by
+$\left(\frac{2}{r-l}, \, \sigma_y \frac{2}{t-b}, \, \frac{s}{n-f} \right)^t$
+followed by a translation by
+$\left( \frac{l+r}{l-r}, \, \sigma_y \frac{b+t}{b-t}, \, \frac{n+f_0}{n-f} \right)^t$,
+which map the $\left[l,\,r\right]$, $\left[b,\,t\right]$ and $\left[n,\,f\right]$ ranges into their respective
+normalised ranges, namely $\left[-1,\, 1\right]$ for \textit{OpenGL}.
+
 
 
 
 \subsubsection{Perspective projection}
-The standard perspective projection matrix is given as \cite{web_gl_perspective}:
+The standard perspective projection matrix to project onto the near plane of a frustum (truncated pyramid)
+with $y$ opening angle $\phi$ is given as \cite{web_gl_perspective} \cite{web_gl_frustum} \cite[p. 81]{Sellers2002}:
 \begin{equation}
-	P_{\mathrm{ortho}} \ =\
+	P_{\mathrm{persp}} \ =\
 		\left( \begin{array}{cccc}
-			\frac{\rho}{\tan\left(\phi/2 \right)} &                                                  0 &                                 0 &  0                 \\
-			                                    0 &  \sigma_y \cdot \frac{1}{\tan\left(\phi/2 \right)} &                                 0 &  0                 \\
-			                                    0 &                                                  0 &  \sigma_z \cdot \frac{n_0+f}{n-f} &  \frac{s n f}{n-f} \\
-			                                    0 &                                                  0 &                         -\sigma_z &  0
+			\frac{2n}{r-l} &                              0 &                  0 &  0                 \\
+			             0 &  \sigma_y \cdot \frac{2n}{t-b} &                  0 &  0                 \\
+			             0 &                              0 &  \frac{n_0+f}{n-f} &  \frac{s n f}{n-f} \\
+			             0 &                              0 &         \boxed{-1} &  0
+		\end{array} \right) \ = \
+		\left( \begin{array}{cccc}
+			\frac{\rho}{\tan\left(\phi/2 \right)} &                                                  0 &                  0 &  0                 \\
+			                                    0 &  \sigma_y \cdot \frac{1}{\tan\left(\phi/2 \right)} &                  0 &  0                 \\
+			                                    0 &                                                  0 &  \frac{n_0+f}{n-f} &  \frac{s n f}{n-f} \\
+			                                    0 &                                                  0 &         \boxed{-1} &  0
 		\end{array} \right),
 \end{equation}
-where the variables have the same meaning as in the orthogonal projection case.
+where the important difference is the $-1$ factor in row 4 and column 3, which generates the perspective
+$1/z$ division upon normalisation by the fourth, homogeneous component \cite[pp. 350-351]{Kuipers2002}.
+As before, the rest is merely scaling and translation to ensure that the $x$, $y$, and $z$ ranges
+are fulfilled.
+The variables have the same meaning as in the orthogonal projection case.
 Additionally, $\phi$ names the field of view angle and $\rho$ is the screen ratio (e.g. 9/16 or 3/4).
 $n_0$ is a scaling factor. Typical values are given in table \ref{tab:gl_constants}.
 
@@ -318,7 +343,6 @@ $n_0$ is a scaling factor. Typical values are given in table \ref{tab:gl_constan
 		    Constant &  \textit{OpenGL} &   \textit{Vulkan} \tabularnewline
 		\hline
 		  $\sigma_y$ &              $1$ &              $-1$ \tabularnewline
-		  $\sigma_z$ &              $1$ &               $1$ \tabularnewline
 		       $n_0$ &              $n$ &               $0$ \tabularnewline
 		       $f_0$ &              $f$ &               $0$ \tabularnewline
 		         $s$ &              $2$ &               $1$ \tabularnewline
