@@ -162,18 +162,57 @@ and have to be considered carefully in the set-up of an experiment.
 
 \subsection{Main workspace}
 \label{sec:gui_gl}
-The largest portion of the screen is reserved for the workspace.
+The largest portion of the screen is reserved for the main workspace.
 A typical view is shown in element (c) of Fig. \ref{fig:gui}.
-Here, a graphical representation of the instrument and the walls as well as the interaction
-with these elements is performed using \textit{OpenGL} \cite{web_OpenGL} via \textit{Qt}'s
+Here, a graphical representation of the instrument space containing the instrument and the walls 
+is performed using \textit{OpenGL} \cite{web_OpenGL} via \textit{Qt}'s
 \lstinline[language=C++]|QOpenGLWidget| \cite{web_QOpenGLWidget} class.
 The current view of the instrument is controlled by moving the mouse while holding the right button.
 The camera position, viewing angle and direction as well as the kind of projection are displayed in dock
 window (f) and can also be entered directly.
-The workspace is not restricted to a passive view of the instrument, but also functions as an editor.
-as it allows for an easy insertion, editing and removal of wall segments. The segments as well as the
-instrument axes themselves can be dynamically moved by dragging them using the mouse.
-Internal details on the various aspects of \textit{OpenGL} rendering have already been given in chapter \ref{ch:gl}.
+
+The workspace is not restricted to a passive view of the instrument, but also functions as an editor
+which allows an easy interaction with the 3-d objects in the scene. For example, wall segments can
+be inserted, edited and removed on the fly, see Fig. \ref{fig:gui_objects}.
+The segments as well as the instrument axes themselves can be dynamically moved by dragging them using the 
+mouse. This is realised by ``unprojecting'' the current mouse position from its coordinates with respect 
+to the near and far planes of view frustum into the global object coordinate system and finding all objects
+that intersect with a line through these two unprojected points. 
+Mathematical details on this and other aspects of \textit{OpenGL} rendering have been discussed 
+in chapter \ref{ch:gl}.
+The renderer itself can be found in the class \lstinline[language=C++]|PathsRenderer|, located in
+the file \lstinline|./src/gui/PathsRenderer.cpp|.
+
+Internally, several data structures are maintained for the object system. 
+The main hierarchical object system has its root in the \lstinline[language=C++]|InstrumentSpace|
+class. This class is part of the core module (see chapter \ref{sec:tasmodel}) and is not dependent
+on \textit{OpenGL} or the GUI.
+To avoid introducing GUI- or rendering-specific details into the core, a second object
+system is maintained in the GUI's \lstinline[language=C++]|PathsRenderer| itself. 
+Here, all the \textit{OpenGL}-specific details, for example the vertex array objects \cite{wiki_vao} 
+of all 3-d objects that are displayed on the screen, are stored.
+Data in this secondary object system is updated automatically as soon as the user edits an object 
+property from the main \lstinline[language=C++]|InstrumentSpace| instance.
+
+
+\begin{figure}[htb]
+	\begin{minipage}{0.45 \textwidth}
+		\begin{center}
+			\includegraphics[width = 1 \textwidth]{figures/gui_object}
+		\end{center}
+	\end{minipage}
+	\hspace{0.1cm}
+	\begin{minipage}{0.5 \textwidth}
+		\begin{center}
+			\includegraphics[width = 1 \textwidth]{figures/gui_objbrowser}
+		\end{center}
+	\end{minipage}
+	\caption[Object manipulation.]{Manipulation of 3-d objects in the main GUI.
+		Left panel: Objects can be moved by mouse and possess a context menu.
+		Right panel: All objects in the instrument space are organised hierarchically. 
+			Their properties can be dynamically edited.
+		\label{fig:gui_objects}}
+\end{figure}
 
 
 
@@ -248,7 +287,7 @@ The library \textit{QCustomPlot} \cite{web_QCustomPlot} is used for plotting.
 
 \begin{figure}[htb]
 		\begin{center}
-			\includegraphics[width = 0.66 \textwidth]{figures/gui_configspace}
+			\includegraphics[width = 0.75 \textwidth]{figures/gui_configspace}
 		\end{center}
 	\caption[Configuration space dialog.]{Angular configuration space and path calculation.
 	The figure plots all possible instrument positions for the monochromator and sample
