@@ -9,19 +9,20 @@
 \label{ch:gui}
 
 The software of the present work has been realised in a modular fashion, it comprises a core
-module (see chapter \ref{ch:impl}), which can be easily used as a library and linked into 
-external C++ applications. More details on the core library can be found in section \ref{sec:library}.
+module, which was introduced in chapter \ref{ch:impl} and which can be easily used as a library 
+and linked into external C++ applications. 
+More details on directly employing the core library can be found in section \ref{sec:library}.
 Such a library usage will be important in the future when we plan to utilise the software as a 
 plug-in module to the instrument control software \textit{NOMAD} \cite{web_NOMAD} that is 
 employed at the Institut Laue-Langevin.
 
 Furthermore, a graphical user interface (GUI) has been implemented for a visual and interactive 
-representation of the instrument and the underlying algorithms. 
+representation of the instrument and the underlying algorithms and to facilitate their use. 
 The GUI is described in detail in section \ref{sec:gui}.
 
 Finally, the software allows scripting via \textit{Python} \cite{Rossum2011, web_python}. 
 Apart from simply setting up a workflow and plotting the results, the \textit{Python} interface 
-will allow the usage of the software in \textit{Python}-based instrument control systems such as 
+aims to allow the usage of the software in \textit{Python}-based instrument control systems such as 
 \textit{NICOS} \cite{web_NICOS}, which is used at the Forschungsreaktor M\"unchen II (FRM-II). 
 Details on the scripting interface can be found in section \ref{sec:scripting}.
 
@@ -31,7 +32,7 @@ Details on the scripting interface can be found in section \ref{sec:scripting}.
 \label{sec:library}
 The core module comprises all necessary calculation as well as input and output sub-modules. 
 Here, we only describe the latter two, since the computation functionality of the core module 
-has already been treated in chapter \ref{ch:impl}.
+has already been treated in detail in chapter \ref{ch:impl}.
 
 The instrument configuration is read from an \textit{XML} file whose hierarchical structure
 mirrors the internal data organisation of the core module and its class hierarchy.
@@ -69,10 +70,10 @@ as the \textit{Python} interface, which are described in the following sections.
 
 \section{Graphical user interface}
 \label{sec:gui}
-The software's main graphical user interface (GUI), for which a typical session is depicted
-in Fig. \ref{fig:gui}, is based on the \textit{Qt} framework \cite{web_Qt}, that allows
-for an easy and rapid cross-platform GUI development in \textit{C++}. We support both
-current releases of \textit{Qt}, namely version 5 and version 6.
+The software's main graphical user interface (GUI) is based on the \textit{Qt} framework 
+\cite{web_Qt}, that allows for an easy and rapid cross-platform GUI development in \textit{C++}. 
+Both current releases of \textit{Qt} are supported, namely version 5 and version 6.
+Fig. \ref{fig:gui} depicts a typical session of the GUI.
 Similar to the core calculation module, the GUI is written in the recent \textit{C++20}
 standard \cite{ISOCPP20} of the C++ language family \cite{Stroustrup2008, Stroustrup2018}.
 The source code of the GUI module can be found in the directory \lstinline|./src/gui| of the
@@ -82,22 +83,24 @@ source repository, see chapter \ref{ch:online} for more information.
 		\begin{center}
 			\includegraphics[width = 1 \textwidth]{figures/gui}
 		\end{center}
-	\caption[Main program GUI.]{Main GUI. Here, instrument and sample crystal properties can be set up,
-		walls can be added and moved and paths around them be calculated.
+	\caption[Main program GUI.]{Main GUI. 
+		Here, instrument and sample crystal properties can be set up,
+		walls can be added and moved. 
+		Furthermore, paths around the walls can be calculated.
 		The central view provides a three-dimensional visualisation of the instrument
-		configuration and is fully dynamic: Every element, including the instrument
+		configuration and is fully dynamic: Each element, including the instrument
 		and the wall segments, can be moved or manipulated using the mouse.
 		See the text for a description of each interface element.
 		\label{fig:gui}}
 \end{figure}
 
 The functions of the individual control elements of the main GUI, which are marked as (a)-(f)
-is explained in the following sections. Each of the panels corresponds to a specific
-functionality. Hereby, all calculation is performed in the core module, which is described in
-chapter \ref{ch:impl} and to which the GUI is just that, an interface.
+in fig. \ref{fig:gui}, are explained in the following sections. Each of the panels corresponds to a specific
+functionality of the core module (chapter \ref{ch:impl}), to which all calculations are delegated. 
+This way, the GUI is literally just an interface.
 By the same token, the core module itself is completely independent of the GUI, or any other
-interface code, and the full functionality of the software, except GUI-specific visualisations,
-is equally accessible from the other alternative interface modules, e.g. the \textit{Python}
+interface code, and the full functionality of the software, except GUI-specific visualisation and editing
+capabilities, is equally accessible from the other alternative interface modules, e.g. the \textit{Python}
 interface described in section \ref{sec:scripting}, or the raw \textit{C++} library interface.
 
 
@@ -113,17 +116,18 @@ interface described in section \ref{sec:scripting}, or the raw \textit{C++} libr
 		\label{fig:gui_xtal}}
 \end{wrapfigure}
 
-Dock window (a) of the main GUI (Fig. \ref{fig:gui}) sets up the crystal $UB$ matrix
-from a sample definition according to the formalism described in chapter \ref{ch:xtal}.
-The window is magnified in Fig. \ref{fig:gui_xtal}. As seen before, this matrix transforms
-the crystal coordinate system into the instrument's laboratory coordinate system.
+Dock window (a) of the main GUI (Fig. \ref{fig:gui}) sets up the metric tensor corresponding 
+to the crystal $UB$ matrix using the sample definition.
+A magnified view of this window is provided in Fig. \ref{fig:gui_xtal}. 
+As seen before, the $UB$ matrix transforms the crystal coordinate system into the instrument's 
+laboratory coordinate system.
 The necessary information for the $B$ matrix comprise the axis lengths of the sample lattice's
 unit cell as well as the axis angles for the non-Cartesian crystal coordinate system.
 The $UB$ matrix rotates the crystal coordinate system so that the $x$ and $y$ axes correspond
-to the 2-d scattering plane accessible by the instrument, see chapter \ref{ch:xtal}
-for more information.
-Finally, the $B$ and $UB$ matrices for the entered crystal information are shown in the
-floating window right of (a).
+to the 2-d scattering plane accessible by the instrument.
+The mathematical background to this formalism has been discussed in chapter \ref{ch:xtal}.
+Finally, the $B$ and $UB$ matrices calculated from the entered crystal information are shown 
+in the floating window right of (a).
 \end{minipage}
 \vspace{0.5cm}
 
@@ -139,20 +143,20 @@ floating window right of (a).
 		\label{fig:gui_instr}}
 \end{wrapfigure}
 
-The raw instrument properties, which are agnostic of any sample crystal coordinates, are set 
+The raw instrument properties, which are agnostic of any sample crystal coordinates, are set up
 using the dock window shown in Fig. \ref{fig:gui_instr}. It displays and lets the user modify
 any crystal rotation angles, both the rocking angles of the crystals around their own axes
 as well as the scattering angle with respect to the following axis. These angles and their
-use in diffraction (two-axis) and spectroscopy (three-axis) instruments is described in chapters
-\ref{ch:intro} and \ref{ch:xtal}. 
+use in diffraction (two-axis) and spectroscopy (three-axis) instruments has been described 
+in chapters \ref{ch:intro} and \ref{ch:xtal}. 
 The fields names ``$d$ spacings'' correspond to the spacing of the crystal planes in the 
 monochromator and analyser crystals. In our examples we use the value of $d=3.355 \AA{}$
 which corresponds to scattering on the $\left(002\right)$ Bragg reflection of highly oriented
-pyrolithic graphite (HOPG) \cite{TODO}, which is one of the standard crystals used in a monochromator
-at a TAS instrument.
+pyrolithic graphite (HOPG) \cite{TODO}, which is one of the standard crystals used as a
+monochromator or analyser in a TAS instrument.
 Finally, the check boxes named ``scattering senses'' control the sign of the scattering angles.
-If the box is checked, a positive angle corresponds to a mathematically positive sense 
-(counterclockwise), or to a negative sense (clockwise) when unchecked.
+If the box is checked, a positive angle corresponds to a counterclockwise sense, i.e. corresponding
+to the usual mathematical definition, and alternatively to a clockwise sense when unchecked.
 From the standpoint of the physics to be studied in the sample, these signs have no influence
 in practice. They do, however, strongly affect the resolution of the instrument \cite{TODO}
 and have to be considered carefully in the set-up of an experiment.
@@ -168,16 +172,16 @@ Here, a graphical representation of the instrument space containing the instrume
 is performed using \textit{OpenGL} \cite{web_OpenGL} via \textit{Qt}'s
 \lstinline[language=C++]|QOpenGLWidget| \cite{web_QOpenGLWidget} class.
 The current view of the instrument is controlled by moving the mouse while holding the right button.
-The camera position, viewing angle and direction as well as the kind of projection are displayed in dock
-window (f) and can also be entered directly.
+The camera position, viewing angle and direction as well as the type of projection matrix are 
+displayed in dock window (f) and can also be entered directly.
 
 The workspace is not restricted to a passive view of the instrument, but also functions as an editor
 which allows an easy interaction with the 3-d objects in the scene. For example, wall segments can
 be inserted, edited and removed on the fly, see Fig. \ref{fig:gui_objects}.
 The segments as well as the instrument axes themselves can be dynamically moved by dragging them using the 
 mouse. This is realised by ``unprojecting'' the current mouse position from its coordinates with respect 
-to the near and far planes of view frustum into the global object coordinate system and finding all objects
-that intersect with a line through these two unprojected points. 
+to the near and far planes of view frustum into the global object coordinate system in a first step, 
+and finding all objects that intersect with a line through these two unprojected points in a second step. 
 Mathematical details on this and other aspects of \textit{OpenGL} rendering have been discussed 
 in chapter \ref{ch:gl}.
 The renderer itself can be found in the class \lstinline[language=C++]|PathsRenderer|, located in
@@ -270,9 +274,9 @@ the angles can also be entered manually, thereby overriding the crystal coordina
 
 The button labelled ``calculate path mesh'' starts the calculation of the skeletal bisectors that are
 described in chapter \ref{sec:polygonal_voronoi_diagram}.
-The ``calculate path'' button finds the optimal path on the mesh and invokes the core library
-functions described in chapter \ref{sec:exepath}.
-Once a path has been calculated, its positions can be tracked using the progress bar at the bottom
+Once a path mesh is available, the ``calculate path'' button finds the optimal path on the mesh and 
+invokes the core library functions described in chapter \ref{sec:exepath}.
+As soon as a path has been calculated, its positions can be tracked using the progress bar at the bottom
 of the dock window.
 
 Details on the path calculations, including the path mesh, are displayed in the angular configuration
@@ -308,20 +312,22 @@ The library \textit{QCustomPlot} \cite{web_QCustomPlot} is used for plotting.
 \section{Python scripting interface}
 \label{sec:scripting}
 
-In order to allow for a simple inclusion of the core module (see section \ref{sec:library}) of the present 
+In order to allow for a simple way to automatise recurring calculations and workflows, as well as to provide
+a possibility for inclusion of the core module (see section \ref{sec:library}) of the present 
 software in other tools, a scripting interface has been developed using the interface generator \textit{SWIG} \cite{web_swig}. 
 \textit{SWIG} is a tool which parses \textit{C} or \textit{C++} header files and creates a native interface 
 for several possible scripting languages, of which we opted for \textit{Python} \cite{Rossum2011, web_python} 
-as it has become the most popular programming language in neutron science over the last decade.
+as it has become one of the most popular programming language in neutron science over the last decade.
 As the core module already has the structure of a library, the effort to offer scripting functionality
 was minimal. Only a few helper functions had to be included in several classes, because \textit{SWIG}
 is not yet fully \textit{C++20} compliant and had some problems with new language features such as 
 template concepts \cite{TODO}.
-The \textit{SWIG} interface definition, which maps the \textit{C++} classes to corresponding Python classes of the same name, 
-can be found in the file \lstinline|./scripting/taspaths.i| of the source repository.
+The \textit{SWIG} interface definition, which maps the \textit{C++} classes to corresponding \textit{Python} 
+classes of the same name, can be found in the file \lstinline|./scripting/taspaths.i| of the source repository.
 
-An example of the full workflow of loading an instrument definition file, creating a path mesh and finding
-the path from a start position in crystal coordinates to a target position is given in listings \ref{lst:pyworkflow1}, \ref{lst:pyworkflow2} and \ref{lst:pyworkflow3}.
+An example of the full workflow consisting of loading an instrument definition file, creating a path 
+mesh and finding the path from a start position in crystal coordinates to a target position is given in listings 
+\ref{lst:pyworkflow1}, \ref{lst:pyworkflow2} and \ref{lst:pyworkflow3}.
 The native core module is imported into \textit{Python} as the name \lstinline[language=C++]|tas| on line 9 of the script,
 instances of its classes are generated for the individual functionalities.
 Specifically, the instrument space class from chapter \ref{sec:tasmodel}, which is the representation of the instrument 
@@ -330,8 +336,8 @@ loading and saving of instrument configurations, is created on line 37.
 Next, the triple-axis and single-crystal calculator class from chapter \ref{ch:xtal} is created on line 51 and is 
 used to set-up the instrument scattering senses and a single-crystal coordinate system.
 Finally, the path builder class, which has been described in chapter \ref{sec:buildpath}, is created on line 64 
-and used in the rest of the script to calculate the path mesh as
-well as the concrete path between the given crystal coordinate points.
+and used in the rest of the script to calculate the path mesh as well as the concrete path between the 
+given crystal coordinate points.
 The results of the script are shown in Fig. \ref{fig:pyworkflow}, where we employ \textit{Matplotlib} \cite{web_matplotlib} 
 to plot the calculated path and the obstacles in configuration space.
 
@@ -562,4 +568,9 @@ if show_plot:
 
 
 \section{Summary}
-TODO
+The modular design of the software keeps the interface code separate from the calculation core.
+Several different types of interfaces were discussed in this chapter, most prominently the graphical 
+user interface, which provides the most accessible way for the end user to use the software.
+A separate scripting interface makes it easy to automatise calculations and interface with other
+software tools.
+
