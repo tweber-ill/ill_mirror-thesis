@@ -109,6 +109,7 @@ of the source code repository.
 
 
 \subsection{Angular configuration space}
+\label{sec:angular_config_space}
 As the obstacles do not have any geometrically primitive shapes in angular configuration space, we need to quantise
 the possible angular configurations into bins. We therefore iterate through the configuration space on a two-dimensional 
 grid and create a bitmap of allowed and forbidden positions. The grid extends towards the scattering angles 
@@ -246,7 +247,7 @@ The radial sweep algorithm works as given below, following the descriptions in R
 
 
 \subsection{Line-segment generation and simplification}
-
+\label{sec:line_seg_generation}
 Panel (a) of Fig. \ref{fig:contour_simplification} shows a typical contour created by the previous step.
 Line segments are now created between successive vertices, where one vertex is created for each pixel of the
 quantified contour. The situation is shown in panel (b).
@@ -538,6 +539,8 @@ convex regions, and calculates an optimal path between user-specified start and 
 can either be given as crystal coordinates or directly in angular configuration space.
 
 The implementation of this algorithm so far is a C++ library. Several user interfaces, among them a 
-graphical one, have also been developed. These are described in the next chapter.
+graphical one, have also been developed. These are described in chapter \ref{ch:gui}.
+But before that, the next chapter first describes some necessary basic concepts that are needed for the 
+graphical representation of the data.
 
 % -----------------------------------------------------------------------------

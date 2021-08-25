@@ -7,29 +7,52 @@
 
 \chapter{Test Tools and Unit Tests}
 \label{ch:tests}
-Due to a rapid increase in complexity over time, the software of this work 
-necessitated a multi-tiered testing strategy during development.
-But also after having finished the critical phases of development, the test tools presented in this 
-chapter serve to ensure that the software and its parts continue to work as intended. 
+Due to a rapid increase in its complexity over time, the software of this work 
+necessitated a multi-tiered testing strategy during development, including test programs and unit tests.
+Even after having finished the critical phases of development, the programs which are 
+presented in this chapter serve to ensure that the software and its parts continue to work as intended. 
 Problems that may arise can be rapidly analysed using the simplified environments these tools provide.
 
-Before being integrated into the main library or the GUI program, each essential function was tested 
-separately. Either via small test programs or via dedicated unit tests, which are discussed in 
+Before having being integrated into the main library or the GUI program, each essential function was tested 
+separately. This was done either via small test programs or via dedicated unit tests, which are discussed in 
 section \ref{sec:unit_tests}.
-Integration tests of algorithms and collections of functions were performed using larger test programs 
-which implemented a simplified versions of the functionality of the main programs.
-These are described in section \ref{sec:tests_tools}.
-
+Integration tests of algorithms, where collections of functions are tested how and if they work together, 
+were performed using larger bespoke test tools, which implemented a simplified versions of the functionality 
+of the main programs. These are described in section \ref{sec:tests_tools}.
 
 
 \section{Test tools}
 \label{sec:tests_tools}
-
+First, we describe the collection of tools that served in testing aspects of the main path-finding algorithm.
 
 \subsection{Line segments tool}
 \label{sec:tests_linesegs}
 
-%the source code in \lstinline|./src/tools/lines.cpp|
+The line segment tool (Fig. \ref{fig:linesgui}), whose source code can be found in the file \lstinline|./src/tools/lines.cpp|, 
+performs several kinds of computations to test the line-based algorithms that are used in the core module.
+
+The most important of these is the calculation of line segment Voronoi diagram bisectors as shown in 
+Fig. \ref{fig:linesgui} (a), please also refer to chapter \ref{sec:voro_ls}.
+To that end, it uses two different backend libraries between which the user can switch dynamically in
+the program. These libraries are \textit{Boost.Polygon}'s Voronoi module \cite{web_boost_polygon_voronoi} for one
+and \textit{OpenVoronoi} \cite{web_openvoronoi} for the other.
+The correctness of the calculation is furthermore checked by iterating the points of the $\mathbb{R}^2$ plane
+on a grid and testing to which line segment they are closest. These are the coloured regions in Fig. \ref{fig:linesgui} (a).
+The line segment tool can load the regions of the angular configuration space that are calculated in the main
+program (chapter \ref{sec:line_seg_generation}), and was used for debugging purposes in its development and
+for testing different approaches to the algorithms used in the main program.
+
+Another calculation the line segment tool performs and which is shown in Fig. \ref{fig:linesgui} (b), is the 
+calculation of trapezoidal maps (chapter \ref{sec:pointrobot_sector}), which are calculated according to the 
+algorithm given in Ref. \cite[Ch. 6, pp. 121-146]{Berg2008}.
+The purpose of this was for early testing which sector-based method would be most suitable
+for path-mesh building. The trapezoid maps were deemed infeasible and were ruled out after
+these tests.
+
+The third calculation that was tested in this tool is the sweep-based intersection of line segments which
+is used in the main algorithm for intersections checks between polygons, as has been discussed in 
+chapter \ref{sec:angular_config_space}.
+The implementation is based on the algorithm given in Ref. \cite[pp. 69-80]{FUH_geo2020}.
 
 \begin{figure}[htb]
 	\centering
@@ -42,7 +65,7 @@ These are described in section \ref{sec:tests_tools}.
 	\caption[Line segments tool.]{Line segments tool.
 		This program allows the dynamic calculation of
 		(a) line segment Voronoi regions (coloured) and bisectors (black lines),
-		(b) trapezoid maps, and
+		(b) trapezoidal maps, and
 		(c) sweep-based points of intersection (green points).
 		Line segment vertices can be inserted, deleted and moved using the mouse.
 		\label{fig:linesgui}}
