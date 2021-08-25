@@ -13,7 +13,7 @@
    version="1.2"
    id="svg294"
    sodipodi:docname="linesegs.svg"
-   inkscape:version="1.0.2 (e86c870879, 2021-01-15)">
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
   <metadata
      id="metadata298">
     <rdf:RDF>
@@ -49,7 +49,7 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:zoom="1.4142136"
-     inkscape:cx="301.18388"
+     inkscape:cx="173.55111"
      inkscape:cy="331.98167"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -1683,16 +1683,19 @@
   <text
      xml:space="preserve"
      style="font-size:32px;line-height:125%;font-family:'Nimbus Sans';-inkscape-font-specification:'Nimbus Sans';letter-spacing:0px;word-spacing:0px;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="357.91733"
-     y="119.50105"
-     id="text991"><tspan
+     x="-237.08621"
+     y="423.47632"
+     id="text991"
+     transform="rotate(-35.596187)"><tspan
        sodipodi:role="line"
        id="tspan989"
-       x="357.91733"
-       y="119.50105"
-       style="font-size:32px;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-opacity:1">l<tspan
-   style="font-size:65%;baseline-shift:sub"
-   id="tspan1029">1</tspan></tspan></text>
+       x="-237.08621"
+       y="423.47632"
+       style="font-size:32px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1">B(l<tspan
+   style="font-size:64.99999762%;baseline-shift:sub;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1"
+   id="tspan979">1</tspan>, l<tspan
+   style="font-size:64.99999762%;baseline-shift:sub;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1"
+   id="tspan977">2</tspan>)</tspan></text>
   <text
      xml:space="preserve"
      style="font-size:32px;line-height:125%;font-family:'Nimbus Sans';-inkscape-font-specification:'Nimbus Sans';letter-spacing:0px;word-spacing:0px;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1706,4 +1709,17 @@
        style="font-size:32px;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-opacity:1">l<tspan
    style="font-size:65%;baseline-shift:sub"
    id="tspan1031">2</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:32px;line-height:125%;font-family:'Nimbus Sans';-inkscape-font-specification:'Nimbus Sans';letter-spacing:0px;word-spacing:0px;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="359.44675"
+     y="125.5004"
+     id="text991-36"><tspan
+       sodipodi:role="line"
+       id="tspan989-7"
+       x="359.44675"
+       y="125.5004"
+       style="font-size:32px;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-opacity:1">l<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan1029-5">1</tspan></tspan></text>
 </svg>

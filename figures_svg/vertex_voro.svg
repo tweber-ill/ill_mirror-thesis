@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="33.955097mm"
+   height="12.1059mm"
+   version="1.2"
+   id="svg114"
+   sodipodi:docname="vertex_voro.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <metadata
+     id="metadata118">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>tweber@ill.fr</dc:title>
+          </cc:Agent>
+        </dc:creator>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2371"
+     inkscape:window-height="1900"
+     id="namedview116"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="11.313708"
+     inkscape:cx="27.174363"
+     inkscape:cy="-0.72229703"
+     inkscape:window-x="1092"
+     inkscape:window-y="176"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg114" />
+  <desc
+     id="desc4">Generated with Qt</desc>
+  <defs
+     id="defs26">
+    <radialGradient
+       gradientUnits="userSpaceOnUse"
+       cx="0"
+       cy="0"
+       r="16"
+       fx="0"
+       fy="0"
+       id="gradient1">
+      <stop
+         offset="0"
+         stop-color="#0000ff"
+         stop-opacity="1"
+         id="stop6" />
+      <stop
+         offset="1"
+         stop-color="#000000"
+         stop-opacity="1"
+         id="stop8" />
+    </radialGradient>
+    <radialGradient
+       gradientUnits="userSpaceOnUse"
+       cx="0"
+       cy="0"
+       r="16"
+       fx="0"
+       fy="0"
+       id="gradient2">
+      <stop
+         offset="0"
+         stop-color="#0000ff"
+         stop-opacity="1"
+         id="stop11" />
+      <stop
+         offset="1"
+         stop-color="#000000"
+         stop-opacity="1"
+         id="stop13" />
+    </radialGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#gradient1"
+       id="radialGradient941"
+       gradientUnits="userSpaceOnUse"
+       cx="0"
+       cy="0"
+       fx="0"
+       fy="0"
+       r="16" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#gradient1"
+       id="radialGradient943"
+       gradientUnits="userSpaceOnUse"
+       cx="0"
+       cy="0"
+       fx="0"
+       fy="0"
+       r="16" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#gradient2"
+       id="radialGradient945"
+       gradientUnits="userSpaceOnUse"
+       cx="0"
+       cy="0"
+       fx="0"
+       fy="0"
+       r="16" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#gradient2"
+       id="radialGradient947"
+       gradientUnits="userSpaceOnUse"
+       cx="0"
+       cy="0"
+       fx="0"
+       fy="0"
+       r="16" />
+  </defs>
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
+     id="g28"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(215.03309,0,0,215.03309,-71800.51,-225282.32)" />
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
+     id="g30"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(0.06516105,0,0,0.06516105,26.778435,3.5580392)" />
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:url(#radialGradient943);fill-rule:evenodd;stroke:#000000;stroke-width:0.61512554;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="g34"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(0.24385266,0,0,0.24385266,67.887815,4.3860391)">
+    <circle
+       style="fill:url(#radialGradient941);stroke-width:0.61512554;stroke-miterlimit:4;stroke-dasharray:none"
+       id="circle32"
+       r="8"
+       cy="0"
+       cx="0" />
+  </g>
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
+     id="g36"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(0.06516105,0,0,0.06516105,26.778435,3.5580392)" />
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
+     id="g38"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(0.06516105,0,0,0.06516105,24.198035,18.61034)" />
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:url(#radialGradient947);fill-rule:evenodd;stroke:#000000;stroke-width:0.61512554;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="g42"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(0.24385266,0,0,0.24385266,61.450045,41.939539)">
+    <circle
+       style="fill:url(#radialGradient945);stroke-width:0.61512554;stroke-miterlimit:4;stroke-dasharray:none"
+       id="circle40"
+       r="8"
+       cy="0"
+       cx="0" />
+  </g>
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
+     id="g44"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(0.06516105,0,0,0.06516105,24.198035,18.61034)" />
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
+     id="g46"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(0.06516105,0,0,0.06516105,33.874525,-5.0432608)" />
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
+     id="g52"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(0.06516105,0,0,0.06516105,33.874525,-5.0432608)" />
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
+     id="g54"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(0.06516105,0,0,0.06516105,17.747045,27.21174)" />
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
+     id="g60"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(0.06516105,0,0,0.06516105,17.747045,27.21174)" />
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
+     id="g62"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(0.06516105,0,0,0.06516105,-10.422284,-11.494251)" />
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:4.61344147;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:18.4537663, 18.4537663;stroke-dashoffset:0;stroke-opacity:1"
+     id="g90"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(0.16256844,0,0,0.16256844,-24.923205,-33.167531)">
+    <polyline
+       style="vector-effect:none;fill:none;stroke:#000000;stroke-width:4.61344147;stroke-miterlimit:4;stroke-dasharray:18.4537663, 18.4537663;stroke-dashoffset:0;stroke-opacity:1"
+       id="polyline88"
+       points="940.056,407.454 153.309,269.861 " />
+  </g>
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
+     id="g68"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(0.06516105,0,0,0.06516105,-10.422284,-11.494251)" />
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
+     id="g70"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(0.06516105,0,0,0.06516105,-10.422284,-11.494251)" />
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
+     id="g76"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(0.06516105,0,0,0.06516105,-10.422284,-11.494251)" />
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
+     id="g78"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(0.06516105,0,0,0.06516105,-10.422284,-11.494251)" />
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
+     id="g84"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(0.06516105,0,0,0.06516105,-10.422284,-11.494251)" />
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
+     id="g86"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(0.06516105,0,0,0.06516105,-10.422284,-11.494251)" />
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
+     id="g92"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(0.06516105,0,0,0.06516105,-10.422284,-11.494251)" />
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
+     id="g94"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(0.06516105,0,0,0.06516105,-10.422284,-11.494251)" />
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
+     id="g100"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(0.06516105,0,0,0.06516105,-10.422284,-11.494251)" />
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
+     id="g102"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(0.06516105,0,0,0.06516105,-10.422284,-11.494251)" />
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
+     id="g108"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(0.06516105,0,0,0.06516105,-10.422284,-11.494251)" />
+  <g
+     style="font-style:normal;font-weight:400;font-size:10px;font-family:'Noto Sans';fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1"
+     id="g110"
+     font-style="normal"
+     font-weight="400"
+     font-size="10"
+     transform="matrix(215.03309,0,0,215.03309,-71800.51,-225282.32)" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:5.69999981;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none"
+     x="73.005188"
+     y="5.9739585"
+     id="text1001"><tspan
+       sodipodi:role="line"
+       id="tspan999"
+       x="73.005188"
+       y="5.9739585"
+       style="font-size:10.66666698px;fill:#0000ff;fill-opacity:1">s<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan870">1</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:5.69999981;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none"
+     x="66.534943"
+     y="43.62125"
+     id="text1001-3"><tspan
+       sodipodi:role="line"
+       id="tspan999-6"
+       x="66.534943"
+       y="43.62125"
+       style="font-size:10.66666698px;fill:#0000ff;fill-opacity:1">s<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan872">2</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:5.69999981;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="6.8475637"
+     y="21.763672"
+     id="text1001-5"
+     transform="rotate(9.3508146)"><tspan
+       sodipodi:role="line"
+       id="tspan999-3"
+       x="6.8475637"
+       y="21.763672"
+       style="font-size:10.66666698px">B(s<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan876">1</tspan>, s<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan874">2</tspan>)</tspan></text>
+</svg>

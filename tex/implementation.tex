@@ -341,85 +341,13 @@ A visualisation and example run of the algorithm is shown in Fig. \ref{fig:conto
 
 
 
-\subsection{Calculation of the Voronoi diagram}
-As we are interested in the instrument path that is at the farthest position from walls, we need to calculate
-the Voronoi diagrams for the line segments that constitute these obstacles. In a second step, we group line
-segments into objects in to remove bisecting lines coming from the same object.
-
-
-\subsubsection*{Line segment Voronoi diagrams}
-Voronoi diagrams are described in a general fashion in \cite[Ch. 7, pp. 147f]{Berg2008} and in
-\cite[Ch. 5, pp. 209f]{Berg2008}, a description of the special case of Voronoi diagrams for line segments can be
-found in \cite[Ch. 7.3, pp. 160-163]{Berg2008} and in \cite[pp. 242-247]{FUH_geo2020}.
-
-The Voronoi region of a line $l_i$ consists of all points in $\mathbb{R}^2$ that are closest to $l_i$. 
-The boundary between the Voronoi regions of two line segments $l_i$ and $l_j$, $i \neq j$, 
-is called bisector and is the curve of equal distance between the two line segments $l_i$ and $l_j$.
-Its shape is either linear or quadratic, where, in the linear case, the bisector curve can also be either
-finite or infinite \cite[pp. 243-244]{FUH_geo2020}.
-
-A linear bisector is obtained for the distance calculated between two line segment endpoints or between two inner 
-points on the line segments which are not the endpoints.
-This can easily be seen, because, (a) in the case of two endpoints, the middle perpendicular line between these 
-two points is equidistant to them; and (b) in the case of two line segments, the angular bisector of the two lines is
-equidistant to them \cite[pp. 243-244]{FUH_geo2020}.
-On the other hand, the bisector curve segment follows a parabolic shape if the distance is calculated 
-between a line segment endpoint and one inner point of the other segment. This is the same as the bisector between
-a point and a line and it parabolic distance is shown in \cite[pp. 260-261]{FUH_geo2020}.
-An example of two or several line segments and their bisectors is shown in Fig. \ref{fig:linesegs_voro}.
-
-For the calculation of the line segment Voronoi diagrams in the present implementation, the Voronoi extensions
-\cite{web_boost_polygon_voronoi} of the \textit{Boost.Polygon} \cite{web_boost_polygon, Simonson2009} 
-C++ library are used.
-\textit{Boost.Polygon} uses Fortune's sweep algorithm \cite{Fortune1987} to construct the Voronoi diagram and is
-internally based on integers coordinates \cite{web_boost_polygon}.
-The reliance on integer coordinate representation is also responsible for \textit{Boost.Polygon}'s inability to handle
-intersecting lines, because the intersection point may be at a non-integer coordinate. Intersecting lines need
-to be carefully filtered out, because they can unfortunately cause the \textit{Boost.Polygon} library to either crash, 
-hang, or yield wrong bisectors.
-
-Several alternative libraries for calculating the line segment Voronoi diagrams exist,
-noteworthy are \textit{VRONI} by M. Held \cite{Held2001}, \textit{OpenVoronoi} by A. E. Wallin \cite{web_openvoronoi}
-and \textit{VoroLS} by W. Schumann \cite{DiplomaSchumann}.
-A further possible C/C++ library, the popular and very high-quality \textit{QHull} by 
-C. B. Barber \cite{web_qhull}, only calculates the Voronoi diagrams for vertices, not for line segments.
-None of the above is feasible for the present project, though: \textit{VRONI} is neither freely available 
-nor under a suitable open-source license.
-The opposite is true for \textit{OpenVoronoi}: It is available under an open-source license, but our first tests
-deemed it too unstable for use in a production-quality software. The source code for our test can be found in
-the function \lstinline[language=C++]|geo::calc_voro_ovd()|, which resides in file \lstinline|./src/libs/hull.h|.
-The source code for the test tool itself is located in: \lstinline|./src/tools/lines.cpp|.
-\textit{VoroLS} is stable and does even handle intersecting lines, but is a \textit{Java}
-software, not a library, and is not under an open-source license.
-
-
-\begin{figure}
-	\begin{minipage}{1 \textwidth}
-		\begin{center}
-			\includegraphics[width = 0.75 \textwidth]{figures/linesegs}
-		\end{center}
-		\vspace{0.25cm}
-	\end{minipage}
-	\begin{minipage}{1 \textwidth}
-		\vspace{0.25cm}
-		\begin{center}
-			\includegraphics[width = 0.95 \textwidth]{figures/linesegs2}
-		\end{center}
-	\end{minipage}
-	\caption[Voronoi diagrams for line segments.]{
-		Top panel: Voronoi regions for two line segments, $l_1$ and $l_2$.
-		Bottom panel: Voronoi regions for five line segments, $l_1,\, l_2,\, ...,\, l_5$.
-		The line segments and their endpoints are marked in blue. The small red points represent the Voronoi vertices.
-		The black lines are the bisectors of the Voronoi regions, where the solid lines delimit finite and the dashed lines
-		infinite regions. Helper lines are marked in red. The figure has been calculated using the \textit{Boost.Polygon} library
-		\cite{web_boost_polygon_voronoi} and the source code in \lstinline|./src/tools/lines.cpp|.
-		\label{fig:linesegs_voro}}
-\end{figure}
-
-
-
-\subsubsection*{Polygon Voronoi diagrams}
+\subsection{Calculation of the Voronoi diagram for polygons}
 \label{sec:polygonal_voronoi_diagram}
+As we are interested in the instrument path that is at the farthest position 
+from walls, we need to calculate the Voronoi diagrams for the line segments 
+that constitute these obstacles. 
+In a second step, we group line segments into objects in to remove bisecting lines 
+coming from the same object.
 
 It is not sufficient to represent the walls as isolated line segments, because -- 
 as we saw before -- they are not necessarily simply-connected. 
@@ -479,6 +407,11 @@ The Voronoi diagram of these regions is calculated in the member function
 \lstinline[language=C++]|PathsBuilder::CalculateVoronoi()|.
 It calls the backend function \lstinline[language=C++]|geo::calc_voro()|, which is part
 of the library and can be found in the file \lstinline|./src/libs/voronoi_lines.h|.
+
+For the calculation of the line segment Voronoi diagrams in the present implementation, 
+the Voronoi extensions \cite{web_boost_polygon_voronoi} of the \textit{Boost.Polygon} 
+\cite{web_boost_polygon, Simonson2009} C++ library are used, see the discussion in 
+chapter \ref{sec:voro_ls}.
 
 
 \begin{figure}

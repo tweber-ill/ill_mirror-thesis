@@ -5,10 +5,154 @@
 % @license see 'LICENSE' file
 %
 
-\chapter{Interlude I: Algorithms}
+\chapter{Basic Concepts, Algorithms and Data Structures}
 \label{ch:algos}
+Before coming to the path-finding algorithm and implementation details, several general concepts, 
+data structures and methods, that are employed in this work, are reviewed in a general manner.
 
-Before coming to the path-finding algorithm and implementation details, 
-sevaral general concepts and methods that are employed in this work are reviewed 
-in a general manner.
+
+\section{Voronoi diagrams}
+\label{sec:voro}
+As we will see in the next chapter, Voronoi diagrams play a central role for the path-finding 
+algorithm of this work. 
+A good review of Voronoi diagrams is given in Ref. \cite[Ch. 7, pp. 147-171]{Berg2008} 
+and in \cite[Ch. 5, pp. 209f]{FUH_geo2020}, which we follow in this chapter.
+
+Starting with some basic definitions, a \textit{Voronoi diagram} is a set of 
+\textit{bisectors}, $B\left(\underline{x},\, \underline{y}\right)$, separating \textit{Voronoi regions}.
+A Voronoi region names the set of points $\underline{x}$ in a vectorspace $V$ that are closest to 
+a given site $\underline{s}$ under a given metric $\left\Vert \cdot \right\Vert$, which measures distances in $V$.
+The site can either be isolated vertices, lines or any other finite object.
+Formally, the bisector between two sites $\underline{s}_1$ and $\underline{s}_2$ is, 
+generalising from \cite[p. 140]{Icking2001},
+\begin{equation}
+	B\left(\underline{s}_1,\, \underline{s}_2\right)\ =\ \left\{ \underline{x} \in V \ |\ 
+		\left\Vert \underline{x} - \underline{s}_1 \right\Vert = \left\Vert \underline{x} - \underline{s}_2 \right\Vert \right\}.
+\end{equation}
+Even though this definition of Voronoi diagrams does not restrict the vectorspace to the $\mathbb{R}^n$ 
+and the underlying metric to the usual Euclidian one, 
+\begin{equation}
+	\left\Vert \underline{x} \right\Vert_2 \ =\ \sqrt{\left<x | x \right>},
+\end{equation}
+they are nevertheless implied in the rest of this work if nothing else is specified.
+Specifically, we thus set $V = \mathbb{R}^2$ and $\left\Vert \cdot \right\Vert = \left\Vert \cdot \right\Vert_2$. 
+Please refer to \cite{Icking2001} for other metrics.
+
+
+
+\subsection{Voronoi diagrams for vertex sites}
+The simplest case is the Voronoi diagram for vertex sites.
+For the general case, namely $\mathbb{R}^n$, the bisectors consist of $n-1$-dimensional hyperplanes. 
+Specifically for $\mathbb{R}^n$, they are either line segments or infinite lines, depending if the 
+corresponding Voronoi region is closed or open, respectively.
+An example of two or several vertex sites and their bisectors is shown in Fig. \ref{fig:vertex_voro}.
+
+\begin{figure}[htb]
+	\begin{minipage}{1 \textwidth}
+		\begin{center}
+			\includegraphics[width = 0.4 \textwidth]{figures/vertex_voro}
+		\end{center}
+		\vspace{1cm}
+		\begin{center}
+			\includegraphics[width = 0.75 \textwidth]{figures/vertex_voro2}
+		\end{center}
+	\end{minipage}
+	\caption[Voronoi diagrams for vertices.]{
+		Top panel: Voronoi diagram for two vertex sites, $s_1$ and $s_2$. 
+			The bisector, $B\left(s_1, s_2\right)$, separates $\mathbb{R}^2$ 
+			into two open Voronoi regions forming half-planes.
+		Bottom panel: Voronoi diagram for ten vertex sites, $s_1,\, s_2,\, ...,\, s_{10}$.
+		The black lines are the bisectors of the Voronoi regions, where the solid lines are of finite size
+		and delimit closed Voronoi regions. The dashed lines are of infinite length and delimit open Voronoi regions.
+		The figure has been calculated using the test program that will be described in chapter \ref{sec:tests_hull}.
+		\label{fig:vertex_voro}}
+\end{figure}
+
+
+
+\subsection{Voronoi diagrams for line-segment sites}
+\label{sec:voro_ls}
+We now look at the special case of Voronoi diagrams constructed from line segments.
+A description of this case can be found in \cite[Ch. 7.3, pp. 160-163]{Berg2008} and in 
+\cite[pp. 242-247]{FUH_geo2020}, whose descriptions we follow in this section.
+
+For this case, the Voronoi region of a line $l_i$ consists of all points in $\mathbb{R}^2$ that 
+are closest to $l_i$. The bisector is the boundary between the Voronoi regions of two line segments $l_i$ and $l_j$, $i \neq j$,
+and is the curve of equal distance between the two line segments $l_i$ and $l_j$.
+Its shape is either linear or quadratic, where, in the linear case, the bisector curve can also be either
+finite or infinite \cite[pp. 243-244]{FUH_geo2020}.
+
+A linear bisector is obtained for the distance calculated between two line segment endpoints or between two inner 
+points on the line segments which are not the endpoints.
+This can easily be seen, because, (a) in the case of two endpoints, the middle perpendicular line between these 
+two points is equidistant to them; and (b) in the case of two line segments, the angular bisector of the two lines is
+equidistant to them \cite[pp. 243-244]{FUH_geo2020}.
+On the other hand, the bisector curve segment follows a parabolic shape if the distance is calculated 
+between a line segment endpoint and one inner point of the other segment. This is the same as the bisector between
+a point and a line and it parabolic distance is shown in \cite[pp. 260-261]{FUH_geo2020}.
+An example of two or several line segment sites and their bisectors is shown in Fig. \ref{fig:linesegs_voro}.
+
+\begin{figure}[htb]
+	\begin{minipage}{1 \textwidth}
+		\begin{center}
+			\includegraphics[width = 0.75 \textwidth]{figures/linesegs}
+		\end{center}
+		\vspace{0.25cm}
+	\end{minipage}
+	\begin{minipage}{1 \textwidth}
+		\vspace{0.25cm}
+		\begin{center}
+			\includegraphics[width = 0.95 \textwidth]{figures/linesegs2}
+		\end{center}
+	\end{minipage}
+	\caption[Voronoi diagrams for line segments.]{
+		Top panel: Voronoi regions for two line segments, $l_1$ and $l_2$.
+		Bottom panel: Voronoi regions for five line segments, $l_1,\, l_2,\, ...,\, l_5$.
+		The line segments and their endpoints are marked in blue. The small red points represent the Voronoi vertices.
+		The black lines are the bisectors of the Voronoi regions, where the solid lines delimit finite and the dashed lines
+		infinite regions. Helper lines are marked in red. The figure has been calculated using the line segments
+		test program which will be described in chapter \ref{sec:tests_linesegs}. The program uses 
+		the \textit{Boost.Polygon} library \cite{web_boost_polygon_voronoi}.
+		\label{fig:linesegs_voro}}
+\end{figure}
+
+
+\subsection{Software libraries}
+A stable and efficient C/C++ library for calculating Voronoi diagram in $\mathbb{R}^n$ is the popular and very 
+high-quality \textit{QHull} by C. B. Barber \cite{web_qhull}. While it does only calculate 
+the Voronoi diagrams for vertices, and not for line segments, it is also capable of calculation the Delaunay
+triangulation and -- as the name implies -- convex hull of the sites.
+
+Several libraries for calculating the line segment Voronoi diagrams in $\mathbb{R}^2$ exist, noteworthy 
+are \textit{VRONI} by M. Held \cite{Held2001}, \textit{OpenVoronoi} by A. E. Wallin \cite{web_openvoronoi}, \textit{VoroLS} 
+by W. Schumann \cite{DiplomaSchumann}, as well as the Voronoi calculator \cite{web_boost_polygon_voronoi} 
+by A. Sydorchukof, which is part of the \textit{Boost.Polygon}  \cite{web_boost_polygon, Simonson2009} 
+C++ library.
+The first three are feasible for the present project, though: 
+\begin{itemize}
+	\item \textit{VRONI} \cite{Held2001} is reported in a paper, but is neither freely available 
+		nor under a suitable open-source license.
+	\item The opposite is true for \textit{OpenVoronoi} \cite{web_openvoronoi}: 
+		It is available under an open-source license, but our first tests deemed it too unstable 
+		for use in a production-quality software. 
+		The source code for our tests can be found in the function \lstinline[language=C++]|geo::calc_voro_ovd()|, 
+		which resides in file \lstinline|./src/libs/hull.h| of the accompanying code. 
+		The source code for the test tool itself is located in: \lstinline|./src/tools/lines.cpp|.
+	\item \textit{VoroLS} \cite{DiplomaSchumann} is stable and does even handle intersecting lines, but is a \textit{Java}
+		software, not a library, and is not under an open-source license.
+	\item All requirements were met by \textit{Boost.Polygon} \cite{web_boost_polygon}, though, and we will use 
+		this library for the calculations of the present work.
+		\textit{Boost.Polygon}  uses Fortune's sweep algorithm \cite{Fortune1987} to construct 
+		the Voronoi diagram and is internally based on integers coordinates \cite{web_boost_polygon}.
+		The reliance on integer coordinate representation is also responsible for \textit{Boost.Polygon}'s 
+		inability to handle intersecting lines, because the intersection point may be at a non-integer coordinate. 
+		Intersecting lines need to be carefully filtered out, because they can unfortunately cause the 
+		\textit{Boost.Polygon} library to either crash, hang, or yield wrong bisectors.
+\end{itemize}
+
+
+
+
+\section{Graphs}
+\label{sec:graphs}
 
