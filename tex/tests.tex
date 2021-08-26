@@ -21,14 +21,24 @@ were performed using larger bespoke test tools, which implemented a simplified v
 of the main programs. These are described in section \ref{sec:tests_tools}.
 
 
+
 \section{Test tools}
 \label{sec:tests_tools}
 First, we describe the collection of tools that served in testing aspects of the main path-finding algorithm.
+These tools share a common \textit{Qt}-based \cite{web_Qt} GUI codebase and are similar in their usage.
+They all use the \lstinline[language=C++]|QGraphicsScene| class \cite{web_QGraphicsScene} and through that
+allow a dynamic manipulation of their respective geometrical objects using the mouse. 
+Calculations and results are automatically updated once the user changes the geometrical scenes.
+
+Early versions of these tools were originally created in 2020 as preparation for the exam in the Algorithmic
+Geometry course, the original repository can be found on-line at \url{https://github.com/t-weber/geo}. 
+Afterwards, these programs were further developed for their current purpose during the present work.
+
 
 \subsection{Line segments tool}
 \label{sec:tests_linesegs}
-
-The line segment tool (Fig. \ref{fig:linesgui}), whose source code can be found in the file \lstinline|./src/tools/lines.cpp|, 
+The line segment tool (Fig. \ref{fig:linesgui}), whose code can be found in the file 
+\lstinline|./src/tools/lines.cpp| of the source repository, 
 performs several kinds of computations to test the line-based algorithms that are used in the core module.
 
 The most important of these is the calculation of line segment Voronoi diagram bisectors as shown in 
@@ -54,7 +64,7 @@ is used in the main algorithm for intersections checks between polygons, as has 
 chapter \ref{sec:angular_config_space}.
 The implementation is based on the algorithm given in Ref. \cite[pp. 69-80]{FUH_geo2020}.
 
-\begin{figure}[htb]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width = 0.49 \textwidth]{figures/linesgui_voro}
 	\hspace{0.05cm}
@@ -74,7 +84,19 @@ The implementation is based on the algorithm given in Ref. \cite[pp. 69-80]{FUH_
 
 
 \subsection{Polygon tool}
-\begin{figure}[htb]
+The next tool performs calculations and tests on polygonal algorithms. 
+Its source code can be found in the file \lstinline|./src/tools/poly.cpp|.
+
+The main purpose of the polygon tool is the testing of the algorithm used for splitting concave 
+polygonal regions into convex sub-regions that is used in building the path mesh in chapter \ref{sec:convex_regions}. 
+Fig. \ref{fig:polygui} (a) shows a screenshot of a test run of the algorithm on a much simpler
+polygonal region than what is calculated in the main program. The polygonal splitting algorithm 
+itself is based on the description from Ref. \cite{Hegazy2014}.
+Another function of the tool is the calculation of the visibility kernel \cite{TODO} of a 
+polygonal region, see Fig. \ref{fig:polygui} (b).
+
+
+\begin{figure}[h]
 	\centering
 	\includegraphics[width = 0.49 \textwidth]{figures/polygui_convex}
 	\hspace{0.05cm}
@@ -85,14 +107,24 @@ The implementation is based on the algorithm given in Ref. \cite[pp. 69-80]{FUH_
 		(b) the visibility kernel (red) of a polygonal region.
 		Polygon vertices can be inserted, deleted and moved using the mouse, updates
 		are performed dynamically.
-		\label{fig:linesgui}}
+		\label{fig:polygui}}
 \end{figure}
 
 
 
 \subsection{Convex hull tool}
 \label{sec:tests_hull}
-\begin{figure}[htb]
+The final tool performs calculations on collections of vertices.
+
+Its main functionality consists of determining the convex hull, the Voronoi diagrams, 
+as well as the Delaunay triangulation the given set of vertices.
+This is shown in Fig. \ref{fig:hullgui} (a).
+A secondary feature, depicted in Fig. \ref{fig:hullgui} (b), is the calculation of 
+the minimal spanning tree between the vertices.
+
+% TODO: backend, choice between different algorithms possible
+
+\begin{figure}[h]
 	\centering
 	\includegraphics[width = 0.49 \textwidth]{figures/hullgui_voro}
 	\hspace{0.05cm}
@@ -105,7 +137,7 @@ The implementation is based on the algorithm given in Ref. \cite[pp. 69-80]{FUH_
 		of a collection of vertices.
 		As with the other test tools, the vertices can be inserted, deleted and moved 
 		using the mouse, updates are performed dynamically.
-		\label{fig:linesgui}}
+		\label{fig:hullgui}}
 \end{figure}
 
 
