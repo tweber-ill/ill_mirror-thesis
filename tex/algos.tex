@@ -69,6 +69,35 @@ An example of two or several vertex sites and their bisectors is shown in Fig. \
 \end{figure}
 
 
+\paragraph{Physical application: Brillouin zones}
+Vertex-site Voronoi diagrams are ubiquitous in solid-state physics and all its connected disciplines
+like neutron scattering, magnetism, etc., although they are not called so in these fields.
+In physics, one usually thinks in terms of the reciprocal (dual, Fourier) space of a crystal lattice, as discussed
+in chapter \ref{ch:xtal}. Due to the periodic nature of the crystal and its reciprocal space, one can define a smallest
+cell for which all physics is the same, the so-called \textit{first Brillouin zone} of the reciprocal
+lattice \cite[pp. 63-64]{Gross2012}, whose definition corresponds to that of the Voronoi region.
+The crystal and its reciprocal lattice are assumed to be infinite. This is a good approximation as one usually
+considers physics in the Angstrom scale, while the crystals used in neutron scattering usually have volumes on the
+$cm^3$ scale. Having an infinite lattice has the effect that the Voronoi diagram does not possess any open regions.
+As the crystal is regular and periodic, only one shape of Voronoi region exists, which repeats to fill the
+entire reciprocal space without gaps.
+Typical examples of Brillouin zone shapes for cubic crystals are shown in Fig. \ref{fig:cubic_bzs}.
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width = 0.75 \textwidth]{figures/bz}
+	\end{center}
+	\caption[Brillouin zones.]{
+		First Brillouin zone for
+			(a) a simple cubic,
+			(b) a body-centred cubic, and
+			(c) a face-centred cubic crystal lattice.
+		Only the bisectors (blue faces) are shown, the vertex-sites (Bragg peaks) are hidden for clarity.
+		Calculated using the \textit{Takin} software \cite{Takin2021, Takin2017, Takin2016}.
+		\label{fig:cubic_bzs}}
+\end{figure}
+
+
 
 \subsection{Voronoi diagrams for line-segment sites}
 \label{sec:voro_ls}
