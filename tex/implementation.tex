@@ -130,12 +130,24 @@ The collision calculation on the two-dimensional grid is spread out on several p
 \lstinline[language=C++]|thread_pool| \cite{web_boost_asio_threadpool} class from the 
 \textit{Boost.Asio} \cite{web_boost_asio} asynchronous input/output library.
 
-With the given two-dimensional simplifications, we only need to distinguish three possible intersection tests for collisions: 
-line-line intersections, line-circle intersections and circle-circle intersections. 
+With the given two-dimensional simplifications, we only need to distinguish three possible 
+intersection tests for collisions: intersections between two polygons, which is done by an intersection
+test between their line segments, line segment-circle intersections for the cases when a polygon 
+collides with a circle, and circle-circle intersections. 
 For efficiency, the actual calculations are only made if the corresponding geometrical objects lie within 
 one another's axis-aligned bounding boxes \cite{web_aabb}.
 
 \subsubsection*{Line-line intersections}
+We realised two different methods for checking if two line segments intersect.
+The first one is a check without calculation of the actual intersection point. 
+This consists of testing if the two endpoints of line segment 1 are on two different sides of line
+segment 2, and vice versa \cite{TODO}. If both conditions are fulfilled, the two line segments intersect.
+While this test is efficient in the number of calculations, we need to do $\mathcal{O}\left(n \cdot m\right)$ checks
+to test the line segments of two polygons with $n$ and $m$ edges, respectively, for intersections with one another.
+For polygonal regions with a large number of edges, we implemented a sweep-based method which runs
+in $\mathcal{O}\left(n \log n\right)$ time for a total number of $n$ edges \cite{TODO}. 
+Before coming to the details, we first describe the calculation of the intersection of two lines in general.
+
 Given two lines $\left|x_1\right> + \lambda_1 \left|d_1\right>$ and $\left|x_2\right> + \lambda_2 \left|d_2\right>$, 
 the line-line intersection can be calculated by setting their equations equal, namely as follows \cite{wiki_line_line_intersection}:
 \begin{equation}
@@ -193,6 +205,8 @@ We shortly summarise the algorithm and our implementation, following the descrip
 				and, as they cross at this point, their order is flipped in the event structure.
 				After the flip, the intersecting line segments are tested against intersection with their new neighbours
 				and the possible intersection points are inserted into the event structure.
+				Note that in this method, we do need to calculate the actual intersection point, as it is at this point
+				that we need to swap the order of the lines.
 		\end{itemize}
 	\item Repeat from step 2.
 \end{enumerate}
