@@ -8,11 +8,16 @@
 
 
 CONVERTER=$(which inkscape)
-DOT=dot
+DOT=$(which dot)
 
 
 if [ "$CONVERTER" = "" ]; then
 	echo -e "\n\nError: Inkscape, which is used for conversion, was not found.\n\n"
+	exit -1
+fi
+
+if [ "$DOT" = "" ]; then
+	echo -e "\n\nError: Dot, which is used for graph creation, was not found.\n\n"
 	exit -1
 fi
 
