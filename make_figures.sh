@@ -8,6 +8,7 @@
 
 
 CONVERTER=$(which inkscape)
+DOT=dot
 
 
 if [ "$CONVERTER" = "" ]; then
@@ -22,6 +23,7 @@ CONVERTER_OLD_ARGS=$?
 #echo -e "return value: $CONVERTER_OLD_ARGS"
 
 
+echo -e "Creating pdfs from svgs..."
 for fig_svg in figures_svg/*.svg; do
 	# change ending
 	fig_pdf_meta="${fig_svg%\.svg}.pdf"
@@ -48,4 +50,20 @@ for fig_svg in figures_svg/*.svg; do
 		$CONVERTER --export-type=pdf --export-pdf-version=1.4 \
 			--export-filename=$fig_pdf $fig_svg
 	fi
+done
+
+
+echo -e "\nCreating pdfs from dot graphs..."
+for fig_dot in figures_svg/*.dot; do
+	# change ending
+	fig_pdf_meta="${fig_dot%\.dot}.pdf"
+
+	# remove meta directory
+	fig_pdf_base=$(basename "${fig_pdf_meta}")
+
+	# add figures directory
+	fig_pdf="figures/${fig_pdf_base}"
+
+	echo -e "$fig_dot -> $fig_pdf"
+	$DOT -Tpdf -o $fig_pdf $fig_dot
 done

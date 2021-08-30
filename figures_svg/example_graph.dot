@@ -1,0 +1,26 @@
+digraph example_graph
+{
+	rankdir = "LR";
+	graph [fontname = "DejaVuSans"]
+	node [fontname = "DejaVuSans"]
+	edge [fontname = "DejaVuSans"]
+
+	// vertices
+	v1 [label=<v<sub>1</sub>>];
+	v2 [label=<v<sub>2</sub>>];
+	v3 [label=<v<sub>3</sub>>];
+	v4 [label=<v<sub>4</sub>>];
+	v5 [label=<v<sub>5</sub>>];
+
+	// edges and weights
+	v1 -> v2 [label=<w(e<sub>12</sub>)=1>];
+	v1 -> v4 [label=<w(e<sub>14</sub>)=9>];
+	v1 -> v5 [label=<w(e<sub>15</sub>)=10>];
+	v2 -> v3 [label=<w(e<sub>23</sub>)=3>];
+	v2 -> v4 [label=<w(e<sub>24</sub>)=7>];
+	v4 -> v2 [label=<w(e<sub>42</sub>)=1>];
+	v3 -> v4 [label=<w(e<sub>34</sub>)=1>];
+	v3 -> v5 [label=<w(e<sub>35</sub>)=2>];
+	v3 -> v1 [label=<w(e<sub>31</sub>)=10>];
+	v4 -> v5 [label=<w(e<sub>45</sub>)=2>];
+}

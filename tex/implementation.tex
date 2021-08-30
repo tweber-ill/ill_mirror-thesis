@@ -525,7 +525,7 @@ which is shown in Fig. \ref{fig:linesegs_path}.
 
 Specifically, our implementation of Dijkstra's algorithm, which can be found in the function 
 \lstinline[language=C++]|geo::dijk()| of the file \lstinline|./src/libs/graphs.h|, is based on the pseudo-code 
-given in \cite[unit 4, p. 17]{FUH_algo2021}. Dijkstra's algorithm is at its core a breath-first
+given in \cite[p. 17]{FUH_algo_graphs_2021}. Dijkstra's algorithm is at its core a breath-first
 search of a graph, where the next neighbour vertex to visit is chosen by the lowest weight
 factor of the connecting edges. In the present implementation, this search for the next neighbour
 to visit is performed using a heap data structure, whose construction and query is performed
