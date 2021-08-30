@@ -220,5 +220,53 @@ An example for a graph is shown in Fig. \ref{fig:example_graph}.
 \end{figure}
 
 
+There are two common data structures to store graphs, the adjacency matrix and the adjacency list, which are
+both discussed in general and in terms of complexity in Ref. \cite[pp. 3-5]{FUH_algo_graphs_2021}.
+The adjacency matrix for a graph with $n$ vertices is an $n \times n$ matrix that stores the 
+weights $w\left(e_{ij}\right)$ for edge $e_{ij}$ between vertices $v_i$ and $v_j$ in its elements,
+where either $0$ or a special \textit{null} symbol means that the corresponding edge does not exist.
+The adjacency list for a graph with $n$ vertices is an array with $n$ elements $l_i$ which point 
+to the head of a (doubly) linked list whose entries contain pointers to all the vertices $v_j$ that are reachable 
+from vertex $v_i$ along with the weight factors for edge $e_{ij}$.
+Table \ref{tab:example_graph_structure} shows an example for an adjacency matrix and an adjacency list.
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|ccccc|}
+			\hline
+			      & $v_1$ & $v_2$ & $v_3$ & $v_4$ & $v_5$ \tabularnewline
+			\hline
+			$v_1$ &  null &     1 &  null &     9 &    10 \tabularnewline
+			$v_2$ &  null &  null &     3 &     7 &  null \tabularnewline
+			$v_3$ &    10 &  null &  null &     1 &     2 \tabularnewline
+			$v_4$ &  null &     1 &  null &  null &     2 \tabularnewline
+			$v_5$ &  null &  null &  null &  null &  null \tabularnewline
+			\hline
+	\end{tabular}
+	\hspace{1cm}
+	\begin{tabular}{|c|c|ccccc|}
+			\cline{1-1} \cline{3-7}
+			$v_1$ &  $\rightarrow$ &  $v_2\, [1]$ &  $\leftrightarrow$ &  $v_4\, [9]$ &  $\leftrightarrow$  & $v_5\, [10]$ \tabularnewline
+			\cline{1-1} \cline{3-7}
+			$v_2$ &  $\rightarrow$ &  $v_3\, [3]$ &  $\leftrightarrow$ &  $v_4\, [7]$ &   &  \tabularnewline
+			\cline{1-1} \cline{3-7}
+			$v_3$ &  $\rightarrow$ &  $v_1\, [10]$ &  $\leftrightarrow$ &  $v_4\, [1]$ &  $\leftrightarrow$  & $v_5\, [2]$ \tabularnewline
+			\cline{1-1} \cline{3-7}
+			$v_4$ &  $\rightarrow$ &  $v_2\, [1]$ & $\leftrightarrow$  &  $v_5\, [2]$ &   &  \tabularnewline
+			\cline{1-1} \cline{3-7}
+			$v_5$ &  $\rightarrow$ & null &   &   &   &  \tabularnewline
+			\cline{1-1} \cline{3-7}
+	\end{tabular}
+	\caption[Adjacency matrix and list.]{
+		Adjacency matrix (left) and adjacency list (right) for the example graph shown in Fig. \ref{fig:example_graph}.
+		For the adjacency matrix, the weight factors directly form the entries, whereas for the adjacency list, 
+		the weight factors are stored alongside the vertex entries and are here shown in square brackets.
+		These tables follow the design of Ref. \cite[pp. 4, table 4.1]{FUH_algo_graphs_2021}.}
+	\label{tab:example_graph_structure}
+\end{table}
+
+
+
 \subsection{Dijkstra's algorithm}
 \label{sec:dijkstra}
+TODO
