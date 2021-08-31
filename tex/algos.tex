@@ -160,7 +160,7 @@ are \textit{VRONI} by M. Held \cite{Held2001}, \textit{OpenVoronoi} by A. E. Wal
 by W. Schumann \cite{DiplomaSchumann}, as well as the Voronoi calculator \cite{web_boost_polygon_voronoi} 
 by A. Sydorchukof, which is part of the \textit{Boost.Polygon}  \cite{web_boost_polygon, Simonson2009} 
 C++ library.
-The first three are feasible for the present project, though: 
+The first three are not feasible for the present project, though: 
 \begin{itemize}
 	\item \textit{VRONI} \cite{Held2001} is reported in a paper, but is neither freely available 
 		nor under a suitable open-source license.
@@ -267,6 +267,49 @@ Table \ref{tab:example_graph_structure} shows an example for an adjacency matrix
 
 
 
-\subsection{Dijkstra's algorithm}
+\subsection{Shortest path and Dijkstra's algorithm}
 \label{sec:dijkstra}
-TODO
+The shortest path in a graph is the path between two vertices which minimises the sum of the weights
+of all edges that are traversed along the way.
+Two general classes of algorithms for finding the shortest path in a graph exist.
+The first class of algorithms solves the so-called \textit{single source shortest path (SSSP)} problem,
+which calculates the shortest paths from one source vertex to all other vertices \cite[pp. 273-297]{Erickson2019}.
+The second class of algorithms solves the \textit{all pairs shortest path (APSP)} problem, which calculates
+all possible pairs of shortest paths between any two vertices in the graph \cite[pp. 309-320]{Erickson2019}.
+Noteworthy representatives of these two classes are the Bellman-Ford \cite[pp. 11-14]{FUH_algo_graphs_2021} 
+and the Dijkstra algorithm \cite[pp. 14-18]{FUH_algo_graphs_2021} for SSSP, 
+as well as the Johnson \cite[pp. 19-21]{FUH_algo_graphs_2021} 
+and the Floyd-Warshall algorithm \cite[pp. 21-24]{FUH_algo_graphs_2021} for APSP.
+
+For the case presented in the following chapters we are interested in calculating a single path between 
+a source and target point and will thus need to solve an SSSP problem.
+To that end we choose Dijkstra's algorithm, because in the best case it can be implemented 
+in $\mathcal{O}\left( n_e \log_2 n_v \right)$ time and $\mathcal{O}\left( n_v \right)$ space 
+complexity when using a heap as internal data structure \cite[pp. 17-18]{FUH_algo_graphs_2021}, 
+where $n_v$ is the number of vertices in the graph, and $n_e$ the number of edges.
+The Bellman-Ford algorithm would be less efficient, with time and storage complexities of 
+$\mathcal{O}\left( n_v n_e \right)$ and $\mathcal{O}\left( n_v \right)$, respectively 
+\cite[pp. 13]{FUH_algo_graphs_2021}.
+
+Following the pseudo-code description in Ref. \cite[p. 17]{FUH_algo_graphs_2021}, Dijkstra's algorithm
+works by inserting all vertices of the graph into a priority search queue, where they are sorted according 
+to distances values to the start vertex that are to be determined and which are initially set to $0$ for
+the start vertex and to infinity for all other vertices.
+As long as the priority queue is not empty, its top vertex, i.e. the one with the lowest distance value, 
+$v_i$, is removed from it. 
+It is tested for each of $v_i$'s outgoing edges, $e_{ij}$, if the path length from the start vertex to 
+vertex $v_j$ (saved as the distance value for $v_j$) becomes smaller when going over vertex $v_i$ (determined
+as the distance value for $v_i$ plus the weight of the edge $e_{ij}$). 
+If so, the distance value for $v_j$ is set to this shorter path length and $v_i$ is remembered as the
+predecessor of $v_j$ along the path.
+As discussed before, the priority search queue should use a heap as its internal data structure for
+optimal run time.
+
+It should be noted that while this is the textbook example of Dijkstra's algorithm, J. Erickson describes
+a slightly modified version which is more general in its support of negative edge weights and which is not
+less efficient than the standard version \cite[pp. 284-288]{Erickson2019}:
+This modified version does not directly initialise the priority search queue with all vertices beforehand, 
+but only with the start vertex (using, as before, a distance of $0$ to itself).
+It inserts the neighbour vertices $v_j$ (as defined above) only if they are discovered to lead to a shorter 
+path in the iteration of all neighbours of the current top vertex in the queue, $v_i$. Full pseudo-code 
+for that can be found in Ref. \cite[p. 285]{Erickson2019}.
