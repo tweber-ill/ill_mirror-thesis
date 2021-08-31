@@ -220,6 +220,7 @@ An example for a graph is shown in Fig. \ref{fig:example_graph}.
 \end{figure}
 
 
+\paragraph{Data structures}
 There are two common data structures to store graphs, the adjacency matrix and the adjacency list, which are
 both discussed in general and in terms of complexity in Ref. \cite[pp. 3-5]{FUH_algo_graphs_2021}.
 The adjacency matrix for a graph with $n$ vertices is an $n \times n$ matrix that stores the 
@@ -269,6 +270,7 @@ Table \ref{tab:example_graph_structure} shows an example for an adjacency matrix
 
 \subsection{Shortest path and Dijkstra's algorithm}
 \label{sec:dijkstra}
+\paragraph{Shortest path}
 The shortest path in a graph is the path between two vertices which minimises the sum of the weights
 of all edges that are traversed along the way.
 Two general classes of algorithms for finding the shortest path in a graph exist.
@@ -291,6 +293,7 @@ The Bellman-Ford algorithm would be less efficient, with time and storage comple
 $\mathcal{O}\left( n_v n_e \right)$ and $\mathcal{O}\left( n_v \right)$, respectively 
 \cite[pp. 13]{FUH_algo_graphs_2021}.
 
+\paragraph{Dijkstra's algorithm}
 Following the pseudo-code description in Ref. \cite[p. 17]{FUH_algo_graphs_2021}, Dijkstra's algorithm
 works by inserting all vertices of the graph into a priority search queue, where they are sorted according 
 to distances values to the start vertex that are to be determined and which are initially set to $0$ for
@@ -313,3 +316,272 @@ but only with the start vertex (using, as before, a distance of $0$ to itself).
 It inserts the neighbour vertices $v_j$ (as defined above) only if they are discovered to lead to a shorter 
 path in the iteration of all neighbours of the current top vertex in the queue, $v_i$. Full pseudo-code 
 for that can be found in Ref. \cite[p. 285]{Erickson2019}.
+
+\paragraph{Example}
+The two variants of Dijkstra's algorithm are best demonstrated using an example.
+We show each step of the algorithm by finding the shortest paths from start point $v_1$ of
+the graph in Fig. \ref{fig:example_graph}.
+
+\begin{table}[h]
+	\begin{minipage}{0.45 \textwidth}
+
+	\begin{itemize}
+	\item Initialisation
+	
+	\begin{tabular}{|c|ccccc|}
+			\hline
+			     Heap & $v_1$ & $v_2$ & $v_3$ & $v_4$ & $v_5$ \tabularnewline
+			\hline
+			Distances &  $0$  &  $\infty$ &  $\infty$ &     $\infty$ &    $\infty$ \tabularnewline
+			\hline
+	\end{tabular}\\
+	\begin{tabular}{|c|ccccc|}
+			\hline
+			     Vertices & $v_1$ & $v_2$ & $v_3$ & $v_4$ & $v_5$ \tabularnewline
+			\hline
+			Predecessors &  -  &  - &  - &     - &    - \tabularnewline
+			\hline
+	\end{tabular}
+	
+
+	\item Iteration 1: Having treated outgoing edges from $v_1$ (top of heap) to $v_2$, $v_4$, and $v_5$,
+		all three leading to shorter paths.
+	
+	\begin{tabular}{|c|cccc|}
+			\hline
+			     Heap & $v_2$ & $v_4$ & $v_3$ & $v_5$ \tabularnewline
+			\hline
+			Distances &  $1$  &  $9$ &  $\infty$ &     $10$  \tabularnewline
+			\hline
+	\end{tabular}\\
+	\begin{tabular}{|c|ccccc|}
+			\hline
+			     Vertices & $v_1$ & $v_2$ & $v_3$ & $v_4$ & $v_5$ \tabularnewline
+			\hline
+			Predecessors &  -  &  $v_1$ &  - &     $v_1$ &    $v_1$ \tabularnewline
+			\hline
+	\end{tabular}
+
+
+	\item Iteration 2: Having treated outgoing edges from $v_2$ to $v_3$ and $v_4$,
+		both leading to shorter paths.
+	
+	\begin{tabular}{|c|ccc|}
+			\hline
+			     Heap & $v_3$ & $v_5$ & $v_4$  \tabularnewline
+			\hline
+			Distances &  $4$  &  $10$ &  $8$  \tabularnewline
+			\hline
+	\end{tabular}\\
+	\begin{tabular}{|c|ccccc|}
+			\hline
+			     Vertices & $v_1$ & $v_2$ & $v_3$ & $v_4$ & $v_5$ \tabularnewline
+			\hline
+			Predecessors &  -  &  $v_1$ &  $v_2$ &     $v_2$ &    $v_1$ \tabularnewline
+			\hline
+	\end{tabular}
+
+
+	\item Iteration 3: Having treated outgoing edges from $v_3$ to $v_4$ and $v_5$,
+		both leading to shorter paths.
+	
+	\begin{tabular}{|c|cc|}
+			\hline
+			     Heap & $v_4$ & $v_5$  \tabularnewline
+			\hline
+			Distances &  $5$  &  $6$   \tabularnewline
+			\hline
+	\end{tabular}\\
+	\begin{tabular}{|c|ccccc|}
+			\hline
+			     Vertices & $v_1$ & $v_2$ & $v_3$ & $v_4$ & $v_5$ \tabularnewline
+			\hline
+			Predecessors &  -  &  $v_1$ &  $v_2$ &     $v_3$ &    $v_3$ \tabularnewline
+			\hline
+	\end{tabular}
+
+
+	\item Iteration 4: Having treated outgoing edges from $v_4$ to $v_2$ and $v_5$,
+		no shorter paths.
+	
+	\begin{tabular}{|c|c|}
+			\hline
+			     Heap & $v_5$ \tabularnewline
+			\hline
+			Distances &  $6$   \tabularnewline
+			\hline
+	\end{tabular}\\
+	\begin{tabular}{|c|ccccc|}
+			\hline
+			     Vertices & $v_1$ & $v_2$ & $v_3$ & $v_4$ & $v_5$ \tabularnewline
+			\hline
+			Predecessors &  -  &  $v_1$ &  $v_2$ &     $v_3$ &    $v_3$ \tabularnewline
+			\hline
+	\end{tabular}
+
+
+	\item Finalisation: No outgoing edges from $v_5$.
+	
+	\begin{tabular}{|c|ccccc|}
+			\hline
+			     Vertices & $v_1$ & $v_2$ & $v_3$ & $v_4$ & $v_5$ \tabularnewline
+			\hline
+			Predecessors &  -  &  $v_1$ &  $v_2$ &     $v_3$ &    $v_3$ \tabularnewline
+			Distances &  $0$  &  $1$ &  $4$ &     $5$ &    $6$ \tabularnewline
+			\hline
+	\end{tabular}
+
+	\end{itemize}
+	\end{minipage}
+	\begin{minipage}{0.45 \textwidth}
+	\footnotesize
+
+	\begin{itemize}
+	\item Initialisation
+	
+	\begin{tabular}{|c|c|}
+			\hline
+			     Heap & $v_1$ \tabularnewline
+			\hline
+			Distances &  $0$  \tabularnewline
+			\hline
+	\end{tabular}\\
+	\begin{tabular}{|c|ccccc|}
+			\hline
+			     Vertices & $v_1$ & $v_2$ & $v_3$ & $v_4$ & $v_5$ \tabularnewline
+			\hline
+			Predecessors &  -  &  - &  - &     - &    - \tabularnewline
+			\hline
+	\end{tabular}
+	
+
+	\item Iteration 1: Having treated outgoing edges from $v_1$ (top of heap) to $v_2$, $v_4$, and $v_5$,
+		all three leading to shorter paths.
+	
+	\begin{tabular}{|c|ccc|}
+			\hline
+			     Heap & $v_5$ & $v_4$ & $v_2$ \tabularnewline
+			\hline
+			Distances &  $10$  &  $9$ &  $1$ \tabularnewline
+			\hline
+	\end{tabular}\\
+	\begin{tabular}{|c|ccccc|}
+			\hline
+			     Vertices & $v_1$ & $v_2$ & $v_3$ & $v_4$ & $v_5$ \tabularnewline
+			\hline
+			Predecessors &  -  &  $v_1$ &  - &     $v_1$ &    $v_1$ \tabularnewline
+			\hline
+	\end{tabular}
+
+
+	\item Iteration 2: No outgoing edges from $v_5$.
+	
+	\begin{tabular}{|c|cc|}
+			\hline
+			     Heap & $v_2$ & $v_4$  \tabularnewline
+			\hline
+			Distances &  $1$  &  $9$  \tabularnewline
+			\hline
+	\end{tabular}\\
+	\begin{tabular}{|c|ccccc|}
+			\hline
+			     Vertices & $v_1$ & $v_2$ & $v_3$ & $v_4$ & $v_5$ \tabularnewline
+			\hline
+			Predecessors &  -  &  $v_1$ &  - &     $v_1$ &    $v_1$ \tabularnewline
+			\hline
+	\end{tabular}
+
+
+	\item Iteration 3: Having treated outgoing edges from $v_2$ to $v_3$ and $v_4$,
+		both leading to shorter paths.
+	
+	\begin{tabular}{|c|cc|}
+			\hline
+			     Heap & $v_4$ & $v_3$  \tabularnewline
+			\hline
+			Distances &  $8$  &  $4$   \tabularnewline
+			\hline
+	\end{tabular}\\
+	\begin{tabular}{|c|ccccc|}
+			\hline
+			     Vertices & $v_1$ & $v_2$ & $v_3$ & $v_4$ & $v_5$ \tabularnewline
+			\hline
+			Predecessors &  -  &  $v_1$ &  $v_2$ &     $v_2$ &    $v_1$ \tabularnewline
+			\hline
+	\end{tabular}
+
+
+	\item Iteration 4: Having treated outgoing edges from $v_4$ to $v_2$ and $v_5$,
+		no shorter paths.
+	
+	\begin{tabular}{|c|c|}
+			\hline
+			     Heap & $v_3$ \tabularnewline
+			\hline
+			Distances &  $4$   \tabularnewline
+			\hline
+	\end{tabular}\\
+	\begin{tabular}{|c|ccccc|}
+			\hline
+			     Vertices & $v_1$ & $v_2$ & $v_3$ & $v_4$ & $v_5$ \tabularnewline
+			\hline
+			Predecessors &  -  &  $v_1$ &  $v_2$ &     $v_2$ &    $v_1$ \tabularnewline
+			\hline
+	\end{tabular}
+
+
+	\item Iteration 5: Having treated outgoing edges from $v_3$ to $v_4$ and $v_5$,
+		both leading to shorter paths.
+	
+	\begin{tabular}{|c|cc|}
+			\hline
+			     Heap & $v_5$ & $v_4$ \tabularnewline
+			\hline
+			Distances &  $6$  &  $5$   \tabularnewline
+			\hline
+	\end{tabular}\\
+	\begin{tabular}{|c|ccccc|}
+			\hline
+			     Vertices & $v_1$ & $v_2$ & $v_3$ & $v_4$ & $v_5$ \tabularnewline
+			\hline
+			Predecessors &  -  &  $v_1$ &  $v_2$ &     $v_3$ &    $v_3$ \tabularnewline
+			\hline
+	\end{tabular}
+
+
+	\item Iteration 6: No outgoing edges from $v_5$.
+	
+	\begin{tabular}{|c|c|}
+			\hline
+			     Heap & $v_4$ \tabularnewline
+			\hline
+			Distances &  $5$   \tabularnewline
+			\hline
+	\end{tabular}\\
+	\begin{tabular}{|c|ccccc|}
+			\hline
+			     Vertices & $v_1$ & $v_2$ & $v_3$ & $v_4$ & $v_5$ \tabularnewline
+			\hline
+			Predecessors &  -  &  $v_1$ &  $v_2$ &     $v_3$ &    $v_3$ \tabularnewline
+			\hline
+	\end{tabular}
+
+
+	\item Finalisation: Having treated outgoing edges from $v_4$ to $v_2$ and $v_5$,
+		no shorter paths.
+	
+	\begin{tabular}{|c|ccccc|}
+			\hline
+			     Vertices & $v_1$ & $v_2$ & $v_3$ & $v_4$ & $v_5$ \tabularnewline
+			\hline
+			Predecessors &  -  &  $v_1$ &  $v_2$ &     $v_3$ &    $v_3$ \tabularnewline
+			Distances &  $0$  &  $1$ &  $4$ &     $5$ &    $6$ \tabularnewline
+			\hline
+	\end{tabular}
+
+	\end{itemize}
+	\end{minipage}
+
+	\caption[Example for Dijkstra's algorithm]{}
+	\label{tab:example_dijk}
+\end{table}
