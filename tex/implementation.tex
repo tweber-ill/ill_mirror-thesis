@@ -520,17 +520,17 @@ To this end we make use of the graph representation of the Voronoi diagram that 
 in a previous step (section \ref{sec:polygonal_voronoi_diagram}) together with the diagram.
 The graph's vertices and edges correspond to the Voronoi vertices and edges, respectively,
 and a possible optimal path is the shortest distance between the start and target coordinates.
-The shortest distance can readily be calculated using Dijkstra's algorithm \cite{wiki_dijkstra},
-which is shown in Fig. \ref{fig:linesegs_path}.
+As discussed in chapter \ref{sec:dijkstra}, the shortest distance can readily be calculated 
+using Dijkstra's algorithm \cite{wiki_dijkstra}, which is shown in Fig. \ref{fig:linesegs_path}.
 
 Specifically, our implementation of Dijkstra's algorithm, which can be found in the function 
-\lstinline[language=C++]|geo::dijk()| of the file \lstinline|./src/libs/graphs.h|, is based on the pseudo-code 
-given in \cite[p. 17]{FUH_algo_graphs_2021}. Dijkstra's algorithm is at its core a breath-first
-search of a graph, where the next neighbour vertex to visit is chosen by the lowest weight
-factor of the connecting edges. In the present implementation, this search for the next neighbour
+\lstinline[language=C++]|geo::dijk()| of the file \lstinline|./src/libs/graphs.h|, is based on the 
+pseudo-code given in Ref. \cite[p. 17]{FUH_algo_graphs_2021} together with the generalising modification of 
+Ref. \cite[p. 285]{Erickson2019}. In the present implementation, this search for the next neighbour
 to visit is performed using a heap data structure, whose construction and query is performed
 using the standard C++ functions \lstinline[language=C++]|std::make_heap()| and 
 \lstinline[language=C++]|std::pop_heap()|, respectively.
+As it is compact enough, the implementation is printed in listing \ref{lst:dijkstra}.
 
 
 \begin{figure}[htb]
@@ -543,6 +543,94 @@ using the standard C++ functions \lstinline[language=C++]|std::make_heap()| and
 		The thin black lines represent the bisectors of the Voronoi diagram, the red points are the Voronoi vertices.
 		\label{fig:linesegs_path}}
 \end{figure}
+
+
+\begin{listing}[htb]
+        \begin{lstlisting} [language = C++,
+                basicstyle = {\scriptsize},
+                breaklines = true, tabsize = 4,
+                numbers = left, numberstyle={\scriptsize}]
+template<class t_graph> requires is_graph<t_graph>
+std::vector<std::optional<std::size_t>>
+dijk_mod(const t_graph& graph, const std::string& startvert)
+{
+	// start index
+	auto _startidx = graph.GetVertexIndex(startvert);
+	if(!_startidx)
+		return {};
+	const std::size_t startidx = *_startidx;
+
+	const std::size_t N = graph.GetNumVertices();
+	using t_weight = typename t_graph::t_weight;
+
+	// vector of distances and predecessors
+	std::vector<t_weight> dists;
+	std::vector<std::optional<std::size_t>> predecessors;
+	dists.resize(N);
+	predecessors.resize(N);
+
+	// don't use the full maximum to prevent overflows when we're adding the weight afterwards
+	const t_weight infinity = std::numeric_limits<t_weight>::max() / 2;
+	for(std::size_t vertidx=0; vertidx<N; ++vertidx)
+		dists[vertidx] = (vertidx==startidx ? 0 : infinity);
+
+	// comparator for distances, used for heap which implements the priority queue
+	auto vert_cmp = [&dists](std::size_t idx1, std::size_t idx2) -> bool
+	{
+		// sort by ascending value: !operator<
+		return dists[idx1] >= dists[idx2];
+	};
+
+	// heap with vertex indices, sorted by distances to start vertex
+	std::vector<std::size_t> heap;
+	heap.reserve(N);
+
+	// push only start index, not all indices
+	heap.push_back(startidx);
+
+	// are there still elements in the heap?
+	while(heap.size())
+	{
+		// get the element on top of the heap
+		std::size_t vertidx = *heap.begin();
+		std::pop_heap(heap.begin(), heap.end(), vert_cmp);
+		heap.pop_back();
+
+		// get the element's neighbours
+		auto neighbours = graph.GetNeighbours(vertidx);
+		for(std::size_t neighbouridx : neighbours)
+		{
+			auto w = graph.GetWeight(vertidx, neighbouridx);
+			if(!w)
+				continue;
+
+			// is the path from startidx to neighbouridx over vertidx shorter
+			// than from startidx to neighbouridx?
+			if(dists[vertidx] + *w < dists[neighbouridx])
+			{
+				dists[neighbouridx] = dists[vertidx] + *w;
+				predecessors[neighbouridx] = vertidx;
+
+				// insert the new node index if it's not in the queue yet
+				if(std::find(heap.begin(), heap.end(), neighbouridx) == heap.end())
+					heap.push_back(neighbouridx);
+
+				// resort the priority queue heap after neighbouridx distance changes
+				std::make_heap(heap.begin(), heap.end(), vert_cmp);
+			}
+		}
+	}
+
+	return predecessors;
+}
+		\end{lstlisting}
+        \caption[C++ implementation of Dijkstra's algorithm]{
+        C++20 implementation of Dijkstra's algorithm, based on pseudo-codes from 
+        Refs. \cite[p. 17]{FUH_algo_graphs_2021} and \cite[p. 285]{Erickson2019}.
+        \label{lst:dijkstra}}
+\end{listing}
+
+
 
 
 

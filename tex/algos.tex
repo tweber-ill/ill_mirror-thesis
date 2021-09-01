@@ -83,18 +83,31 @@ considers physics in the Angstrom scale, while the crystals used in neutron scat
 $cm^3$ scale. Having an infinite lattice has the effect that the Voronoi diagram does not possess any open regions.
 As the crystal is regular and periodic, only one shape of Voronoi region exists, which repeats to fill the
 entire reciprocal space without gaps.
-Typical examples of Brillouin zone shapes for cubic crystals are shown in Fig. \ref{fig:cubic_bzs}.
+Typical examples of Brillouin zone shapes for cubic crystals and two-dimensional cuts through them 
+are shown in Fig. \ref{fig:cubic_bzs}.
 
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[width = 0.8 \textwidth]{figures/bz}
+		\includegraphics[width = 0.95 \textwidth]{figures/bz}
+
+		\vspace{0.5cm}
+		\includegraphics[width = 0.2 \textwidth]{figures/sc}
+		\hspace{2.2cm}
+		\includegraphics[width = 0.2 \textwidth]{figures/bcc}
+		\hspace{2.2cm}
+		\includegraphics[width = 0.2 \textwidth]{figures/fcc}
 	\end{center}
 	\caption[Brillouin zones.]{
 		First Brillouin zone for
 			(a) a simple cubic,
 			(b) a body-centred cubic, and
 			(c) a face-centred cubic crystal lattice.
-		Only the bisectors (blue faces) are shown, the vertex-sites (Bragg peaks) are hidden for clarity.
+		In the top panels, 3-d views of only the bisectors are shown.
+		In the bottom panels, 2-d cuts through the horizontal plane show the Brillouin zones 
+		completely filling the space. The vertex sites (Bragg peaks) are shown as small dots.
+		Such 2-d views are typically used for experiments at triple-axis spectrometers.
+		The apparent gaps in in the 2-d cut of panel (c) come from Brillouin zones which are 
+		above or below the cutting plane.
 		Calculated using the \textit{Takin} software \cite{Takin2021, Takin2017, Takin2016}.
 		\label{fig:cubic_bzs}}
 \end{figure}
@@ -305,6 +318,8 @@ vertex $v_j$ (saved as the distance value for $v_j$) becomes smaller when going 
 as the distance value for $v_i$ plus the weight of the edge $e_{ij}$). 
 If so, the distance value for $v_j$ is set to this shorter path length and $v_i$ is remembered as the
 predecessor of $v_j$ along the path.
+In total, Dijkstra's algorithm is at its core a breath-first search of a graph, where the next neighbour 
+vertex to visit is chosen by the lowest weight factor of the connecting edges.
 As discussed before, the priority search queue should use a heap as its internal data structure for
 optimal run time.
 
@@ -545,3 +560,7 @@ The shortest path is thus $v_1$, $v_2$, $v_3$, $v_5$.
 	Note that from iteration 2 on, both variants have converged to the same results.}
 	\label{tab:example_dijk}
 \end{table}
+
+
+\section{Summary}
+TODO
