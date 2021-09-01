@@ -531,6 +531,12 @@ to visit is performed using a heap data structure, whose construction and query 
 using the standard C++ functions \lstinline[language=C++]|std::make_heap()| and 
 \lstinline[language=C++]|std::pop_heap()|, respectively.
 As it is compact enough, the implementation is printed in listing \ref{lst:dijkstra}.
+Note that the implementation is generic, because it does not insist on a specific class
+for the underlying graph. Instead it keeps the graph type, \lstinline[language=C++]|t_graph|, open and
+only requires that it fulfill the template concept \lstinline[language=C++]|is_graph|, which is
+given in listing \ref{lst:graph_concept}.
+For the software package, we offer two graph implementations, one based on the adjacency list, the
+other on the adjacency matrix, as discussed in chapter \ref{sec:graphs}.
 
 
 \begin{figure}[htb]
@@ -546,10 +552,10 @@ As it is compact enough, the implementation is printed in listing \ref{lst:dijks
 
 
 \begin{listing}[htb]
-        \begin{lstlisting} [language = C++,
-                basicstyle = {\scriptsize},
-                breaklines = true, tabsize = 4,
-                numbers = left, numberstyle={\scriptsize}]
+	\begin{lstlisting} [language = C++,
+			basicstyle = {\scriptsize},
+			breaklines = true, tabsize = 4,
+			numbers = left, numberstyle={\scriptsize}]
 template<class t_graph> requires is_graph<t_graph>
 std::vector<std::optional<std::size_t>>
 dijk_mod(const t_graph& graph, const std::string& startvert)
@@ -623,14 +629,53 @@ dijk_mod(const t_graph& graph, const std::string& startvert)
 
 	return predecessors;
 }
-		\end{lstlisting}
-        \caption[C++ implementation of Dijkstra's algorithm]{
-        C++20 implementation of Dijkstra's algorithm, based on pseudo-codes from 
-        Refs. \cite[p. 17]{FUH_algo_graphs_2021} and \cite[p. 285]{Erickson2019}.
-        \label{lst:dijkstra}}
+	\end{lstlisting}
+	\caption[C++ implementation of Dijkstra's algorithm]{
+	C++20 implementation of Dijkstra's algorithm, based on pseudo-codes from 
+	Refs. \cite[p. 17]{FUH_algo_graphs_2021} and \cite[p. 285]{Erickson2019}.
+	\label{lst:dijkstra}}
 \end{listing}
 
 
+\begin{listing}[htb]
+	\begin{lstlisting}[language = C++,
+			basicstyle = {\scriptsize},
+			breaklines = true, tabsize = 4,
+			numbers = left, numberstyle={\scriptsize}]
+/**
+ * requirements for the graph class interface
+ */
+template<class t_graph>
+concept is_graph = requires(t_graph& graph, std::size_t vertidx)
+{
+	// function to get vertex count
+	{ graph.GetNumVertices() } -> convertible_to<std::size_t>;
+
+	// function to get vertex identifier from index
+	{ graph.GetVertexIdent(vertidx) } -> convertible_to<std::string>;
+
+	// function to get edge weight
+	{ graph.GetWeight(vertidx, vertidx) }
+		-> convertible_to<std::optional<typename t_graph::t_weight>>;
+
+	// get neighbours of a vertex
+	graph.GetNeighbours(vertidx);
+
+	// support insertion of vertices by identifier
+	graph.AddVertex("123");
+
+	// support insertion of edges by index
+	graph.AddEdge(0, 1);
+
+	// support insertion of edges by vertex identifiers
+	graph.AddEdge("1", "2");
+};
+	\end{lstlisting}
+	\caption[C++ graph template concept]{
+	C++20 concept for a graph template class, \lstinline[language=C++]|t_graph|,
+	constraining its interface to the one given here.
+	\label{lst:graph_concept}}
+\end{listing}
 
 
 
