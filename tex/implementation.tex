@@ -540,15 +540,56 @@ To this end, we make use of the graph representation of the Voronoi diagram that
 in a previous step (section \ref{sec:polygonal_voronoi_diagram}) together with the diagram itself.
 The graph's vertices and edges correspond to the Voronoi vertices and edges, respectively,
 and the optimal path is determined using a cost function, which is applied to the graph's edge weights.
-A possible cost function is the length of a graph/Voronoi edge.
+
 As discussed in chapter \ref{sec:dijkstra}, the optimal path minimising the edge weights 
-can readily be calculated using Dijkstra's algorithm \cite{wiki_dijkstra}. 
+can readily be calculated using Dijkstra's algorithm \cite{wiki_dijkstra}.
+We now only need to specify a cost function to define what \textit{optimal} means exactly.
+
+\paragraph{Shortest path}
+A possible cost function is the length of the Voronoi diagram's edges, for the linear bisectors
+this is simply the Euclidian 2-norm,
+\begin{equation}
+	f^{\mathrm{cost}}_1\left(\underline{v}, \underline{w} \right) \ = \ 
+	\left\Vert \underline{v} - \underline{w} \right\Vert_2 \ =\ \sqrt{\sum_i \left(v_i - w_i\right)^2},
+\end{equation}
+where $v$ and $w$ name Voronoi vertices sharing an edge.
 Using the edge lengths as as cost function leads to the path with the shortest distance 
 between the start and target coordinates, i.e. the most basic application of Dijkstra's algorithm.
 for which an example is shown in Fig. \ref{fig:linesegs_path}.
 
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width = 0.66 \textwidth]{figures/linesegs_path}
+	\end{center}
+	\caption[Path between a start and a target position.]{
+		The final shortest path (orange) between the start and target positions (large red and green points, respectively).
+		As before, the line segment vertices are depicted as blue points, the line segments as blue lines.
+		The thin black lines represent the bisectors of the Voronoi diagram, the red points are the Voronoi vertices.
+		\label{fig:linesegs_path}}
+\end{figure}
+
+
 \paragraph{Avoiding walls}
-TODO: refer to section \ref{sec:walls_index_tree} for other cost functions.
+Berg \textit{et al.} mention a heuristic, non-analytic path-finding approach using potential 
+functions \cite[p. 305]{Berg2008}. Their idea is to have the target position as a potential well attracting
+the robot, and the walls and obstacles as repellant potential peaks. They, however, discuss
+that such an approach can possibly trap the robot between several potential peaks.
+
+For the present case, we can combine our analytical approach with the potential idea, but without 
+resorting to heuristics. We can use the cost function to apply a potential, while keeping the
+instrument position on the path mesh.
+For the cost function, we keep the Euclidian distance between vertices, but include the vertices' 
+distance from the closest wall in their vicinity as a repulsive potential. 
+The simplest such potential is an $1/r$ function with $r$ being the closest distance from the 
+Voronoi edge between two vertices to the next wall.
+The cost function for two vertices $\underline{v}$ and $\underline{w}$ thus reads,
+\begin{equation}
+	f^{\mathrm{cost}}_2\left(\underline{v}, \underline{w} \right) \ = \ 
+	\left\Vert \underline{v} - \underline{w} \right\Vert_2 \cdot \frac{1}{r}.
+\end{equation}
+The closest wall to an arbitrary point and thus the distance $r$ between them can be efficiently
+determined using the spatial index tree that has been generated in a previous step (section \ref{sec:walls_index_tree}).
+
 
 \paragraph{Implementation details}
 Our implementation of Dijkstra's algorithm, which can be found in the function 
@@ -568,18 +609,6 @@ other on the adjacency matrix, as discussed in chapter \ref{sec:graphs}.
 The algorithm is furthermore agnostic towards the cost function and its interna and dependent 
 data structures. To this end, a cost function can be provided as a generic callback function 
 for which all the details are provided and only known by the caller.
-
-
-\begin{figure}[htb]
-	\begin{center}
-		\includegraphics[width = 0.66 \textwidth]{figures/linesegs_path}
-	\end{center}
-	\caption[Path between a start and a target position.]{
-		The final path (orange) between the start and target positions (large red and green points, respectively).
-		As before, the line segment vertices are depicted as blue points, the line segments as blue lines.
-		The thin black lines represent the bisectors of the Voronoi diagram, the red points are the Voronoi vertices.
-		\label{fig:linesegs_path}}
-\end{figure}
 
 
 \begin{listing}[htb]
