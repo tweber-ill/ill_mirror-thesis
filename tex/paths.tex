@@ -165,12 +165,19 @@ crystal lattice (see chapter \ref{ch:xtal}).
 In the figure, the crystal configuration space seems to be simple enough for 
 further consideration, but it has several disadvantages: Shown here is merely
 a two-dimensional slice at $E = 0$ of the true configuration space.
-Such a slice is thus not sufficient for a full analysis.
-Furthermore, this configuration space is dependent on the crystal as well as
-the selected scattering plane (here shown, for instance, is the plane spanned
-by the $\left[1,\,0,\,0\right]$ and $\left[0,\,1,\,0\right]$ vectors), so
-it would need to be re-calculated for every change in sample or scattering
-plane.
+Such a slice is thus not sufficient for a full analysis as the two instrument
+angles that it moves are only the sample scattering and the sample crystal angle.
+Of these, only the scattering angle actually moves an instrument arm, the crystal
+angle is just the internal rotation on the axis.
+As can be seen in Fig. \ref{fig:tas_wall} (b), the instrument cannot move
+around obstacles, but is locked on isolated regions of the configuration space.
+To have enough degrees of freedom for path finding, we would need to include
+a third coordinate axis, the energy.
+As a further negative aspect, this configuration space is dependent on the 
+crystal as well as the selected scattering plane (here shown, for instance, 
+is the plane spanned by the $\left[1,\,0,\,0\right]$ and $\left[0,\,1,\,0\right]$ 
+vectors), so it would need to be re-calculated for every change in sample or 
+scattering plane.
 
 
 \subsection{Angular configuration space}
@@ -241,6 +248,10 @@ The two tasks comprise these following steps:
 	\item Building the path mesh.
 	\begin{enumerate}
 		\item Calculate the angular configuration space as described above.
+		\item Create a spatial index tree of the angular position of the obstacles.
+			This step is needed so that we can quickly determine the distance to
+			the next wall from any angular coordinate, for instance in the cost
+			function for the edge weights that will be discussed in the next chapter.
 		\item Trace the obstacle contours in angular configuration space. 
 			This step is necessary because they can be of arbitrary
 			shape in this representation and are not necessarily geometric 
@@ -273,7 +284,8 @@ The two tasks comprise these following steps:
 			regions of the convex line segment contour groups.
 	\end{enumerate}
 
-	\item Finding the instrument path and executing its motion, this is the point-like limiting case of the algorithm in \cite[p. 163]{Berg2008}.
+	\item Finding the instrument path and executing its motion, this is the 
+		point-like limiting case of the algorithm in \cite[p. 163]{Berg2008}.
 	\begin{enumerate}
 		\item The user of a triple-axis spectrometer usually enters the coordinates 
 			in the crystal coordinate system (see chapter \ref{ch:xtal}). The start 
@@ -284,11 +296,16 @@ The two tasks comprise these following steps:
 			using the spatial index tree that was generated during the creation
 			of the path mesh.
 		\item Move the instrument to the edge of the start Voronoi region.
-		\item Calculate the shortest path to the edge of the Voronoi region 
-			containing the end point using Dijkstra's algorithm \cite{wiki_dijkstra}
-			and move the instrument along that path.
-			Dijkstra's algorithm or algorithms based on it are commonly used
-			in literature \cite{Hwang2003, Singal2014}.
+		\item Calculate a path to the edge of the Voronoi region 
+			containing the end point and move the instrument along that path. 
+			The path has to minimise a given cost function, which can,
+			for example, lead to the shortest path or the path furthest from
+			all walls. 
+			In either case, Dijkstra's algorithm \cite{wiki_dijkstra}
+			will be employed to get a path with minimum edge weights.
+			It is the obvious choice, as Dijkstra's algorithm or an algorithm based 
+			on it are commonly used in literature \cite{Hwang2003, Singal2014} 
+			for such a task.
 		\item Move the instrument from the edge of the Voronoi region containing 
 			the end point towards that point.
 	\end{enumerate}

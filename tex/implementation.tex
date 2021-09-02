@@ -237,6 +237,22 @@ is less than the sum of their radii, $r_1$ and $r_2$, respectively:
 
 
 
+
+\subsection{Representation of configuration space as spatial index tree}
+\label{sec:walls_index_tree}
+Having discretised the angular configuration space on a grid, we next represent all occupied bins
+on the grid, which represent obstacles, in the form of a spatial index tree.
+When calculating cost-functions for different path finding strategies in an upcoming step 
+(section \ref{sec:optimalpath}), we can make use of the index tree to efficiently query
+the angular position of the next wall from an arbitrary positions. 
+It can furthermore be used to calculate the proximity of the instrument to the walls.
+
+Internally, we make use of the R*-tree implementation from Boost.Geometry's \cite{web_boost_geometry} 
+\lstinline[language=C++]|boost::geometry::index::rtree| class \cite{web_boost_geometry_rtree}.
+
+
+
+
 \subsection{Contour tracing}
 \label{sec:contourtracing}
 Having determined a bitmap representation of allowed and forbidden regions in the angular configuration space,
@@ -410,11 +426,15 @@ whereas regions 2 and 3 are non-inverted, meaning they enclose forbidden regions
 Together with the calculation of the Voronoi diagram, a graph is constructed whose
 vertices correspond to the Voronoi vertices of the diagram and whose edges correspond
 to the Voronoi bisectors. 
-Together with the graph, a spatial index tree is created from the Voronoi vertices,
-specifically we use the R*-tree implementation from Boost.Geometry's 
-\cite{web_boost_geometry} \lstinline[language=C++]|boost::geometry::index::rtree| class \cite{web_boost_geometry_rtree}.
-The graph and the R*-tree are queried in the path-finding step described in section \ref{sec:exepath}.
+Furthermore, a spatial index tree is created from the Voronoi vertices in the same 
+step as the graph construction.
+As before (section \ref{sec:walls_index_tree}), we again use the R*-tree implementation
+from Boost.Geometry's \cite{web_boost_geometry} \lstinline[language=C++]|boost::geometry::index::rtree| 
+class \cite{web_boost_geometry_rtree}.
+The graph and the R*-tree are queried in the path-finding step described in 
+section \ref{sec:exepath}.
 
+\paragraph{Implementation details}
 The collection of normal and inverted regions is calculated in the member function
 \lstinline[language=C++]|CalculateLineSegments()| of the \lstinline[language=C++]|PathsBuilder|
 class, which resides in file \lstinline|./src/core/PathsBuilder.cpp|. 
@@ -465,7 +485,7 @@ chapter \ref{sec:voro_ls}.
 % -----------------------------------------------------------------------------
 % instrument motion
 % -----------------------------------------------------------------------------
-\section{Finding the shortest path and the instrument motion}
+\section{Finding the optimal path and the instrument motion}
 \label{sec:exepath}
 
 So far we have constructed a mesh of possible paths along which the instrument can move
@@ -516,17 +536,25 @@ as the operator projecting $\left| p - x \right>$ onto $\left|d\right>$, see \ci
 
 Having found the points closest to the start and target positions on the bisectors, we can
 proceed with calculating the optimal path on the path mesh formed by all Voronoi edges.
-To this end we make use of the graph representation of the Voronoi diagram that we calculated
-in a previous step (section \ref{sec:polygonal_voronoi_diagram}) together with the diagram.
+To this end, we make use of the graph representation of the Voronoi diagram that we calculated
+in a previous step (section \ref{sec:polygonal_voronoi_diagram}) together with the diagram itself.
 The graph's vertices and edges correspond to the Voronoi vertices and edges, respectively,
-and a possible optimal path is the shortest distance between the start and target coordinates.
-As discussed in chapter \ref{sec:dijkstra}, the shortest distance can readily be calculated 
-using Dijkstra's algorithm \cite{wiki_dijkstra}, which is shown in Fig. \ref{fig:linesegs_path}.
+and the optimal path is determined using a cost function, which is applied to the graph's edge weights.
+A possible cost function is the length of a graph/Voronoi edge.
+As discussed in chapter \ref{sec:dijkstra}, the optimal path minimising the edge weights 
+can readily be calculated using Dijkstra's algorithm \cite{wiki_dijkstra}. 
+Using the edge lengths as as cost function leads to the path with the shortest distance 
+between the start and target coordinates, i.e. the most basic application of Dijkstra's algorithm.
+for which an example is shown in Fig. \ref{fig:linesegs_path}.
 
-Specifically, our implementation of Dijkstra's algorithm, which can be found in the function 
+\paragraph{Avoiding walls}
+TODO: refer to section \ref{sec:walls_index_tree} for other cost functions.
+
+\paragraph{Implementation details}
+Our implementation of Dijkstra's algorithm, which can be found in the function 
 \lstinline[language=C++]|geo::dijk()| of the file \lstinline|./src/libs/graphs.h|, is based on the 
 pseudo-code given in Ref. \cite[p. 17]{FUH_algo_graphs_2021} together with the generalising modification of 
-Ref. \cite[p. 285]{Erickson2019}. In the present implementation, this search for the next neighbour
+Ref. \cite[p. 285]{Erickson2019}. In the present implementation, the search for the next neighbour
 to visit is performed using a heap data structure, whose construction and query is performed
 using the standard C++ functions \lstinline[language=C++]|std::make_heap()| and 
 \lstinline[language=C++]|std::pop_heap()|, respectively.
@@ -537,6 +565,9 @@ only requires that it fulfill the template concept \lstinline[language=C++]|is_g
 given in listing \ref{lst:graph_concept}.
 For the software package, we offer two graph implementations, one based on the adjacency list, the
 other on the adjacency matrix, as discussed in chapter \ref{sec:graphs}.
+The algorithm is furthermore agnostic towards the cost function and its interna and dependent 
+data structures. To this end, a cost function can be provided as a generic callback function 
+for which all the details are provided and only known by the caller.
 
 
 \begin{figure}[htb]
@@ -556,26 +587,26 @@ other on the adjacency matrix, as discussed in chapter \ref{sec:graphs}.
 			basicstyle = {\scriptsize},
 			breaklines = true, tabsize = 4,
 			numbers = left, numberstyle={\scriptsize}]
-template<class t_graph> requires is_graph<t_graph>
-std::vector<std::optional<std::size_t>>
-dijk_mod(const t_graph& graph, const std::string& startvert)
+template<class t_graph,                           // generic graph and cost function types
+	class t_cost_func = std::optional<typename t_graph::t_weight>(std::size_t, std::size_t)>
+	requires is_graph<t_graph>                    // constrain graph type
+std::vector<std::optional<std::size_t>>           // returns a vector of predecessors
+dijk_mod(const t_graph& graph, const std::string& startvert,
+         t_cost_func *cost_func = nullptr)        // optional cost function for edge weights
 {
-	// start index
+	// get start vertex index from its identifier
 	auto _startidx = graph.GetVertexIndex(startvert);
-	if(!_startidx)
-		return {};
-	const std::size_t startidx = *_startidx;
+	if(!_startidx) return {};                     // invalid identifier
+	const std::size_t startidx = *_startidx;      // get the actual numeric start vertex index
 
-	const std::size_t N = graph.GetNumVertices();
-	using t_weight = typename t_graph::t_weight;
+	const std::size_t N = graph.GetNumVertices(); // number of vertices
+	using t_weight = typename t_graph::t_weight;  // weight type from the generic graph type
 
-	// vector of distances and predecessors
-	std::vector<t_weight> dists;
+	std::vector<t_weight> dists;                  // vector of distances and predecessors
 	std::vector<std::optional<std::size_t>> predecessors;
-	dists.resize(N);
-	predecessors.resize(N);
+	dists.resize(N); predecessors.resize(N);      // allocate the space needed for N vertices
 
-	// don't use the full maximum to prevent overflows when we're adding the weight afterwards
+	// don't use the maximum, preventing overflows when we're adding the weight afterwards
 	const t_weight infinity = std::numeric_limits<t_weight>::max() / 2;
 	for(std::size_t vertidx=0; vertidx<N; ++vertidx)
 		dists[vertidx] = (vertidx==startidx ? 0 : infinity);
@@ -583,41 +614,37 @@ dijk_mod(const t_graph& graph, const std::string& startvert)
 	// comparator for distances, used for heap which implements the priority queue
 	auto vert_cmp = [&dists](std::size_t idx1, std::size_t idx2) -> bool
 	{
-		// sort by ascending value: !operator<
-		return dists[idx1] >= dists[idx2];
+		return dists[idx1] >= dists[idx2];        // sort by ascending value: !operator<
 	};
 
-	// heap with vertex indices, sorted by distances to start vertex
-	std::vector<std::size_t> heap;
-	heap.reserve(N);
+	std::vector<std::size_t> heap;                // heap with vertex indices,
+	heap.reserve(N);                              // sorted by distances to start vertex
+	heap.push_back(startidx);                     // only push start index, not all indices
 
-	// push only start index, not all indices
-	heap.push_back(startidx);
-
-	// are there still elements in the heap?
-	while(heap.size())
+	while(heap.size())                            // are there still elements in the heap?
 	{
-		// get the element on top of the heap
-		std::size_t vertidx = *heap.begin();
+		std::size_t vertidx = *heap.begin();      // get the graph vertex on top of the heap
 		std::pop_heap(heap.begin(), heap.end(), vert_cmp);
-		heap.pop_back();
+		heap.pop_back();                          // remove the top vertex from the heap
 
-		// get the element's neighbours
-		auto neighbours = graph.GetNeighbours(vertidx);
-		for(std::size_t neighbouridx : neighbours)
+		// iterate the vertex' neighbours
+		for(std::size_t neighbouridx : graph.GetNeighbours(vertidx))
 		{
-			auto w = graph.GetWeight(vertidx, neighbouridx);
-			if(!w)
-				continue;
+			// directly get edge weight, or use the user-supplied cost function
+			std::optional<typename t_graph::t_weight> w = 
+				cost_func ? (*cost_func)(vertidx, neighbouridx)
+				          : graph.GetWeight(vertidx, neighbouridx);
+			if(!w) continue;                      // ignore an invalid weight
 
 			// is the path from startidx to neighbouridx over vertidx shorter
 			// than from startidx to neighbouridx?
 			if(dists[vertidx] + *w < dists[neighbouridx])
 			{
+				// update distances and predecessors
 				dists[neighbouridx] = dists[vertidx] + *w;
 				predecessors[neighbouridx] = vertidx;
 
-				// insert the new node index if it's not in the queue yet
+				// insert the new vertex index if it's not in the queue yet
 				if(std::find(heap.begin(), heap.end(), neighbouridx) == heap.end())
 					heap.push_back(neighbouridx);
 
@@ -627,7 +654,7 @@ dijk_mod(const t_graph& graph, const std::string& startvert)
 		}
 	}
 
-	return predecessors;
+	return predecessors;                          // return final vector of predecessors
 }
 	\end{lstlisting}
 	\caption[C++ implementation of Dijkstra's algorithm]{
