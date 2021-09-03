@@ -116,13 +116,30 @@ polygonal region, see Fig. \ref{fig:polygui} (b).
 \label{sec:tests_hull}
 The final tool performs calculations on collections of vertices.
 
-Its main functionality consists of determining the convex hull, the Voronoi diagrams, 
-as well as the Delaunay triangulation the given set of vertices.
-This is shown in Fig. \ref{fig:hullgui} (a).
+Its main functionality consists of determining the convex hull \cite[Ch. 11, pp. 243-258]{Berg2008}, 
+the Voronoi diagrams \cite[Ch. 7, pp. 147-171]{Berg2008}, 
+as well as the Delaunay triangulation \cite[Ch. 9, pp. 191-218]{Berg2008} 
+of the given set of vertices. This is shown in Fig. \ref{fig:hullgui} (a).
 A secondary feature, depicted in Fig. \ref{fig:hullgui} (b), is the calculation of 
-the minimal spanning tree between the vertices \cite{TODO}.
+the minimal spanning tree between the vertices using Kruskal's algorithm \cite[pp. 265-268]{Erickson2019}.
 
-% TODO: backend, choice between different algorithms possible
+For calculating the convex hull, several different algorithms have been implemented,
+which can be selected in the program's ``backend'' menu.
+These backends comprise the contour polygon method \cite[Ch. 3.1.5, pp. 125-128]{FUH_geo2020}, 
+the iterative incremental calculation \cite[Ch. 3.1.3, pp. 117-123]{FUH_geo2020}, as well as the 
+recursive divide-and-conquer method \cite[Ch. 3.1.4, pp. 123-125]{FUH_geo2020}, 
+which have been implemented according to the pseudo-codes and descriptions given
+in the respective references.
+One further backend includes calculation via the \textit{QHull} library \cite{web_qhull}.
+Not surprisingly, all backends yield the same results.
+
+Similarly to the convex hull calculation, the calculation of the Delaunay triangulation
+also supports multiple backend algorithms.
+Among them are the incremental method \cite[Ch. 6.2, pp. 269-282]{FUH_geo2020}, 
+delegating calculations \textit{QHull} \cite{web_qhull}, 
+and third, the parabolic transformation \cite[Ch. 6.5, pp. 298-300]{FUH_geo2020}, 
+which also partially uses \textit{QHull}, namely to calculate the three-dimensional 
+convex hull of the transformed problem.
 
 \begin{figure}[h]
 	\centering
