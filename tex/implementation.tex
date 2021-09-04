@@ -588,7 +588,28 @@ The cost function for two vertices $\underline{v}$ and $\underline{w}$ thus read
 	\left\Vert \underline{v} - \underline{w} \right\Vert_2 \cdot \frac{1}{r}.
 \end{equation}
 The closest wall to an arbitrary point and thus the distance $r$ between them can be efficiently
-determined using the spatial index tree that has been generated in a previous step (section \ref{sec:walls_index_tree}).
+determined using the spatial index tree that has been generated in a previous step
+(section \ref{sec:walls_index_tree}).
+
+A demonstration of the effect of the cost functions is depicted in Fig. \ref{fig:path_finding_strategies}.
+
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width = 0.66 \textwidth]{figures/strategies_instrument}
+
+		\vspace{0.1cm}
+		\includegraphics[width = 0.49 \textwidth]{figures/strategies_shortest_path}
+		\hspace{0.1cm}
+		\includegraphics[width = 0.49 \textwidth]{figures/strategies_avoid_walls}
+	\end{center}
+	\caption[Path-finding strategies.]{
+		Effects of different cost functions on path-finding.
+		(a) The instrument is caught between two cylindrical obstacles.
+		(b) The shortest path in angular configuration space moves the instrument very close to the obstacles.
+		(c) The wall avoidance strategy chooses a longer, but safer path.
+		\label{fig:path_finding_strategies}}
+\end{figure}
 
 
 \paragraph{Implementation details}
