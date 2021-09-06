@@ -5,8 +5,6 @@
 % @license see 'LICENSE' file
 %
 
-% TODO: describe reciprocal xtal lattice in general
-
 \chapter{Crystal and Instrument Coordinate Systems}
 \label{ch:xtal}
 
@@ -21,7 +19,7 @@ but are also employed in virtual instrument simulators like \textit{vTAS} \cite{
 Note that this chapter has already been published in the manual of the software from Ref. \cite{Takin2021}
 and is furthermore based on an earlier version of these derivations from my (physics) PhD thesis 
 \cite[pp. 139-143]{PhDWeber}. Originally, these formula were derived with the aid of the source
-code of \textit{McStas'} \textit{templateTAS} virtual instrument \cite{McStas2020, TODO}.
+code of \textit{McStas'} \textit{templateTAS} virtual instrument \cite{web_mcstas_templateTAS, McStas2020}.
 
 
 % ------------------------------------------------------------------------------------------------------------------------------------
@@ -154,10 +152,13 @@ It is obvious that the reciprocal view greatly simplifies the image: Bragg scatt
 crystal planes in real space in panel (a) becomes a single point in reciprocal space \cite[p. 66]{Gross2012},
 the so-called Bragg peak $\left| G \right>$ in panel (c). The reciprocal vector $\left| G \right>$ is
 perpendicular to the original crystal planes and its length is related to their distance $d$ by
-$\left\Vert G \right\Vert = 2\pi/d$ \cite[p. 66]{Gross2012}.
+$\left\Vert G \right\Vert = 2\pi/d$ \cite[p. 66]{Gross2012}. Panel (c) also shows how the lattice vector
+together with the neutron beam directions forms the so-called scattering triangle, which is 
+ubiquitous in visualisations of neutron scattering geometry \cite[pp. 14-15]{Shirane2002} and which will be 
+discussed in the next section.
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.95\textwidth]{figures/bragg_recip}
+	\includegraphics[width=1\textwidth]{figures/bragg_recip}
 	\caption[Real and reciprocal lattice scattering.]{
 		(a) Bragg scattering on crystal planes having a spacing $d$, viewed from real space.
 			Figure drawn after \cite[p. 68, Fig. 2.7]{Gross2012}.
@@ -226,7 +227,7 @@ It is then rotated by the $U$ matrix to account for the actual crystal orientati
 	\left|Q_{\mathrm{lab}}\right> \ =\  U \cdot B \cdot \left|Q_{\mathrm{rlu}}\right>.
 \end{equation}
 In the rest of this work we will not use the $U$ matrix explicitly, though, but instead directly work 
-with its basis vectors. This is just a formality though, the mathematics are the same.
+with its basis vectors. This is just a formality, though, the mathematics are the same.
 
 % ------------------------------------------------------------------------------------------------------------------------------------
 
@@ -263,9 +264,10 @@ The monochromator and analyser scattering angles follow directly from Bragg's eq
 
 \vspace{0.5cm}
 
-To determine the sample scattering angle $2 \theta_S$, we use the scattering triangle, see 
-Fig. \ref{fig:scattering_triangle}. 
-The scattering triangle can be directly determined by the angles the instrument is positioned at. 
+To determine the sample scattering angle $2 \theta_S$, we use the so-called scattering triangle, see 
+Fig. \ref{fig:scattering_triangle}, whose connection to the neutron beam direction has already 
+been established in the previous section.
+The scattering triangle can be directly determined by the angles the instrument is positioned at \cite[pp. 14-15]{Shirane2002}: 
 For that, we have a look at the incoming and final neutron wavevectors $\left| k_i \right>$ and $\left| k_f \right>$, 
 whose directions (but not lengths!) correspond directly to the neutron paths before and after the sample, 
 respectively, as shown on the left-hand side of Fig. \ref{fig:scattering_triangle}. We can rearrange them so 
@@ -381,4 +383,13 @@ With that, Eq. \ref{eq:xi} simplifies to:
 
 
 \section{Summary}
-TODO
+This chapter introduced some important concepts from solid-state physics and crystallography that are essential
+for an understanding of the basic coordinate system transformations from the generally non-orthogonal (real or 
+reciprocal) crystal coordinates to the orthonormal lab coordinates used at the instrument.
+In practice, it is the crystal coordinates that are entered into the instrument control software by
+the user, not the raw instrument angles. A path-finding system for triple-axis spectrometers thus has to know both. 
+Internally, it will be more convenient for the software to use instrument-related coordinates, as we will see in 
+the following chapters, but the input and output will be in crystal coordinates.
+
+Having established all the necessary physical foundations, the next chapter will proceed to do the same for the 
+essential concepts in computer science before putting everything together in a path-finding algorithm.

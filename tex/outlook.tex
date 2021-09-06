@@ -7,3 +7,34 @@
 
 \chapter{Outlook and Future Developments}
 \label{ch:outlook}
+The software of this work is capable of finding a path around obstacles given start and target coordinates 
+either in the crystal coordinate system or directly using the instrument angles.
+While the software is fully functional, several more steps will need to be done to make it usable
+at the instrument.
+
+The first step is an integration into existing instrument control systems. 
+With its modular design and the possibility to use it as C++ library without any graphical user interface
+(see chapter \ref{sec:library}), care has already been taken to make this step as smooth as possible.
+In a joint project with Y. Le Goc from the instrument control group at the ILL, a plug-in module for
+the instrument control software \textit{NOMAD} \cite{web_NOMAD} will be developed that links against 
+the path-finding library of this work. 
+The idea is to have a settings tab in \textit{NOMAD} where the user can switch on or off the path-finding
+functionality. If it is on, subsequent drive commands will not be directly executed and all motors thus
+driven at the same time independently, but instead piped through the plug-in module. 
+The module will give back a list of drive commands to \textit{NOMAD} which drives the instrument
+along the determined optimal path in a step-wise fashion.
+
+A second step will include an interface with the independent \textit{NOMAD 3D} \cite{TODO} software to replace the
+collision detection performed on the simplified model with the full \textit{CAD} model \cite{TODO} of the instrument.
+So far, \textit{NOMAD 3D} tries to calculate collisions between all polygons of the \textit{CAD} model, 
+but -- as expected -- does not come to a result before running out of memory and time.
+This problem of \textit{NOMAD 3D} might never be solved. 
+But in that case, we have shown that a simplified model as is used in the present software is much more 
+feasible. 
+The simplified model may be thought of as the bounding boxes and cylinders of the real full-detail model.
+The results are still correct and just rationalise away all details close to obstacles, which should
+anyway be avoided.
+
+A first general presentation of the software of this work will take place at the 
+\textit{Innovative Inelastic Neutron Scattering} workshop in Autrans-M\'eaudre-en-Vercors, France 
+in October 2021.
