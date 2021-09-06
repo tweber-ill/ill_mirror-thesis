@@ -145,8 +145,33 @@ Explicitly written out using the basis vectors, the matrix reads \cite{wiki_frac
 
 
 \paragraph{Reciprocal-space crystal lattice}
-The $B$ matrix, which transforms reciprocal-space relative lattice units (rlu) to lab coordinates 
-(1/\AA), is \cite[p. 60]{Gross2012}:
+For calculations in solid-state physics and neutron scattering, one does not normally use
+the real-space crystal lattice, but instead thinks in term of the so-called reciprocal-space lattice.
+Reciprocal space is constructed in a way to facilitate calculations with momenta on a periodic lattice,
+for that reason it is also sometimes called momentum or Fourier space.
+A comparison of the same Bragg scattering in real vs. reciprocal space is shown in Fig. \ref{fig:braggscattering_recip}.
+It is obvious that the reciprocal view greatly simplifies the image: Bragg scattering on what is set of parallel
+crystal planes in real space in panel (a) becomes a single point in reciprocal space \cite[p. 66]{Gross2012},
+the so-called Bragg peak $\left| G \right>$ in panel (c). The reciprocal vector $\left| G \right>$ is
+perpendicular to the original crystal planes and its length is related to their distance $d$ by
+$\left\Vert G \right\Vert = 2\pi/d$ \cite[p. 66]{Gross2012}.
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/bragg_recip}
+	\caption[Real and reciprocal lattice scattering.]{
+		(a) Bragg scattering on crystal planes having a spacing $d$, viewed from real space.
+			Figure drawn after \cite[p. 68, Fig. 2.7]{Gross2012}.
+		(b) A view mixing real and reciprocal space. The reciprocal lattice vector, $\underline{G}$,
+			is perpendicular to the real space crystal planes.
+		(c) Bragg scattering viewed from reciprocal space. The direction of the incoming and outgoing
+			neutron beams define wave vectors $\underline{k}_i$ and $\underline{k}_f$.}
+	\label{fig:braggscattering_recip}
+\end{figure}
+
+From the construction of reciprocal space, it can be shown that the basis vectors of reciprocal space
+are mutually perpendicular to the corresponding real space basis vectors \cite[p. 60]{Gross2012}.
+This directly leads to the so-called $B$ matrix, which transforms reciprocal-space relative lattice units (rlu)
+to lab coordinates (1/\AA), is \cite[p. 60]{Gross2012}:
 \begin{equation} B \ =\  2 \pi A^{-t}, \end{equation}
 where $-t$ denotes the transposed inverse.
 We can now also determine the metric tensor corresponding to the coordinate system defined by 
@@ -156,18 +181,23 @@ the $B$ transformation matrix, it reads \cite[p. 808]{Arens2015}:
 \end{equation}
 where the reciprocal basis vectors $\left| \underline{b}_i \right>$ form the columns of $B$.
 
+A rigorous introduction into the reciprocal crystal lattice can be found in the book by Gross
+and Marx \cite[pp. 58 - 67]{Gross2012}.
+
 
 \subsection{Example: lengths and angles in the reciprocal lattice}
 Having a metric makes it straightforward to calculate lengths and angles.
 The length of a reciprocal lattice vector $\left| G \right>$ seen from the lab system is 
 (in 1/\AA{} units) \cite[p. 808]{Arens2015}:
 \begin{equation}
-	\left\Vert \left< G | G \right> \right\Vert \ =\  \sqrt{\left< G | G \right>} \ =\  \sqrt{G_i G^i} \ =\  \sqrt{g_{ij} G^i G^j}.
+	\left\Vert \left< G | G \right> \right\Vert \ =\  \sqrt{\left< G | G \right>}
+		\ =\  \sqrt{G_i G^i} \ =\  \sqrt{g_{ij} G^i G^j}.
 \end{equation}
 The angle $\theta$ between two Bragg peaks $\left| G \right>$ and $\left| H \right>$ 
 is given by their dot product \cite[p. 808]{Arens2015}:
 \begin{equation}
-	\frac{\left< G | H \right>}{\left\Vert \left< G | G \right> \right\Vert \cdot \left\Vert \left< H | H \right> \right\Vert} \ =\  
+	\frac{\left< G | H \right>}{\left\Vert \left< G | G \right> \right\Vert
+		\cdot \left\Vert \left< H | H \right> \right\Vert} \ =\
 	\frac{g_{ij} G^i H^j }{\sqrt{g_{ij} G^i G^j} \sqrt{g_{ij} H^i H^j}} \ =\  \cos \theta.
 \end{equation}
 
