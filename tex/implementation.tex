@@ -35,6 +35,8 @@ The instrument space comprising the triple-axis spectrometer, the walls and obst
 the class \lstinline[language=C++]|InstrumentSpace|. It also serves as high-level interface for loading and saving
 the instrument geometry and states, signalling mechanisms for state changes using the publish-subscribe mechanism
 via \textit{Boost.Signals2} \cite{web_boost_signals}, as well as checking the instrument for collisions.
+The publish-subscribe mechanism is also known as observer pattern, for which a comprehensive description 
+can be found in Ref. \cite[Ch. 4, pp. 122-127]{FUH_prog2019}.
 
 The classes \lstinline[language=C++]|Instrument| and \lstinline[language=C++]|Axis| contain the actual instrument definition.
 The spectrometer is modelled as a hierarchy of the three principal axes, namely monochromator, sample and analyser.

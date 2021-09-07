@@ -125,7 +125,7 @@ the minimal spanning tree between the vertices using Kruskal's algorithm \cite[p
 
 For calculating the convex hull, several different algorithms have been implemented,
 which can be selected in the program's ``backend'' menu.
-These backends comprise the contour polygon method \cite[Ch. 3.1.5, pp. 125-128]{FUH_geo2020}, 
+These backends comprise the contour polygon method \cite[Ch. 3.1.5, pp. 125-128]{FUH_geo2020},
 the iterative incremental calculation \cite[Ch. 3.1.3, pp. 117-123]{FUH_geo2020}, as well as the 
 recursive divide-and-conquer method \cite[Ch. 3.1.4, pp. 123-125]{FUH_geo2020}, 
 which have been implemented according to the pseudo-codes and descriptions given
@@ -165,12 +165,23 @@ convex hull of the transformed problem.
 A unit test tests if a given set of inputs to a function gives an expected set of outputs.
 Testing an algorithm containing several function calls also allows to check if a set of invariants
 is fulfilled during the algorithm run, meaning between function calls.
-Possible checks can either be fixed input values which are testes agains known output values,
+Possible checks can either be fixed input values which are tested against known output values,
 or random inputs for which the correct output is calculated independently using a different 
 method than the one being tested, or even an external program.
+A comprehensive description of unit testing is given in Ref. \cite[Ch. 3, pp. 73-105]{FUH_prog2019}.
+
 Unit tests allow to spot an error for which they are specifically designed. Conversely, they cannot 
-prove that a software is free of errors. Such a feat would be the task of software verification, 
-which is very complicated, if not impossible for software systems of a certain size and complexity.
+prove that a software is free of errors. Such a feat would be the task of software
+verification \cite[Ch. 5, pp. 117-144]{Berghammer2017}, which is complicated, if not impossible for
+software systems of a certain size and complexity.
+Software verification uses proofs via Hoare logic, which splits the program into its primitive
+operations (e.g. assignments, conditions, loops) \cite[pp. 118-119]{Berghammer2017}, formulates
+a set of axioms and derivation rules consisting of pre- and post-conditions for these primitive operations
+\cite[pp. 122]{Berghammer2017}, reduces the complex program into these axioms \cite[pp. 123]{Berghammer2017},
+and finally either proofs the partial or the total correctness of the program.
+The former says that if the pre-condition is valid, the post-condition is also valid after running the
+program, the latter means that the post-condition follows from the pre-condition and the execution
+of the program \cite[pp. 121]{Berghammer2017}.
 
 For the present software, unit tests of isolated functions and algorithms were performed using the 
 C++ library \textit{Boost.Test} \cite{web_boost_test}.
