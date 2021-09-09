@@ -564,9 +564,39 @@ The shortest path is thus $v_1$, $v_2$, $v_3$, $v_5$.
 
 
 
+
 \section{Spatial index trees}
 \label{sec:indextrees}
+Finding a certain number from a set of $n$ numbers which possess an ordering relation --
+alternatively, all numbers that are smaller or greater than a certain number or lie within a range -- 
+can be efficiently done in one dimension using a binary search tree.
+Several well-known data structures exist, among them the \textit{AVL tree} \cite{wiki_avl} and the 
+\textit{Red-black tree} \cite{wiki_redblack}.
+Both of them possess a memory complexity linear in the number of elements, $n$, and -- since they 
+are balanced with respect to their heights -- dual-logarithmic in time for searching, inserting 
+and removing an element \cite{wiki_avl, wiki_redblack}.
+
+In $k$ dimensions, there are several generalisations of search trees, among them the 
+\textit{BSP tree} \cite[Ch. 12, pp. 259-281]{Berg2008}, the \textit{k-d tree} \cite[Ch. 5.2, pp. 99-105]{Berg2008}, 
+and the \textit {R-tree} \cite{wiki_rtree}.
+
+
+\paragraph{BSP tree}
+The BSP or \textit{binary space partitioning} tree recursively divides the $n$ dimensional vector 
+space it operates on into two half-spaces. These two half-spaces respectively lie left and right of 
+an $n-1$ dimensional splitting hyperplane. The hyperplane is usually chosen so that each of the 
+half-spaces contains an equal amount of stored objects (vertices, polygons, etc.).
+
 TODO
+
+
+\paragraph{k-d tree}
+TODO
+
+
+\paragraph{R-tree}
+TODO
+
 
 
 \section{Summary}
