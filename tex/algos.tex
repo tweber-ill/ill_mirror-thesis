@@ -582,16 +582,27 @@ and the \textit {R-tree} \cite{wiki_rtree}.
 
 
 \paragraph{BSP tree}
-The BSP or \textit{binary space partitioning} tree recursively divides the $n$ dimensional vector 
-space it operates on into two half-spaces. These two half-spaces respectively lie left and right of 
-an $n-1$ dimensional splitting hyperplane. The hyperplane is usually chosen so that each of the 
-half-spaces contains an equal amount of stored objects (vertices, polygons, etc.).
-
-TODO
+Following the definition in Ref. \cite[pp. 261-262]{Berg2008}, a BSP or \textit{binary space partitioning} 
+tree divides the $k$ dimensional vector space it operates on into two half-spaces. 
+These two half-spaces respectively lie left and right of 
+an $k-1$ dimensional splitting hyperplane. The hyperplane is usually chosen so that each of the 
+half-spaces contains an equal amount of stored objects (vertices, polygons, etc.). 
+The algorithm is next applied recursively to each of the half-spaces, partitioning them in the same
+fashion until there is only one object left, yielding a leaf node.
 
 
 \paragraph{k-d tree}
-TODO
+The $k$-d, or $k$-dimensional tree is a special case of the BSP tree where the splitting planes are 
+axis-aligned \cite[p. 278]{Berg2008}. 
+There is also less freedom to chose them as in the BSP case: In the recursion steps, a split by 
+the $x_1 = const.$ plane is followed by the $x_2 = const.$ plane in the next depth level of the tree,
+until the $x_k = const.$ plane is reached, after which the choice wraps around to the
+$x_1 = const.$ plane. The only freedom is to choose the respective constant offsets of the
+plane to have the tree optimally balanced.
+A $k$-d tree of $n$ objects can be created with an upper bound in time complexity of 
+$\mathcal{O}\left( n \log_2 n \right)$ and has a storage complexity linear in $n$,
+its query time lies in $\mathcal{O}\left( n^{1-1/k} + r \right)$, where $r$ is the number of
+objects that are found by the query \cite[p. 105]{Berg2008}.
 
 
 \paragraph{R-tree}
