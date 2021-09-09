@@ -75,11 +75,11 @@ Vertex-site Voronoi diagrams are ubiquitous in solid-state physics and all its c
 like neutron scattering, magnetism, etc., although they are not called so in these fields.
 In physics, one usually thinks in terms of the reciprocal (dual, Fourier) space of a crystal lattice, as discussed
 in chapter \ref{ch:xtal}. Due to the periodic nature of the crystal and its reciprocal space, one can define a smallest
-cell around the sites in reciprocal space (called ``Bragg peaks'') for which all physics is the same, the so-called 
-\textit{first Brillouin zone} of the reciprocal lattice \cite[pp. 63-64]{Gross2012}, 
-whose definition corresponds to that of the Voronoi region of the Bragg peaks.
+cell around the vertex sites in reciprocal space (here called ``Bragg peaks'', as discussed before) for which all physics is 
+the same, the so-called \textit{first Brillouin zone} of the reciprocal lattice \cite[pp. 63-64]{Gross2012}. 
+The definition of the first Brillouin zone corresponds to that of the Voronoi region of the Bragg peaks.
 The crystal and its reciprocal lattice are assumed to be infinite. This is a good approximation as one usually
-considers physics in the Angstrom scale, while the crystals used in neutron scattering usually have volumes on the
+considers physics in the \AA{}ngstr\"om scale ($10^{-10}\,\mathrm{m}$), while the crystals used in neutron scattering usually have volumes on the
 $cm^3$ scale. Having an infinite lattice has the effect that the Voronoi diagram does not possess any open regions.
 As the crystal is regular and periodic, only one shape of Voronoi region exists, which repeats to fill the
 entire reciprocal space without gaps.
@@ -134,7 +134,7 @@ two points is equidistant to them; and (b) in the case of two line segments, the
 equidistant to them \cite[pp. 243-244]{FUH_geo2020}.
 On the other hand, the bisector curve segment follows a parabolic shape if the distance is calculated 
 between a line segment endpoint and one inner point of the other segment. This is the same as the bisector between
-a point and a line and it parabolic distance is shown in \cite[pp. 260-261]{FUH_geo2020}.
+a point and a line and its parabolic shape is proven in \cite[pp. 260-261]{FUH_geo2020}.
 An example of two or several line segment sites and their bisectors is shown in Fig. \ref{fig:linesegs_voro}.
 
 \begin{figure}[h]
@@ -164,7 +164,7 @@ An example of two or several line segment sites and their bisectors is shown in 
 
 \subsection{Software libraries}
 A stable and efficient C/C++ library for calculating Voronoi diagram in $\mathbb{R}^n$ is the popular and very 
-high-quality \textit{QHull} by C. B. Barber \cite{web_qhull}. While it does only calculate 
+high-quality \textit{QHull} library by C. B. Barber \cite{web_qhull}. While it does only calculate 
 the Voronoi diagrams for vertices, and not for line segments, it is also capable of calculation the Delaunay
 triangulation and -- as the name implies -- convex hull of the sites.
 
@@ -191,7 +191,7 @@ The first three are not feasible for the present project, though:
 		the Voronoi diagram and is internally based on integers coordinates \cite{web_boost_polygon}.
 		The reliance on integer coordinate representation is also responsible for \textit{Boost.Polygon}'s 
 		inability to handle intersecting lines, because the intersection point may be at a non-integer coordinate. 
-		Intersecting lines need to be carefully filtered out, because they can unfortunately cause the 
+		Intersecting lines need to be carefully filtered out before calculation, because they can unfortunately cause the 
 		\textit{Boost.Polygon} library to either crash, hang, or yield wrong bisectors.
 \end{itemize}
 
@@ -220,7 +220,8 @@ where subsequent vertices $v_i$ and $v_{i+1}$, $i \in \left[1, n\right]$, are co
 where each vertex in the tuple is unique, i.e. $v_i \neq v_j$ for $i \neq j$.
 Specifically, this signifies that there are no loops and no vertex is visited multiple times upon 
 traversal of the path.
-An example for a graph is shown in Fig. \ref{fig:example_graph}.
+An example for a directed and weighted graph is shown in Fig. \ref{fig:example_graph}.
+This example graph will also serve for the algorithm demonstrations in the following.
 
 \begin{figure}[h]
 	\begin{center}
