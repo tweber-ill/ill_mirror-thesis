@@ -181,7 +181,7 @@ The first three are not feasible for the present project, though:
 		It is available under an open-source license, but our first tests deemed it too unstable 
 		for use in a production-quality software. 
 		The source code for our tests can be found in the function \lstinline[language=C++]|geo::calc_voro_ovd()|, 
-		which resides in file \lstinline|./src/libs/hull.h| of the accompanying code. 
+		which resides in file \lstinline|./src/libs/hull.h| of the accompanying code archive. 
 		The source code for the test tool itself is located in: \lstinline|./src/tools/lines.cpp|.
 	\item \textit{VoroLS} \cite{DiplomaSchumann} is stable and does even handle intersecting lines, but is a \textit{Java}
 		software, not a library, and is not under an open-source license.
@@ -563,5 +563,15 @@ The shortest path is thus $v_1$, $v_2$, $v_3$, $v_5$.
 \end{table}
 
 
-\section{Summary}
+
+\section{Spatial index trees}
+\label{sec:indextrees}
 TODO
+
+
+\section{Summary}
+With the concept of the Voronoi diagram, basic graph theory, and spatial index trees, 
+this chapter presented the foundations on which the path-mesh calculation and path-finding
+algorithm of this work will be based. The following chapter will review different kinds
+of path-finding methods and use parts of these to construct a bespoke method which
+is suitable for the angular movement of triple-axis spectrometers.
