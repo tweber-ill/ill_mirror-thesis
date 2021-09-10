@@ -579,7 +579,7 @@ and removing an element \cite{wiki_avl, wiki_redblack}.
 In $k$ dimensions, there are several generalisations of search trees, among them the 
 \textit{BSP tree} \cite[Ch. 12, pp. 259-281]{Berg2008} and the \textit{k-d tree} \cite[Ch. 5.2, pp. 99-105]{Berg2008}
 as examples of multi-dimensional binary search trees, as well as the non-binary
-\textit {R-tree} \cite{wiki_rtree}.
+\textit {R tree} \cite{wiki_rtree}.
 
 
 \paragraph{BSP tree}
@@ -606,13 +606,46 @@ its range query time lies in $\mathcal{O}\left( n^{1-1/k} + r \right)$, where $r
 objects that are found by the query \cite[p. 105]{Berg2008}.
 
 
-\paragraph{R-tree}
-R-tree stands for rectangle tree and is named for its use of (hyper-)rectangles grouping objects \cite{wiki_rtree}.
-Each node in the tree has a hyperrectangle assigned to it which serves as axis-aligned bounding box
-for all the objects it contains in its child nodes. The rectangular bounding boxes for the nodes at the
-same height may overlap, and the key to efficiency in this kind of tree is a good insertion algorithm
-which minimises such a overlap. The most prominent of these overlap-minimised data structures is the
-so-called \textit{R* tree} \cite{wiki_rstartree}.
+\paragraph{R tree}
+R tree stands for rectangle tree and is named for its use of (hyper-)rectangles grouping objects \cite{wiki_rtree}.
+Each node in the tree has a hyperrectangle assigned to it, which serves as axis-aligned bounding box
+for all the objects it contains in its child nodes. 
+The tree is not necessarily a binary tree, in fact, the number of children that each node can have is 
+a configuration parameter. 
+The rectangular bounding boxes for the nodes at the same height may overlap, and the key to efficiency 
+in this kind of tree is a good insertion algorithm which minimises such a overlap.
+The most prominent of these overlap-minimised data structures is the so-called \textit{R* tree} \cite{wiki_rstartree}.
+Fig. \ref{fig:example_rtrees} shows a comparison between a classical R tree and and R* tree for the
+same vertex sites. The R trees shows a clearly more pronounced overlap than the R* tree.
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width = 0.4 \textwidth]{figures/rtree8}
+		\hspace{1cm}
+		\includegraphics[width = 0.4 \textwidth]{figures/rstartree8}
+	\end{center}
+	\caption[Example R trees.]{An R tree (left panel) and an R* tree (right panel) for the 
+		same 250 random, linearly distributed vertices (back circles). 
+		The rectangular bounding boxes at each level of the R trees are marked in different colours, 
+		the innermost rectangles are blue, the next level is red, and the outermost level 
+		(at the root node) is black.
+		The trees were created so that each node has maximally 8 children.
+		These panels were calculated using the \lstinline[language=C++]|rtree| class \cite{web_boost_geometry_rtree}
+		of the \textit{Boost.Geometry} library \cite{web_boost_geometry}.
+		\label{fig:example_rtrees}}
+\end{figure}
+
+
+\subsection{Software libraries}
+BSP trees are very popular in the field of computer graphics, and free and open-source implementations are 
+readily available \cite{TODO}. Unfortunately and surprisingly, the \textit{Boost} C++ libraries \cite{web_boost},
+which is the preferred ressource for data types and algorithms in this work, do not feature one. 
+Equally surprisingly, the \textit{Qt} libraries do feature a BSP tree implementation, but it is not part of 
+their public API, but only used internally in the \lstinline[language=C++]|QGraphicsScene| class \cite{web_QGraphicsScene}.
+
+A high-quality implementation of R and R* trees as well as the insertion, deletion, and querying algorithms 
+operating on them is readily available through the \textit{Boost.Geometry} library \cite{web_boost_geometry, web_boost_geometry_rtree}. As first tests could directly confirm the good performance of \textit{Boost.Geometry}'s,
+R and R* tree codes, we will employ them for this work.
 
 
 
