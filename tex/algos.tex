@@ -167,6 +167,8 @@ A stable and efficient C/C++ library for calculating Voronoi diagram in $\mathbb
 high-quality \textit{QHull} library by C. B. Barber \cite{web_qhull}. While it does only calculate 
 the Voronoi diagrams for vertices, and not for line segments, it is also capable of calculation the Delaunay
 triangulation and -- as the name implies -- convex hull of the sites.
+The \textit{OpenCV} library \cite{web_opencv} also features a module for calculating Voronoi diagrams
+(and the dual Delaunay triangulation), but is also restricted to vertex sites and to two dimensions.
 
 Several libraries for calculating the line segment Voronoi diagrams in $\mathbb{R}^2$ exist, noteworthy 
 are \textit{VRONI} by M. Held \cite{Held2001}, \textit{OpenVoronoi} by A. E. Wallin \cite{web_openvoronoi}, \textit{VoroLS} 
@@ -593,9 +595,9 @@ fashion until there is only one object left, yielding a leaf node.
 
 
 \paragraph{k-d tree}
-The $k$-d, or $k$-dimensional tree is a special case of the BSP tree where the splitting planes are 
+The $k$-d, or \textit{$k$-dimensional tree} is a special case of the BSP tree where the splitting planes are 
 axis-aligned \cite[p. 278]{Berg2008}. 
-There is also less freedom to chose them as in the BSP case: In the recursion steps, a split by 
+There is also less freedom to choose them as in the BSP case: In the recursion steps, a split by 
 the $x_1 = const.$ plane is followed by the $x_2 = const.$ plane in the next depth level of the tree,
 until the $x_k = const.$ plane is reached, after which the choice wraps around to the
 $x_1 = const.$ plane. The only freedom is to choose the respective constant offsets of the
@@ -607,7 +609,8 @@ objects that are found by the query \cite[p. 105]{Berg2008}.
 
 
 \paragraph{R tree}
-R tree stands for rectangle tree and is named for its use of (hyper-)rectangles grouping objects \cite{wiki_rtree}.
+R tree stands for \textit{rectangle tree} and is named for its use of (hyper-)rectangles 
+grouping objects \cite{wiki_rtree}.
 Each node in the tree has a hyperrectangle assigned to it, which serves as axis-aligned bounding box
 for all the objects it contains in its child nodes. 
 The tree is not necessarily a binary tree, in fact, the number of children that each node can have is 
@@ -638,10 +641,12 @@ same vertex sites. The R trees shows a clearly more pronounced overlap than the 
 
 \subsection{Software libraries}
 BSP trees are very popular in the field of computer graphics, and free and open-source implementations are 
-readily available \cite{TODO}. Unfortunately and surprisingly, the \textit{Boost} C++ libraries \cite{web_boost},
+readily available \cite{web_bsp_faq}. Unfortunately and surprisingly, the \textit{Boost} C++ libraries \cite{web_boost},
 which is the preferred ressource for data types and algorithms in this work, do not feature one. 
 Equally surprisingly, the \textit{Qt} libraries do feature a BSP tree implementation, but it is not part of 
 their public API, but only used internally in the \lstinline[language=C++]|QGraphicsScene| class \cite{web_QGraphicsScene}.
+
+An open-source k-d tree implementation can be found in the \textit{OpenCV} library \cite{web_opencv}.
 
 A high-quality implementation of R and R* trees as well as the insertion, deletion, and querying algorithms 
 operating on them is readily available through the \textit{Boost.Geometry} library \cite{web_boost_geometry, web_boost_geometry_rtree}. As first tests could directly confirm the good performance of \textit{Boost.Geometry}'s,

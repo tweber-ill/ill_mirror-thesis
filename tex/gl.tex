@@ -253,9 +253,9 @@ $\underline{v} \in \mathbb{R}^3$  reduces to two quaternion multiplications and 
 where $q^{*} = \left( r,\, -\underline{s} \right)$ is the complex conjugate quaternion \cite[pp. 110-111]{Kuipers2002}.
 
 \paragraph{SO(3)}
-The special orthogonal group $\mathrm{SO\left(3\right)}$, which comprises rotations in three-dimensional space by an angle
-$\alpha$ around a normalised vector $\underline{v}$, can be directly written in quaternion form in an analogy to 
-Euler's formula for complex numbers \cite{wiki_quatrot}:
+Representatnts of the special orthogonal group $\mathrm{SO\left(3\right)}$, which comprises rotations in 
+three-dimensional space by an angle $\alpha$ around a normalised vector $\underline{v}$ \cite[pp. 849-851]{Arfken2013},
+can be directly written in quaternion form in an analogy to Euler's formula for complex numbers \cite{wiki_quatrot}:
 \begin{equation}
 	\boxed{
 	q_{\mathrm{rot}} \ =\ \left(\cos\left(\alpha/2 \right),\; \sin\left(\alpha/2 \right) \cdot \underline{v} \right).
@@ -269,6 +269,11 @@ $\left(\underline{a} \times \underline{b}\right) \times \underline{c} =
 	\left( \underline{c}\cdot \underline{a} \right) \underline{b} - 
 	\left( \underline{c}\cdot \underline{b} \right) \underline{a}$ \cite{wiki_tripleprod},
 and verifying that the results are equal in both cases.
+Note that this equivalence can also be shown more theoretically by first representing quaternions in the 
+special unitary group $\mathrm{SU\left(2\right)}$, with the algebraic identity of 
+Eq. \ref{eq:quat_basic} being fulfilled by a set of basis vectors comprising the three Pauli matrices and the 
+identity matrix \cite[p. 116]{Arfken2013}. And, secondly, invoking the homomorphism 
+between groups $\mathrm{SO\left(3\right)}$ and $\mathrm{SU\left(2\right)}$ \cite[pp. 851-852]{Arfken2013}.
 % -----------------------------------------------------------------------------
 
 

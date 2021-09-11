@@ -44,6 +44,7 @@ ENTRY
     volume
     year
     url
+    github
     doi
     issn
     isbn
@@ -428,6 +429,13 @@ FUNCTION {format.url}
 { url empty$
     { "" }
     { "URL:~\url{" url * "}" * }
+  if$
+}
+
+FUNCTION {format.github}
+{ github empty$
+    { "" }
+    { "Source Code Repository URL:~\url{" github * "}" * }
   if$
 }
 
@@ -902,6 +910,7 @@ FUNCTION {misc}
   format.date output
   new.block
   format.url output
+  format.github output
   new.block
   note output
   fin.entry
