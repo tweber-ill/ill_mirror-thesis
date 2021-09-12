@@ -1,0 +1,45 @@
+// creator: tweber@ill.fr
+// directed graph
+digraph tree
+{
+	graph [fontname = "DejaVuSans"]
+	node [fontname = "DejaVuSans"]
+	edge [fontname = "DejaVuSans"]
+
+	// states
+	0 [label="split plane:
+x = 11", color=red];
+	1 [label="split plane:
+y = 10", color=blue];
+	2 [label="split plane:
+x = 8.5", color=red];
+	3 [label="vertex:
+(7, 10)"];
+	4 [label="vertex:
+(10, 5)"];
+	5 [label="vertex:
+(8, 15)"];
+	6 [label="split plane:
+y = 16", color=blue];
+	7 [label="vertex:
+(14, 11)"];
+	8 [label="split plane:
+x = 13.5", color=red];
+	9 [label="vertex:
+(12, 19)"];
+	10 [label="vertex:
+(15, 18)"];
+
+	// transitions
+	0:sw -> 1:n [label="l"];
+	1:sw -> 2:n [label="l"];
+	2:sw -> 3:n [label="l"];
+	2:se -> 4:n [label="r"];
+	1:se -> 5:n [label="r"];
+	0:se -> 6:n [label="r"];
+	6:sw -> 7:n [label="l"];
+	6:se -> 8:n [label="r"];
+	8:sw -> 9:n [label="l"];
+	8:se -> 10:n [label="r"];
+
+}

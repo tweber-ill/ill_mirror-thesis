@@ -1,3 +1,4 @@
+// creator: tweber@ill.fr
 digraph example_graph
 {
 	rankdir = "LR";
