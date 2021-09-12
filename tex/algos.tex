@@ -7,8 +7,11 @@
 
 \chapter{Basic Concepts, Algorithms and Data Structures}
 \label{ch:algos}
-The  path-finding algorithm and implementation, that will be presented in the following chapters,
-employs several different concepts, data structures and methods.
+The  path-finding algorithm and implementation that will be presented in the following chapters
+employ several different concepts, data structures and methods.
+Among these concepts are the Voronoi diagram (section \ref{sec:voro}),
+graph data structures and algorithms on them (section \ref{sec:graphs}),
+as well as spatial index trees (section \ref{sec:indextrees}).
 In this chapter, these basic building blocks are reviewed in a general manner.
 
 
@@ -606,18 +609,24 @@ A $k$-d tree of $n$ objects can be created with an upper bound in time complexit
 $\mathcal{O}\left( n \log_2 n \right)$ and has a storage complexity linear in $n$,
 its range query time lies in $\mathcal{O}\left( n^{1-1/k} + r \right)$, where $r$ is the number of
 objects that are found by the query \cite[p. 105]{Berg2008}.
+An example for a k-d tree is shown in Fig. \ref{fig:example_kdtree}.
 
 \begin{figure}[h]
 	\begin{center}
 		\begin{minipage}{0.4 \textwidth}
 			\includegraphics[width = 1 \textwidth]{figures/example_kd_plane}
 		\end{minipage}
-		\hspace{0.5cm}
-		\begin{minipage}{0.55 \textwidth}
+		\hspace{0.1cm}
+		\begin{minipage}{0.58 \textwidth}
 			\includegraphics[width = 1 \textwidth, trim=1cm 1cm 1cm 1cm, clip]{figures/example_kd}
 		\end{minipage}
 	\end{center}
-	\caption[Example kd trees.]{
+	\caption[Example k-d tree.]{A k-d created from six vertices (left panel) and its graph representation (right panel).
+		The vertices are drawn as black circles, the vertical and horizontal splitting planes
+		are shown in red and blue, respectively.
+		The splitting planes are written out explicitly to emphasise that a
+		k-d tree is also a BSP tree (but not necessarily vice versa).
+		The graph has been drawn using the \textit{Dot} tool from the \textit{Graphviz} software \cite{Ellson2003}.
 		\label{fig:example_kdtree}}
 \end{figure}
 
@@ -637,9 +646,9 @@ same vertex sites. The R trees shows a clearly more pronounced overlap than the 
 
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[width = 0.4 \textwidth]{figures/rtree8}
+		\includegraphics[width = 0.38 \textwidth]{figures/rtree8}
 		\hspace{1cm}
-		\includegraphics[width = 0.4 \textwidth]{figures/rstartree8}
+		\includegraphics[width = 0.38 \textwidth]{figures/rstartree8}
 	\end{center}
 	\caption[Example R trees.]{An R tree (left panel) and an R* tree (right panel) for the 
 		same 250 random, linearly distributed vertices (back circles). 

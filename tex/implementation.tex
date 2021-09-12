@@ -245,15 +245,19 @@ is less than the sum of their radii, $r_1$ and $r_2$, respectively:
 
 \subsection{Representation of configuration space as spatial index tree}
 \label{sec:walls_index_tree}
-Having discretised the angular configuration space on a grid, we next represent all occupied bins
-on the grid, which represent obstacles, in the form of a spatial index tree.
+Having discretised the angular configuration space on a grid, we next convert the positions
+of all occupied bins on the grid, which represent obstacles, in the form of a spatial index tree
+(see chapter \ref{sec:indextrees}).
 When calculating cost-functions for different path finding strategies in an upcoming step 
 (section \ref{sec:optimalpath}), we can make use of the index tree to efficiently query
 the angular position of the next wall from an arbitrary positions. 
 It can furthermore be used to calculate the proximity of the instrument to the walls.
 
-Internally, we make use of the R*-tree implementation from Boost.Geometry's \cite{web_boost_geometry} 
+Internally, we make use of the R* tree implementation from Boost.Geometry's \cite{web_boost_geometry}
 \lstinline[language=C++]|boost::geometry::index::rtree| class \cite{web_boost_geometry_rtree}.
+The R* tree implementation proved far more performant than alternate tests using a k-d tree.
+In the present use case, this is due to the fact that an R* tree is in smaller than the corresponding k-d tree
+because vertices are grouped into tuples of, in our case, 8.
 
 
 
@@ -433,10 +437,10 @@ vertices correspond to the Voronoi vertices of the diagram and whose edges corre
 to the Voronoi bisectors. 
 Furthermore, a spatial index tree is created from the Voronoi vertices in the same 
 step as the graph construction.
-As before (section \ref{sec:walls_index_tree}), we again use the R*-tree implementation
+As before (section \ref{sec:walls_index_tree}), we again use the R* tree implementation
 from Boost.Geometry's \cite{web_boost_geometry} \lstinline[language=C++]|boost::geometry::index::rtree| 
-class \cite{web_boost_geometry_rtree}.
-The graph and the R*-tree are queried in the path-finding step described in 
+class \cite{web_boost_geometry_rtree} (chapter \ref{sec:indextrees}).
+The graph and the R* tree are queried in the path-finding step described in
 section \ref{sec:exepath}.
 
 \paragraph{Implementation details}
@@ -512,7 +516,7 @@ representation as large red and green points in Fig. \ref{fig:linesegs_path},
 we find the closest points on the respective nearest Voronoi bisector and save 
 these points as vertices on the generated path curve.
 The closest Voronoi vertices to which these Voronoi edges belong are found by 
-querying the R*-tree that has been created in the mesh-building step of section
+querying the R* tree that has been created in the mesh-building step of section
 \ref{sec:polygonal_voronoi_diagram}.
 
 In general, the closest point $\left|q\right>$ between a point $\left|p\right>$ 
