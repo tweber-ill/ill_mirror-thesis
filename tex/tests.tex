@@ -191,6 +191,10 @@ different template arguments. The body of a test case contains a block of normal
 In the C++ code, conditions and invariants are tested using the 
 \lstinline[language=C++]|BOOST_TEST()| macro. Each successful or non-successful evaluation
 of the macro is registered by \textit{Boost.Test} and reported in a final summary.
+Listings \ref{lst:unit_test} and \ref{lst:unit_test2} show an example of a unit test, which compares
+a k-d and an R* tree by creating 5000 random points in $\mathbb{R}^2$, building the respective
+trees, querying the closest point to a randomly given point, and testing if the query results
+from both tree data structures agree. The output of the unit test is shown in listing \ref{lst:unit_test_output}.
 
 \begin{listing}[htb]
 	\begin{lstlisting}[language = C++,
@@ -305,4 +309,29 @@ BOOST_AUTO_TEST_CASE_TEMPLATE(trees, t_scalar,
 	\end{lstlisting}
 	\caption[Unit test 2/2]{Unit test for comparing the results of the k-d and the R* trees, part 2 of 2.
 	\label{lst:unit_test2}}
+\end{listing}
+
+
+\begin{listing}[htb]
+	\begin{lstlisting}[basicstyle = {\scriptsize},
+			breaklines = true, tabsize = 4,
+			numbers = left, numberstyle={\scriptsize}]
+Running 3 test cases...
+
+Testing for float type.
+kd result: 79.1563; 22.7786
+rt result: 79.1563; 22.7786
+
+Testing for double type.
+kd result: 96.6395; 52.7907
+rt result: 96.6395; 52.7907
+
+Testing for long double type.
+kd result: 0.719367; 97.1848
+rt result: 0.719367; 97.1848
+
+*** No errors detected
+	\end{lstlisting}
+	\caption[Unit test output]{Possible output from the unit test of listings \ref{lst:unit_test} and \ref{lst:unit_test2}.
+	\label{lst:unit_test_output}}
 \end{listing}
