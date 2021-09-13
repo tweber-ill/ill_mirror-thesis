@@ -57,6 +57,7 @@ figures_svg2pdf: $(patsubst %.svg, %.pdf, $(wildcard figures/*.svg))
 # special rules
 # -----------------------------------------------------------------------------
 thesis.pdf: tex/thesis.tex tex/thesis.bib \
+	tex/foreword.tex \
 	tex/abstract.tex tex/acknowledgements.tex tex/intro.tex tex/errata.tex \
 	tex/notation.tex tex/publications.tex tex/tests.tex tex/outlook.tex \
 	tex/gl.tex tex/xtal.tex tex/paths.tex tex/implementation.tex \

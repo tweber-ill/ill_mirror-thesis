@@ -1,0 +1,47 @@
+%
+% intro
+% @author Tobias Weber <tweber@ill.fr>
+% @date mar-2021
+% @license see 'LICENSE' file
+%
+
+\chapter*{Foreword}
+\addcontentsline{toc}{chapter}{Foreword}
+The present work is concerned about the development of a path-finding system for neutron triple-axis
+spectrometers using the concepts of robot motion planning.
+It touches upon multiple disciplines in physics and computer science. Among these are the field
+of neutron scattering, concept of solid-state physics and crystallography for the physical part,
+as well as Voronoi diagrams and graph theory for robot motion planning, furthermore three-dimensional graphics
+and unit testing.
+This work is organised in a manner to introduce important concepts with dedicated chapters that are
+as self-contained as possible. These introductory chapters appear directly before the chapters that reference
+them.
+
+\paragraph{Layout of this work}
+After some general introduction in chapter \ref{ch:intro}, the two subsequent chapters 
+provide the necessary building blocks for the chapters that follow.
+These are chapter \ref{ch:xtal}, which reviews important concepts from crystallography and
+neutron scattering, namely crystal and instrument coordinate systems,
+as well as chapter \ref{ch:algos}, which presents data structures and algorithms 
+that are necessary for the path-finding.
+Chapter \ref{ch:paths} is concerned about the general concept of path-finding and motion planning, providing
+a review of different alternatives for the present problem as well as a high-level overview of the algorithm
+to be developed in this work. The actual details and the implementation of the path-finding algorithm
+is outlined in chapter \ref{ch:impl}.
+Chapter \ref{ch:gl} contains a brief introduction to the mathematics of three-dimensional computer graphics.
+This maths is made use of in chapter \ref{ch:gui} which is concerned about the user interfaces to the software
+developed in this work. The user interfaces include a graphical one based on an interactive, three-dimensional
+view of the instrument, as well as a purely command-line scripting interface.
+The closing chapters, \ref{ch:tests} and \ref{ch:outlook}, describe unit testing necessary for maintaining
+a reasonably sized software relatively bug-free and give an outlook on the future developments.
+
+\paragraph{Accompanying software}
+The source code of the software that is part of this work is provided on a supplementary 
+medium together with compiled binary versions for several systems.
+The source code is furthermore available via the DOI (digital object identifier) 
+\href{https://doi.org/10.5281/zenodo.4625649}{10.5281/zenodo.4625649} and can be
+accessed online via the URL \url{https://doi.org/10.5281/zenodo.4625649}.
+An up-to-date list of possible future errata to this work will be provided under the DOI
+\href{https://doi.org/10.5281/zenodo.5092159}{10.5281/zenodo.5092159} and the corresponding URL
+\url{https://doi.org/10.5281/zenodo.5092159},
+see appendix \ref{ch:online}.
