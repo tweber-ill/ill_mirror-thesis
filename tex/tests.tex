@@ -192,9 +192,11 @@ In the C++ code, conditions and invariants are tested using the
 \lstinline[language=C++]|BOOST_TEST()| macro. Each successful or non-successful evaluation
 of the macro is registered by \textit{Boost.Test} and reported in a final summary.
 Listings \ref{lst:unit_test} and \ref{lst:unit_test2} show an example of a unit test, which compares
-a k-d and an R* tree by creating 5000 random points in $\mathbb{R}^2$, building the respective
-trees, querying the closest point to a randomly given point, and testing if the query results
-from both tree data structures agree. The output of the unit test is shown in listing \ref{lst:unit_test_output}.
+a k-d and an R* tree (chapter \ref{sec:indextrees}) by creating 5000 random points in $\mathbb{R}^2$
+(for 32, 64, and 128 bit floating point data types), 
+building the respective trees, querying the closest point to a randomly given point, 
+and testing if the query results from both tree data structures agree. 
+The output of the unit test is shown in listing \ref{lst:unit_test_output}.
 
 \begin{listing}[htb]
 	\begin{lstlisting}[language = C++,
@@ -269,7 +271,7 @@ BOOST_AUTO_TEST_CASE_TEMPLATE(trees, t_scalar,
 	if(const auto* node = kd.get_closest(query); node)
 		closest_kd = *node->vec;
 	\end{lstlisting}
-	\caption[Unit test 1/2]{Unit test for comparing the results of the k-d and the R* trees, part 1 of 2.
+	\caption[Unit test 1/2.]{Unit test for comparing the results of the k-d and the R* trees, part 1 of 2.
 	\label{lst:unit_test}}
 \end{listing}
 
@@ -284,7 +286,7 @@ BOOST_AUTO_TEST_CASE_TEMPLATE(trees, t_scalar,
 	for(const t_vec& pt : points)
 		rt.insert(t_vertex{pt[0], pt[1]});
 
-	// get point closest to query point
+	// get point closest to the query point
 	std::vector<t_vec> closest_rt;
 	rt.query(boost::geometry::index::nearest(
 		t_vertex{query[0], query[1]}, 1),
@@ -295,6 +297,10 @@ BOOST_AUTO_TEST_CASE_TEMPLATE(trees, t_scalar,
 			closest_rt.emplace_back(std::move(vec));
 		}));
 
+
+	// test if all dimensions are correct
+	BOOST_TEST((closest_kd.size() == 2 &&
+		closest_rt.size() == 1 && closest_rt[0].size() == 2));
 
 	// test if the two results (k-d and r* tree) are equal
 	if(closest_kd.size() && closest_rt.size())
@@ -307,7 +313,7 @@ BOOST_AUTO_TEST_CASE_TEMPLATE(trees, t_scalar,
 	}
 }
 	\end{lstlisting}
-	\caption[Unit test 2/2]{Unit test for comparing the results of the k-d and the R* trees, part 2 of 2.
+	\caption[Unit test 2/2.]{Unit test for comparing the results of the k-d and the R* trees, part 2 of 2.
 	\label{lst:unit_test2}}
 \end{listing}
 
@@ -332,6 +338,6 @@ rt result: 0.719367; 97.1848
 
 *** No errors detected
 	\end{lstlisting}
-	\caption[Unit test output]{Possible output from the unit test of listings \ref{lst:unit_test} and \ref{lst:unit_test2}.
+	\caption[Unit test output.]{Possible output from the unit test of listings \ref{lst:unit_test} and \ref{lst:unit_test2}.
 	\label{lst:unit_test_output}}
 \end{listing}

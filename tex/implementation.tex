@@ -716,7 +716,7 @@ dijk_mod(const t_graph& graph, const std::string& startvert,
 	return predecessors;                          // return final vector of predecessors
 }
 	\end{lstlisting}
-	\caption[C++ implementation of Dijkstra's algorithm]{
+	\caption[C++ implementation of Dijkstra's algorithm.]{
 	C++20 implementation of Dijkstra's algorithm, based on pseudo-codes from 
 	Refs. \cite[p. 17]{FUH_algo_graphs_2021} and \cite[p. 285]{Erickson2019}.
 	\label{lst:dijkstra}}
@@ -763,7 +763,7 @@ concept is_graph = requires(t_graph& graph, std::size_t vertidx)
 	graph.AddEdge("v123", "v321");
 };
 	\end{lstlisting}
-	\caption[C++ graph template concept]{
+	\caption[C++ graph template concept.]{
 	C++20 concept for a graph template class, \lstinline[language=C++]|t_graph|,
 	constraining its interface to the one given here.
 	\label{lst:graph_concept}}
