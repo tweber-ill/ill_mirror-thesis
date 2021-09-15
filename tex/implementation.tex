@@ -9,21 +9,21 @@
 \label{ch:impl}
 
 In this chapter we describe the individual steps of the path-finding strategy (see p. \pageref{sec:strategy}) 
-in detail and present an implementation in C++ \cite{Stroustrup2008, Stroustrup2018}. 
-Specifically, the latest version 20 of the C++ standard \cite{ISOCPP20}
-together with the Boost C++ template libraries \cite{web_boost}
-was employed in the creation of the software. 
+in detail and at the same time present an implementation in C++ \cite{Stroustrup2008, Stroustrup2018}. 
+Specifically, the latest version 20 of the C++ standard \cite{ISOCPP20} (C++20 in short),
+was employed in the creation of the software, together with the Boost C++ template libraries \cite{web_boost}. 
 The source code for the implementation can be found in the directory \lstinline|./src/core| 
-together with the library routines in \lstinline|./src/libs| of the repository at 
-\url{https://code.ill.fr/scientific-software/takin/paths}. 
+together with the library routines in \lstinline|./src/libs| of the accompanying software.
+Its Repository can be found at at \url{https://code.ill.fr/scientific-software/takin/paths}. 
 Stable versions of the source code have furthermore been registered under the DOI 
 \href{https://doi.org/10.5281/zenodo.4625649}{10.5281/zenodo.4625649}, please also refer to 
-chapter \ref{ch:online} for more details.
+appendix \ref{ch:online} for more details.
 
 Section \ref{sec:tasmodel} is dedicated to modelling the triple-axis spectrometer (TAS), 
 section \ref{sec:buildpath} discusses the steps involved in building up the mesh of possible instrument paths, 
 and section \ref{sec:exepath} focuses on finding one specific path and executing the instrument motion along it.
-The graphical and scripting user interfaces to the software is presented separately, namely in chapter \ref{ch:gui}.
+The graphical and scripting user interfaces to the software are presented separately from the core functionality, 
+namely in chapter \ref{ch:gui}.
 
 
 
@@ -36,23 +36,24 @@ The graphical and scripting user interfaces to the software is presented separat
 
 The instrument space comprising the triple-axis spectrometer, the walls and obstacles, as well as the floor, are modelled in
 the class \lstinline[language=C++]|InstrumentSpace|. It also serves as high-level interface for loading and saving
-the instrument geometry and states, signalling mechanisms for state changes using the publish-subscribe mechanism
-via \textit{Boost.Signals2} \cite{web_boost_signals}, as well as checking the instrument for collisions.
+the instrument geometry and states as well as checking the instrument for collisions. 
+State changes in the class, for example the occurence of a collision, are signalled to the outside world using the 
+publish-subscribe mechanism via \textit{Boost.Signals2} \cite{web_boost_signals} library.
 The publish-subscribe mechanism is also known as observer pattern, for which a comprehensive description 
 can be found in Ref. \cite[Ch. 4, pp. 122-127]{FUH_prog2019}.
 
 The classes \lstinline[language=C++]|Instrument| and \lstinline[language=C++]|Axis| contain the actual instrument definition.
-The spectrometer is modelled as a hierarchy of the three principal axes, namely monochromator, sample and analyser.
-Each axis has three local coordinate systems, namely the rotation relative to the incoming and outgoing vector, respectively,
+The spectrometer is modelled as a hierarchy of the three principal instrument axes, namely monochromator, sample and analyser.
+Each axis has three local coordinate systems, namely the respective rotation relative to the incoming and outgoing vector,
 and an internal rotation which is decoupled from the other local rotations.
 Geometrical objects are derived from the abstract, purely virtual class \lstinline[language=C++]|Geometry| and can be
 coupled to any of these three local coordinate systems.
-This makes it possible to model neutron-optical components attached to the either the incoming or outgoing path of the
+This makes it possible to model neutron-optical components attached to either the incoming or outgoing path of the
 neutron beam at the specific axis. 
 It furthermore makes it possible to have components which rotate independently of the axis, for example a cryostat or
-a magnet on a separate rotation stage, as is usually the case.
+a magnet on a separate rotation stage, as is usually the case in practice.
 Physically, the outgoing coordinate system is equal to the scattering angle, while the internal angle corresponds
-to the crystal rocking angle (see chapter \ref{ch:xtal}).
+to the crystal rocking angle, where only the crystal is turned while keeping the scattering angle constant \cite{TODO} (see chapter \ref{ch:xtal}).
 The transformation matrices corresponding to the three local coordinate systems are calculated as follows:
 \begin{equation}
 \begin{split}
@@ -87,7 +88,7 @@ The situation is depicted in Fig. \ref{fig:tas_axes}.
 	Left panel: Local transformations for an axis. The symbols $R_{\mathrm{x}}^i$ are shorthands
 	for the rotation matrices $R\left( \theta_{\mathrm{x}}^i \right)$, with $x = \left\{ \mathrm{in,\, int,\, out} \right\}$.
 	$P^i$ is the point of origin for the axis.
-	Right panel: Three coupled axes build up the triple-axis spectrometer, with axes 1, 2, and 3 
+	Right panel: A hierarchy of three coupled axes build up the triple-axis spectrometer, with axes 1, 2, and 3 
 	naming the monochromator, the sample, and the analyser axis, respectively.
 	\label{fig:tas_axes}}
 \end{figure}
@@ -129,30 +130,40 @@ each $\left( 2\theta_S,\, 2\theta_M \right)$ position on the grid and tested for
 itself. Even though the instrument model itself is a three-dimensional representation of the spectrometer, we
 can nevertheless simplify the collision detection checks to a two-dimensional plane. The reason for this is
 that all possible obstacles in the instrument path, for instance walls and pillars, are upright and do not have
-any sloped angles. And even if they were sloped, one can alternatively use the maximum extents in a two-dimensional 
-representation and obtain the same results. The same is true for the instrument itself.
+any sloped angles. And even if they were sloped, one can alternatively use the maximum extents, i.e. a bounding box,
+in a two-dimensional representation and obtain the same results. The same is true for the instrument itself.
 The collision calculation on the two-dimensional grid is spread out on several processor cores using the 
 \lstinline[language=C++]|thread_pool| \cite{web_boost_asio_threadpool} class from the 
 \textit{Boost.Asio} \cite{web_boost_asio} asynchronous input/output library.
+A thread pool maintains a fixed number of threads, $n$, onto which it loads a variable number
+of tasks, $m$, where $m$ is usually larger than $n$. Each of the $n$ threads maintains a queue for the
+threads it receives and processes them sequentially. A good explanation fo thread pools can be 
+found in Ref. \cite[pp. 273-299]{Williams2012}.
 
 With the given two-dimensional simplifications, we only need to distinguish three possible 
 intersection tests for collisions: intersections between two polygons, which is done by an intersection
 test between their line segments, line segment-circle intersections for the cases when a polygon 
 collides with a circle, and circle-circle intersections. 
-For efficiency, the actual calculations are only made if the corresponding geometrical objects lie within 
+For efficiency, the actual calculations are only performed if the corresponding geometrical objects lie within 
 one another's axis-aligned bounding boxes \cite{web_aabb}.
 
 \subsubsection*{Line-line intersections}
 We realised two different methods for checking if two line segments intersect.
+
+\paragraph{Intersection check}
 The first one is a check without calculation of the actual intersection point. 
 This consists of testing if the two endpoints of line segment 1 are on two different sides of line
 segment 2, and vice versa \cite{TODO}. If both conditions are fulfilled, the two line segments intersect.
 While this test is efficient in the number of calculations, we need to do $\mathcal{O}\left(n \cdot m\right)$ checks
 to test the line segments of two polygons with $n$ and $m$ edges, respectively, for intersections with one another.
+
+\paragraph{Intersection calculation}
 For polygonal regions with a large number of edges, we implemented a sweep-based method which runs
 in $\mathcal{O}\left(n \log n\right)$ time for a total number of $n$ edges \cite{TODO}. 
-Before coming to the details, we first describe the calculation of the intersection of two lines in general.
+It can be seen that while the individual calculations are more involved than in the simpler intersection check, 
+they have to be performed less often for a large number of lines, $n$.
 
+Before coming to the details, we first describe the calculation of the intersection of two lines in general.
 Given two lines $\left|x_1\right> + \lambda_1 \left|d_1\right>$ and $\left|x_2\right> + \lambda_2 \left|d_2\right>$, 
 the line-line intersection can be calculated by setting their equations equal, namely as follows \cite{wiki_line_line_intersection}:
 \begin{equation}
@@ -233,9 +244,9 @@ The intersection points along the line are thus given by \cite{wiki_line_sphere_
 
 
 \subsubsection*{Circle-circle intersections}
-In this case we do not need the actual intersection points, so the calculation is restricted to calculation if
-the circles overlap. This is the case when the distance of their centres $\left| x_1 \right>$ and $\left| x_2 \right>$ 
-is less than the sum of their radii, $r_1$ and $r_2$, respectively:
+In this case we do not need the actual intersection points, so the calculation is restricted to checking if
+the circles (or spheres) overlap. This is the case when the distance of their centres 
+$\left| x_1 \right>$ and $\left| x_2 \right>$ is less than the sum of their radii, $r_1$ and $r_2$, respectively:
 \begin{equation}
 	\left< x_2 - x_1 \ |\ x_2 - x_1  \right> \ \leq \ \left( r_2 + r_1 \right)^2.
 \end{equation}
@@ -246,25 +257,24 @@ is less than the sum of their radii, $r_1$ and $r_2$, respectively:
 \subsection{Representation of configuration space as spatial index tree}
 \label{sec:walls_index_tree}
 Having discretised the angular configuration space on a grid, we next convert the positions
-of all occupied bins on the grid, which represent obstacles, in the form of a spatial index tree
-(see chapter \ref{sec:indextrees}).
-When calculating cost-functions for different path finding strategies in an upcoming step 
-(section \ref{sec:optimalpath}), we can make use of the index tree to efficiently query
-the angular position of the next wall from an arbitrary positions. 
+of all occupied bins on the grid, which represent obstacles, in the form of a spatial index tree,
+as described in chapter \ref{sec:indextrees}.
+When calculating cost functions for different path finding strategies in one of the upcoming steps 
+(section \ref{sec:optimalpath}), we can make use of the index tree for efficiently querying
+the angular position of the wall that is closest to an arbitrary positions. 
 It can furthermore be used to calculate the proximity of the instrument to the walls.
 
 Internally, we make use of the R* tree implementation from Boost.Geometry's \cite{web_boost_geometry}
-\lstinline[language=C++]|boost::geometry::index::rtree| class \cite{web_boost_geometry_rtree}.
-The R* tree implementation proved far more performant than alternate tests using a k-d tree.
+\lstinline[language=C++]|rtree| class \cite{web_boost_geometry_rtree}.
+In our tests, the R* tree implementation proved far more performant than alternate tests using a k-d tree.
 In the present use case, this is due to the fact that an R* tree is in smaller than the corresponding k-d tree
 because vertices are grouped into tuples of, in our case, 8.
 
 
 
-
 \subsection{Contour tracing}
 \label{sec:contourtracing}
-Having determined a bitmap representation of allowed and forbidden regions in the angular configuration space,
+Having already determined a bitmap representation of allowed and forbidden regions in the angular configuration space,
 we now need to trace the boundary contour between these regions.
 To this end we use the radial sweep algorithm \cite{web_radial_sweep} whose implementation can be found
 in the function \lstinline[language=C++]|geo::trace_boundary()| located in the file \lstinline|./src/libs/img.h|.
@@ -272,7 +282,7 @@ in the function \lstinline[language=C++]|geo::trace_boundary()| located in the f
 The radial sweep algorithm works as given below, following the descriptions in Ref. \cite{web_radial_sweep}:
 \begin{enumerate}
 	\item We scan the bitmap line by line and row by row until a forbidden region is found. 
-		If the corresponding pixel has already been seen, we continue. Otherwise it is marked as start pixel.
+		If the corresponding pixel has already been seen, we continue scanning. Otherwise it is marked as start pixel.
 	\item We set an arbitrary direction vector pointing to one of the eight neighbouring pixels.
 	\item The direction vector is rotated in a given, fixed sense, i.e. either in an always clockwise or 
 		always counter-clockwise fashion, until the pixel it points to is again inside a forbidden region.
@@ -280,20 +290,22 @@ The radial sweep algorithm works as given below, following the descriptions in R
 	\item The current pixel position is incremented using the newly found direction vector. 
 		We set the new direction vector to point from the new pixel to the old one and
 		add the line connecting the old and the new pixel to the boundary.
-	\item Step 3 is repeated until the start pixel is seen again (or no new direction vector is found).
+	\item Step 3 is repeated until either the start pixel is seen again or no new direction vector is found.
 \end{enumerate}
 
 
 
 \subsection{Line-segment generation and simplification}
 \label{sec:line_seg_generation}
-Panel (a) of Fig. \ref{fig:contour_simplification} shows a typical contour created by the previous step.
+After the preceding step, we now possess a list of pixel coordinates marking the boundaries of occupied regions
+in configuration space.
+Panel (a) of Fig. \ref{fig:contour_simplification} shows a typical contour created by the angular sweep algorithm.
 Line segments are now created between successive vertices, where one vertex is created for each pixel of the
 quantified contour. The situation is shown in panel (b).
 
 After creating the line segments from the traced contour lines, they have to be cleaned up and simplified,
 because the quantity of superfluous vertices would considerably slow down the generation of the Voronoi 
-diagram in a subsequent step of the algorithm.
+diagram in a subsequent step of the path-mesh building algorithm.
 In the function \lstinline[language=C++]|geo::simplify_contour()|, which resides in the file \lstinline|./src/libs/hull.h|,
 we perform two simplification steps:
 
@@ -305,7 +317,7 @@ for horizontal or vertical line segments between sloped line segments and remove
 horizontal or vertical segments.
 
 The second simplification step replaces collections of short collinear line segments with larger ones,
-thus replacing the staircase artefacts that the quantification step of the contour tracer had created,
+thus replacing the staircase artefacts, that the quantification step of the contour tracer had created,
 with proper diagonal lines. This is depicted in panel (d) of Fig. \ref{fig:contour_simplification}.
 To that end, we iterate through the vertices on the contour line and remove any vertices whose line segment angles
 involving the previous and the next vertex, respectively, are below a given small scalar value $\epsilon$, with $\epsilon > 0$.
@@ -338,11 +350,11 @@ involving the previous and the next vertex, respectively, are below a given smal
 \label{sec:convex_regions}
 The regions that were generated in the previous steps are in general concave. 
 This can pose a problem, because we also need to be able to move the instrument into positions near concave angles
-of the region's vertices, which generate ``alcoves'' in the region, see next section for a discussion.
+of the region's vertices, which generate ``alcoves'' in the region, see the next section for a discussion.
 
 In this step, we thus split the regions into convex sub-regions. 
 Note that in the final version of the code, this is implicitly handled in the next step, the generation of 
-the Voronoi diagram. We nevertheless describe the idea and the explicit implementation.
+the Voronoi diagram. We nevertheless describe the idea and an explicit implementation.
 
 The algorithm for splitting concave polygons into convex regions is given by D. Hegazy \cite{Hegazy2014},
 on whose descriptions we base our present implementation.
@@ -388,6 +400,8 @@ from walls, we need to calculate the Voronoi diagrams for the line segments
 that constitute these obstacles. 
 In a second step, we group line segments into objects in to remove bisecting lines 
 coming from the same object.
+Please refer to chapter \ref{sec:voro} for a description of Voronoi diagrams, and
+specifically to chapter \ref{sec:voro_ls} for line segment diagrams.
 
 It is not sufficient to represent the walls as isolated line segments, because -- 
 as we saw before -- they are not necessarily simply-connected. 
@@ -405,7 +419,7 @@ In case (b) collections of line segments, which form arbitrary concave polygons,
 are grouped grouped into regions. Here, the bisectors do not touch any region 
 and the resulting path is what is called the ``contour-parallel tool path'' in 
 the terms of \textit{CNC} (computer numerical control) milling machines \cite{Jeong1998, wiki_milling}, 
-where these kinds of paths are utilised. While the bisectors of this case could 
+a field where these kinds of paths are utilised. While the bisectors of this case could 
 be used for the spectrometer path mesh, a problem remains: In contrast to a milling
 machine the spectrometer is not supposed to be at the furthest distance of any
 polygonal region at all times, but has a starting and ending position which can 
@@ -438,7 +452,7 @@ to the Voronoi bisectors.
 Furthermore, a spatial index tree is created from the Voronoi vertices in the same 
 step as the graph construction.
 As before (section \ref{sec:walls_index_tree}), we again use the R* tree implementation
-from Boost.Geometry's \cite{web_boost_geometry} \lstinline[language=C++]|boost::geometry::index::rtree| 
+from Boost.Geometry's \cite{web_boost_geometry} \lstinline[language=C++]|rtree| 
 class \cite{web_boost_geometry_rtree} (chapter \ref{sec:indextrees}).
 The graph and the R* tree are queried in the path-finding step described in
 section \ref{sec:exepath}.
@@ -497,8 +511,8 @@ chapter \ref{sec:voro_ls}.
 \section{Finding the optimal path and the instrument motion}
 \label{sec:exepath}
 
-So far we have constructed a mesh of possible paths along which the instrument can move
-from one convex region to another convex region of the angular configuration space.
+So far we have constructed a mesh of possible paths along which the instrument can 
+potentially move from one convex region to another convex region of the angular configuration space.
 In the present section we describe the algorithm to find a possible start position on the
 path mesh to which the instrument can move from its initial configuration, which is
 not necessarily on the path mesh (section \ref{sec:startend}).
@@ -511,7 +525,7 @@ A concrete path is then determined between the calculated start and end position
 \subsection{Determination of the start and target coordinates}
 \label{sec:startend}
 
-For the start and target coordinate position, which have their respective 
+For the start and target coordinate positions, which have their respective 
 representation as large red and green points in Fig. \ref{fig:linesegs_path}, 
 we find the closest points on the respective nearest Voronoi bisector and save 
 these points as vertices on the generated path curve.
@@ -555,8 +569,8 @@ can readily be calculated using Dijkstra's algorithm \cite{wiki_dijkstra}.
 We now only need to specify a cost function to define what \textit{optimal} means exactly.
 
 \paragraph{Shortest path}
-A possible cost function is the length of the Voronoi diagram's edges, for the linear bisectors
-this is simply the Euclidian 2-norm,
+The most obvious possibility for a cost function is the length of the Voronoi diagram's edges, 
+for the linear bisectors this is simply the Euclidian 2-norm,
 \begin{equation}
 	f^{\mathrm{cost}}_1\left(\underline{v}, \underline{w} \right) \ = \ 
 	\left\Vert \underline{v} - \underline{w} \right\Vert_2 \ =\ \sqrt{\sum_i \left(v_i - w_i\right)^2},
@@ -772,14 +786,14 @@ concept is_graph = requires(t_graph& graph, std::size_t vertidx)
 
 
 \section{Summary}
-In summary, we presented a path-finding algorithm together with its implementation, which generates an angular 
+In summary, we presented a path-finding algorithm and its implementation, which generates an angular 
 representation of obstacles in a triple-axis instrument's path, calculates a mesh of skeletal bisectors between 
 convex regions, and calculates an optimal path between user-specified start and target positions. These positions
 can either be given as crystal coordinates or directly in angular configuration space.
 
 The implementation of this algorithm so far is a C++ library. Several user interfaces, among them a 
 graphical one, have also been developed. These are described in chapter \ref{ch:gui}.
-But before that, the next chapter first describes some necessary basic concepts that are needed for the 
+But before that, the upcoming chapter first describes some necessary basic concepts that are needed for the 
 graphical representation of the data.
 
 % -----------------------------------------------------------------------------
