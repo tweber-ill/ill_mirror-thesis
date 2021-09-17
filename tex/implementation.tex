@@ -295,7 +295,7 @@ The radial sweep algorithm works as given below, following the descriptions in R
 
 
 
-\subsection{Line-segment generation and simplification}
+\subsection{Line segment generation and simplification}
 \label{sec:line_seg_generation}
 After the preceding step, we now possess a list of pixel coordinates marking the boundaries of occupied regions
 in configuration space.
@@ -428,11 +428,13 @@ is not directly accessible from the present bisector configuration. This problem
 is solved in case (c).
 In case (c) the concave polygonal regions are split into convex sub-regions, see
 section \ref{sec:convex_regions}.
-The bisectors form what is called a skeletal bisector configuration \cite{Jeong1998, Couprie2007}.
-Here, each part of the instrumental configuration space can be reached from the
-bisector mesh and no bisectors inside forbidden regions exits. This configuration
-will be used in the software for calculating the bisector path mesh for instrument
-movement.
+The bisectors form what is called a skeletal bisector configuration \cite{Jeong1998, Couprie2007},
+and is closely related to the concept of the Voronoi diagram's 1-skeleton 
+\cite[p. 111]{Boissonnat2006} that was briefly discussed in chapter \ref{sec:voro_median}.
+From the skeletal bisector mesh, each part of the instrumental configuration space 
+can be reached, and no bisectors inside forbidden regions exit. 
+This configuration will be used in the software for calculating the bisector 
+path mesh for instrument movement.
 
 In the implementation we distinguish between contours and inverted contours, with 
 the former enclosing forbidden regions (and having an open allowed region outside) 
