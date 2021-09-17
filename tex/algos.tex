@@ -33,6 +33,7 @@ generalising from \cite[p. 140]{Icking2001},
 \begin{equation}
 	B\left(\underline{s}_1,\, \underline{s}_2\right)\ =\ \left\{ \underline{x} \in V \ |\ 
 		\left\Vert \underline{x} - \underline{s}_1 \right\Vert = \left\Vert \underline{x} - \underline{s}_2 \right\Vert \right\}.
+	\label{eq:bisector}
 \end{equation}
 Even though this definition of Voronoi diagrams does not restrict the vector space to the $\mathbb{R}^n$ 
 and the underlying metric to the usual Euclidian one, 
@@ -146,7 +147,7 @@ between a line segment endpoint and one inner point of the other segment. This i
 a point and a line and its parabolic shape is proven in \cite[pp. 260-261]{FUH_geo2020}.
 An example of two or several line segment sites and their bisectors is shown in Fig. \ref{fig:linesegs_voro}.
 
-\begin{figure}[h]
+\begin{figure}[htb]
 	\begin{minipage}{1 \textwidth}
 		\begin{center}
 			\includegraphics[width = 0.7 \textwidth]{figures/linesegs}
@@ -172,9 +173,13 @@ An example of two or several line segment sites and their bisectors is shown in 
 
 
 
+
 \subsection{Voronoi diagrams for curves}
 \label{sec:voro_median}
-TODO: \cite{wiki_medial}, \cite{Boissonnat2006}, \cite{Cazals2006}.
+A generalisation of Voronoi diagrams for curves or, more generally, curved hypersurfaces in $\mathbb{R}^n$ under 
+an Euclidian metric, are the so-called \textit{medial axes} or \textit{topological skeletons} 
+\cite{wiki_medial, wiki_medial2, wiki_skeleton}, which are comprehensively described in 
+Refs. \cite[pp. 109-114]{Boissonnat2006} and \cite[pp. 244-252]{Cazals2006}, both of which we follow here.
 
 
 
