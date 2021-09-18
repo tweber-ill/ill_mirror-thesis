@@ -217,7 +217,7 @@ by W. Schumann \cite{DiplomaSchumann}, as well as the Voronoi calculator \cite{w
 by A. Sydorchukof, which is part of the \textit{Boost.Polygon}  \cite{web_boost_polygon, Simonson2009} 
 C++ library.
 A further noteworthy library, which is capable of caluclating 2D Voronoi diagrams and Delaunay triangulations
-for both vertex and line segment sites is the \textit{2D Segment Delaunay Graphs} library by M. Karavelas \cite{web_2dsegdel} 
+for both vertex and line segment sites is the \textit{2D Segment Delaunay Graphs} library by M. Karavelas \cite{web_2dsegdel, Karavelas2004, Karavelas2006} 
 which is part of the \textit{CGAL} \cite{web_cgal} software package.
 The first three libraries are not feasible for the present project, though: 
 \begin{itemize}
@@ -241,7 +241,10 @@ The first three libraries are not feasible for the present project, though:
 		inability to handle intersecting lines, because the intersection point may be at a non-integer coordinate. 
 		Intersecting lines need to be carefully filtered out before calculation, because they can unfortunately cause the 
 		\textit{Boost.Polygon} library to either crash, hang, or yield wrong bisectors.
-	\item The \textit{2D Segment Delaunay Graphs} library \cite{web_2dsegdel} also fulfills all requirements with respect
+		An advantage of using integers is that we can create polygonal objects out of line
+		segments and calculate their Voronoi diagrams without having to define an epsilon 
+		environment for coinciding vertices.
+	\item The \textit{2D Segment Delaunay Graphs} library \cite{web_2dsegdel, Karavelas2004, Karavelas2006} also fulfills all requirements with respect
 		to its open-source licensing model and its capabilities to calculate line segment Voronoi diagrams, even for 
 		intersecting line segments. We nevertheless opt for \textit{Boost.Polygon} because with its optimisation
 		for integer numbers we can generally expect a better performance, which is crucial for the large number of

@@ -677,7 +677,7 @@ dijk_mod(const t_graph& graph, const std::string& startvert,
 	const std::size_t N = graph.GetNumVertices(); // number of vertices
 	using t_weight = typename t_graph::t_weight;  // weight type from the generic graph type
 
-	std::vector<t_weight> dists;                  // vector of distances and predecessors
+	std::vector<t_weight> dists;                  // vectors of distances and predecessors
 	std::vector<std::optional<std::size_t>> predecessors;
 	dists.resize(N); predecessors.resize(N);      // allocate the space needed for N vertices
 
