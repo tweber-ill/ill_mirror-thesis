@@ -227,7 +227,7 @@ The first three libraries are not feasible for the present project, though:
 		It is available under an open-source license, but our first tests deemed it too unstable 
 		for use in a production-quality software. 
 		The source code for our tests can be found in the function \lstinline[language=C++]|geo::calc_voro_ovd()|, 
-		which resides in file \lstinline|./src/libs/hull.h| of the accompanying code archive. 
+		which resides in file \lstinline|./src/libs/voronoi_lines.h| of the accompanying code archive. 
 		The source code for the test tool itself is located in: \lstinline|./src/tools/lines.cpp|.
 	\item \textit{VoroLS} \cite{DiplomaSchumann} is stable and does even handle intersecting lines, but is a \textit{Java}
 		software, not a library, and is not under an open-source license.
@@ -258,7 +258,7 @@ The first three libraries are not feasible for the present project, though:
 \paragraph{Performance comparison}
 Figure \ref{fig:voro_performance} shows a performance comparison between the \textit{Boost.Polygon} and
 the \textit{CGAL / 2D Segment Delaunay Graphs} libraries.
-The curves show the times needed to calculate the Voronoi diagrams for random non-intersecting line segments
+The curves depict the times needed to calculate the Voronoi diagrams for random non-intersecting line segments
 using a \textit{AMD Ryzen 7 2700} CPU.
 Several runs were performed for an increasing number of line segments and the same random line segments were
 used as input for both libraries per run.
@@ -276,11 +276,11 @@ are easier for Voronoi diagram calculation had been generated for every single r
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[width = 0.5 \textwidth]{figures/voronoi_performance}
+		\includegraphics[width = 0.55 \textwidth, trim=0.5cm 0.2cm 0.5cm 0.75cm, clip]{figures/voronoi_performance}
 	\end{center}
 	\caption[Voronoi calculation performance.]{
 		Comparison of the times needed to calculate the line segment Voronoi diagrams for an increasing
-		number of random line segments using the \textit{Boost.Polygon} (``Boost'') \cite{web_boost_polygon}
+		number of random line segments using the \textit{Boost.Polygon} (labelled ``Boost'') \cite{web_boost_polygon}
 		and the \textit{CGAL / 2D Segment Delaunay Graphs} (``CGAL'') \cite{web_2dsegdel} libraries.
 		\label{fig:voro_performance}}
 \end{figure}

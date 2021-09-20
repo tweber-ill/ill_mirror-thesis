@@ -43,9 +43,9 @@ performs several kinds of computations to test the line-based algorithms that ar
 
 The most important of these is the calculation of line segment Voronoi diagram bisectors as shown in 
 Fig. \ref{fig:linesgui} (a), please also refer to chapter \ref{sec:voro_ls}.
-To that end, it uses two different backend libraries between which the user can switch dynamically in
-the program. These libraries are \textit{Boost.Polygon}'s Voronoi module \cite{web_boost_polygon_voronoi} for one
-and \textit{OpenVoronoi} \cite{web_openvoronoi} for the other.
+To that end, it uses three different backend libraries between which the user can switch dynamically in
+the program. These three backend libraries are \textit{Boost.Polygon}'s Voronoi module \cite{web_boost_polygon_voronoi},
+the \textit{2D Segment Delaunay Graphs} \cite{web_2dsegdel} library, and \textit{OpenVoronoi} \cite{web_openvoronoi}.
 The correctness of the calculation is furthermore checked by iterating the points of the $\mathbb{R}^2$ plane
 on a grid and testing to which line segment they are closest. These are the coloured regions in Fig. \ref{fig:linesgui} (a).
 The line segment tool can load the regions of the angular configuration space that are calculated in the main
