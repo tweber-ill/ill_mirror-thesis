@@ -429,8 +429,9 @@ is solved in case (c).
 In case (c) the concave polygonal regions are split into convex sub-regions, see
 section \ref{sec:convex_regions}.
 The bisectors form what is called a skeletal bisector configuration \cite{Jeong1998, Couprie2007},
-and is closely related to the concept of the Voronoi diagram's 1-skeleton 
-\cite[p. 111]{Boissonnat2006} that was briefly discussed in chapter \ref{sec:voro_median}.
+and are closely related to the concept of the 1-skeleton or medial axis 
+\cite[p. 111]{Boissonnat2006}, the generalised Voronoi diagram for curves that was 
+discussed in chapter \ref{sec:voro_median}.
 From the skeletal bisector mesh, each part of the instrumental configuration space 
 can be reached, and no bisectors inside forbidden regions exit. 
 This configuration will be used in the software for calculating the bisector 
@@ -468,11 +469,13 @@ The Voronoi diagram of these regions is calculated in the member function
 It calls the backend function \lstinline[language=C++]|geo::calc_voro()|, which is part
 of the library and can be found in the file \lstinline|./src/libs/voronoi_lines.h|.
 
-For the calculation of the line segment Voronoi diagrams in the present implementation, 
-the Voronoi extensions \cite{web_boost_polygon_voronoi} of the \textit{Boost.Polygon} 
-\cite{web_boost_polygon, Simonson2009} C++ library are used, see the discussion in 
-chapter \ref{sec:voro_ls}.
-
+For the calculation of the line segment Voronoi diagrams the software uses either of two
+backends, between which the user can freely switch: These are the the Voronoi 
+extensions \cite{web_boost_polygon_voronoi} of the \textit{Boost.Polygon} 
+\cite{web_boost_polygon, Simonson2009} C++ library for one,
+and the \textit{2D Segment Delaunay Graphs} library \cite{web_2dsegdel, Karavelas2004, Karavelas2006} 
+from the \textit{CGAL} software package \cite{web_cgal} for the other,
+see the discussion in chapter \ref{sec:voro_ls}.
 
 \begin{figure}
 	\begin{minipage}{0.5 \textwidth}
