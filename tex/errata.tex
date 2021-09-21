@@ -5,7 +5,7 @@
 % @license see 'LICENSE' file
 %
 
-\chapter{Online Resources and Future Errata}
+\chapter{Accompanying Software and Future Errata}
 \label{ch:online}
 
 \paragraph{Software source code}
@@ -30,6 +30,50 @@ ca04a9a9471cd23e\\
 154109926f33e147\\
 50bc23cb2ccd55c0.\\
 \end{centering}
+
+
+
+\paragraph{Source code layout}
+The layout of the software's source code archive is shown in table \ref{tab:sourcelayout}.
+
+\begin{table}[htb]
+	\centering
+	\begin{tabular}{|c c|c|c|}
+		\hline
+		\bf{Folder} & & \bf{Explanation} & \bf{References} \tabularnewline
+		\hline
+		src/ & & Main source directory. & \tabularnewline
+		       & libs/ & Library of geometry algorithms and data structures. & Chapter \ref{ch:algos}. \tabularnewline
+		       & core/ & Core TAS path finding library. & Chapters \ref{ch:impl} and \ref{sec:library}. \tabularnewline
+		       & gui/ & Graphical user interface and 3-D editor/viewer. & Chapter \ref{sec:gui}. \tabularnewline
+		       & tools/ & Helper and auxiliary tools. & Chapter \ref{sec:tests_tools}. \tabularnewline
+		\hline
+		scripting/ & & Python scripting interface. & Chapter \ref{sec:scripting} \tabularnewline
+		\hline
+		unittests/ & & Unit tests. & Chapter \ref{sec:unit_tests}. \tabularnewline
+		\hline
+		tests/ & & Small (performance) test programs. & \tabularnewline
+		\hline
+		res/ & & Resource files, e.g. shader scripts. & \tabularnewline
+		\hline
+		cmake/ & & Modules for the \textit{CMake} \cite{TODO} build system. & \tabularnewline
+		\hline
+		setup/ & & Compile and setup scripts for... & \tabularnewline
+		\hline
+		           & osx/ & ... \textit{MacOS}, & \tabularnewline
+		           & deb/ & ... \textit{GNU/Linux}, mainly \textit{Ubuntu}, & \tabularnewline
+		           & mingw/ & ... \textit{MinGW}. & \tabularnewline
+		\hline
+		tlibs2/ & & Mathematical template library developed  & \cite{Takin2016, Takin2017, Takin2021, DiplomaWeber, PhDWeber} \tabularnewline
+		           & & during my physics diploma and PhD thesis. & \tabularnewline
+		\hline
+		externals/ & & Further external library dependencies. & \tabularnewline
+		\hline
+	\end{tabular}
+	\caption[Source code layout.]{Layout of the source code.}
+	\label{tab:sourcelayout}
+\end{table}
+
 
 
 \paragraph{Thesis source code}
