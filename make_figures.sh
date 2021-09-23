@@ -22,7 +22,7 @@ if [ "$CONVERTER" = "" ]; then
 fi
 
 if [ "$DOT" = "" ]; then
-	echo -e "\n\nError: Dot, which is used for graph creation, was not found.\n\n"
+	echo -e "\n\nError: Dot/Graphviz, which is used for graph creation, was not found.\n\n"
 	exit -1
 fi
 
