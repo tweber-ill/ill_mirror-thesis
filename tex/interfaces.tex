@@ -152,7 +152,7 @@ in chapters \ref{ch:intro} and \ref{ch:xtal}.
 The fields names ``$d$ spacings'' correspond to the spacing of the crystal planes in the 
 monochromator and analyser crystals. In our examples we use the value of $d=3.355 \AA{}$
 which corresponds to scattering on the $\left(002\right)$ Bragg reflection of highly oriented
-pyrolithic graphite (HOPG) \cite{TODO}, which is one of the standard crystals used as a
+pyrolithic graphite (HOPG) \cite[p. 250]{Shirane2002}, which is one of the standard crystals used as a
 monochromator or analyser in a TAS instrument.
 Finally, the check boxes named ``scattering senses'' control the sign of the scattering angles.
 If the box is checked, a positive angle corresponds to a counterclockwise sense, i.e. corresponding
@@ -323,7 +323,7 @@ as it has become one of the most popular programming language in neutron science
 As the core module already has the structure of a library, the effort to offer scripting functionality
 was minimal. Only a few helper functions had to be included in several classes, because \textit{SWIG}
 is not yet fully \textit{C++20} compliant and had some problems with new language features such as 
-template concepts \cite{TODO}.
+template concepts \cite{cppwiki_concepts}.
 The \textit{SWIG} interface definition, which maps the \textit{C++} classes to corresponding \textit{Python} 
 classes of the same name, can be found in the file \lstinline|./scripting/taspaths.i| of the source repository.
 

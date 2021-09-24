@@ -24,8 +24,9 @@ driven at the same time independently, but instead piped through the plug-in mod
 The module will give back a list of drive commands to \textit{NOMAD} which drives the instrument
 along the determined optimal path in a step-wise fashion.
 
-A second step will include an interface with the independent \textit{NOMAD 3D} \cite{TODO} software to replace the
-collision detection performed on the simplified model with the full \textit{CAD} model \cite{TODO} of the instrument.
+A second step will include an interface with the independent \textit{NOMAD 3D} \cite{web_NOMAD3d}
+software to replace the collision detection performed on the simplified model with the full \textit{CAD}
+model \cite{ThalesModel2021} of the instrument.
 So far, \textit{NOMAD 3D} tries to calculate collisions between all polygons of the \textit{CAD} model, 
 but -- as expected -- does not come to a result before running out of memory and time.
 This problem of \textit{NOMAD 3D} might never be solved. 

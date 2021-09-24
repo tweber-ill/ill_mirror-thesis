@@ -53,7 +53,7 @@ neutron beam at the specific axis.
 It furthermore makes it possible to have components which rotate independently of the axis, for example a cryostat or
 a magnet on a separate rotation stage, as is usually the case in practice.
 Physically, the outgoing coordinate system is equal to the scattering angle, while the internal angle corresponds
-to the crystal rocking angle, where only the crystal is turned while keeping the scattering angle constant \cite{TODO} (see chapter \ref{ch:xtal}).
+to the crystal rocking angle, where only the crystal is turned while keeping the scattering angle constant \cite[p. 87]{Shirane2002} (see chapter \ref{ch:xtal}).
 The transformation matrices corresponding to the three local coordinate systems are calculated as follows:
 \begin{equation}
 \begin{split}
@@ -651,8 +651,8 @@ using the standard C++ functions \lstinline[language=C++]|std::make_heap()| and
 As it is compact enough, the implementation is printed in listing \ref{lst:dijkstra}.
 Note that the implementation is generic, because it does not insist on a specific class
 for the underlying graph. Instead it keeps the graph type, \lstinline[language=C++]|t_graph|, open and
-only requires that it fulfill the template concept \lstinline[language=C++]|is_graph|, which is
-given in listing \ref{lst:graph_concept}.
+only requires that it fulfill the template concept \cite{cppwiki_concepts}
+\lstinline[language=C++]|is_graph|, which is given in listing \ref{lst:graph_concept}.
 For the software package, we offer two graph implementations, one based on the adjacency list, the
 other on the adjacency matrix, as discussed in chapter \ref{sec:graphs}.
 The algorithm is furthermore agnostic towards the cost function and its interna and dependent 
