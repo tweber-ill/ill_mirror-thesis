@@ -35,6 +35,15 @@ The simplified model may be thought of as the bounding boxes and cylinders of th
 The results are still correct and just rationalise away all details close to obstacles, which should
 anyway be avoided.
 
+Another development for the future that was suggested by M. B\"ohm, the leader of the spectroscopy 
+group at the ILL, might include the use of a depth camera for automatic generation and update 
+of the obstacle positions. The camera would be at a fixed position above the instrument
+space, where it has full coverage. The depth values would be used to identify any objects above the
+instrument floor. Such a strategy has already been tested in the field of robot motion planning and 
+algorithms for identifying objects are available \cite{Biswas2012}.
+Such a feature might be useful to include non-fixed geometry such as helium cans or ladders
+that may be present in the instrument space.
+
 A first general presentation of the software of this work will take place at the 
 \textit{Innovative Inelastic Neutron Scattering} workshop in Autrans-M\'eaudre-en-Vercors, France 
 in October 2021.
