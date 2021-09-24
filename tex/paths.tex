@@ -45,6 +45,19 @@ of moving in the direction of the target, fully circling a potential obstacle in
 returning to the obstacle's point of closest distance to the target and repeating
 \cite[Ch. 7.3.1, pp. 323-326]{FUH_geo2020}.
 
+A still more sophisticated strategy is the \textit{continuous angular bisector}
+(CAB) \cite{Icking1995}, which solves the specific problem of finding the visibility kernel
+of a robot inside a simple, star-shaped polygon, where the kernel is defined as the
+region where the entire polygon is visible, and ``star-shaped'' means that such a
+non-empty kernel exists \cite[Ch. 7.4.5, pp. 347-351]{FUH_geo2020}.
+The robot does not know the shape of the polygonal region beforehand, but is equipped
+with a camera system and memory that allows it to map out its environment on the go.
+The strategy works by moving the robot along a path that increases its own visibility
+polygon until it coincides with the original polygon, at which point the kernel has been
+reached; the movement of the robot continuously follows the angular bisector of the
+``gaining wedge'', the wedge-shaped region along which the robot's visibility of the
+polygon increases \cite[p. 261]{Icking1995}.
+
 In difference to these case studies, the robot arm in question in this work --
 the triple-axis spectrometer -- has full information of its surroundings.
 The geometry of the instrument, the position of all obstacles, as well
