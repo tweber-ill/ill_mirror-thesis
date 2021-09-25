@@ -34,20 +34,20 @@ i.e. a basic robotic vacuum cleaner.
 Such a robot is capable of finding a path out of a maze using the Pledge algorithm,
 which consists of noting the angle of an initially arbitrary direction, repeatedly
 moving along that direction until an obstacle is hit, and then moving parallel to the
-obstacle's faces as long as the accumulated angle is not at its initial value,
-e.g. 0 degrees, again \cite[Ch. 7.2, pp. 316-322]{FUH_geo2020}.
+obstacle's faces as long as the accumulated angle is not at its initial value again,
+e.g. $0$ degrees \cite[Ch. 7.2, pp. 316-322]{FUH_geo2020}.
 
 If -- aside from the tactile sensor and the angular sense -- the robot also knows
-its current position relative to the target point, it can execute a bug algorithm
-to reach its target, which is based on the movement of insects.
+its current position relative to the target point, it can execute a \textit{bug algorithm}
+to reach its target, these are algorithms which are based on the movement of insects.
 Several of these algorithms exist \cite{Choset2010_ch2}, and the basic idea consists
 of moving in the direction of the target, fully circling a potential obstacle in the way,
 returning to the obstacle's point of closest distance to the target and repeating
 \cite[Ch. 7.3.1, pp. 323-326]{FUH_geo2020}.
 
 A still more sophisticated strategy is the \textit{continuous angular bisector}
-(CAB) \cite{Icking1995}, which solves the specific problem of finding the visibility kernel
-of a robot inside a simple, star-shaped polygon, where the kernel is defined as the
+(CAB) \cite{Icking1995}, which solves the specific problem of a robot finding the visibility kernel
+of a simple, star-shaped polygon, in whose boundaries the robot navigates, where the kernel is defined as the
 region where the entire polygon is visible, and ``star-shaped'' means that such a
 non-empty kernel exists \cite[Ch. 7.4.5, pp. 347-351]{FUH_geo2020}.
 The robot does not know the shape of the polygonal region beforehand, but is equipped
@@ -74,8 +74,8 @@ We continue to review such strategies in the following sections.
 \subsection{Sector-based method}
 \label{sec:pointrobot_sector}
 An algorithm for motion planning in a point-like robot based on decomposing the 
-available space into sectors is given in Ref. \cite[Ch. 13, pp. 283-306]{Berg2008}, 
-whose descriptions we follow in this section. 
+available space into sectors is given in the book by Berg \textit{et al.}
+\cite[Ch. 13, pp. 283-306]{Berg2008}, whose descriptions we follow in this section. 
 While the book chapter also describes polygonal robots, we limit ourselves to the 
 parts that are relevant for the present work.
 
@@ -304,7 +304,7 @@ The two tasks comprise these following steps:
 			shape in this representation and are not necessarily geometric 
 			primitives, as seen in Fig. \ref{fig:tas_wall}.
 		\item Approximate the traced contour curves with line segments.
-		\item Simplify the line segments. This is necessary because the line 
+		\item Simplify the line segments. This is needed because the line 
 			segments generated in the previous step are not optimal:
 			First, they may contain back-to-back collinear lines which can be 
 			unified. Second, jagged edges and zigzag lines may be
@@ -329,6 +329,9 @@ The two tasks comprise these following steps:
 			These are generated in the previous step because, there, no 
 			differentiation was made between the ``inside'' and ``outside'' 
 			regions of the convex line segment contour groups.
+			This will in the end give a mesh that coincides with the
+			topological 1-skeleton of the obstacles in configuration space, 
+			see chapter \ref{sec:voro_median}.
 	\end{enumerate}
 
 	\item Finding the instrument path and executing its motion, this is the 
@@ -363,9 +366,9 @@ The two tasks comprise these following steps:
 
 \section{Summary}
 Different approaches to path-finding for a robotic system were discussed in this chapter.
-The best strategy to the problem at hand is a Voronoi-diagram based construction of
-a mesh of possible paths and an application of the classic Dijkstra algorithm for 
-finding a specific path on the mesh.
-An algorithm for such a task was introduced on a very general level.
+The best strategy to the problem at hand where the robot has full information of its
+surroundings is a Voronoi-diagram based construction of a mesh of possible paths and 
+an application of the classic Dijkstra algorithm for finding a specific path on the mesh.
+An algorithm for such a task was introduced on a very general level in this chapter.
 Describing the details of this algorithm together with an implementation in C++  
 will be left to the next chapter.
