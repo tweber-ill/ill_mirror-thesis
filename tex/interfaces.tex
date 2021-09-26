@@ -379,13 +379,25 @@ As can be seen, issuing such a drive command would lead to a collision of the an
 \end{figure}
 
 
-\paragraph{Solution}
-TODO
 
+\paragraph{Solution}
+The problem of avoiding the collision with the outer wall  is easily solved using by calculating the 
+path along the skeleton mesh using the software. Figures \ref{fig:casestudy_sequence1} and 
+\ref{fig:casestudy_sequence2} show key frames of the driving sequence from the start to the 
+target position.
+As can be seen in the figure panels, the algorithm ensures that first the monochromator 
+(related to the energy) is driven primarily, while the sample scattering angle (related to the momentum) 
+is initially driven away from the wall and in the opposite direction than that of its final position (Steps 1-3
+in the panels of Fig. \ref{fig:casestudy_sequence1}).
+The second part of the sequence primarily drives the sample scattering angle to nearly its
+envisaged end position while also still continuing to drive the monochromator (Steps 3-4
+in Figures \ref{fig:casestudy_sequence1} and \ref{fig:casestudy_sequence2}).
+The third and final part continued driving the sample scattering angle, but drives the monochromator
+back a bit, until both reach their target position (Steps 4-5 in Fig. \ref{fig:casestudy_sequence2}).
 
 \begin{figure}[htb]
 		\begin{center}
-			\includegraphics[width = 0.4 \textwidth]{figures/casestudy_15_15_05_10meV}
+			\includegraphics[width = 0.4 \textwidth]{figures/casestudy_step0}
 			\hspace{0.5cm}
 			\includegraphics[width = 0.55 \textwidth]{figures/casestudy_path}
 			\vspace{0.2cm}
@@ -397,7 +409,8 @@ TODO
 			\hspace{0.5cm}
 			\includegraphics[width = 0.55 \textwidth]{figures/casestudy_step2_cfg}
 		\end{center}
-	\caption[Case study: Path 1/2.]{
+	\caption[Case study: Path 1/2.]{The first three steps of the path leading from the start
+		to the target position and avoiding the collision with the outer wall.
 		\label{fig:casestudy_sequence1}}
 \end{figure}
 
@@ -407,11 +420,12 @@ TODO
 			\hspace{0.5cm}
 			\includegraphics[width = 0.55 \textwidth]{figures/casestudy_step3_cfg}
 			\vspace{0.2cm}
-			\includegraphics[width = 0.4 \textwidth]{figures/casestudy_2_2_0_0meV}
+			\includegraphics[width = 0.4 \textwidth]{figures/casestudy_step4}
 			\hspace{0.5cm}
 			\includegraphics[width = 0.55 \textwidth]{figures/casestudy_2_2_0_0meV_cfg}
 		\end{center}
-	\caption[Case study: Path 2/2.]{
+	\caption[Case study: Path 2/2.]{The second two steps of the path leading from the start
+		to the target position and avoiding the collision with the outer wall.
 		\label{fig:casestudy_sequence2}}
 \end{figure}
 
