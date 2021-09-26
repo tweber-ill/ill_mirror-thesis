@@ -306,24 +306,82 @@ The library \textit{QCustomPlot} \cite{web_QCustomPlot} is used for plotting.
 \end{figure}
 
 
-\subsection{Typical workflow}
-\begin{figure}[htb]
+\subsection{Case study and illustrative example}
+We proceed to present an illustrative example modelled after a situation that arose during an 
+experiment that we performed at \textit{Thales} \cite{thales} some time ago. 
+The situation is an archetypical one which can be automatised and visualised using the present software. 
+The software was not yet available at the time of the experiment, though, so we still had to resort 
+to long-winded manual driving of the instrument.
+
+\paragraph{Problem}
+After a series of scans, the instrument reached a position of 
+$Q_\mathrm{start}\,=\,\left(1.5,\ 1.5,\ 0.5\right)\, \mathrm{rlu}$ and  $E_\mathrm{start}\,=\,10\, \mathrm{meV}$, where
+$Q$ and $E$ refer to the momentum and energy transfer from the neutron to the crystal, respectively,
+and ``rlu'' stands for \textit{relative lattice units}, see chapter \ref{ch:xtal}. 
+The real-space position of the instrument corresponding to these crystal coordinates is depicted in Fig. \ref{fig:casestudy_start}.
+The crystal in question was cubic and had the lattice constant of $a = 8.9\,\textup{\AA}$, it was
+oriented in a $(hhl)$ scattering plane, meaning that the plane was spanned by the vectors
+$\left[1,\, 1,\, 0\right]$ and $\left[0,\, 0,\, 1\right]$.
+
+For the next scans, the instrument was to drive back to the $\left(220\right)$ Bragg peak, 
+i.e. to the coordinates $Q_\mathrm{target}\,=\,\left(2,\ 2,\ 0\right)\, \mathrm{rlu}$ and  $E_\mathrm{target}\,=\,0\, \mathrm{meV}$,
+whose corresponding instrument configuration is depicted in Fig. \ref{fig:casestudy_target}.
+Naively, one might assume that it were safe to directly drive the instrument from $\left(Q_\mathrm{start},\, E_\mathrm{start}\right)$
+to $\left(Q_\mathrm{target},\, E_\mathrm{target}\right)$, as at least these two limiting positions are safe and nothing seems to block
+the intermediate positions.
+
+The control software would drive all motors at the same time, and the problem lies in the fact that not all motors
+drive equally fast. The monochromator motors, which are responsible for selecting the energy transfer $E$ are
+much slower than the two sample motors which drive the momentum transfer $Q$. In practice this would lead to
+the situation where $Q$ has already reached the target position, while $E$ is still near its starting point, i.e. the 
+mixed coordinate $\left(Q_\mathrm{target},\, E_\mathrm{start}\right)$, which is shown in Fig. \ref{fig:casestudy_collision}.
+As can be seen, issuing such a drive command would lead to a collision of the analyser drum with the outer wall.
+
+\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width = 0.4 \textwidth]{figures/casestudy_15_15_05_10meV}
 			\hspace{0.5cm}
 			\includegraphics[width = 0.55 \textwidth]{figures/casestudy_15_15_05_10meV_cfg}
-			\vspace{0.2cm}
+		\end{center}
+	\caption[Case study: Start position.]{Start position shown in real (left) and in angular configuration space (right), 
+		where the red dot indicates the current instrument position. 
+		After some measurement the instrument was at a position
+		corresponding to the crystal coordinates $Q_\mathrm{start}\,=\,\left(1.5,\ 1.5,\ 0.5\right)\, \mathrm{rlu}$ and 
+		energy transfer $E_\mathrm{start}\,=\,10\, \mathrm{meV}$.
+		\label{fig:casestudy_start}}
+\end{figure}
+
+\begin{figure}[H]
+		\begin{center}
 			\includegraphics[width = 0.4 \textwidth]{figures/casestudy_2_2_0_0meV}
 			\hspace{0.5cm}
 			\includegraphics[width = 0.55 \textwidth]{figures/casestudy_2_2_0_0meV_cfg}
-			\vspace{0.2cm}
+		\end{center}
+	\caption[Case study: Target position.]{Target position shown in real (left) and in angular configuration space (right). 
+		The next set of measurements required the instrument
+		to move to the crystal coordinates $Q_\mathrm{target}\,=\,\left(2,\ 2,\ 0\right)\, \mathrm{rlu}$ and 
+		energy transfer $E_\mathrm{target}\,=\,0\, \mathrm{meV}$.
+		\label{fig:casestudy_target}}
+\end{figure}
+
+\begin{figure}[H]
+		\begin{center}
 			\includegraphics[width = 0.4 \textwidth]{figures/casestudy_2_2_0_10meV}
 			\hspace{0.5cm}
 			\includegraphics[width = 0.55 \textwidth]{figures/casestudy_2_2_0_10meV_cfg}
 		\end{center}
-	\caption[Case study: Start and target position.]{
-		\label{fig:casestudy_start_target}}
+	\caption[Case study: Collision.]{Collision. 
+		If one were to drive the instrument directly from $\left(Q_\mathrm{start},\, E_\mathrm{start}\right)$ (Fig. \ref{fig:casestudy_start})
+		to $\left(Q_\mathrm{target},\, E_\mathrm{target}\right)$ (Fig. \ref{fig:casestudy_target}), the instrument 
+		would collide with the outer wall due to the monochromator motors being much slower than the other 
+		motors of the instrument (see text for more explanations).
+		\label{fig:casestudy_collision}}
 \end{figure}
+
+
+\paragraph{Solution}
+TODO
+
 
 \begin{figure}[htb]
 		\begin{center}
