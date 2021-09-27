@@ -410,7 +410,11 @@ back a bit, until both reach their target position (Steps 4-5 in Fig. \ref{fig:c
 			\includegraphics[width = 0.55 \textwidth]{figures/casestudy_step2_cfg}
 		\end{center}
 	\caption[Case study: Path 1/2.]{The first three steps of the path leading from the start
-		to the target position and avoiding the collision with the outer wall.
+		to the target position and avoiding the collision with the outer wall. As before, the
+		left-hand sides show the real-space instrumental configuration, while the right-hand
+		sides show the corresponding angular configuration space with the red dot indicating the
+		current instrument position, and the green dot being the target position.
+		The calculated optimal path is drawn as a yellow line.
 		\label{fig:casestudy_sequence1}}
 \end{figure}
 
@@ -426,6 +430,10 @@ back a bit, until both reach their target position (Steps 4-5 in Fig. \ref{fig:c
 		\end{center}
 	\caption[Case study: Path 2/2.]{The second two steps of the path leading from the start
 		to the target position and avoiding the collision with the outer wall.
+		The left-hand sides show the real-space instrumental configuration, while the right-hand
+		sides show the corresponding angular configuration space with the red dot indicating the
+		current instrument position, and the green dot being the target position.
+		The calculated optimal path is drawn as a yellow line.
 		\label{fig:casestudy_sequence2}}
 \end{figure}
 
@@ -694,6 +702,7 @@ if show_plot:
 The modular design of the software keeps the interface code separate from the calculation core.
 Several different types of interfaces were discussed in this chapter, most prominently the graphical 
 user interface, which provides the most accessible way for the end user to use the software.
-A separate scripting interface makes it easy to automatise calculations and interface with other
-software tools.
-
+We demonstrated a typical situation of the instrument colliding with an outer wall, which arose 
+during one of our past measurements, and which can be solved graphically using the software's GUI.
+A separate scripting interface makes it easy to automatise calculations on the command line and 
+to interface with other software tools.
