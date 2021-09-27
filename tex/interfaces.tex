@@ -97,7 +97,7 @@ source repository, see chapter \ref{ch:online} for more information.
 The functions of the individual control elements of the main GUI, which are marked as (a)-(f)
 in Fig. \ref{fig:gui}, are explained in the following sections. Each of the panels corresponds to a specific
 functionality of the core module (chapter \ref{ch:impl}), to which all calculations are delegated. 
-This way, the GUI is literally just an interface.
+This way, the GUI is literally just an interface and only performs auxiliary calculations.
 By the same token, the core module itself is completely independent of the GUI, or any other
 interface code, and the full functionality of the software, except GUI-specific visualisation and editing
 capabilities, is equally accessible from the other alternative interface modules, e.g. the \textit{Python}
@@ -231,7 +231,7 @@ property from the main \lstinline[language=C++]|InstrumentSpace| instance.
 		\label{fig:gui_xtalcoords}}
 \end{wrapfigure}
 
-Using the $UB$ transformation matrix that has been set up before (sec. \ref{sec:gui_xtal}),
+Using the $UB$ transformation matrix that has been set up before (section \ref{sec:gui_xtal}),
 an instrument position can be entered in the crystal coordinates dock window, which is
 shown in Fig. \ref{fig:gui_xtalcoords}.
 At triple-axis spectrometers, coordinates are given as four-dimensional tuples of the
@@ -246,7 +246,7 @@ The fourth coordinate component, namely the energy transferred to the crystal, i
 	E \ =\ \frac{\left( \hbar k_i \right)^2}{2 m_n} - \frac{\left( \hbar k_f \right)^2}{2 m_n}.
 \end{equation}
 The checkbox labelled ``keep $k_f$ = const'' selects which one of the two wavenumbers, $k_i$ or $k_f$,
-is kept constant to effectuate the energy transfer.
+is kept constant and which is variable to effectuate the energy transfer.
 Please refer to chapters \ref{ch:intro} and \ref{ch:xtal} for details on the calculations and physics.
 
 The button labelled ``jump to coordinates'' sets the current (and initial path position)
@@ -269,7 +269,7 @@ sets the target position on the instrument path.
 
 Finally, the calculation of the instrument path is done using the path properties dock window
 given in Fig. \ref{fig:gui_path}. Here, the target scattering angles are calculated from the crystal
-coordinates and set by the previous step (sec. \ref{sec:gui_xtalcoords}). For direct positioning,
+coordinates and set by the previous step (section \ref{sec:gui_xtalcoords}). For direct positioning,
 the angles can also be entered manually, thereby overriding the crystal coordinate calculations.
 
 The button labelled ``calculate path mesh'' starts the calculation of the skeletal bisectors that are
@@ -293,10 +293,10 @@ The library \textit{QCustomPlot} \cite{web_QCustomPlot} is used for plotting.
 		\begin{center}
 			\includegraphics[width = 0.75 \textwidth]{figures/gui_configspace}
 		\end{center}
-	\caption[Configuration space dialog.]{Angular configuration space and path calculation.
-	The figure plots all possible instrument positions for the monochromator and sample
-	scattering angles, $2\theta_M$ and $2\theta_S$, respectively. Forbidden positions
-	are shown in red.
+	\caption[Configuration space dialog.]{Angular configuration space and path calculation dialog.
+	Using the \textit{QCustomPlot} library \cite{web_QCustomPlot}, the dialog plots all possible
+	instrument positions for the monochromator and sample scattering angles, $2\theta_M$ and $2\theta_S$, respectively.
+	Forbidden positions are shown in red.
 	These can be invalid angles as well as collisions of the instrument with walls
 	(here, specifically, the pillar from Fig \ref{fig:gui}), or with itself.
 	Allowed positions are drawn in blue. The mesh of all possible instrument
@@ -309,7 +309,8 @@ The library \textit{QCustomPlot} \cite{web_QCustomPlot} is used for plotting.
 \subsection{Case study and illustrative example}
 We proceed to present an illustrative example modelled after a situation that arose during an 
 experiment that we performed at \textit{Thales} \cite{thales} some time ago. 
-The situation is an archetypical one which can be automatised and visualised using the present software. 
+The situation is an archetypical one which often arises during a measurement and which
+can be automatised and visualised using the present software.
 The software was not yet available at the time of the experiment, though, so we still had to resort 
 to long-winded manual driving of the instrument.
 
@@ -331,10 +332,11 @@ to $\left(Q_\mathrm{target},\, E_\mathrm{target}\right)$, as at least these two 
 the intermediate positions.
 
 The control software would drive all motors at the same time, and the problem lies in the fact that not all motors
-drive equally fast. The monochromator motors, which are responsible for selecting the energy transfer $E$ are
+drive equally fast. The monochromator motors, which are responsible for selecting the energy transfer $E$, are
 much slower than the two sample motors which drive the momentum transfer $Q$. In practice this would lead to
-the situation where $Q$ has already reached the target position, while $E$ is still near its starting point, i.e. the 
-mixed coordinate $\left(Q_\mathrm{target},\, E_\mathrm{start}\right)$, which is shown in Fig. \ref{fig:casestudy_collision}.
+the situation where $Q$ has already reached the target position, while $E$ is still near its starting point, i.e. the instrument
+would be at a mixed coordinate $\left(Q_\mathrm{target},\, E_\mathrm{start}\right)$,
+which is shown in Fig. \ref{fig:casestudy_collision}.
 As can be seen, issuing such a drive command would lead to a collision of the analyser drum with the outer wall.
 
 \begin{figure}[H]
@@ -381,7 +383,7 @@ As can be seen, issuing such a drive command would lead to a collision of the an
 
 
 \paragraph{Solution}
-The problem of avoiding the collision with the outer wall  is easily solved using by calculating the 
+The problem of avoiding the collision with the outer wall  is easily solved by calculating the
 path along the skeleton mesh using the software. Figures \ref{fig:casestudy_sequence1} and 
 \ref{fig:casestudy_sequence2} show key frames of the driving sequence from the start to the 
 target position.
@@ -706,3 +708,7 @@ We demonstrated a typical situation of the instrument colliding with an outer wa
 during one of our past measurements, and which can be solved graphically using the software's GUI.
 A separate scripting interface makes it easy to automatise calculations on the command line and 
 to interface with other software tools.
+
+Having outlined the entirety of the software, what remains to be done in the next chapter
+is a description of the tools used to ensure that it stays bug-free, for example when
+introducing new features to the core module.

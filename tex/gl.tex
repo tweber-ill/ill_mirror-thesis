@@ -17,16 +17,16 @@ Here, we mainly describe the most important mathematical aspects of 3-d graphics
 
 \section{Coordinate systems and transformations}
 To draw a three-dimensional object onto the screen, several principal coordinate systems are typically maintained,
-namely the coordinate system of the 3-d object, a global coordinate system common for all objects in scene, the
+namely the coordinate system of the 3-d object, a global coordinate system common for all objects in the scene, the
 system of the camera, as well as screen (device) and window coordinates \cite[pp. 63-66]{Sellers2002}.
-The vertices of the 3-d object, $\left|x\right>$ , are thus transformed into a window's 2-d pixels by using four
+The vertices of the 3-d object, $\left|x\right>$, are thus transformed into a window's 2-d pixels by using four
 matrices transforming from one coordinate system to the next,
 \begin{equation}
 	\boxed{\left|x_{\mathrm{window}}\right> \ =\ W \cdot P \cdot V \cdot  M \cdot  \left| x_{\mathrm{model}} \right>,}
 	\label{eq:gl_mvp}
 \end{equation}
 where $M$ is a matrix transforming the model's local system (used, for example, to spin the object around one of
-its axes) into the global coordinate system, $V$ is the view matrix given by the camera's coordinate system
+its axes) into the global coordinate system. $V$ is the view matrix given by the camera's coordinate system
 which transforms global object coordinates into the camera's viewing frame. These matrices take the form
 described in section \ref{sec:gl_trafos}.
 $P$ projects the three-dimensional scene onto the two-dimensional plane representing the screen \cite{web_gl_ortho, web_gl_perspective} and is described in section \ref{sec:gl_projs}. 
@@ -46,14 +46,16 @@ While the transformation given by Eq. \ref{eq:gl_mvp} is not fixed anymore, its 
 in the shaders by the user. More information on the rendering pipeline and the shaders is given in 
 section \ref{sec:gl_shaders}.
 
-The transformation inverse to Eq. \ref{eq:gl_mvp} is of importance to be able to select objects in the 
+\paragraph{Object selection}
+The transformation inverse to Eq. \ref{eq:gl_mvp} is also of importance to be able to select objects in the
 three-dimensional scene by mouse. 
 To that end, a line is calculated by ``unprojecting'' two homogeneous $\left|x_{\mathrm{window}}\right>$ vectors
 (see next section) having the same mouse position as their $x$ and $y$ components and the distance of the
-near and far planes of the view frustum as two different $z$ coordinate components.
+near and far planes of the so-called view frustum (see section \ref{sec:gl_perspective_proj})
+as two different $z$ coordinate components.
 Finally, the intersection of the line through these two unprojected $\left|x_{\mathrm{model}}\right>$ points 
 with the scene geometry is calculated. 
-The unprojection operation is given by \cite{web_gl_unproject}:
+The unprojection operation as the inverse of Eq. \ref{eq:gl_mvp} is given by \cite{web_gl_unproject}:
 \begin{equation}
 	\left|x_{\mathrm{model}}\right> \ =\ M^{-1} \cdot V^{-1} \cdot P^{-1} \cdot  W^{-1} \cdot  \left| x_{\mathrm{window}} \right>,
 \end{equation}
@@ -66,7 +68,9 @@ and normalising $\left|x_{\mathrm{model}}\right>$ by its fourth (homogeneous) co
 To simplify the calculations when translations are involved, \textit{OpenGL} uses homogeneous coordinates.
 Homogeneous coordinates append a fourth component to the three-dimensional vectors, which is set to zero for
 directions and non-zero for vertices, where the original vertex coordinates are recovered by normalising this
-fourth component to one \cite[pp. 235, 357]{Bronstein2008}.
+fourth component to one \cite[pp. 235, 357]{Bronstein2008}. Homogeneous coordinates help describing translations
+in matrix form, and projective division using the normalisation operation by the fourth component, as will be
+described next.
 
 
 % -----------------------------------------------------------------------------
@@ -196,8 +200,8 @@ Explicitly writing Eq. \ref{eq:rodrigues} thus yields the full Rodrigues formula
 which is, for example, used in \textit{OpenGL}'s  \lstinline[language=C]|glRotate| functions \cite{web_gl_rotate}.
 
 Using the canonical coordinate basis vectors $\left| x \right> = \left( 1\,0\,0 \right)^t$, $\left| y \right> = \left( 0\,1\,0 \right)^t$,
-and $\left| z \right> = \left( 0\,0\,1 \right)^t$, respectively, we reproduce the well-known simple rotation matrices as 
-special cases \cite[p. 238]{Bronstein2008}:
+and $\left| z \right> = \left( 0\,0\,1 \right)^t$, respectively, we reproduce the well-known simple rotation matrices around the
+coordinate axes as special cases \cite[p. 238]{Bronstein2008}:
 \begin{equation}
 	R_x \ =\ 
 		\left( \begin{array}{ccc} 
@@ -314,8 +318,12 @@ A comprehensive derivation of this matrix can be found in Ref. \cite{web_webgl_o
 
 
 \subsubsection{Perspective projection}
-The most commonly used perspective matrix to project onto the near plane of a view frustum (truncated pyramid)
-with $y$ opening angle $\phi$ is given as \cite{web_gl_perspective} \cite{web_gl_frustum} \cite[p. 81]{Sellers2002}:
+\label{sec:gl_perspective_proj}
+The most commonly used perspective matrix to project onto the near plane of a view frustum, which
+has the form of a truncated pyramid whose near plane corresponds to the screen and whose far and side
+planes serve as a cut-off for the geometry to be considered in rendering \cite{web_gl_frustum}.
+With its opening angle $\phi$ with respect to $y$ coordinates, it defines a projection matrix given as
+\cite{web_gl_perspective} \cite{web_gl_frustum} \cite[p. 81]{Sellers2002}:
 \begin{equation}
 	P_{\mathrm{persp}} \ =\
 		\left( \begin{array}{cccc}
@@ -331,8 +339,9 @@ with $y$ opening angle $\phi$ is given as \cite{web_gl_perspective} \cite{web_gl
 			                                    0 &                                                0 &         \boxed{-1} &  0
 		\end{array} \right),
 \end{equation}
-where the important difference is the $-1$ factor in row 4 and column 3, which generates the perspective
-$1/z$ division upon normalisation by the fourth, homogeneous component \cite[pp. 350-351]{Kuipers2002}.
+where the important difference to parallel projection is the $-1$ factor in row 4 and column 3,
+which generates the perspective $1/z$ division upon normalisation by the fourth,
+homogeneous component \cite[pp. 350-351]{Kuipers2002}.
 As before, the rest is merely scaling and translation to ensure that the $x$, $y$, and $z$ ranges
 are fulfilled.
 The variables have the same meaning as in the orthogonal projection case.

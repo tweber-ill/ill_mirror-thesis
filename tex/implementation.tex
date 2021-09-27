@@ -10,7 +10,7 @@
 
 In this chapter we describe the individual steps of the path-finding strategy (see p. \pageref{sec:strategy}) 
 in detail and at the same time present an implementation in C++ \cite{Stroustrup2008, Stroustrup2018}. 
-Specifically, the latest version 20 of the C++ standard \cite{ISOCPP20} (C++20 in short),
+Specifically, the latest version 20 of the C++ standard \cite{ISOCPP20} (C++20 in short)
 was employed in the creation of the software, together with the Boost C++ template libraries \cite{web_boost}. 
 The source code for the implementation can be found in the directory \lstinline|./src/core| 
 together with the library routines in \lstinline|./src/libs| of the accompanying software.
@@ -19,7 +19,7 @@ Stable versions of the source code have furthermore been registered under the DO
 \href{https://doi.org/10.5281/zenodo.4625649}{10.5281/zenodo.4625649}, please also refer to 
 appendix \ref{ch:online} for more details.
 
-Section \ref{sec:tasmodel} is dedicated to modelling the triple-axis spectrometer (TAS), 
+Section \ref{sec:tasmodel} of the present chapter is dedicated to modelling the triple-axis spectrometer (TAS),
 section \ref{sec:buildpath} discusses the steps involved in building up the mesh of possible instrument paths, 
 and section \ref{sec:exepath} focuses on finding one specific path and executing the instrument motion along it.
 The graphical and scripting user interfaces to the software are presented separately from the core functionality, 
@@ -33,27 +33,34 @@ namely in chapter \ref{ch:gui}.
 % -----------------------------------------------------------------------------
 \section{TAS instrument modelling}
 \label{sec:tasmodel}
-
-The instrument space comprising the triple-axis spectrometer, the walls and obstacles, as well as the floor, are modelled in
-the class \lstinline[language=C++]|InstrumentSpace|. It also serves as high-level interface for loading and saving
-the instrument geometry and states as well as checking the instrument for collisions. 
-State changes in the class, for example the occurence of a collision, are signalled to the outside world using the 
-publish-subscribe mechanism via \textit{Boost.Signals2} \cite{web_boost_signals} library.
+The very first task is to model the instrument space comprising the triple-axis spectrometer, the walls and
+obstacles, as well as the floor as geometrical objects, for which positions and possible collisions can be
+calculated. In the implementation, all these components are modelled hierarchically, starting at the top with the class
+\lstinline[language=C++]|InstrumentSpace| which also serves as high-level interface for loading and saving
+the instrument geometry and states.
+State changes in the class, for example the occurence of a collision, are signalled to the outside world
+using the publish-subscribe mechanism via \textit{Boost.Signals2} \cite{web_boost_signals} library.
 The publish-subscribe mechanism is also known as observer pattern, for which a comprehensive description 
 can be found in Ref. \cite[Ch. 4, pp. 122-127]{FUH_prog2019}.
 
-The classes \lstinline[language=C++]|Instrument| and \lstinline[language=C++]|Axis| contain the actual instrument definition.
-The spectrometer is modelled as a hierarchy of the three principal instrument axes, namely monochromator, sample and analyser.
-Each axis has three local coordinate systems, namely the respective rotation relative to the incoming and outgoing vector,
-and an internal rotation which is decoupled from the other local rotations.
-Geometrical objects are derived from the abstract, purely virtual class \lstinline[language=C++]|Geometry| and can be
-coupled to any of these three local coordinate systems.
-This makes it possible to model neutron-optical components attached to either the incoming or outgoing path of the
-neutron beam at the specific axis. 
-It furthermore makes it possible to have components which rotate independently of the axis, for example a cryostat or
-a magnet on a separate rotation stage, as is usually the case in practice.
-Physically, the outgoing coordinate system is equal to the scattering angle, while the internal angle corresponds
-to the crystal rocking angle, where only the crystal is turned while keeping the scattering angle constant \cite[p. 87]{Shirane2002} (see chapter \ref{ch:xtal}).
+The classes \lstinline[language=C++]|Instrument| and \lstinline[language=C++]|Axis| contain the actual
+instrument definition. The spectrometer itself is also modelled as a hierarchy, namely of the
+three principal instrument axes, among them the monochromator, sample and analyser.
+In this respect it bears resemblance of a robot arm whose movement is restricted to a
+two-dimensional plane.
+Like in the modelling of a robot arm, each axis has three local coordinate systems, namely the
+respective rotation relative to the incoming and outgoing vector, and an internal rotation which is
+decoupled from the other local rotations.
+Geometrical objects are derived from the abstract, purely virtual class \lstinline[language=C++]|Geometry|
+and can be coupled to any of these three local coordinate systems.
+This makes it possible to model neutron-optical components attached to either the incoming or
+outgoing path of the neutron beam at the specific axis.
+It furthermore enables us to have components which rotate independently of the axis,
+for example a cryostat or a magnet on a separate rotation stage, as is usually the case in practice.
+Physically, the outgoing angle of an axis is equal to the scattering angle of that axis, $2\theta_{M,S,A}$,
+while the internal angles correspond to the respective crystal rocking angle, $\theta_{M,A}$ and $\Theta_{S}$,
+where only the crystal is turned while keeping the scattering angle constant \cite[p. 87]{Shirane2002}
+(see chapter \ref{ch:xtal}).
 The transformation matrices corresponding to the three local coordinate systems are calculated as follows:
 \begin{equation}
 \begin{split}
@@ -105,7 +112,9 @@ The situation is depicted in Fig. \ref{fig:tas_axes}.
 \section{Construction of the path mesh}
 \label{sec:buildpath}
 This section is dedicated to calculating the path mesh, which consists of all possible instrument paths between
-convex regions in configuration space.
+convex regions in configuration space. As seen in chapter \ref{sec:voro_median} and discussed in further detail
+in section \ref{sec:polygonal_voronoi_diagram}, this mesh is to be equivalent to the 1-skeleton of the obstacle
+boundary curves in configuration space.
 
 As discussed in chapter \ref{sec:tasrobot}, path mesh creation will be based on the angular configuration space
 (as opposed to -- for example -- crystal coordinates configuration space). 
@@ -125,15 +134,16 @@ not use the full angular range as this is not possible in real instruments which
 fixed position and only scatter in one direction. The sample scattering angle, on the other hand, needs the full 
 angular range as scattering on both sides of the axis is done in practice.
 
-To check for the allowed positions, the instrument model, as is was described in section \ref{sec:tasmodel}, is moved to
-each $\left( 2\theta_S,\, 2\theta_M \right)$ position on the grid and tested for collisions with the walls or with
-itself. Even though the instrument model itself is a three-dimensional representation of the spectrometer, we
+To check for the allowed positions, the instrument model, as is was described in section \ref{sec:tasmodel}, is
+programmatically moved to each $\left( 2\theta_S,\, 2\theta_M \right)$ position on the grid and tested for
+collisions with the walls or with itself.
+Even though the instrument model itself is a three-dimensional representation of the spectrometer, we
 can nevertheless simplify the collision detection checks to a two-dimensional plane. The reason for this is
 that all possible obstacles in the instrument path, for instance walls and pillars, are upright and do not have
 any sloped angles. And even if they were sloped, one can alternatively use the maximum extents, i.e. a bounding box,
 in a two-dimensional representation and obtain the same results. The same is true for the instrument itself.
-The collision calculation on the two-dimensional grid is spread out on several processor cores using the 
-\lstinline[language=C++]|thread_pool| \cite{web_boost_asio_threadpool} class from the 
+On the implementation side, the collision calculation on the two-dimensional grid is spread out on several
+processor cores using the \lstinline[language=C++]|thread_pool| \cite{web_boost_asio_threadpool} class from the
 \textit{Boost.Asio} \cite{web_boost_asio} asynchronous input/output library.
 A thread pool maintains a fixed number of threads, $n$, onto which it loads a variable number
 of tasks, $m$, where $m$ is usually larger than $n$. Each of the $n$ threads maintains a queue for the
@@ -159,7 +169,8 @@ to test the line segments of two polygons with $n$ and $m$ edges, respectively, 
 
 \paragraph{Intersection calculation}
 For polygonal regions with a large number of edges, we implemented a sweep-based method which runs
-in $\mathcal{O}\left(n \log n\right)$ time for a total number of $n$ edges \cite{TODO}. 
+in $\mathcal{O}\left(n \log n + k \log n\right)$ time for a total number of $n$ edges and $k$ points
+of intersection between the lines \cite[p. 29]{Berg2008}.
 It can be seen that while the individual calculations are more involved than in the simpler intersection check, 
 they have to be performed less often for a large number of lines, $n$.
 
@@ -198,8 +209,9 @@ finite range.
 
 For an efficient handling of multiple line segment intersections, the decision for which lines to test for intersections is
 performed using the line segment sweep algorithm from Ref. \cite[pp. 69-80]{FUH_geo2020} whose C++ implementation can be
-found in the function \lstinline[language=C++]|geo::intersect_sweep()| of the file \lstinline|./src/libs/lines.h|.
-We shortly summarise the algorithm and our implementation, following the description in \cite[pp. 69-80]{FUH_geo2020}:
+found in the function \lstinline[language=C++]|geo::intersect_sweep()| of the file \lstinline|./src/libs/lines.h| and which
+is also described in the book by Berg \textit{et al.} \cite[Ch. 2, pp. 19-43]{Berg2008}.
+We shortly summarise this algorithm and our implementation, following the description in \cite[pp. 69-80]{FUH_geo2020}:
 \begin{enumerate}
 	\item Possible events are kept in an event structure. Before the sweep, this is initialised with all the line segment
 		endpoints. The structure itself is a priority queue which sorts its elements by their $x$ coordinate in ascending order.
@@ -256,8 +268,9 @@ $\left| x_1 \right>$ and $\left| x_2 \right>$ is less than the sum of their radi
 
 \subsection{Representation of configuration space as spatial index tree}
 \label{sec:walls_index_tree}
-Having discretised the angular configuration space on a grid, we next convert the positions
-of all occupied bins on the grid, which represent obstacles, in the form of a spatial index tree,
+Having discretised the angular configuration space on a grid based on the intersections of the instrument
+with the obstacle geometry or with itself, we next convert the positions
+of all occupied bins on the grid, which represent these obstacles, in the form of a spatial index tree,
 as described in chapter \ref{sec:indextrees}.
 When calculating cost functions for different path finding strategies in one of the upcoming steps 
 (section \ref{sec:optimalpath}), we can make use of the index tree for efficiently querying
@@ -316,7 +329,7 @@ The first simplification step, which is illustrated in panel (c) of Fig. \ref{fi
 for horizontal or vertical line segments between sloped line segments and removed the inner vertices and thus the
 horizontal or vertical segments.
 
-The second simplification step replaces collections of short collinear line segments with larger ones,
+The second simplification step replaces collections of short collinear line segments with longer ones,
 thus replacing the staircase artefacts, that the quantification step of the contour tracer had created,
 with proper diagonal lines. This is depicted in panel (d) of Fig. \ref{fig:contour_simplification}.
 To that end, we iterate through the vertices on the contour line and remove any vertices whose line segment angles
@@ -348,7 +361,7 @@ involving the previous and the next vertex, respectively, are below a given smal
 
 \subsection{Generation of convex regions}
 \label{sec:convex_regions}
-The regions that were generated in the previous steps are in general concave. 
+The regions that were generated by contour tracing and line-segment generation in the previous steps are in general concave.
 This can pose a problem, because we also need to be able to move the instrument into positions near concave angles
 of the region's vertices, which generate ``alcoves'' in the region, see the next section for a discussion.
 
@@ -582,7 +595,7 @@ for the linear bisectors this is simply the Euclidian 2-norm,
 \end{equation}
 where $v$ and $w$ name Voronoi vertices sharing an edge.
 Using the edge lengths as as cost function leads to the path with the shortest distance 
-between the start and target coordinates, i.e. the most basic application of Dijkstra's algorithm.
+between the start and target coordinates, i.e. the most basic application of Dijkstra's algorithm,
 for which an example is shown in Fig. \ref{fig:linesegs_path}.
 
 \begin{figure}[h]
@@ -648,7 +661,8 @@ Ref. \cite[p. 285]{Erickson2019}. In the present implementation, the search for 
 to visit is performed using a heap data structure, whose construction and query is performed
 using the standard C++ functions \lstinline[language=C++]|std::make_heap()| and 
 \lstinline[language=C++]|std::pop_heap()|, respectively.
-As it is compact enough, the implementation is printed in listing \ref{lst:dijkstra}.
+As it is compact enough and since it is representative of the design and coding styles of the software
+in general, the implementation is printed in full in listing \ref{lst:dijkstra}.
 Note that the implementation is generic, because it does not insist on a specific class
 for the underlying graph. Instead it keeps the graph type, \lstinline[language=C++]|t_graph|, open and
 only requires that it fulfill the template concept \cite{cppwiki_concepts}
@@ -791,12 +805,12 @@ concept is_graph = requires(t_graph& graph, std::size_t vertidx)
 
 
 \section{Summary}
-In summary, we presented a path-finding algorithm and its implementation, which generates an angular 
+In summary, we presented a two-part path-finding algorithm and its implementation, which generates an angular
 representation of obstacles in a triple-axis instrument's path, calculates a mesh of skeletal bisectors between 
-convex regions, and calculates an optimal path between user-specified start and target positions. These positions
-can either be given as crystal coordinates or directly in angular configuration space.
+convex regions in its first part, and calculates an optimal path between user-specified start and target positions
+in the second part. These positions can either be given as crystal coordinates or directly in angular configuration space.
 
-The implementation of this algorithm so far is a C++ library. Several user interfaces, among them a 
+The implementation of this algorithm so far is in the form of a C++ library. Several user interfaces, among them a
 graphical one, have also been developed. These are described in chapter \ref{ch:gui}.
 But before that, the upcoming chapter first describes some necessary basic concepts that are needed for the 
 graphical representation of the data.
