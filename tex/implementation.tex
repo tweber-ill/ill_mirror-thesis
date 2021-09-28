@@ -318,7 +318,7 @@ quantified contour. The situation is shown in panel (b).
 
 After creating the line segments from the traced contour lines, they have to be cleaned up and simplified,
 because the quantity of superfluous vertices would considerably slow down the generation of the Voronoi 
-diagram in a subsequent step of the path-mesh building algorithm.
+diagram in a subsequent step of the path mesh building algorithm.
 In the function \lstinline[language=C++]|geo::simplify_contour()|, which resides in the file \lstinline|./src/libs/hull.h|,
 we perform two simplification steps:
 

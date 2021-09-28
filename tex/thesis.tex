@@ -21,9 +21,18 @@
 \usepackage{babel}
 \usepackage[hyphens]{url}
 \usepackage[shortlabels]{enumitem}
-\usepackage{listings}
 \usepackage[numbib, chapter]{tocbibind}
 \usepackage[colorlinks=true, linkcolor=black, citecolor=blue, urlcolor=blue, unicode=true]{hyperref}
+
+\usepackage{listings}
+\lstset{
+	basicstyle = \ttfamily,
+}
+\lstset{
+	language = C++,
+	emph = {concept, requires, decltype, constexpr},
+	emphstyle = \bf
+}
 
 \usepackage[a4paper]{geometry}
 %\geometry{tmargin=2.5cm, bmargin=2.5cm, lmargin=2cm, rmargin=2cm}
@@ -35,7 +44,6 @@
 \floatstyle{ruled}
 \newfloat{listing}{htb}{lol}[chapter]
 \floatname{listing}{Listing}
-
 
 \renewcommand{\arraystretch}{1.25}
 
@@ -49,7 +57,6 @@
 
 \newcommand{\ill}{Institut Laue-Langevin (ILL), 71 avenue des Martyrs, CS 20156, 38042 Grenoble cedex 9, France}
 \newcommand{\fuh}{Fernuniversit\"at in Hagen (FUH), Universit\"atsstraße 47, 58097 Hagen, Germany}
-
 
 \title{Path-finding for triple-axis spectrometers}
 \author{Tobias Weber, tweber@ill.fr}

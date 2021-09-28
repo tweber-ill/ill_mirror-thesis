@@ -53,10 +53,10 @@ program (chapter \ref{sec:line_seg_generation}), and was used for debugging purp
 for testing different approaches to the algorithms used in the main program.
 
 Another calculation the line segment tool performs and which is shown in Fig. \ref{fig:linesgui} (b), is the 
-calculation of trapezoidal maps (chapter \ref{sec:pointrobot_sector}), which are calculated according to the 
+creation of trapezoidal maps (chapter \ref{sec:pointrobot_sector}), which are calculated according to the 
 algorithm given in Ref. \cite[Ch. 6, pp. 121-146]{Berg2008}.
 The purpose of this was for early testing which sector-based method would be most suitable
-for path-mesh building. The trapezoid maps were deemed infeasible and were ruled out after
+for path mesh building. The trapezoid maps were deemed infeasible and were ruled out after
 these tests.
 
 The third calculation that was tested in this tool is the sweep-based intersection of line segments which
@@ -136,7 +136,7 @@ Not surprisingly, all backends yield the same results.
 Similarly to the convex hull calculation, the calculation of the Delaunay triangulation
 also supports multiple backend algorithms.
 Among them are the incremental method \cite[Ch. 6.2, pp. 269-282]{FUH_geo2020}, 
-delegating calculations \textit{QHull} \cite{web_qhull}, 
+delegating calculations to the external \textit{QHull} library \cite{web_qhull}, 
 and third, the parabolic transformation \cite[Ch. 6.5, pp. 298-300]{FUH_geo2020}, 
 which also partially uses \textit{QHull}, namely to calculate the three-dimensional 
 convex hull of the transformed problem.
@@ -178,7 +178,7 @@ Software verification uses proofs via Hoare logic, which splits the program into
 operations (e.g. assignments, conditions, loops) \cite[pp. 118-119]{Berghammer2017}, formulates
 a set of axioms and derivation rules consisting of pre- and post-conditions for these primitive operations
 \cite[pp. 122]{Berghammer2017}, reduces the complex program into these axioms \cite[pp. 123]{Berghammer2017},
-and finally either proofs the partial or the total correctness of the program.
+and finally either prooves the partial or the total correctness of the program.
 The former says that if the pre-condition is valid, the post-condition is also valid after running the
 program, the latter means that the post-condition follows from the pre-condition and the execution
 of the program \cite[pp. 121]{Berghammer2017}.
@@ -319,7 +319,9 @@ BOOST_AUTO_TEST_CASE_TEMPLATE(trees, t_scalar,
 
 
 \begin{listing}[htb]
-	\begin{lstlisting}[basicstyle = {\scriptsize},
+	\begin{lstlisting}[
+			basicstyle = {\scriptsize},
+			language = {},
 			breaklines = true, tabsize = 4,
 			numbers = left, numberstyle={\scriptsize}]
 Running 3 test cases...

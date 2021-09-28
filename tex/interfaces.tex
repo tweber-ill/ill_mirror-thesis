@@ -7,8 +7,9 @@
 
 \chapter{Graphical and Scripting User Interfaces}
 \label{ch:gui}
+The present chapter describes the different user and developer interfaces to the software of the present work.
 
-The software of the present work has been realised in a modular fashion, it comprises a core
+The software has been realised in a modular fashion, it comprises a core
 module, which was introduced in chapter \ref{ch:impl} and which can be easily used as a library 
 and linked into external C++ applications. 
 More details on directly employing the core library can be found in section \ref{sec:library}.
@@ -30,7 +31,7 @@ Details on the scripting interface can be found in section \ref{sec:scripting}.
 
 \section{Core module and C++ library}
 \label{sec:library}
-The core module comprises all necessary calculation as well as input and output sub-modules. 
+The core module contains all necessary calculation as well as input and output sub-modules. 
 Here, we only describe the latter two, since the computation functionality of the core module 
 has already been treated in detail in chapter \ref{ch:impl}.
 
@@ -38,7 +39,7 @@ The instrument configuration is read from an \textit{XML} file whose hierarchica
 mirrors the internal data organisation of the core module and its class hierarchy.
 The \textit{XML} file is parsed using the \textit{Boost.PropertyTree} library \cite{web_boost_proptree}
 and objects are created of the respective classes once the corresponding section in the \textit{XML}
-structure is discovered. An \textit{XML} section is handed down to the corresponding \textit{C++} object,
+structure is discovered. An \textit{XML} section is handed down to the corresponding C++ object,
 so that each object only receives the portions of the \textit{XML} configuration it is responsible for.
 Editing the \textit{XML} instrument configurations can be done using the GUI module of section \ref{sec:gui}.
 
@@ -63,7 +64,7 @@ accepts the output base class and dispatches to the desired child object.
 The core module functionality is self-contained and does, for instance, not depend on any GUI code.
 It is therefore straightforward to statically or dynamically link it to external applications which 
 wish to use the path-finding functionality. To avoid exposing the user to the complexities of 
-the \textit{C++} language, a more comfortable approach is provided by both the graphical as well 
+the C++ language, a more comfortable approach is provided by both the graphical as well 
 as the \textit{Python} interface, which are described in the following sections.
 
 
@@ -71,10 +72,10 @@ as the \textit{Python} interface, which are described in the following sections.
 \section{Graphical user interface}
 \label{sec:gui}
 The software's main graphical user interface (GUI) is based on the \textit{Qt} framework 
-\cite{web_Qt}, that allows for an easy and rapid cross-platform GUI development in \textit{C++}. 
+\cite{web_Qt}, that allows for an easy and rapid cross-platform GUI development in C++. 
 Both current releases of \textit{Qt} are supported, namely version 5 and version 6.
 Fig. \ref{fig:gui} depicts a typical session of the GUI.
-Similar to the core calculation module, the GUI is written in the recent \textit{C++20}
+Similar to the core calculation module, the GUI is written in the recent C++20
 standard \cite{ISOCPP20} of the C++ language family \cite{Stroustrup2008, Stroustrup2018}.
 The source code of the GUI module can be found in the directory \lstinline|./src/gui| of the
 source repository, see chapter \ref{ch:online} for more information.
@@ -101,7 +102,7 @@ This way, the GUI is literally just an interface and only performs auxiliary cal
 By the same token, the core module itself is completely independent of the GUI, or any other
 interface code, and the full functionality of the software, except GUI-specific visualisation and editing
 capabilities, is equally accessible from the other alternative interface modules, e.g. the \textit{Python}
-interface described in section \ref{sec:scripting}, or the raw \textit{C++} library interface.
+interface described in section \ref{sec:scripting}, or the raw C++ library interface.
 
 
 
@@ -150,7 +151,7 @@ as well as the scattering angle with respect to the following axis. These angles
 use in diffraction (two-axis) and spectroscopy (three-axis) instruments has been described 
 in chapters \ref{ch:intro} and \ref{ch:xtal}. 
 The fields names ``$d$ spacings'' correspond to the spacing of the crystal planes in the 
-monochromator and analyser crystals. In our examples we use the value of $d=3.355 \AA{}$
+monochromator and analyser crystals. In our examples we use the value of $d\,=\,3.355\, \textup{\AA}$
 which corresponds to scattering on the $\left(002\right)$ Bragg reflection of highly oriented
 pyrolithic graphite (HOPG) \cite[p. 250]{Shirane2002}, which is one of the standard crystals used as a
 monochromator or analyser in a TAS instrument.
@@ -231,7 +232,7 @@ property from the main \lstinline[language=C++]|InstrumentSpace| instance.
 		\label{fig:gui_xtalcoords}}
 \end{wrapfigure}
 
-Using the $UB$ transformation matrix that has been set up before (section \ref{sec:gui_xtal}),
+Using the $UB$ transformation matrix that has been set up before (chapter \ref{sec:gui_xtal}),
 an instrument position can be entered in the crystal coordinates dock window, which is
 shown in Fig. \ref{fig:gui_xtalcoords}.
 At triple-axis spectrometers, coordinates are given as four-dimensional tuples of the
@@ -308,7 +309,7 @@ The library \textit{QCustomPlot} \cite{web_QCustomPlot} is used for plotting.
 
 \subsection{Case study and illustrative example}
 We proceed to present an illustrative example modelled after a situation that arose during an 
-experiment that we performed at \textit{Thales} \cite{thales} some time ago. 
+experiment that we performed at the instrument \textit{Thales} \cite{thales} some time ago. 
 The situation is an archetypical one which often arises during a measurement and which
 can be automatised and visualised using the present software.
 The software was not yet available at the time of the experiment, though, so we still had to resort 
@@ -447,14 +448,14 @@ back a bit, until both reach their target position (Steps 4-5 in Fig. \ref{fig:c
 In order to allow for a simple way to automatise recurring calculations and workflows, as well as to provide
 a possibility for inclusion of the core module (see section \ref{sec:library}) of the present 
 software in other tools, a scripting interface has been developed using the interface generator \textit{SWIG} \cite{web_swig}. 
-\textit{SWIG} is a tool which parses \textit{C} or \textit{C++} header files and creates a native interface 
+\textit{SWIG} is a tool which parses C or C++ header files and creates a native interface 
 for several possible scripting languages, of which we opted for \textit{Python} \cite{Rossum2011, web_python} 
 as it has become one of the most popular programming language in neutron science over the last decade.
 As the core module already has the structure of a library, the effort to offer scripting functionality
 was minimal. Only a few helper functions had to be included in several classes, because \textit{SWIG}
-is not yet fully \textit{C++20} compliant and had some problems with new language features such as 
+is not yet fully C++20 compliant and had some problems with new language features such as 
 template concepts \cite{cppwiki_concepts}.
-The \textit{SWIG} interface definition, which maps the \textit{C++} classes to corresponding \textit{Python} 
+The \textit{SWIG} interface definition, which maps the C++ classes to corresponding \textit{Python} 
 classes of the same name, can be found in the file \lstinline|./scripting/taspaths.i| of the source repository.
 
 \paragraph{Typical workflow}
@@ -703,7 +704,7 @@ if show_plot:
 \section{Summary}
 The modular design of the software keeps the interface code separate from the calculation core.
 Several different types of interfaces were discussed in this chapter, most prominently the graphical 
-user interface, which provides the most accessible way for the end user to use the software.
+user interface, which provides the most accessible way for the end user to interact with the software.
 We demonstrated a typical situation of the instrument colliding with an outer wall, which arose 
 during one of our past measurements, and which can be solved graphically using the software's GUI.
 A separate scripting interface makes it easy to automatise calculations on the command line and 
