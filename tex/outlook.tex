@@ -5,12 +5,44 @@
 % @license see 'LICENSE' file
 %
 
-\chapter{Outlook and Future Developments}
+\chapter{Discussion and Outlook}
 \label{ch:outlook}
-The software of this work is capable of finding a path around obstacles given start and target coordinates 
-either in the crystal coordinate system or directly using the instrument angles.
-While the software is fully functional, several more steps will need to be done to make it usable
-at the instrument.
+The software of this work is capable of moving a triple-axis spectrometer around obstacles 
+given start and target coordinates either in the crystal coordinate system or directly using the instrument angles.
+In the scope of this work, a triple-axis spectrometer can be thought of as a robot arm having three rotational
+degrees of freedom and moving on a planar floor.
+The program can be used as a library, via a scripting interface, and -- more comfortably -- through a graphical
+user interface, which allows for a convenient editing of the geometry and testing of configuration
+with immediate feedback of the results.
+
+Ideas from the field of computational geometry proved indispensable for the success of the project,
+first and foremost the concept of the Voronoi diagram and its bisectors, but also index trees and sweep 
+algorithms, which ensure the efficiency of the path-finding algorithm.
+The calculation of Voronoi diagrams for line segments which approximate curves is also the most
+calculation-intensive part of the algorithm, together with the quantisation of the configuration space.
+
+The importance of a path-finding system for triple-axis spectrometers can be seen as the development 
+of a software with a similar goal had already been attempted before, in a tool named 
+\textit{Paprika} \cite{Muehlbauer2006}, a fact that was brought to our attention at the very end of the present work.
+At its time, \textit{Paprika} gained relatively little traction, though, and this might be due to their approach 
+being less than optimal.
+Similar to our approach, they also construct a two-dimensional configuration space of allowed collision-free 
+angles of the instrument on a grid. But instead of using it to build a path-mesh of Voronoi bisectors along which 
+the instrument can move at the furthest distance of any obstacle, which is central to our approach, they 
+directly use the grid vertices for finding the shortest path. 
+This can lead to the shortest path leading directly along a wall.
+As the \textit{Paprika} project dates from 2006, a reason why they did not consider Voronoi bisectors 
+for possible path curves might be the difficulty -- both conceptually and in terms of processor time -- 
+of calculating them for curved line segments, even if they are -- as in our case -- quantised into straight 
+line segments.
+Our performance measurements depicted in Fig. \ref{fig:voro_performance} of chapter \ref{sec:voronoi_libs}
+show that on a modern processor of 2021 typical calculation times are in the order of tens of seconds.
+15 years ago, the same calculations might still have been out of reach for practical applications.
+
+
+\paragraph{Future developments}
+While the present software is already fully functional, several more steps will need to be done 
+to make it usable at the instrument.
 
 The first step is an integration into existing instrument control systems. 
 With its modular design and the possibility to use it as C++ library without any graphical user interface
