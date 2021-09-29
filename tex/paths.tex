@@ -19,6 +19,10 @@ of the algorithm will be presented in the next chapter.
 Before looking at the situation with TAS in section \ref{sec:tasrobot}, we shortly 
 review motion planning in general (section \ref{sec:motionplanning}) and the ideas of
 motion planning for a point-like robot (section \ref{sec:pointrobot}).
+Good references for robot motion planing can be found in the textbook by 
+M. de Berg \textit{et al.} \cite[Ch. 13, pp. 283-306]{Berg2008}, the lecture notes by
+R. Klein and C. Icking \cite[Ch. 7, pp. 313-366]{FUH_geo2020}, as well as the lecture 
+notes by H. Choset \cite{Choset2010}.
 
 
 \section{Motion planning in general}
@@ -81,8 +85,8 @@ parts that are relevant for the present work.
 
 The movement of the point-like robot in question is not restricted to conventional 
 Cartesian space, its coordinates are instead given in a general configuration space
-\cite[Ch. 13.1, pp. 284-286]{Berg2008}, which more directly models its inherent 
-degrees of freedom and can -- for instance -- include angular motion.
+\cite[Ch. 13.1, pp. 284-286]{Berg2008} \cite{Choset2010_ch3}, which more directly 
+models its inherent degrees of freedom and can -- for instance -- include angular motion.
 
 The algorithm that Berg \textit{et al.} describe consists of two parts: 
 First, the separation of allowed space into sectors, within which the robot can 
@@ -289,7 +293,7 @@ instrument can move along.
 The second task concerns finding one specific path on the path mesh and moving
 the instrument on that path. 
 Splitting the work into a pre-built path mesh that can be used for live calculations
-is an approach that is commonly used in path-finding problems \cite{Hwang2003}.
+is an approach that is commonly used in path-finding problems \cite{Hwang2003, Choset2010_ch5}.
 The two tasks comprise these following steps:
 \begin{enumerate}
 	\item Building the path mesh.
@@ -332,6 +336,8 @@ The two tasks comprise these following steps:
 			This will in the end give a mesh that coincides with the
 			topological 1-skeleton of the obstacles in configuration space, 
 			see chapter \ref{sec:voro_median}.
+			Such topological skeletons are often used for the path mesh building 
+			phase in robot motion planning \cite{Choset2010_ch5}.
 	\end{enumerate}
 
 	\item Finding the instrument path and executing its motion, this is the 

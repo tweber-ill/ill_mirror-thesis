@@ -69,6 +69,9 @@ The transformation matrices corresponding to the three local coordinate systems 
 	T_{\mathrm{out}}^{i} & \ =\  T_{\mathrm{in}}^{i} \cdot R\left(\theta_{\mathrm{out}}^{i}\right).
 \end{split}
 \end{equation}
+To facilitate rotation and translation in one step, the vectors and matrices for describing robot arms
+are usually given in homogeneous coordinates \cite{Choset2010_ch3}, see also chapter \ref{ch:gl} for 
+more mathematical details.
 
 Here, the $T_{\mathrm{in,\, int,\, out}}^{i}$ name the transformation matrices of the incoming, internal (decoupled) 
 and outgoing coordinate system of axis $i$, respectively.
