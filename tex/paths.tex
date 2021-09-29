@@ -143,6 +143,9 @@ only using mere line segments. Second, our own implementation has shown that for
 the algorithm to be stable, it has to handle many special cases, for example to 
 eliminate vertices with equal $x$ coordinate components or vertical lines.
 
+More on sector-based methods for motion planning using graphs to connect neighbouring
+sectors can be found in Ref. \cite{Choset2010_ch6}.
+
 \vspace{0.5cm}
 
 \subsection{Retraction method}
@@ -321,7 +324,7 @@ The two tasks comprise these following steps:
 		\item Calculate the Voronoi diagram for the line segment groups. 
 			The Voronoi edges are the possible instrument paths in configuration 
 			space. Save both the Voronoi diagram as well as its representation 
-			in a graph structure, as in \cite[p. 163]{Berg2008}.
+			in a graph structure as in Ref. \cite[p. 163]{Berg2008}.
 			For quick access to the closest positions, the positions of the
 			Voronoi vertices are additionally saved in a spatial index tree such as a 
 			k-d tree or an R tree.

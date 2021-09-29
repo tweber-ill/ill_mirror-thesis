@@ -246,9 +246,13 @@ The fourth coordinate component, namely the energy transferred to the crystal, i
 \begin{equation}
 	E \ =\ \frac{\left( \hbar k_i \right)^2}{2 m_n} - \frac{\left( \hbar k_f \right)^2}{2 m_n}.
 \end{equation}
-The checkbox labelled ``keep $k_f$ = const'' selects which one of the two wavenumbers, $k_i$ or $k_f$,
-is kept constant and which is variable to effectuate the energy transfer.
-Please refer to chapters \ref{ch:intro} and \ref{ch:xtal} for details on the calculations and physics.
+The checkbox labelled ``keep $k_f$ = const'' selects which one of the two wavenumbers, the incoming ($k_i$) 
+or the outgoing ($k_f$), is kept constant and which is variable to effectuate the energy transfer
+from the neutron to the sample.
+Depending on the selected mode, the configuration space and motion planning calculations will either involve
+the monochromator scattering angle (in case $k_f$ chosen to be constant), or the analyser scattering
+angle (in case $k_i$ is chosen to be constant).
+Please refer to chapters \ref{ch:intro} and \ref{ch:xtal} for details on the calculations and physical background.
 
 The button labelled ``jump to coordinates'' sets the current (and initial path position)
 of the instrument to the given crystal coordinates, whereas the ``set target angles'' button

@@ -20,16 +20,29 @@ first and foremost the concept of the Voronoi diagram and its bisectors, but als
 algorithms, which ensure the efficiency of the path-finding algorithm.
 The calculation of Voronoi diagrams for line segments which approximate curves is also the most
 calculation-intensive part of the algorithm, together with the quantisation of the configuration space.
+In total, our approach to path-finding is a mix between what Choset calls the grid-based model and the 
+topological approach \cite{Choset2010_ch8}.
+The purely topological approach would consist of calculating the form of the obstacles analytically in
+configuration space and computing from that the medial axis (see chapter \ref{sec:voro_median}), also
+in analytical fashion. 
+Analytical obstacle calculation is too complex mathematically due to the coordinate systems and trigonometric
+expressions involved (see chapter \ref{ch:xtal}). Analytical calculation of the medial axis, which would consist
+of calculating the Voronoi bisectors of curved line segments in a closed form, is also not feasible, 
+as was discussed in chapter \ref{sec:voro_median}.
+Our quantisation step therefore mainly served to reduce the problem of the medial axis to the standard
+line segment Voronoi diagrams, for which very efficient libraries are available. 
+A purely grid-based approach, on the other hand, would not keep the instrument at the furthest distance
+of the obstacles.
 
 The importance of a path-finding system for triple-axis spectrometers can be seen as the development 
 of a software with a similar goal had already been attempted before, in a tool named 
 \textit{Paprika} \cite{Muehlbauer2006}, a fact that was brought to our attention at the very end of the present work.
 At its time, \textit{Paprika} gained relatively little traction, though, and this might be due to their approach 
 being less than optimal.
-Similar to our approach, they also construct a two-dimensional configuration space of allowed collision-free 
-angles of the instrument on a grid. But instead of using it to build a path mesh of Voronoi bisectors along which 
-the instrument can move at the furthest distance of any obstacle, which is central to our approach, they 
-directly use the grid vertices for finding the shortest path. 
+Similar to our general approach, they also construct a two-dimensional configuration space of allowed collision-free 
+angles of the instrument on a grid. But instead of using it to build a path mesh of Voronoi/medial axis 
+bisectors along which the instrument can move at the furthest distance of any obstacle, which is central 
+to our approach, they directly use a grid-based method, finding the shortest path directly among the grid vertices.
 This can lead to the shortest path leading directly along a wall.
 As the \textit{Paprika} project dates from 2006, a reason why they did not consider Voronoi bisectors 
 for possible path curves might be the difficulty -- both conceptually and in terms of processor time -- 
