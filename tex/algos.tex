@@ -7,7 +7,7 @@
 
 \chapter{Basic Concepts, Algorithms and Data Structures}
 \label{ch:algos}
-The  path-finding algorithm and implementation that will be presented in the following chapters
+The  pathfinding algorithm and implementation that will be presented in the following chapters
 employ several different concepts, data structures and methods.
 Among these concepts are the Voronoi diagram (section \ref{sec:voro}),
 graph data structures and algorithms on them (section \ref{sec:graphs}),
@@ -18,7 +18,7 @@ In this chapter, these basic building blocks are reviewed in a general manner.
 
 \section{Voronoi diagrams}
 \label{sec:voro}
-As we will see in the next chapter, a concept that will play a central role for the path-finding 
+As we will see in the next chapter, a concept that will play a central role for the pathfinding
 algorithm of this work is the Voronoi diagram.
 A good review of Voronoi diagrams is given in Ref. \cite[Ch. 7, pp. 147-171]{Berg2008} 
 and in \cite[Ch. 5, pp. 209f]{FUH_geo2020}, which we follow in this chapter.
@@ -191,7 +191,7 @@ For the cases considered in this work, the medial axes coincide with the so-call
 \cite{wiki_skeleton, wiki_nskeleton, wiki_medial2} \cite[p. 169]{Berg2008}, which comprise the curves obtained from the centre positions of all possible maximal 
 spheres on the hypersurface $S$; this is explained in detail and with more mathematical rigor in the work by 
 Cazals and Giesen \cite[pp. 246f]{Cazals2006}.
-As we will be interested in these skeletons for the mesh-building step of our path-finding algorithm in the next
+As we will be interested in these skeletons for the mesh-building step of our pathfinding algorithm in the next
 chapter, it is important to note that they are notoriously difficult to calculate in a mathematically closed form.
 In this work, we will follow the alternate route laid out by Boissonat \textit{et al.}, where the skeleton is 
 not calculated directly, but approximated by quantising the surface boundary of $S$ on a grid and calculating 
@@ -290,7 +290,7 @@ are easier for Voronoi diagram calculation had been generated for every single r
 
 \section{Graphs}
 \label{sec:graphs}
-Another crucial concept for path-finding on a mesh of nodes is the graph.
+Another crucial concept for pathfinding on a mesh of nodes is the graph.
 A good review of graph theory can be found in Ref. \cite{FUH_algo_graphs_2021},
 which we will follow in this section.
 
@@ -765,7 +765,7 @@ R and R* tree codes, we will employ them for this work.
 
 \section{Summary}
 With the concept of the Voronoi diagram, basic graph theory, and spatial index trees, 
-this chapter presented the foundations on which the path mesh calculation and path-finding
+this chapter presented the foundations on which the path mesh calculation and pathfinding
 algorithm of this work will be based. The following chapter will review different kinds
-of path-finding methods and use parts of these to construct a bespoke method which
+of pathfinding methods and use parts of these to construct a bespoke method which
 is suitable for the angular movement of triple-axis spectrometers.

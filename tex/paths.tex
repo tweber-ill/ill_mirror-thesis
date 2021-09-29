@@ -1,14 +1,14 @@
 %
-% path-finding
+% pathfinding
 % @author Tobias Weber <tweber@ill.fr>
 % @date 2021
 % @license see 'LICENSE' file
 %
 
-\chapter{Path-finding Strategies}
+\chapter{Pathfinding Strategies}
 \label{ch:paths}
 
-This chapter develops the general theoretical idea of path-finding in a 
+This chapter develops the general theoretical idea of pathfinding in a
 triple-axis spectrometer (TAS).
 The path should be optimal in the sense that the instrument not only avoids 
 obstacles like walls or equipment in the experimental area, but also keeps a 
@@ -29,7 +29,7 @@ notes by H. Choset \cite{Choset2010}.
 \label{sec:motionplanning}
 Motion planning strategies for a robot vary strongly depending on the amount of
 information the robot has at its disposal. A review of several different algorithms
-for path-finding without full information is given in Ref \cite[Ch. 7, pp. 313-366]{FUH_geo2020},
+for pathfinding without full information is given in Ref \cite[Ch. 7, pp. 313-366]{FUH_geo2020},
 which we follow in this section.
 
 The simplest possible case is a robot equipped with just a sense of its relative
@@ -125,7 +125,7 @@ where $n$ is the number of line segments \cite[Theorem 6.3, p. 133]{Berg2008}.
 	\includegraphics[width = 0.4 \textwidth]{figures/pointrobot_walls.pdf}
 	\hspace{1 cm}
 	\includegraphics[width = 0.4 \textwidth]{figures/pointrobot_walls_trapezoids.pdf}
-	\caption[Path-finding using trapezoid maps.]{
+	\caption[Pathfinding using trapezoid maps.]{
 		Left panel: A point-like robot has to find a way around line segments 
 		which represent obstacles. 
 		Right panel: The algorithm outlined in Ref. \cite[p. 289]{Berg2008} 
@@ -162,7 +162,7 @@ we will follow for our TAS motion planning approach.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width = 0.5 \textwidth]{figures/pointrobot_walls_voronoi.pdf}
-	\caption[Path-finding using Voronoi diagrams.]{
+	\caption[Pathfinding using Voronoi diagrams.]{
 		The accessible configuration space is subdivided into the Voronoi regions 
 		of the obstacles (coloured). The optimal path (blue arrows) in the sense 
 		that it keeps the robot at maximum distance from any obstacle, has it 
@@ -296,7 +296,7 @@ instrument can move along.
 The second task concerns finding one specific path on the path mesh and moving
 the instrument on that path. 
 Splitting the work into a pre-built path mesh that can be used for live calculations
-is an approach that is commonly used in path-finding problems \cite{Hwang2003, Choset2010_ch5}.
+is an approach that is commonly used in pathfinding problems \cite{Hwang2003, Choset2010_ch5}.
 The two tasks comprise these following steps:
 \begin{enumerate}
 	\item Building the path mesh.
@@ -374,7 +374,7 @@ The two tasks comprise these following steps:
 
 
 \section{Summary}
-Different approaches to path-finding for a robotic system were discussed in this chapter.
+Different approaches to pathfinding for a robotic system were discussed in this chapter.
 The best strategy to the problem at hand where the robot has full information of its
 surroundings is a Voronoi-diagram based construction of a mesh of possible paths and 
 an application of the classic Dijkstra algorithm for finding a specific path on the mesh.

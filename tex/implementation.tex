@@ -1,14 +1,14 @@
 %
-% path-finding implementation
+% pathfinding implementation
 % @author Tobias Weber <tweber@ill.fr>
 % @date 2021
 % @license see 'LICENSE' file
 %
 
-\chapter{Path-finding Algorithm and Implementation}
+\chapter{Pathfinding Algorithm and Implementation}
 \label{ch:impl}
 
-In this chapter we describe the individual steps of the path-finding strategy (see p. \pageref{sec:strategy}) 
+In this chapter we describe the individual steps of the pathfinding strategy (see p. \pageref{sec:strategy})
 in detail and at the same time present an implementation in C++ \cite{Stroustrup2008, Stroustrup2018}. 
 Specifically, the latest version 20 of the C++ standard \cite{ISOCPP20} (C++20 in short)
 was employed in the creation of the software, together with the Boost C++ template libraries \cite{web_boost}. 
@@ -37,11 +37,25 @@ The very first task is to model the instrument space comprising the triple-axis 
 obstacles, as well as the floor as geometrical objects, for which positions and possible collisions can be
 calculated. In the implementation, all these components are modelled hierarchically, starting at the top with the class
 \lstinline[language=C++]|InstrumentSpace| which also serves as high-level interface for loading and saving
-the instrument geometry and states.
-State changes in the class, for example the occurence of a collision, are signalled to the outside world
+the instrument geometry and states. A domain model diagram of the class hierarchy can be seen
+in Fig. \ref{ig:tas_class_hierarchy}.
+State changes in the class, for example the occurrence of a collision, are signalled to the outside world
 using the publish-subscribe mechanism via \textit{Boost.Signals2} \cite{web_boost_signals} library.
 The publish-subscribe mechanism is also known as observer pattern, for which a comprehensive description 
 can be found in Ref. \cite[Ch. 4, pp. 122-127]{FUH_prog2019}.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width = 0.9 \textwidth]{figures/core_instrument_classes}
+	\end{center}
+	\caption[Instrument class hierarchy.]{Simplified domain model diagram of the triple-axis
+		spectrometer. An instrument space consists of an instrument and a collection
+		of walls. The instrument has three axes (monochromator, sample and analyser). The axes
+		and the walls possess a specific geometry. The concrete geometries themselves implement
+		the purely virtual class \lstinline[language=C++]|Geometry|.
+		See Ref. \cite{web_domainmodeldiagram} for more information on these types of diagrams.
+	\label{fig:tas_class_hierarchy}}
+\end{figure}
 
 The classes \lstinline[language=C++]|Instrument| and \lstinline[language=C++]|Axis| contain the actual
 instrument definition. The spectrometer itself is also modelled as a hierarchy, namely of the
@@ -473,7 +487,7 @@ step as the graph construction.
 As before (section \ref{sec:walls_index_tree}), we again use the R* tree implementation
 from Boost.Geometry's \cite{web_boost_geometry} \lstinline[language=C++]|rtree| 
 class \cite{web_boost_geometry_rtree} (chapter \ref{sec:indextrees}).
-The graph and the R* tree are queried in the path-finding step described in
+The graph and the R* tree are queried in the pathfinding step described in
 section \ref{sec:exepath}.
 
 \paragraph{Implementation details}
@@ -614,7 +628,7 @@ for which an example is shown in Fig. \ref{fig:linesegs_path}.
 
 
 \paragraph{Avoiding walls}
-Berg \textit{et al.} mention a heuristic, non-analytic path-finding approach using potential 
+Berg \textit{et al.} mention a heuristic, non-analytic pathfinding approach using potential
 functions \cite[p. 305]{Berg2008}. Their idea is to have the target position as a potential well attracting
 the robot, and the walls and obstacles as repellant potential peaks. They, however, discuss
 that such an approach can possibly trap the robot between several potential peaks.
@@ -648,8 +662,8 @@ More information on robot motion in potential function can be found in the notes
 		\hspace{0.1cm}
 		\includegraphics[width = 0.49 \textwidth]{figures/strategies_avoid_walls}
 	\end{center}
-	\caption[Path-finding strategies.]{
-		Effects of different cost functions on path-finding.
+	\caption[Pathfinding strategies.]{
+		Effects of different cost functions on pathfinding.
 		(a) The instrument is caught between two cylindrical obstacles.
 		(b) The shortest path in angular configuration space moves the instrument very close to the obstacles.
 		(c) The wall avoidance strategy chooses a longer, but safer path.
@@ -809,7 +823,7 @@ concept is_graph = requires(t_graph& graph, std::size_t vertidx)
 
 
 \section{Summary}
-In summary, we presented a two-part path-finding algorithm and its implementation, which generates an angular
+In summary, we presented a two-part pathfinding algorithm and its implementation, which generates an angular
 representation of obstacles in a triple-axis instrument's path, calculates a mesh of skeletal bisectors between 
 convex regions in its first part, and calculates an optimal path between user-specified start and target positions
 in the second part. These positions can either be given as crystal coordinates or directly in angular configuration space.

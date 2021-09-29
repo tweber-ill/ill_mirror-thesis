@@ -213,7 +213,7 @@ gained significant traction, with first autonomous experiments being attempted a
 \cite{web_ill_autonomous2020, Noack2021}.
 
 As part of the current drive towards autonomous experimentation at the ILL, the goal of the present work is the design
-and implementation of a software tool which enable an automatic path-finding for TAS instruments. Path-finding
+and implementation of a software tool which enable an automatic pathfinding for TAS instruments. Pathfinding
 is necessary for the instrument to circumvent obstacles in its way and for safe, collision-free movement close to walls.
 Currently, this task has to be performed by the instrument scientists before each new scan series in a time-consuming fashion.
 The current approach requires the instrument to be driven along the programmed scan path, but without measuring and with
@@ -222,7 +222,7 @@ The scientist has to stay in the instrument space and watch the instrument as it
 A manual stop has to be initiated when the instrument would collide with a wall, with itself, or when the rotation of one
 of the axes would pull out a cable or tube.
 
-An early attempt at automatic collision prevention and path-finding for a triple-axis spectrometer can be found in 
+An early attempt at automatic collision prevention and pathfinding for a triple-axis spectrometer can be found in
 the 2006 work by M\"uhlbauer and Hradil \cite{Muehlbauer2006}, but their method is based on a simple grid search and thus
 does not result in paths which keep the furthest distance to obstacles. A reason for such a solution might be
 that computing power was not sufficient at that time to calculate the mesh of possible paths as it is 
@@ -234,6 +234,6 @@ done with the algorithms to be presented in the current work.
 
 This chapter provided a short glance at neutron physics and the types of instrument typically used at research
 reactors, with special emphasis on the triple-axis spectrometer. The complexity of the movement of these kind of
-instruments necessitate the use of a path-finding system for a more effective set-up of measurements.
+instruments necessitate the use of a pathfinding system for a more effective set-up of measurements.
 In the next chapter, we will introduce the coordinate systems used in crystallography and at TAS instruments,
 and show how one set of coordinates transforms into the other.
