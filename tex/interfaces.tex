@@ -104,6 +104,12 @@ interface code, and the full functionality of the software, except GUI-specific 
 capabilities, is equally accessible from the other alternative interface modules, e.g. the \textit{Python}
 interface described in section \ref{sec:scripting}, or the raw C++ library interface.
 
+From within the GUI, the developer documentation is accessible via the ``Help'' menu.
+The documentation for the entire source code is automatically generated using 
+the \textit{Doxygen} \cite{web_doxygen} documentation generator.
+Furthermore, a settings dialog exists which allows for a fine-tuning of the algorithm's
+parameters.
+
 
 
 \subsection{Crystal definition dock window}
@@ -198,13 +204,6 @@ Here, all the \textit{OpenGL}-specific details, for example the vertex array obj
 of all 3-d objects that are displayed on the screen, are stored.
 Data in this secondary object system is updated automatically as soon as the user edits an object 
 property from the main \lstinline[language=C++]|InstrumentSpace| instance.
-
-From within the GUI, the developer documentation is accessible via the ``Help'' menu.
-The documentation for the entire source code is automatically generated using 
-the \textit{Doxygen} \cite{web_doxygen} documentation generator.
-Furthermore, a settings dialog exists which allows for a fine-tuning of the algorithm's
-parameters.
-
 
 \begin{figure}[htb]
 	\begin{minipage}{0.45 \textwidth}
