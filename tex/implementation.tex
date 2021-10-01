@@ -675,8 +675,9 @@ More information on robot motion in potential function can be found in the notes
 \paragraph{Implementation details}
 Our implementation of Dijkstra's algorithm, which can be found in the function 
 \lstinline[language=C++]|geo::dijk()| of the file \lstinline|./src/libs/graphs.h|, is based on the 
-pseudo-code given in Ref. \cite[p. 17]{FUH_algo_graphs_2021} together with the generalising modification of 
-Ref. \cite[p. 285]{Erickson2019}. In the present implementation, the search for the next neighbour
+pseudo-code given in Ref. \cite[p. 17, algo. 3]{FUH_algo_graphs_2021} together with the
+generalising modification of Ref. \cite[p. 285]{Erickson2019}.
+In the present implementation, the search for the next neighbour
 to visit is performed using a heap data structure, whose construction and query is performed
 using the standard C++ functions \lstinline[language=C++]|std::make_heap()| and 
 \lstinline[language=C++]|std::pop_heap()|, respectively.
@@ -770,7 +771,7 @@ dijk_mod(const t_graph& graph, const std::string& startvert,
 	\end{lstlisting}
 	\caption[C++ implementation of Dijkstra's algorithm.]{
 	C++20 implementation of Dijkstra's algorithm, based on pseudo-codes from 
-	Refs. \cite[p. 17]{FUH_algo_graphs_2021} and \cite[p. 285]{Erickson2019}.
+	Refs. \cite[p. 17, algo. 3]{FUH_algo_graphs_2021} and \cite[p. 285]{Erickson2019}.
 	\label{lst:dijkstra}}
 \end{listing}
 

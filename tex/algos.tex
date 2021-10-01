@@ -326,7 +326,7 @@ This example graph will also serve for the algorithm demonstrations in the follo
 
 \paragraph{Data structures}
 There are two common data structures to store graphs, the adjacency matrix and the adjacency list, which are
-both discussed in general and in terms of complexity in Ref. \cite[pp. 3-5]{FUH_algo_graphs_2021}.
+both discussed in general and in terms of complexity in Ref. \cite[Ch. 4.1.2, pp. 3-5]{FUH_algo_graphs_2021}.
 The adjacency matrix for a graph with $n$ vertices is an $n \times n$ matrix that stores the 
 weights $w\left(e_{ij}\right)$ for edge $e_{ij}$ between vertices $v_i$ and $v_j$ in its elements,
 where either $0$ or a special \textit{null} symbol means that the corresponding edge does not exist.
@@ -383,10 +383,10 @@ The first class of algorithms solves the so-called \textit{single source shortes
 which calculates the shortest paths from one source vertex to all other vertices \cite[pp. 273-297]{Erickson2019}.
 The second class of algorithms solves the \textit{all pairs shortest path (APSP)} problem, which calculates
 all possible pairs of shortest paths between any two vertices in the graph \cite[pp. 309-320]{Erickson2019}.
-Noteworthy representatives of these two classes are the Bellman-Ford \cite[pp. 11-14]{FUH_algo_graphs_2021} 
-and the Dijkstra algorithm \cite[pp. 14-18]{FUH_algo_graphs_2021} for SSSP, 
-as well as the Johnson \cite[pp. 19-21]{FUH_algo_graphs_2021} 
-and the Floyd-Warshall algorithm \cite[pp. 21-24]{FUH_algo_graphs_2021} for APSP.
+Noteworthy representatives of these two classes are the Bellman-Ford \cite[Ch. 4.2.2, pp. 11-14]{FUH_algo_graphs_2021}
+and the Dijkstra algorithm \cite[Ch. 4.2.3, pp. 14-18]{FUH_algo_graphs_2021} for SSSP,
+as well as the Johnson \cite[Ch. 4.3.1, pp. 19-21]{FUH_algo_graphs_2021}
+and the Floyd-Warshall algorithm \cite[Ch. 4.3.2, pp. 21-24]{FUH_algo_graphs_2021} for APSP.
 
 For the case presented in the following chapters we are interested in calculating a single path between 
 a source and target point and will thus need to solve an SSSP problem.
@@ -399,7 +399,7 @@ $\mathcal{O}\left( n_v n_e \right)$ and $\mathcal{O}\left( n_v \right)$, respect
 \cite[p. 13]{FUH_algo_graphs_2021}.
 
 \paragraph{Dijkstra's algorithm}
-Following the pseudo-code description in Ref. \cite[p. 17]{FUH_algo_graphs_2021}, Dijkstra's algorithm
+Following the pseudo-code description in Ref. \cite[p. 17, algo. 3]{FUH_algo_graphs_2021}, Dijkstra's algorithm
 works by inserting all vertices of the graph into a priority search queue, where they are sorted according 
 to distances values to the start vertex that are to be determined and which are initially set to $0$ for
 the start vertex and to infinity for all other vertices.
@@ -435,7 +435,7 @@ The shortest path is thus $v_1$, $v_2$, $v_3$, $v_5$.
 
 \begin{table}[h]
 	\begin{minipage}[t]{0.45 \textwidth}
-	Dijkstra's algorithm \cite[p. 17]{FUH_algo_graphs_2021} run:
+	Dijkstra's algorithm \cite[p. 17, algo. 3]{FUH_algo_graphs_2021} run:
 	\begin{itemize}
 	\item Initialisation.
 	
