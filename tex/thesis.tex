@@ -50,18 +50,23 @@
 \makeatletter
 % Bold math tip from Prof. Icking and https://tex.stackexchange.com/questions/209466/problem-with-tocloft-minitoc-and-bold-math-mode
 \g@addto@macro\bfseries{\mathversion{bold}}
+
+\newcommand{\ill}{\par{Institut Laue-Langevin (ILL), 71 avenue des Martyrs, CS 20156, 38042 Grenoble cedex 9, France\par}}
+\newcommand{\fuh}{\par{Fernuniversit\"at in Hagen (FUH), Universit\"atsstraße 47, 58097 Hagen, Germany\par}}
+
 \makeatother
 
 
 \begin{document}
 
-\newcommand{\ill}{Institut Laue-Langevin (ILL), 71 avenue des Martyrs, CS 20156, 38042 Grenoble cedex 9, France}
-\newcommand{\fuh}{Fernuniversit\"at in Hagen (FUH), Universit\"atsstraße 47, 58097 Hagen, Germany}
-
 \title{Pathfinding for Triple-Axis Spectrometers}
 \author{Tobias Weber, tweber@ill.fr}
-
 \maketitle
+
+\vspace*{\fill}
+\fuh
+\ill
+
 \tableofcontents
 
 
