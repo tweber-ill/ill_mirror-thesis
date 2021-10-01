@@ -74,10 +74,21 @@ The layout of the software's source code archive is shown in table \ref{tab:sour
 \end{table}
 
 Development of the geometry library under \lstinline|./src/libs| and the auxiliary tools under \lstinline|./src/tools| 
-was already started in 2020, as preparation for the exam in Algorithmic Geometry. 
+was already started in 2020, as preparation for the exam in Algorithmic Geometry, and they 
+are therefore based on the course materials \cite{FUH_geo2020}. 
 The library and tools were then further developed for this work, their separate code repository is available under 
 \url{https://github.com/t-weber/geo}, the software is furthermore registered under the DOI 
 \href{https://doi.org/10.5281/zenodo.4297475}{10.5281/zenodo.4297475}.
+
+This software is based on the \textit{tlibs} libraries, which reside in the 
+sub-directory \lstinline|./tlibs2|, but are not part of the present thesis.
+That library has already been developed since my diploma thesis \cite{DiplomaWeber} 
+and my PhD thesis \cite{PhDWeber}, as well as during several software 
+projects \cite{Weber2014, Takin2016, Takin2017, Takin2021}.
+Its full source code is included in the source archive merely for convenience.
+Apart from using the \textit{tlibs} library, several code snippets are further developments
+of their counterparts from that library, among these the setup and build scripts for the various
+systems, as well as the \textit{OpenGL} renderer.
 
 
 \paragraph{Thesis source code}
