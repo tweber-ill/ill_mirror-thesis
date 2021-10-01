@@ -156,7 +156,7 @@ Voronoi regions of the obstacles and moving the robot along the Voronoi edges,
 which ensures that the path is optimal in the sense that the robot is always at 
 the furthest distance from any obstacle \cite[pp. 163 and 304]{Berg2008}.
 An example path for the same problem as before is given in Fig. \ref{fig:robot_voronoi}.
-This approach is described in detail in \cite[pp. 247-251]{FUH_geo2020}, which 
+This approach is described in detail in \cite[Ch. 5.4.3, pp. 247-251]{FUH_geo2020}, which
 we will follow for our TAS motion planning approach.
 
 \begin{figure}[htb]
@@ -166,7 +166,8 @@ we will follow for our TAS motion planning approach.
 		The accessible configuration space is subdivided into the Voronoi regions 
 		of the obstacles (coloured). The optimal path (blue arrows) in the sense 
 		that it keeps the robot at maximum distance from any obstacle, has it 
-		moving along the Voronoi edges.}
+		moving along the Voronoi edges. This figure follows the design of
+		Ref. \cite[Fig. 5.4.3.1, p. 247]{FUH_geo2020}.}
 	\label{fig:robot_voronoi}
 \end{figure}
 
@@ -287,7 +288,7 @@ The strategy for planning the motion of the spectrometer comprises several steps
 Modifying the algorithm for a point-like robot described in Ref. 
 \cite[Ch. 13, pp. 283-306]{Berg2008} (see section \ref{sec:pointrobot}) and the 
 retraction algorithm for finding a path using line-segment Voronoi diagrams as 
-presented in \cite[p. 163]{Berg2008} and \cite[pp. 247-251]{FUH_geo2020}, we 
+presented in \cite[p. 163]{Berg2008} and \cite[Ch. 5.4.3, pp. 247-251]{FUH_geo2020}, we
 summarise the steps here before describing them in detail together with the actual
 implementation in the next chapter.
 

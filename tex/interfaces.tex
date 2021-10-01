@@ -58,8 +58,9 @@ are available:
 \end{itemize}
 For easy extensibility and to isolate the \lstinline[language=C++]|PathBuilder| class from the output
 code, the output class hierarchy is realised using the Visitor pattern \cite{wiki_visitor} 
-\cite[Ch. 4, pp. 141-147]{FUH_prog2019}, where the \lstinline[language=C++]|PathBuilder| 
+\cite[Ch. 4.4.9, pp. 161-167]{FUH_prog2019}, where the \lstinline[language=C++]|PathBuilder|
 accepts the output base class and dispatches to the desired child object.
+%\cite[Ch. 4, pp. 141-147]{FUH_prog2019}
 
 The core module functionality is self-contained and does, for instance, not depend on any GUI code.
 It is therefore straightforward to statically or dynamically link it to external applications which 

@@ -42,7 +42,8 @@ in Fig. \ref{ig:tas_class_hierarchy}.
 State changes in the class, for example the occurrence of a collision, are signalled to the outside world
 using the publish-subscribe mechanism via \textit{Boost.Signals2} \cite{web_boost_signals} library.
 The publish-subscribe mechanism is also known as observer pattern, for which a comprehensive description 
-can be found in Ref. \cite[Ch. 4, pp. 122-127]{FUH_prog2019}.
+can be found in Ref. \cite[Ch. 4.4.2, pp. 143-148]{FUH_prog2019}.
+%\cite[Ch. 4, pp. 122-127]{FUH_prog2019}
 
 \begin{figure}
 	\begin{center}
@@ -225,10 +226,10 @@ Testing for the intersection of line segments instead of infinite lines is done 
 finite range.
 
 For an efficient handling of multiple line segment intersections, the decision for which lines to test for intersections is
-performed using the line segment sweep algorithm from Ref. \cite[pp. 69-80]{FUH_geo2020} whose C++ implementation can be
+performed using the line segment sweep algorithm from Ref. \cite[Ch. 2.3.2, pp. 69-80]{FUH_geo2020} whose C++ implementation can be
 found in the function \lstinline[language=C++]|geo::intersect_sweep()| of the file \lstinline|./src/libs/lines.h| and which
 is also described in the book by Berg \textit{et al.} \cite[Ch. 2, pp. 19-43]{Berg2008}.
-We shortly summarise this algorithm and our implementation, following the description in \cite[pp. 69-80]{FUH_geo2020}:
+We shortly summarise this algorithm and our implementation, following the description in \cite[Ch. 2.3.2, pp. 69-80]{FUH_geo2020}:
 \begin{enumerate}
 	\item Possible events are kept in an event structure. Before the sweep, this is initialised with all the line segment
 		endpoints. The structure itself is a priority queue which sorts its elements by their $x$ coordinate in ascending order.

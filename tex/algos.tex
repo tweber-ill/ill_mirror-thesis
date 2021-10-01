@@ -128,23 +128,23 @@ Voronoi diagrams over the vector space $\mathbb{R}^n$ with either a non-Euclidia
 are not point-shaped are called non-affine and possess curved bisectors \cite[p. 72]{Boissonnat2006}.
 We now look at the special case of Voronoi diagrams over the $\mathbb{R}^2$ constructed from line segments.
 A description of this case can be found in \cite[Ch. 7.3, pp. 160-163]{Berg2008} and in 
-\cite[pp. 242-247]{FUH_geo2020}, whose descriptions we follow in this section.
+\cite[Ch. 5.4.2, pp. 242-247]{FUH_geo2020}, whose descriptions we follow in this section.
 
 For this case, the Voronoi region of a line $l_i$ consists of all points in $\mathbb{R}^2$ that 
 are closest to $l_i$. The bisector is the boundary between the Voronoi regions of two line segments 
 $l_i$ and $l_j$, $i \neq j$,
 and is the curve of equal distance between the two line segments $l_i$ and $l_j$.
 Its shape is either linear or quadratic, where, in the linear case, the bisector curve can also be either
-finite or infinite \cite[pp. 243-244]{FUH_geo2020}.
+finite or infinite \cite[Ch. 5.4.2, pp. 243-244]{FUH_geo2020}.
 
 A linear bisector is obtained for the distance calculated between two line segment endpoints or between two inner 
 points on the line segments which are not the endpoints.
 This can easily be seen, because, (a) in the case of two endpoints, the middle perpendicular line between these 
 two points is equidistant to them; and (b) in the case of two line segments, the angular bisector of the two lines is
-equidistant to them \cite[pp. 243-244]{FUH_geo2020}.
+equidistant to them \cite[Ch. 5.4.2, pp. 243-244]{FUH_geo2020}.
 On the other hand, the bisector curve segment follows a parabolic shape if the distance is calculated 
 between a line segment endpoint and one inner point of the other segment. This is the same as the bisector between
-a point and a line and its parabolic shape is proven in \cite[pp. 260-261]{FUH_geo2020}.
+a point and a line and its parabolic shape is proven in \cite[Ch. 5, pp. 260-261]{FUH_geo2020}.
 An example of two or several line segment sites and their bisectors is shown in Fig. \ref{fig:linesegs_voro}.
 
 \begin{figure}[H]
@@ -366,9 +366,10 @@ Table \ref{tab:example_graph_structure} shows an example for an adjacency matrix
 		Adjacency matrix (left) and adjacency list (right) for the example graph shown in Fig. \ref{fig:example_graph}.
 		For the adjacency matrix, the weight factors directly form the entries, whereas for the adjacency list, 
 		the weight factors are stored alongside the vertex entries and are here shown in square brackets.
-		These tables follow the design of Ref. \cite[pp. 4, table 4.1]{FUH_algo_graphs_2021}.}
+		These tables follow the design of Ref. \cite[p. 5, Fig. 4.3]{FUH_algo_graphs_2021}.}
 	\label{tab:example_graph_structure}
 \end{table}
+% \cite[p. 4, Fig. 4.3]{FUH_algo_graphs_2021}
 
 
 
@@ -395,7 +396,7 @@ complexity when using a heap as internal data structure \cite[pp. 17-18]{FUH_alg
 where $n_v$ is the number of vertices in the graph, and $n_e$ the number of edges.
 The Bellman-Ford algorithm would be less efficient, with time and storage complexities of 
 $\mathcal{O}\left( n_v n_e \right)$ and $\mathcal{O}\left( n_v \right)$, respectively 
-\cite[pp. 13]{FUH_algo_graphs_2021}.
+\cite[p. 13]{FUH_algo_graphs_2021}.
 
 \paragraph{Dijkstra's algorithm}
 Following the pseudo-code description in Ref. \cite[p. 17]{FUH_algo_graphs_2021}, Dijkstra's algorithm
