@@ -29,7 +29,7 @@ Analytical obstacle calculation is too complex mathematically due to the coordin
 expressions involved (see chapter \ref{ch:xtal}). Analytical calculation of the medial axis, which would consist
 of calculating the Voronoi bisectors of curved line segments in a closed form, is also not feasible, 
 as was discussed in chapter \ref{sec:voro_median}.
-Our quantisation step therefore mainly served to reduce the problem of the medial axis to the standard
+Our quantisation step therefore mainly serves to reduce the problem of the medial axis to the standard
 line segment Voronoi diagrams, for which very efficient libraries are available. 
 A purely grid-based approach, on the other hand, would not keep the instrument at the furthest distance
 of the obstacles.
@@ -39,7 +39,7 @@ of a software with a similar goal had already been attempted before, in a tool n
 \textit{Paprika} \cite{Muehlbauer2006}, a fact that was brought to our attention at the very end of the present work.
 At its time, \textit{Paprika} gained relatively little traction, though, and this might be due to their approach 
 being less than optimal.
-Similar to our general approach, they also construct a two-dimensional configuration space of allowed collision-free 
+At first similar to our general approach, they also construct a two-dimensional configuration space of allowed collision-free 
 angles of the instrument on a grid. But instead of using it to build a path mesh of Voronoi/medial axis 
 bisectors along which the instrument can move at the furthest distance of any obstacle, which is central 
 to our approach, they directly use a grid-based method, finding the shortest path directly among the grid vertices.
@@ -65,7 +65,7 @@ the instrument control software \textit{NOMAD} \cite{web_NOMAD} will be develope
 the pathfinding library of this work.
 The idea is to have a settings tab in \textit{NOMAD} where the user can switch on or off the pathfinding
 functionality. If it is on, subsequent drive commands will not be directly executed and all motors thus
-driven at the same time independently, but instead piped through the plug-in module. 
+not be driven at the same time independently, but instead piped through the plug-in module. 
 The module will give back a list of drive commands to \textit{NOMAD} which drives the instrument
 along the determined optimal path in a step-wise fashion.
 

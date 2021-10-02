@@ -13,7 +13,7 @@ Even after having finished the critical phases of development, the programs whic
 presented in this chapter serve to ensure that the software and its parts continue to work as intended. 
 Problems that may arise can be rapidly analysed using the simplified environments these tools provide.
 
-Before having being integrated into the main library or the GUI program, each essential function was tested 
+Before having been integrated into the main library or the GUI program, each essential function was tested 
 separately. This was done either via small test programs or via dedicated unit tests, which are discussed in 
 section \ref{sec:unit_tests}.
 Integration tests of algorithms, where collections of functions are tested how and if they work together, 
@@ -49,7 +49,7 @@ the \textit{2D Segment Delaunay Graphs} \cite{web_2dsegdel} library, and \textit
 The correctness of the calculation is furthermore checked by iterating the points of the $\mathbb{R}^2$ plane
 on a grid and testing to which line segment they are closest. These are the coloured regions in Fig. \ref{fig:linesgui} (a).
 The line segment tool can load the regions of the angular configuration space that are calculated in the main
-program (chapter \ref{sec:line_seg_generation}), and was used for debugging purposes in its development and
+program (chapter \ref{sec:line_seg_generation}); it was thus used for debugging purposes in its development and
 for testing different approaches to the algorithms used in the main program.
 
 Another calculation the line segment tool performs and which is shown in Fig. \ref{fig:linesgui} (b), is the 
@@ -179,7 +179,7 @@ Software verification uses proofs via Hoare logic, which splits the program into
 operations (e.g. assignments, conditions, loops) \cite[pp. 118-119]{Berghammer2017}, formulates
 a set of axioms and derivation rules consisting of pre- and post-conditions for these primitive operations
 \cite[pp. 122]{Berghammer2017}, reduces the complex program into these axioms \cite[pp. 123]{Berghammer2017},
-and finally either prooves the partial or the total correctness of the program.
+and finally either proves the partial or the total correctness of the program.
 The former says that if the pre-condition is valid, the post-condition is also valid after running the
 program, the latter means that the post-condition follows from the pre-condition and the execution
 of the program \cite[pp. 121]{Berghammer2017}.

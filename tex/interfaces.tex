@@ -7,19 +7,27 @@
 
 \chapter{Graphical and Scripting User Interfaces}
 \label{ch:gui}
-The present chapter describes the different user and developer interfaces to the software of the present work.
+In the practical environment it is to be employed at, a software system often has to meet very different 
+requirements concerning its usage. One user might find a graphical interface most useful to quickly
+perform and visualise a calculation. Another user may be interested in automatising calculations 
+in batch jobs using a script. A developer may wish to include the functionality of the software
+in another software system, and use it as a library.
+For the software of the present thesis, all these different forms of user and developer interfaces
+have been realised. The current chapter is dedicated to describing them one after the other together
+with typical use cases.
 
-The software has been realised in a modular fashion, it comprises a core
-module, which was introduced in chapter \ref{ch:impl} and which can be easily used as a library 
-and linked into external C++ applications. 
+To help facilitate the inclusion of such a variety of interfaces, the software has been realised in a 
+modular fashion, it comprises a core module, which was introduced in chapter \ref{ch:impl} 
+and which can be easily used as a library and linked into external C++ applications. 
 More details on directly employing the core library can be found in section \ref{sec:library}.
 Such a library usage will be important in the future when we plan to utilise the software as a 
 plug-in module to the instrument control software \textit{NOMAD} \cite{web_NOMAD} that is 
 employed at the Institut Laue-Langevin.
 
 Furthermore, a graphical user interface (GUI) has been implemented for a visual and interactive 
-representation of the instrument and the underlying algorithms and to facilitate their use. 
-The GUI is described in detail in section \ref{sec:gui}.
+representation of the instrument and the underlying algorithms and to facilitate their use.
+The GUI does not duplicate any core functionality, but instead links against the core library.
+It is described in detail in section \ref{sec:gui}.
 
 Finally, the software allows scripting via \textit{Python} \cite{Rossum2011, web_python}. 
 Apart from simply setting up a workflow and plotting the results, the \textit{Python} interface 
@@ -46,8 +54,8 @@ Editing the \textit{XML} instrument configurations can be done using the GUI mod
 While the central \lstinline[language=C++]|PathBuilder| class offers getter functions for all intermediate
 data that is generated during each step of the calculation workflow, the final results are output using
 the classes derived from the purely virtual class \lstinline[language=C++]|PathsExporterBase| that resides
-in the files \lstinline|./src/core/PathsExporter[.h,.cpp]|. Currently, three possible output classes
-are available:
+in the file \lstinline|PathsExporter.cpp| of the \lstinline|./src/core/| directory. 
+Currently, three possible output classes are available:
 \begin{itemize}
 	\item \lstinline[language=C++]|PathsExporterRaw|, which outputs the vertices of the calculated 
 		final instrument path in a raw text format.
@@ -56,7 +64,7 @@ are available:
 	\item \lstinline[language=C++]|PathsExporterNicos|, which generates \textit{Python} code to
 		be used for driving the instrument using the \textit{NICOS} \cite{web_NICOS} control system.
 \end{itemize}
-For easy extensibility and to isolate the \lstinline[language=C++]|PathBuilder| class from the output
+For easy extensibility, and to isolate the \lstinline[language=C++]|PathBuilder| class from the output
 code, the output class hierarchy is realised using the Visitor pattern \cite{wiki_visitor} 
 \cite[Ch. 4.4.9, pp. 161-167]{FUH_prog2019}, where the \lstinline[language=C++]|PathBuilder|
 accepts the output base class and dispatches to the desired child object.
@@ -157,7 +165,7 @@ any crystal rotation angles, both the rocking angles of the crystals around thei
 as well as the scattering angle with respect to the following axis. These angles and their
 use in diffraction (two-axis) and spectroscopy (three-axis) instruments has been described 
 in chapters \ref{ch:intro} and \ref{ch:xtal}. 
-The fields names ``$d$ spacings'' correspond to the spacing of the crystal planes in the 
+The fields named ``$d$ spacings'' correspond to the spacing of the crystal planes in the 
 monochromator and analyser crystals. In our examples we use the value of $d\,=\,3.355\, \textup{\AA}$
 which corresponds to scattering on the $\left(002\right)$ Bragg reflection of highly oriented
 pyrolithic graphite (HOPG) \cite[p. 250]{Shirane2002}, which is one of the standard crystals used as a
@@ -184,7 +192,7 @@ The camera position, viewing angle and direction as well as the type of projecti
 displayed in dock window (f) and can also be entered directly.
 
 The workspace is not restricted to a passive view of the instrument, but also functions as an editor
-which allows an easy interaction with the 3-d objects in the scene. For example, wall segments can
+which allows for an easy interaction with the 3-d objects in the scene. For example, wall segments can
 be inserted, edited and removed on the fly, see Fig. \ref{fig:gui_objects}.
 The segments as well as the instrument axes themselves can be dynamically moved by dragging them using the 
 mouse. This is realised by ``unprojecting'' the current mouse position from its coordinates with respect 
@@ -221,7 +229,9 @@ property from the main \lstinline[language=C++]|InstrumentSpace| instance.
 	\caption[Object manipulation.]{Manipulation of 3-d objects in the main GUI.
 		Left panel: Objects can be moved by mouse and possess a context menu.
 		Right panel: All objects in the instrument space are organised hierarchically. 
-			Their properties can be dynamically edited.
+			Their properties can be dynamically edited, meaning that any change
+			in the editor is immediately reflected in the \textit{OpenGL}
+			visualisation, and vice versa.
 		\label{fig:gui_objects}}
 \end{figure}
 
