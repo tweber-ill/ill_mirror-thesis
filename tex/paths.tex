@@ -8,7 +8,7 @@
 \chapter{Pathfinding Strategies}
 \label{ch:paths}
 
-This chapter develops the general theoretical idea of pathfinding in a
+This chapter develops the general theoretical idea of pathfinding for a
 triple-axis spectrometer (TAS).
 The path should be optimal in the sense that the instrument not only avoids 
 obstacles like walls or equipment in the experimental area, but also keeps a 
@@ -17,8 +17,8 @@ Here, the descriptions remain ``high level'', the details and the implementation
 of the algorithm will be presented in the next chapter.
 
 Before looking at the situation with TAS in section \ref{sec:tasrobot}, we shortly 
-review motion planning in general (section \ref{sec:motionplanning}) and the ideas of
-motion planning for a point-like robot (section \ref{sec:pointrobot}).
+review motion planning in general (section \ref{sec:motionplanning}), and the ideas of
+motion planning for a point-like robot in particular (section \ref{sec:pointrobot}).
 Good references for robot motion planing can be found in the textbook by 
 M. de Berg \textit{et al.} \cite[Ch. 13, pp. 283-306]{Berg2008}, the lecture notes by
 R. Klein and C. Icking \cite[Ch. 7, pp. 313-366]{FUH_geo2020}, as well as the lecture 
@@ -39,26 +39,26 @@ Such a robot is capable of finding a path out of a maze using the Pledge algorit
 which consists of noting the angle of an initially arbitrary direction, repeatedly
 moving along that direction until an obstacle is hit, and then moving parallel to the
 obstacle's faces as long as the accumulated angle is not at its initial value again,
-e.g. $0$ degrees \cite[Ch. 7.2, pp. 316-322]{FUH_geo2020}.
+for instance $0$ degrees \cite[Ch. 7.2, pp. 316-322]{FUH_geo2020}.
 
 If -- aside from the tactile sensor and the angular sense -- the robot also knows
 its current position relative to the target point, it can execute a \textit{bug algorithm}
 to reach its target, these are algorithms which are based on the movement of insects.
-Several of these algorithms exist \cite{Choset2010_ch2}, and the basic idea consists
+Several variations of these algorithms exist \cite{Choset2010_ch2}, and the basic idea consists
 of moving in the direction of the target, fully circling a potential obstacle in the way,
-returning to the obstacle's point of closest distance to the target and repeating
-\cite[Ch. 7.3.1, pp. 323-326]{FUH_geo2020}.
+returning to the obstacle's point of closest distance to the target and repeating the movement
+towards the target \cite[Ch. 7.3.1, pp. 323-326]{FUH_geo2020}.
 
 A still more sophisticated strategy is the \textit{continuous angular bisector}
 (CAB) \cite{Icking1995}, which solves the specific problem of a robot finding the visibility kernel
-of a simple, star-shaped polygon, in whose boundaries the robot navigates, where the kernel is defined as the
-region where the entire polygon is visible, and ``star-shaped'' means that such a
-non-empty kernel exists \cite[Ch. 7.4.5, pp. 347-351]{FUH_geo2020}.
+of a simple, star-shaped polygon, in whose boundaries the robot navigates, and where 
+the kernel is defined as the region where the entire polygon is visible, and ``star-shaped'' 
+means that such a non-empty kernel exists \cite[Ch. 7.4.5, pp. 347-351]{FUH_geo2020}.
 The robot does not know the shape of the polygonal region beforehand, but is equipped
 with a camera system and memory that allows it to map out its environment on the go.
 The strategy works by moving the robot along a path that increases its own visibility
 polygon until it coincides with the original polygon, at which point the kernel has been
-reached; the movement of the robot continuously follows the angular bisector of the
+reached; the movement of the robot hereby continuously follows the angular bisector of the
 ``gaining wedge'', the wedge-shaped region along which the robot's visibility of the
 polygon increases \cite[p. 261]{Icking1995}.
 
@@ -93,7 +93,7 @@ First, the separation of allowed space into sectors, within which the robot can
 move without hitting an obstacle \cite[p. 286]{Berg2008}. 
 The second part concerns the computation of the actual path and is given in 
 Ref. \cite[p. 289]{Berg2008}. 
-In the first part, a trapezoidal map (explained below) is created for the 
+In the first part, a trapezoidal map, whose details are explained below, is created for the 
 configuration space containing the obstacles, both of polygonal shape. 
 The trapezoids inside the obstacles are removed from the final map as the robot 
 has to stay clear of them. 
@@ -155,9 +155,12 @@ This approach is called the retraction method and is based on constructing the
 Voronoi regions of the obstacles and moving the robot along the Voronoi edges, 
 which ensures that the path is optimal in the sense that the robot is always at 
 the furthest distance from any obstacle \cite[pp. 163 and 304]{Berg2008}.
-An example path for the same problem as before is given in Fig. \ref{fig:robot_voronoi}.
+Here, the notion of distance of course refers the the inherent metric of the configuration space
+at hand, it can be, for example, an angular distance.
 This approach is described in detail in \cite[Ch. 5.4.3, pp. 247-251]{FUH_geo2020}, which
 we will follow for our TAS motion planning approach.
+An example path for the same problem as before is given in Fig. \ref{fig:robot_voronoi}.
+
 
 \begin{figure}[htb]
 	\centering
@@ -289,7 +292,7 @@ Modifying the algorithm for a point-like robot described in Ref.
 \cite[Ch. 13, pp. 283-306]{Berg2008} (see section \ref{sec:pointrobot}) and the 
 retraction algorithm for finding a path using line-segment Voronoi diagrams as 
 presented in \cite[p. 163]{Berg2008} and \cite[Ch. 5.4.3, pp. 247-251]{FUH_geo2020}, we
-summarise the steps here before describing them in detail together with the actual
+summarise these steps here before describing them in detail together with the actual
 implementation in the next chapter.
 
 Two tasks are needed. The first task is building the mesh of possible paths the 
@@ -353,8 +356,8 @@ The two tasks comprise these following steps:
 			coordinates into instrument angles. The instrument angles form a 
 			coordinate point in angular configuration space.
 		\item Determine the Voronoi regions of the start and end coordinate points
-			using the spatial index tree that was generated during the creation
-			of the path mesh.
+			using the spatial index tree of Voronoi vertices that was generated 
+			during the creation of the path mesh.
 		\item Move the instrument to the edge of the start Voronoi region.
 		\item Calculate a path to the edge of the Voronoi region 
 			containing the end point and move the instrument along that path. 
