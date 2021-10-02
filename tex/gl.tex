@@ -8,8 +8,8 @@
 \chapter{Interlude: Mathematics for 3-d Graphics}
 \label{ch:gl}
 
-The software of this work uses \textit{OpenGL} \cite{web_OpenGL} in its main graphical user interface (GUI).
-Before discussing the main GUI proper, this chapter reviews concepts behind 3-d graphics in a general way.
+The software of this work uses \textit{OpenGL} \cite{web_OpenGL} for visualisation in its main graphical user interface (GUI).
+Before discussing the main GUI proper, this chapter reviews concepts behind three-dimensional graphics in a general way.
 Here, we mainly describe the most important mathematical aspects of 3-d graphics, a comprehensive overview of 
 \textit{OpenGL} and the mathematics involved can be found in Ref. \cite{Sellers2002}.
 
@@ -17,7 +17,7 @@ Here, we mainly describe the most important mathematical aspects of 3-d graphics
 
 \section{Coordinate systems and transformations}
 To draw a three-dimensional object onto the screen, several principal coordinate systems are typically maintained,
-namely the coordinate system of the 3-d object, a global coordinate system common for all objects in the scene, the
+namely the local coordinate system of the 3-d object, a global coordinate system common for all objects in the scene, the
 system of the camera, as well as screen (device) and window coordinates \cite[pp. 63-66]{Sellers2002}.
 The vertices of the 3-d object, $\left|x\right>$, are thus transformed into a window's 2-d pixels by using four
 matrices transforming from one coordinate system to the next,
@@ -26,7 +26,7 @@ matrices transforming from one coordinate system to the next,
 	\label{eq:gl_mvp}
 \end{equation}
 where $M$ is a matrix transforming the model's local system (used, for example, to spin the object around one of
-its axes) into the global coordinate system. $V$ is the view matrix given by the camera's coordinate system
+its axes) into the global coordinate system of the scene. $V$ is the view matrix given by the camera's coordinate system
 which transforms global object coordinates into the camera's viewing frame. These matrices take the form
 described in section \ref{sec:gl_trafos}.
 $P$ projects the three-dimensional scene onto the two-dimensional plane representing the screen \cite{web_gl_ortho, web_gl_perspective} and is described in section \ref{sec:gl_projs}. 
@@ -41,13 +41,14 @@ transformation and lighting operations of the rendering pipeline are programmabl
 programs that are directly executed on the graphics processing unit (GPU) \cite{wiki_gl_history}
 and are written in a \textit{C}-like language \cite{wiki_glsl}.
 Going even further than \textit{OpenGL}, its successor \textit{Vulkan} \cite{web_Vulkan} makes the pipeline
-itself dynamic and programmable, not only the shaders of its individual steps.
+itself dynamic and programmable, not only the shaders of its individual steps, but sacrificing the ease of use in 
+exchange for flexibility.
 While the transformation given by Eq. \ref{eq:gl_mvp} is not fixed anymore, its form is usually maintained
 in the shaders by the user. More information on the rendering pipeline and the shaders is given in 
 section \ref{sec:gl_shaders}.
 
 \paragraph{Object selection}
-The transformation inverse to Eq. \ref{eq:gl_mvp} is also of importance to be able to select objects in the
+The transformation inverse to Eq. \ref{eq:gl_mvp} is also of importance, namely to be able to select objects in the
 three-dimensional scene by mouse. 
 To that end, a line is calculated by ``unprojecting'' two homogeneous $\left|x_{\mathrm{window}}\right>$ vectors
 (see next section) having the same mouse position as their $x$ and $y$ components and the distance of the
@@ -77,8 +78,8 @@ described next.
 % scaling
 % -----------------------------------------------------------------------------
 \subsection{Translation}
-Vertices can thus be translated by left-multiplying with a matrix whose fourth column represents the translation
-vector \cite{web_gl_translate}:
+Using homogeneous coordinates, vertices can be translated by left-multiplying with a 
+matrix whose fourth column represents the translation vector \cite{web_gl_translate}:
 \begin{equation}
 	\left( \begin{array}{c} x + t_x \\ y + t_y \\ z + t_z \\ 1 \end{array} \right) 
 	\ =\  
@@ -90,7 +91,7 @@ vector \cite{web_gl_translate}:
 	\end{array} \right) \cdot
 	\left( \begin{array}{c} x \\ y \\ z \\ 1 \end{array} \right).
 \end{equation}
-Not that direction vectors, which have their fourth component zero, are not affected by a translation.
+Note that direction vectors, which have their fourth component zero, are not affected by a translation.
 % -----------------------------------------------------------------------------
 
 
@@ -119,7 +120,7 @@ elements \cite{web_gl_scale}:
 % -----------------------------------------------------------------------------
 \subsection{Rotation}
 The set of rotations in three-dimensional space forms an algebraic group, the special orthogonal group $\mathrm{SO\left(3\right)}$,
-which comprises all orthogonal matrices with determinant 1.
+which comprises all orthogonal matrices with determinant 1 \cite[pp. 849-851]{Arfken2013}.
 There are two popular ways to describe rotations $R \in \mathrm{SO\left(3\right)}$ given the rotation axis and angle, 
 namely the Rodrigues formalism and quaternions. 
 % As they are both ubiquitous in computer graphics, we describe each of them briefly in the following paragraphs.
@@ -237,7 +238,7 @@ basic properties of the three imaginary units, $i$, $j$, and $k$ \cite[p. 103]{K
 \end{equation}
 A very good in-depth treatise of quaternion algebra and analysis can be found in the book by Kuipers \cite{Kuipers2002},
 which we follow in this section.
-Here we only present some important results, please refer to \cite{Kuipers2002} for the derivations.
+Here we only present some important results, please refer to Ref. \cite{Kuipers2002} for the derivations.
 
 \paragraph{Quaternion multiplication}
 The product of two quaternions $\left( w_1,\,\underline{v_1} \right),\ \left( w_2,\,\underline{v_2} \right) \in \mathbb{H}$ 
@@ -403,7 +404,7 @@ A formal derivation of this transformation is given in Ref. \cite{web_webgl_view
 \section{Rendering}
 \label{sec:gl_shaders}
 Rendering in \textit{OpenGL} is performed as pipeline operations comprised of so-called shaders.
-Shaders are small programs that are executed on the GPU are are written in the
+Shaders are small programs that are executed on the GPU and are written in the
 \textit{OpenGL Shading Language} (\textit{GLSL}) \cite{wiki_glsl}
 The pipeline passes buffered vertex data to the vertex shader, performs tessellation steps to triangulate
 the resulting geometry, passes this data to a geometry shader, and rasterises it with the help
