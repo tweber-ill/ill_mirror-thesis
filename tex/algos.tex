@@ -36,7 +36,7 @@ generalising from \cite[p. 140]{Icking2001},
 	\label{eq:bisector}
 \end{equation}
 Even though this definition of Voronoi diagrams does not restrict the vector space to the $\mathbb{R}^n$ 
-and the underlying metric to the usual Euclidian one, 
+and the underlying metric to the usual Euclidian one \cite[p. 736]{Arens2015},
 \begin{equation}
 	\left\Vert \underline{x} \right\Vert_2 \ =\ \sqrt{\left<x | x \right>},
 \end{equation}
@@ -107,9 +107,9 @@ are shown in Fig. \ref{fig:cubic_bzs}.
 	\end{center}
 	\caption[Brillouin zones.]{
 		First Brillouin zone for
-			(a) a simple cubic,
-			(b) a body-centred cubic, and
-			(c) a face-centred cubic crystal lattice.
+			(a) a simple cubic \cite[p. 25]{Gross2012},
+			(b) a body-centred cubic \cite[p. 26]{Gross2012}, and
+			(c) a face-centred cubic \cite[pp. 25-26]{Gross2012} crystal lattice.
 		In the top panels, 3-d views of only the bisectors are shown.
 		In the bottom panels, 2-d cuts through the horizontal plane show the Brillouin zones 
 		completely filling the space. The vertex sites (Bragg peaks) are shown as small dots.
@@ -144,7 +144,7 @@ two points is equidistant to them; and (b) in the case of two line segments, the
 equidistant to them \cite[Ch. 5.4.2, pp. 243-244]{FUH_geo2020}.
 On the other hand, the bisector curve segment follows a parabolic shape if the distance is calculated 
 between a line segment endpoint and one inner point of the other segment. This is the same as the bisector between
-a point and a line and its parabolic shape is proven in \cite[Ch. 5, pp. 260-261]{FUH_geo2020}.
+a point and a line and its parabolic shape is proven in Ref. \cite[Ch. 5, pp. 260-261]{FUH_geo2020}.
 An example of two or several line segment sites and their bisectors is shown in Fig. \ref{fig:linesegs_voro}.
 
 \begin{figure}[H]
@@ -237,7 +237,7 @@ The first three libraries are not feasible for the present project, though:
 		\textit{Boost.Polygon} uses Fortune's sweep algorithm \cite{Fortune1987} to construct
 		the Voronoi diagram, which has an upper bound in complexity of $\mathcal{O}\left( n \log_2 n \right)$ in time
 		and $\mathcal{O}\left( n \right)$ in storage space for $n$ line segments \cite[p. 168]{Fortune1987}.
-		The library is internally based on integers coordinates for optimal performance \cite{web_boost_polygon}.
+		The library is internally based on integer coordinates for optimal performance \cite{web_boost_polygon}.
 		The reliance on integer coordinate representation is also responsible for \textit{Boost.Polygon}'s 
 		inability to handle intersecting lines, because the intersection point may be at a non-integer coordinate. 
 		Intersecting lines need to be carefully filtered out before calculation, because they can unfortunately cause the 
@@ -282,7 +282,7 @@ are easier for Voronoi diagram calculation had been generated for every single r
 	\caption[Voronoi calculation performance.]{
 		Comparison of the times needed to calculate the line segment Voronoi diagrams for an increasing
 		number of random line segments using the \textit{Boost.Polygon} (labelled ``Boost'') \cite{web_boost_polygon}
-		and the \textit{CGAL / 2D Segment Delaunay Graphs} (``CGAL'') \cite{web_2dsegdel} libraries.
+		and the \textit{CGAL / 2D Segment Delaunay Graphs} (labelled ``CGAL'') \cite{web_2dsegdel} libraries.
 		\label{fig:voro_performance}}
 \end{figure}
 
@@ -366,7 +366,7 @@ Table \ref{tab:example_graph_structure} shows an example for an adjacency matrix
 		Adjacency matrix (left) and adjacency list (right) for the example graph shown in Fig. \ref{fig:example_graph}.
 		For the adjacency matrix, the weight factors directly form the entries, whereas for the adjacency list, 
 		the weight factors are stored alongside the vertex entries and are here shown in square brackets.
-		These tables follow the design of Ref. \cite[p. 5, Fig. 4.3]{FUH_algo_graphs_2021}.}
+		These tables follow the design of equivalent tables in Ref. \cite[p. 5, Fig. 4.3]{FUH_algo_graphs_2021}.}
 	\label{tab:example_graph_structure}
 \end{table}
 % \cite[p. 4, Fig. 4.3]{FUH_algo_graphs_2021}
@@ -410,8 +410,8 @@ vertex $v_j$ (saved as the distance value for $v_j$) becomes smaller when going 
 as the distance value for $v_i$ plus the weight of the edge $e_{ij}$). 
 If so, the distance value for $v_j$ is set to this shorter path length and $v_i$ is remembered as the
 predecessor of $v_j$ along the path.
-In total, Dijkstra's algorithm is at its core a breath-first search of a graph, where the next neighbour 
-vertex to visit is chosen by the lowest weight factor of the connecting edges.
+In total, Dijkstra's algorithm is at its core a breadth-first search of a graph \cite{wiki_dijkstra},
+where the next neighbour vertex to visit is chosen by the lowest weight factor of the connecting edges.
 As discussed before, the priority search queue has to use a heap as its internal data structure for
 optimal run time.
 

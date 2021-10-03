@@ -27,7 +27,7 @@ code of \textit{McStas'} \textit{templateTAS} virtual instrument \cite{web_mcsta
 
 We begin by presenting the so-called $UB$ matrix formalism to convert between relative lattice units 
 of a crystal and laboratory coordinates used in instrument space. This method has been described in 
-\cite{Lumsden2005}. The derivation of the transformation matrices, $A$ and $B$, describing fractional 
+Ref. \cite{Lumsden2005}. The derivation of the transformation matrices, $A$ and $B$, describing fractional
 crystal coordinates, can be found in \cite{wiki_fractional}, which we follow here.
 
 \subsection{$A$ and $B$ matrices}
@@ -37,8 +37,8 @@ which -- in general -- are not perpendicular to one another, but instead enclose
 and $\gamma$, respectively, as shown in Fig. \ref{fig:cell}. 
 To calculate the crystallographic $A$ matrix which transforms non-orthogonal crystal to orthogonal lab units, 
 we first need to reduce the number of parameters.
-The respective relations between the basis vectors and their angles can be directly obtained via the cosine 
-theorem:
+The respective relations between the basis vectors and their angles can be directly obtained via
+their scalar products, following the derivation in Ref. \cite{wiki_fractional}:
 \begin{equation} \left< a | b \right > \ =\  ab \cos \gamma, \label{ab} \end{equation}
 \begin{equation} \left< a | c \right > \ =\  ac \cos \beta, \label{ac} \end{equation}
 \begin{equation} \left< b | c \right > \ =\  bc \cos \alpha. \label{bc} \end{equation}
@@ -175,8 +175,8 @@ This directly leads to the so-called $B$ matrix, which transforms reciprocal-spa
 to lab coordinates (1/\AA), is \cite[p. 60]{Gross2012}:
 \begin{equation} B \ =\  2 \pi A^{-t}, \end{equation}
 where $-t$ denotes the transposed inverse.
-We can now also determine the metric tensor corresponding to the coordinate system defined by 
-the $B$ transformation matrix, it reads \cite[p. 808]{Arens2015}:
+We can now also determine the metric tensor \cite[pp. 807-809]{Arens2015} corresponding to the coordinate
+system defined by the $B$ transformation matrix, it reads \cite[p. 808]{Arens2015}:
 \begin{equation}
 	\left(g_{ij}\right) \ =\  \left<\underline{b}_i | \underline{b}_j \right> \ =\  B^T B,
 \end{equation}
@@ -223,7 +223,7 @@ QR decomposition \cite[pp. 269-272]{Scarpino2011}.
 In summary, a coordinate point $\left|Q_{\mathrm{rlu}}\right>$, which is given in relative lattice 
 units of the reciprocal crystal, 
 is transformed by the $B$ matrix into the orthogonal lab units used at the instrument. 
-It is then rotated by the $U$ matrix to account for the actual crystal orientation:
+It is then rotated by the $U$ matrix to account for the actual crystal orientation \cite{Lumsden2005}:
 \begin{equation}
 	\left|Q_{\mathrm{lab}}\right> \ =\  U \cdot B \cdot \left|Q_{\mathrm{rlu}}\right>.
 \end{equation}
@@ -238,7 +238,7 @@ with its basis vectors. This is just a formality, though, the mathematics are th
 % ------------------------------------------------------------------------------------------------------------------------------------
 \section{Scattering triangle and TAS angles \label{sec:tasangles}}
 
-With the metric tensor of the crystal coordinate system, we can now calculate the scattering angles 
+With the metric tensor \cite[pp. 807-809]{Arens2015} of the crystal coordinate system, we can now calculate the scattering angles
 $2 \theta_M$, $2 \theta_S$, and $2 \theta_A$ from the monochromator, sample and analyser, respectively. 
 The derivation of basic scattering geometries in triple-axis spectrometers can be found in \cite[Ch. 1.3]{Shirane2002}.
 
@@ -273,7 +273,8 @@ For that, we have a look at the incoming and final neutron wavevectors $\left| k
 whose directions (but not lengths!) correspond directly to the neutron paths before and after the sample, 
 respectively, as shown on the left-hand side of Fig. \ref{fig:scattering_triangle}. We can rearrange them so 
 that their tips meet, as depicted on the right-hand side of Fig. \ref{fig:scattering_triangle}, where the 
-scattering triangle is formed together scattering vector $\left| Q \right> = \left| k_i \right> - \left| k_f \right>$. 
+scattering triangle is formed by $\left| k_i \right>$ and $\left| k_f \right>$ together with the
+scattering vector $\left| Q \right> = \left| k_i \right> - \left| k_f \right>$.
 Here, the two wavevectors enclose the scattering angle $2 \theta_S$.
 
 \begin{figure}
@@ -284,7 +285,8 @@ Here, the two wavevectors enclose the scattering angle $2 \theta_S$.
 		Triple-axis layout (left) and scattering triangle (right). \label{fig:scattering_triangle}}
 \end{figure}
 
-We can calculate $2 \theta_S$ by forming the scalar product of $\left| Q \right>$ with itself.
+We can calculate $2 \theta_S$ via the cosine theorem \cite[pp. 694-695]{Arens2015}, i.e.
+by forming the scalar product of $\left| Q \right>$ with itself \cite[p. 11]{Shirane2002}:
 \begin{equation} 
 	\left| Q \right> \ =\  \left| k_i \right> - \left| k_f \right> \\ 
 \end{equation}

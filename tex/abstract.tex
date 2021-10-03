@@ -32,8 +32,13 @@ not every $\left( \underline{Q}, E \right)$ coordinate point is accessible, and 
 usually required beforehand to avoid collisions of the instrument with walls, collisions with itself or movements
 which could pull out fragile cables.
 
-The goal this work was the development and implementation of a pathfinding algorithm for
-neutron triple-axis spectrometers. Given a user-selected target coordinate in reciprocal crystal space, 
-the algorithm is able to navigate the instrument in its constrained angular space. The problem is similar to
-moving a robot arm around obstacles, with the addition of having the start and target coordinates in a 
-coordinate system with a different metric.
+The goal this work is the development and implementation of a pathfinding algorithm for
+neutron triple-axis spectrometers.
+Given a user-selected target coordinate in reciprocal crystal space,
+the algorithm is able to navigate the instrument in its constrained angular space.
+To that end, a generalised Voronoi diagram is used to calculate a mesh of possible paths
+the instrument can move along.
+The situation is similar to moving a robot arm around obstacles, with the addition of having
+the start and target coordinates in a coordinate system with a different metric.
+An easy to use graphical user interface is provided for visualising the motion planning
+problem and its solutions.
