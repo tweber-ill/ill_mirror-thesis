@@ -31,7 +31,7 @@ of calculating the Voronoi bisectors of curved line segments in a closed form, i
 as was discussed in chapter \ref{sec:voro_median}.
 Our quantisation step therefore mainly serves to reduce the problem of the medial axis to the standard
 line segment Voronoi diagrams, for which very efficient libraries are available. 
-A purely grid-based approach, on the other hand, would not keep the instrument at the furthest distance
+A purely grid-based approach, on the other hand, would not keep the instrument at the farthest distance
 of the obstacles.
 
 The importance of a pathfinding system for triple-axis spectrometers can be seen as the development
@@ -41,7 +41,7 @@ At its time, \textit{Paprika} gained relatively little traction, though, and thi
 being less than optimal.
 At first similar to our general approach, they also construct a two-dimensional configuration space of allowed collision-free 
 angles of the instrument on a grid. But instead of using it to build a path mesh of Voronoi/medial axis 
-bisectors along which the instrument can move at the furthest distance of any obstacle, which is central 
+bisectors along which the instrument can move at the farthest distance of any obstacle, which is central 
 to our approach, they directly use a grid-based method, finding the shortest path directly among the grid vertices.
 This can lead to the shortest path leading directly along a wall.
 As the \textit{Paprika} project dates from 2006, a reason why they did not consider Voronoi bisectors 

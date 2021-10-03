@@ -23,6 +23,7 @@
 \usepackage[shortlabels]{enumitem}
 \usepackage[numbib, chapter]{tocbibind}
 \usepackage[colorlinks=true, linkcolor=black, citecolor=blue, urlcolor=blue, unicode=true]{hyperref}
+\usepackage{pdfpages}
 
 \usepackage{listings}
 \lstset{
@@ -58,6 +59,11 @@
 
 
 \begin{document}
+% explicitly add the cover page
+%\pagenumbering{gobble}
+%\includepdf[width=\paperwidth]{titelseite.pdf}
+%\cleardoublepage
+%\pagenumbering{arabic}
 
 \title{Pathfinding for Triple-Axis Spectrometers}
 \author{Tobias Weber, tweber@ill.fr}

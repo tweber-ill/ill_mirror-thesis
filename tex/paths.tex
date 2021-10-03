@@ -154,7 +154,7 @@ direct approach can be taken.
 This approach is called the retraction method and is based on constructing the 
 Voronoi regions of the obstacles and moving the robot along the Voronoi edges, 
 which ensures that the path is optimal in the sense that the robot is always at 
-the furthest distance from any obstacle \cite[pp. 163 and 304]{Berg2008}.
+the farthest distance from any obstacle \cite[pp. 163 and 304]{Berg2008}.
 Here, the notion of distance of course refers the the inherent metric of the configuration space
 at hand, it can be, for example, an angular distance.
 This approach is described in detail in \cite[Ch. 5.4.3, pp. 247-251]{FUH_geo2020}, which
@@ -362,7 +362,7 @@ The two tasks comprise these following steps:
 		\item Calculate a path to the edge of the Voronoi region 
 			containing the end point and move the instrument along that path. 
 			The path has to minimise a given cost function, which can,
-			for example, lead to the shortest path or the path furthest from
+			for example, lead to the shortest path or the path farthest from
 			all walls. 
 			In either case, Dijkstra's algorithm \cite{wiki_dijkstra}
 			will be employed to get a path with minimum edge weights.
