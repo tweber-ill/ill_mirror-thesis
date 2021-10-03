@@ -511,7 +511,8 @@ of the library and can be found in the file \lstinline|./src/libs/voronoi_lines.
 For the calculation of the line segment Voronoi diagrams the software uses either of two
 backends, between which the user can freely switch: These are the the Voronoi 
 extensions \cite{web_boost_polygon_voronoi} of the \textit{Boost.Polygon} 
-\cite{web_boost_polygon, Simonson2009} C++ library for one,
+\cite{web_boost_polygon, Simonson2009} C++ library together with code
+for iterating points on a quadratic bisector \cite{web_boost_polygon_voronoi_visual_utils} for one,
 and the \textit{2D Segment Delaunay Graphs} library \cite{web_2dsegdel, Karavelas2004, Karavelas2006} 
 from the \textit{CGAL} software package \cite{web_cgal} for the other,
 see the discussion in chapter \ref{sec:voro_ls}.
