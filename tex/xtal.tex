@@ -11,13 +11,13 @@
 In this chapter we review the theory for conversion between crystal coordinates and scattering angles 
 at the triple-axis instrument. Section \ref{sec:xtalcoords} introduces crystal coordinates and the so-called 
 $UB$ matrix formalism, section \ref{sec:tasangles} calculates the corresponding TAS angles. 
-These are the calculations that the control programs of triple-axis instruments typically use, they
-can, for example, be found in \textit{NOMAD} \cite{web_NOMAD} or \textit{NICOS} \cite{web_NICOS},
-but are also employed in virtual instrument simulators like \textit{vTAS} \cite{vTAS2013} or 
-\textit{McStas} \cite{McStas2020}.
+The formalisms presented here are ubiquitous in neutron science, they are not only used 
+in the control programs of triple-axis instruments, among them \textit{NOMAD} \cite{web_NOMAD} 
+or \textit{NICOS} \cite{web_NICOS}, but are also employed in virtual instrument simulators like \textit{vTAS} \cite{vTAS2013} or 
+\textit{McStas} \cite{McStas2020}, as well as in data analysis software like \textit{Mantid} \cite{Arnold2014}.
 
 Note that this chapter has already been published in the manual of the software from Ref. \cite{Takin2021}
-and is furthermore based on an earlier version of these derivations from my (physics) PhD thesis 
+and is furthermore based on an earlier version of the same text and derivations from my (physics) PhD thesis 
 \cite[pp. 139-143]{PhDWeber}. Originally, these formula were re-derived with the aid of the source
 code of \textit{McStas'} \textit{templateTAS} virtual instrument \cite{web_mcstas_templateTAS, McStas2020}.
 
@@ -37,18 +37,28 @@ which -- in general -- are not perpendicular to one another, but instead enclose
 and $\gamma$, respectively, as shown in Fig. \ref{fig:cell}. 
 To calculate the crystallographic $A$ matrix which transforms non-orthogonal crystal to orthogonal lab units, 
 we first need to reduce the number of parameters.
-The respective relations between the basis vectors and their angles can be directly obtained via
+The respective relations between the three basis vectors and their angles can be directly obtained via
 their scalar products, following the derivation in Ref. \cite{wiki_fractional}:
-\begin{equation} \left< a | b \right > \ =\  ab \cos \gamma, \label{ab} \end{equation}
-\begin{equation} \left< a | c \right > \ =\  ac \cos \beta, \label{ac} \end{equation}
-\begin{equation} \left< b | c \right > \ =\  bc \cos \alpha. \label{bc} \end{equation}
+
+\vspace{\abovedisplayskip}
+\begin{minipage}{0.317\textwidth}
+	\begin{equation} \left< a | b \right > \ =\  ab \cos \gamma, \label{eq:ab} \end{equation}
+\end{minipage}
+\begin{minipage}{0.317\textwidth}
+	\begin{equation} \left< a | c \right > \ =\  ac \cos \beta, \label{eq:ac} \end{equation}
+\end{minipage}
+\begin{minipage}{0.317\textwidth}
+	\begin{equation} \left< b | c \right > \ =\  bc \cos \alpha. \label{eq:bc} \end{equation}
+\end{minipage}
+\vspace{\belowdisplayskip}
 
 \begin{figure}
 	\centering
 	\includegraphics[width = 0.2 \textwidth]{figures/cell}
 	\caption[Crystal unit cell.]{
 		The unit cell of a crystal is given by its coordinate vectors $a$, $b$, and $c$ 
-		as well as their angles $\alpha$, $\beta$, and $\gamma$.}
+		as well as their angles $\alpha$, $\beta$, and $\gamma$.
+		Figure drawn after the figure in Ref. \cite{wiki_fractional}.}
 	\label{fig:cell}
 \end{figure}
 
@@ -67,7 +77,7 @@ $xy$ plane, and $\left| c \right>$ in general:
 \end{equation}
 
 
-Inserting $\left| a \right>$ and $\left| b \right>$ into Eq. \ref{ab} gives:
+Inserting $\left| a \right>$ and $\left| b \right>$ into Eq. \ref{eq:ab} gives:
 
 \begin{equation} \left< a | b \right > \ =\  a_1 b_1 \ =\  ab \cos \gamma, \end{equation}
 \begin{equation} b_1 \ =\  b \cos \gamma. \end{equation}
@@ -77,23 +87,23 @@ Using the cross product between $\left| a \right>$ and $\left| b \right>$, we ge
 \begin{equation} 
 	\left\Vert \left| a \right> \times \left| b \right> \right\Vert \ =\ 
 	\left\Vert \left( \begin{array}{c} 0 \\ 0 \\ a_1 b_2 \end{array} \right) \right\Vert \ =\ 
-	ab \sin \gamma, \label{crossab}
+	ab \sin \gamma, \label{eq:crossab}
 \end{equation}
 \begin{equation} b_2 \ =\  b \sin \gamma, \end{equation}
 \begin{equation} 
 \boxed{ \left| b \right> \ =\  \left( \begin{array}{c} b \cos \gamma \\ b \sin \gamma \\ 0 \end{array} \right). } 
-\label{bvec} 
+\label{eq:bvec} 
 \end{equation}
 
 
-Inserting $\left| a \right>$ and $\left| c \right>$ into Eq. \ref{ac} gives:
+Inserting $\left| a \right>$ and $\left| c \right>$ into Eq. \ref{eq:ac} gives:
 
 \begin{equation} \left< a | c \right > \ =\  a_1 c_1 \ =\  ac \cos \beta, \end{equation}
 \begin{equation} c_1 \ =\  c \cos \beta. \end{equation}
 
 
 
-Inserting $\left| b \right>$ and $\left| c \right>$ into Eq. \ref{bc} gives:
+Inserting $\left| b \right>$ and $\left| c \right>$ into Eq. \ref{eq:bc} gives:
 
 \begin{equation} \left< b | c \right > \ =\  b_1 c_1 + b_2 c_2 \ =\  bc \cos \alpha, \end{equation}
 \begin{equation} b \cos \gamma \cdot c \cos \beta + b \sin \gamma \cdot c_2 \ =\  bc \cos \alpha, \end{equation}
@@ -161,7 +171,7 @@ discussed in the next section.
 	\includegraphics[width=1\textwidth]{figures/bragg_recip}
 	\caption[Real and reciprocal lattice scattering.]{
 		(a) Bragg scattering on crystal planes having a spacing $d$, viewed from real space.
-			Figure drawn after \cite[p. 68, Fig. 2.7]{Gross2012}.
+			Figure drawn after Ref. \cite[p. 68, Fig. 2.7]{Gross2012}.
 		(b) A view mixing real and reciprocal space. The reciprocal lattice vector, $\underline{G}$,
 			is perpendicular to the real space crystal planes.
 		(c) Bragg scattering viewed from reciprocal space. The direction of the incoming and outgoing
@@ -347,7 +357,7 @@ The angle $\psi$ between $\left| k_i \right>$ and $\left| Q \right>$ is determin
 The angle $\xi$ between $\left| Q \right>$ and orientation vector $\left| a \right>$ is also determined 
 from the properties of the scalar product.
 Here we have to use the covariant form, because $\left| a \right>$ is a coordinate in crystal space 
-naming a Bragg reflection, while $\left| Q \right>$ lives, as before in instrument space.
+naming a Bragg reflection, while $\left| Q \right>$ lives, as before, in instrument space.
 \begin{equation} 
 	\boxed{ \xi \ =\  
 \sigma_{\mathrm{side}} \cdot \arccos \left( \frac{ \left< Q | a \right> }{ \sqrt{\left< Q | Q \right>} \sqrt{\left< a | a \right>} } \right) \ =\  
