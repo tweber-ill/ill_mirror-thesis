@@ -16,9 +16,10 @@ in the control programs of triple-axis instruments, among them \textit{NOMAD} \c
 or \textit{NICOS} \cite{web_NICOS}, but are also employed in virtual instrument simulators like \textit{vTAS} \cite{vTAS2013} or 
 \textit{McStas} \cite{McStas2020}, as well as in data analysis software like \textit{Mantid} \cite{Arnold2014}.
 
-Note that this chapter has already been published in the manual of the software from Ref. \cite{Takin2021}
-and is furthermore based on an earlier version of the same text and derivations from my (physics) PhD thesis 
-\cite[pp. 139-143]{PhDWeber}. Originally, these formula were re-derived with the aid of the source
+Note that this chapter has already been published in the manual of the software from Ref. \cite{Takin2021},
+as well as in my (physics) PhD thesis \cite[pp. 139-143]{PhDWeber},
+where the latter featured an earlier version of the same text, figures, and derivations.
+Originally, these formula were re-derived with the aid of the source
 code of \textit{McStas'} \textit{templateTAS} virtual instrument \cite{web_mcstas_templateTAS, McStas2020}.
 
 
@@ -300,7 +301,9 @@ Here, the two wavevectors enclose the scattering angle $2 \theta_S$.
 		\includegraphics[width = 0.75 \textwidth]{figures/tas_triangle}
 	\end{center}
 	\caption[TAS layout and scattering triangle.]{
-		Triple-axis layout (left) and corresponding scattering triangle (right). \label{fig:scattering_triangle}}
+		Triple-axis layout (left) and corresponding scattering triangle (right).
+		Figures inspired by Ref. \cite[p. 72, Fig. 3.8]{Shirane2002} and \cite[p. 15, Fig. 1.6]{Shirane2002}, respectively.
+		\label{fig:scattering_triangle}}
 \end{figure}
 
 We can calculate $2 \theta_S$ via the cosine theorem \cite[pp. 694-695]{Arens2015}, i.e.
@@ -319,7 +322,7 @@ by forming the scalar product of $\left| Q \right>$ with itself \cite[p. 11]{Shi
 	\boxed{ 2 \theta_S \ =\  \sigma_s \cdot \arccos \left( \frac{k_i^2 + k_f^2 - Q^2}{2 k_i k_f} \right). }
 \end{equation}
 
-As we could scatter in either clockwise or counterclockwise direction, $2 \theta_S$ can be positive or negative.
+As we could scatter in either clockwise or counter-clockwise direction, $2 \theta_S$ can be positive or negative.
 The sign of $2 \theta_S$ is given by the sample scattering sense $\sigma_s = \pm 1$.
 
 
@@ -328,11 +331,11 @@ The sign of $2 \theta_S$ is given by the sample scattering sense $\sigma_s = \pm
 
 The final and most complicated angle to determine is the sample rotation $\Theta_S$.
 It is given by the angle of the incoming wavevector $\left| k_i \right>$ to an (arbitrary) direction 
-$\left| a \right>$ which is known from sample orientation, this is usually a Bragg peak. 
+$\left| a \right>$ which is known from sample orientation, this is usually a Bragg peak \cite[p. 87]{Shirane2002}.
 If we were to explicitly use the $U$ matrix here, this vector would be one of its rows.
 The situation is shown in the right panel of Fig. \ref{fig:scattering_triangle}.
 We split $\Theta_S$ into the angle $\psi$ between $\left| k_i \right>$ and $\left| Q \right>$ 
-and the angle $\xi$ between $\left| k_i \right>$ and $\left| a \right>$:
+and the angle $\xi$ between $\left| Q \right>$ and $\left| a \right>$:
 \begin{equation} \boxed{ \Theta_S \ =\  180^{\circ} - \left( \psi + \xi \right).} \end{equation}
 
 
