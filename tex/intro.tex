@@ -25,10 +25,11 @@ repulsion, for example by the electron hull \cite[p. 1]{Squires2012}.
 
 In 1939, Otto Hahn used a Chadwick-type neutron source to irradiate uranium isotopes in an attempt to produce
 heavy trans-uranium elements \cite{wiki_fission}. The measurements did not yield the expected results, because
-instead of heavier elements, the experiment produced lighter elements. This was interpreted by Lise Meitner as
-a splitting of the uranium nucleus, marking the discovery of nuclear fission \cite{wiki_fission}. A typical possible
-channel of a fission reaction is the decay of uranium-235 into baryum-144 and krypton-89, where two to three
-neutrons are produced by each reaction in addition to the daughter nuclei and energy \cite{wiki_fission}.
+instead of heavier elements, the experiment produced lighter elements \cite{wiki_fission}.
+This was interpreted by Lise Meitner as a splitting of the uranium nucleus, marking the discovery of
+nuclear fission \cite{wiki_fission}.
+A typical possible channel of a fission reaction is the decay of uranium-235 into baryum-144 and krypton-89,
+where two to three neutrons are produced by each reaction in addition to the daughter nuclei and energy \cite{wiki_fission}.
 
 In 1942, Enrico Fermi made use of the excess neutrons that are obtained by each fission reaction to produce a
 continuous, self-sustaining chain reaction in the first artificial nuclear reactor, the
@@ -56,8 +57,9 @@ Studying the structure and dynamics of crystals is made possible since neutrons 
 slowed down (moderated) into energy regions where their de Broglie wavelength $\lambda = h/p$ \cite[p. 89]{Gross2012}
 corresponds to typical inter-atomic distances in crystal unit cells, which is of the order of 1 \AA{}ngstr\"om,
 i.e. $10^{-10}$ m \cite[pp.1,3]{Squires2012}. In the formula, $p$ denotes the neutron momentum and $h$ Planck's constant.
-Such a slowing-down of neutrons is usually performed using a secondary moderator outside the reactor's main moderator --
-which itself sustains the nuclear fission -- for example using liquid $\mathrm{D_2O}$ \cite[p. 82]{Jacrot2021}.
+Such a slowing-down of neutrons is usually performed using a secondary moderator \cite[p. 10]{ExperimentalFacilites}
+outside the reactor's main moderator -- which itself sustains the nuclear fission --
+for example using liquid $\mathrm{D_2O}$ \cite[p. 82]{Jacrot2021}.
 Here, neutrons are brought into a new thermal equilibrium by elastic collisions with the nuclei of the moderator's
 atoms \cite[p. 30]{Stacey2007}, i.e. the neutrons take the temperature and thus energy of the surrounding material.
 
@@ -67,13 +69,13 @@ atoms \cite[p. 30]{Stacey2007}, i.e. the neutrons take the temperature and thus 
 
 While a modern research reactor houses a multitude of different instrument types, among them time-of-flight,
 back-scattering and spin-echo spectrometers, furthermore Larmor, Laue and small-angle diffractometers (see, for example,
-Refs. \cite{ExperimentalFacilites} and \cite[pp. 15-18]{Shirane2002} for an explanation of these types of instrument), in
+Refs. \cite{ExperimentalFacilites} and \cite[pp. 15-18]{Shirane2002} for an explanation of these instruments), in
 this section, we instead want to shortly present the most basic types of instrument, the two-axis diffractometer
 and the triple-axis spectrometer. Together, the discovery of these two instruments by Clifford Shull and Bertram Brockhouse,
 respectively, was awarded the 1994 Nobel Prize in Physics~\cite{web_nobel1994}.
 A comprehensive introduction into these instruments, especially triple-axis spectroscopy, can be found in the
-book by G. Shirane \cite{Shirane2002}. An advanced treatment of neutron scattering theory is given by
-G. L. Squires \cite{Squires2012}.
+book by G. Shirane \cite{Shirane2002}, which we follow here.
+An advanced treatment of neutron scattering theory is given by G. L. Squires \cite{Squires2012}.
 
 
 \subsection{Two-axis diffractometers}
@@ -107,7 +109,7 @@ interpretation of Eq. \ref{eq:bragg} is depicted in Fig. \ref{fig:braggscatterin
 
 The resulting monochromatic beam with the wavelength $\lambda_i$ and wavevector $\underline{k}_i$ is Bragg-scattered
 a second time, this time from a sample powder containing small crystallites. Diffractometers typically contain hundreds
-of neutron detectors surrounding the sample and picking up diffracted neutrons at a whole range of scattering angles
+of neutron detectors surrounding the sample used for picking up diffracted neutrons at a whole range of scattering angles
 $2 \theta_S$. The scattering angles define the momentum transfer from the neutron to the sample as \cite[p. 11]{Shirane2002}
 \begin{equation}
 	\label{eq:Q}
@@ -139,9 +141,10 @@ Together, they determine the structural build-up of the crystal.
 
 \subsection{Triple-axis spectrometers}
 
-In a two-axis diffractometer the scattering angle from a sample defines a momentum $\hbar \underline{Q}$ which is
-transferred from the the neutron to the sample. It does not allow to select a sample-neutron energy transfer,
-which is given by the de Broglie equation as \cite[p. 89]{Gross2012} \cite[p. 11]{Shirane2002}
+In a two-axis diffractometer, the scattering angle from a sample defines a momentum $\hbar \underline{Q}$ which is
+transferred from the the neutron to the sample \cite[p. 11]{Shirane2002}.
+It does not allow to select a sample-neutron energy transfer, which is given by the de Broglie equation
+as \cite[p. 89]{Gross2012} \cite[p. 11]{Shirane2002}
 \begin{equation}
 	\label{eq:E}
 	E \ =\ E_i - E_f \ =\ \frac{\left( \hbar k_i \right)^2}{2 m_n} - \frac{\left( \hbar k_f \right)^2}{2 m_n}.
@@ -169,7 +172,8 @@ Since we also know the incoming wavelength $\lambda_i$ before the scattering eve
 transferred energy as given by Eq. \ref{eq:E}. This additional crystal and the corresponding instrument axis are named ``analyser''.
 Fig. \ref{fig:spectroscopy} visualises the principles of the instrument, Fig. \ref{fig:thales} shows a typical triple-axis
 instrument with its three axes, namely the monochromator in the right-hand side of the picture, the sample and the analyser
-with the attached detector. A detailed description of all components comprising a TAS can be found in Ref. \cite[pp. 55-93]{Shirane2002}.
+with the attached detector. A detailed description of all components comprising a TAS and their functions can be found
+in Ref. \cite[pp. 55-93]{Shirane2002}.
 
 \begin{figure}[htb]
 	\centering

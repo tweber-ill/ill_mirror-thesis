@@ -66,7 +66,7 @@ their scalar products, where we follow the derivation in Ref. \cite{wiki_fractio
 %\subsection*{Basis vectors}
 
 The next goal is to explicitly write the components of the vectors $\left| a \right>$, $\left| b \right>$, and $\left| c \right>$ 
-in terms of their (scalar) lengths $a = \sqrt{\left< a | a \right>}$, $b = \sqrt{\left< b | b \right>}$, $c = \sqrt{\left< c | c \right>}$, 
+in terms of their lengths $a = \sqrt{\left< a | a \right>}$, $b = \sqrt{\left< b | b \right>}$, $c = \sqrt{\left< c | c \right>}$,
 and the three angles.
 To that end, we first choose -- without loss of generality -- $\left| a \right>$ along the $x$ axis, $\left| b \right>$ in the 
 $xy$ plane, and $\left| c \right>$ in general:
@@ -77,32 +77,35 @@ $xy$ plane, and $\left| c \right>$ in general:
 \end{equation}
 
 
-Inserting $\left| a \right>$ and $\left| b \right>$ into Eq. \ref{eq:ab} gives:
+Inserting $\left| a \right>$ and $\left| b \right>$ into Eq. \ref{eq:ab} gives the first component
+of the $\left| b \right>$ vector:
 \begin{equation} \left< a | b \right > \ =\  a_1 b_1 \ =\  ab \cos \gamma
 \hspace{0.5cm} \Rightarrow \hspace{0.5cm} b_1 \ =\  b \cos \gamma. \end{equation}
 
 
-Using the cross product between $\left| a \right>$ and $\left| b \right>$, we get:
+Using the cross product between $\left| a \right>$ and $\left| b \right>$, we get the second component of $\left| b \right>$:
 \begin{equation} 
 	\left\Vert \left| a \right> \times \left| b \right> \right\Vert \ =\ 
 	\left\Vert \left( \begin{array}{c} 0 \\ 0 \\ a_1 b_2 \end{array} \right) \right\Vert \ =\ 
 	ab \sin \gamma \label{eq:crossab}
 	\hspace{0.5cm} \Rightarrow \hspace{0.5cm} b_2 \ =\  b \sin \gamma.
 \end{equation}
+
+The vector $\left| b \right>$ is now complete:
 \begin{equation} 
 \boxed{ \left| b \right> \ =\  \left( \begin{array}{c} b \cos \gamma \\ b \sin \gamma \\ 0 \end{array} \right). } 
 \label{eq:bvec} 
 \end{equation}
 
 
-Inserting $\left| a \right>$ and $\left| c \right>$ into Eq. \ref{eq:ac} gives:
+Inserting $\left| a \right>$ and $\left| c \right>$ into Eq. \ref{eq:ac} gives the first component of $\left| c \right>$:
 \begin{equation} \left< a | c \right > \ =\  a_1 c_1 \ =\  ac \cos \beta
 \hspace{0.5cm} \Rightarrow \hspace{0.5cm} c_1 \ =\  c \cos \beta.
 \end{equation}
 
 
 
-Inserting $\left| b \right>$ and $\left| c \right>$ into Eq. \ref{eq:bc} gives:
+Inserting $\left| b \right>$ and $\left| c \right>$ into Eq. \ref{eq:bc} yields the second component of $\left| c \right>$:
 \begin{equation} \left< b | c \right > \ =\  b_1 c_1 + b_2 c_2 \ =\  bc \cos \alpha, \end{equation}
 \begin{equation} b \cos \gamma \cdot c \cos \beta + b \sin \gamma \cdot c_2 \ =\  bc \cos \alpha
 	\hspace{0.5cm} \Rightarrow \hspace{0.5cm}
@@ -114,8 +117,10 @@ The last component, $c_3$, can be obtained from the vector length normalisation,
 \begin{equation} \left< c | c \right > \ =\  c_1^2 + c_2^2 + c_3^2 \ =\  c^2, \end{equation}
 \begin{equation} c_3^2 \ =\  c^2 - c_1^2 - c_2^2
 	\hspace{0.5cm} \Rightarrow \hspace{0.5cm}
-	c_3^2 \ =\  c^2 \left[1 - \cos^2 \beta - \left(\frac{\cos \alpha - \cos \gamma \cos \beta}{\sin \gamma} \right)^2 \right],
+	c_3^2 \ =\  c^2 \left[1 - \cos^2 \beta - \left(\frac{\cos \alpha - \cos \gamma \cos \beta}{\sin \gamma} \right)^2 \right].
 \end{equation}
+
+The full vector $\left| c \right>$ is now reads:
 \begin{equation} \boxed{ \left| c \right> \ =\  \left( \begin{array}{c}
 	c \cdot \cos \beta \\
 	c \cdot \frac{\cos \alpha - \cos \gamma \cos \beta}{\sin \gamma} \\
@@ -124,7 +129,7 @@ The last component, $c_3$, can be obtained from the vector length normalisation,
 
 
 
-The crystallographic $A$ matrix, which transforms real-space fractional to lab coordinates (\AA), 
+The crystallographic $A$ matrix, which transforms real-space fractional to lab coordinates (\AA) \cite{Lumsden2005},
 is formed with the basis vectors in its columns \cite[p. 631]{Arens2015}:
 \begin{equation}
 	A \ =\  \left(
@@ -158,7 +163,7 @@ lattice \cite[pp. 11-15]{Shirane2002}.
 Reciprocal space is constructed in a way to facilitate calculations with momenta on a periodic lattice,
 for that reason it is also sometimes called momentum or Fourier space.
 A comparison of the same Bragg scattering in real vs. reciprocal space is shown in Fig. \ref{fig:braggscattering_recip}.
-It is obvious that the reciprocal view greatly simplifies the image: Bragg scattering on what is set of parallel
+It is obvious that the reciprocal view greatly simplifies the image: Bragg scattering on what is a set of parallel
 crystal planes in real space in panel (a) becomes a single point in reciprocal space \cite[p. 66]{Gross2012},
 the so-called Bragg peak $\left| G \right>$ in panel (c). The reciprocal vector $\left| G \right>$ is
 perpendicular to the original crystal planes and its length is related to their distance $d$ by
@@ -184,7 +189,7 @@ discussed in the next section.
 From the construction of reciprocal space, it can be shown that the basis vectors of reciprocal space
 are mutually perpendicular to the corresponding real space basis vectors \cite[p. 60]{Gross2012}.
 This directly leads to the so-called $B$ matrix, which transforms reciprocal-space relative lattice units (rlu)
-to lab coordinates (1/\AA), is \cite[p. 60]{Gross2012}:
+to lab coordinates (1/\AA) \cite{Lumsden2005}, is \cite[p. 60]{Gross2012}:
 \begin{equation} B \ =\  2 \pi A^{-t}, \end{equation}
 where $-t$ denotes the transposed inverse.
 We can now also determine the metric tensor \cite[pp. 807-809]{Arens2015} corresponding to the coordinate
@@ -220,20 +225,20 @@ a summation over it is implied, see Ref. \cite{wiki_summation}.
 
 \subsection{$U$ matrix}
 The $B$ matrix alone yields the transformation from the non-orthogonal and reciprocal crystal 
-coordinate system into the orthogonal lab units.
+coordinate system into the orthogonal lab units \cite{Lumsden2005}.
 However, it does not yet take into account the actual rotation of the crystal so that a specific plane, 
 the so-called scattering plane, can be accessed by the two-dimensional movements of the instrument. 
 Such a rotation is performed by the $U$ matrix, whose rows contain two vectors inside the desired 
-scattering plane and the plane normal. 
+scattering plane and the plane normal \cite{Lumsden2005}.
 These basis vectors are usually chosen along two orientation Bragg reflections \cite[pp. 87-88]{Shirane2002}
 and are expressed in the orthogonal lab system, i.e. they are pre-multiplied by $B$.
-For $U$ to be a rotation matrix, these basis vectors are normalised using, for instance, the 
+For $U$ to be a rotation matrix, the basis vectors are normalised using, for instance, the
 Gram-Schmidt algorithm \cite[p. 744]{Arens2015} \cite[pp. 269-270]{Arfken2013} or 
 QR decomposition \cite[pp. 269-272]{Scarpino2011}.
 
 In summary, a coordinate point $\left|Q_{\mathrm{rlu}}\right>$, which is given in relative lattice 
 units of the reciprocal crystal, 
-is transformed by the $B$ matrix into the orthogonal lab units used at the instrument. 
+is transformed by the $B$ matrix into the orthogonal lab units used at the instrument \cite{Lumsden2005}.
 It is then rotated by the $U$ matrix to account for the actual crystal orientation \cite{Lumsden2005}:
 \begin{equation}
 	\left|Q_{\mathrm{lab}}\right> \ =\  U \cdot B \cdot \left|Q_{\mathrm{rlu}}\right>.
@@ -255,7 +260,8 @@ The derivation of basic scattering geometries in triple-axis spectrometers can b
 which we follow here.
 
 For the monochromator and analyser, the crystal angles $\theta_M$ and $\theta_A$ are coupled to 
-their scattering angles, they are simply half their value. 
+their scattering angles, they are simply half their value, because the Bragg condition of Eq. \ref{eq:bragg}
+always has to be fulfilled.
 The crystal rotation for the sample is not necessarily half its scattering angle, $\Theta_S \ne 2\theta_S/2$, 
 though, because the instrument can be freely positioned at any point of reciprocal crystal space.
 
@@ -286,7 +292,7 @@ whose directions (but not lengths!) correspond directly to the neutron paths bef
 respectively, as shown on the left-hand side of Fig. \ref{fig:scattering_triangle}. We can rearrange them so 
 that their tips meet, as depicted on the right-hand side of Fig. \ref{fig:scattering_triangle}, where the 
 scattering triangle is formed by $\left| k_i \right>$ and $\left| k_f \right>$ together with the
-scattering vector $\left| Q \right> = \left| k_i \right> - \left| k_f \right>$.
+scattering vector $\left| Q \right> = \left| k_i \right> - \left| k_f \right>$ \cite[p. 14]{Shirane2002}.
 Here, the two wavevectors enclose the scattering angle $2 \theta_S$.
 
 \begin{figure}

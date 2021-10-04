@@ -16,9 +16,9 @@ Problems that may arise can be rapidly analysed using the simplified environment
 Before having been integrated into the main library or the GUI program, each essential function was tested 
 separately. This was done either via small test programs or via dedicated unit tests, which are discussed in 
 section \ref{sec:unit_tests}.
-Integration tests of algorithms, where collections of functions are tested how and if they work together, 
-were performed using larger bespoke test tools, which implemented a simplified versions of the functionality 
-of the main programs. These are described in section \ref{sec:tests_tools}.
+Integration tests \cite{wiki_integrationtest} of algorithms, where collections of functions are tested how
+and if they work together, were performed using larger bespoke test tools, which implemented a simplified
+versions of the functionality of the main programs. These are described in section \ref{sec:tests_tools}.
 
 
 
@@ -162,7 +162,7 @@ convex hull of the transformed problem.
 
 \section{Unit tests}
 \label{sec:unit_tests}
-A unit test tests if a given set of inputs to a function gives an expected set of outputs.
+A unit test \cite{wiki_unittest} tests if a given set of inputs to a function gives an expected set of outputs.
 Testing an algorithm containing several function calls also allows to check if a set of invariants
 is fulfilled during the algorithm run, meaning between function calls.
 Possible checks can either be fixed input values which are tested against known output values,
