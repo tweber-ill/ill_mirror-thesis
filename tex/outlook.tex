@@ -69,6 +69,12 @@ not be driven at the same time independently, but instead piped through the plug
 The module will give back a list of drive commands to \textit{NOMAD} which drives the instrument
 along the determined optimal path in a step-wise fashion.
 
+Having an optimal path determined directly and transparently via the instrument control software
+is also essential for our ongoing project in autonomous experimentation \cite{Noack2021}, which
+so far is oblivious to the positions in instrument space a crystal coordinate corresponds to.
+The software will allow the autonomous control system \cite{web_gpcam} to drive the instrument safely
+and with far less surveillance than is still necessary at the moment.
+
 A second step will include an interface with the independent \textit{NOMAD 3D} \cite{web_NOMAD3d}
 software to replace the collision detection performed on the simplified model with the full \textit{CAD}
 model \cite{ThalesModel2021} of the instrument.

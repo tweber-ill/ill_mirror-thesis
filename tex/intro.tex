@@ -66,7 +66,8 @@ atoms \cite[p. 30]{Stacey2007}, i.e. the neutrons take the temperature and thus 
 \section{Instruments for neutron scattering \label{sec:instruments}}
 
 While a modern research reactor houses a multitude of different instrument types, among them time-of-flight,
-back-scattering and spin-echo spectrometers, furthermore Larmor, Laue and small-angle diffractometers (see, for example, Ref. \cite{ExperimentalFacilites} for an explanation of these types of instrument), in
+back-scattering and spin-echo spectrometers, furthermore Larmor, Laue and small-angle diffractometers (see, for example,
+Refs. \cite{ExperimentalFacilites} and \cite[pp. 15-18]{Shirane2002} for an explanation of these types of instrument), in
 this section, we instead want to shortly present the most basic types of instrument, the two-axis diffractometer
 and the triple-axis spectrometer. Together, the discovery of these two instruments by Clifford Shull and Bertram Brockhouse,
 respectively, was awarded the 1994 Nobel Prize in Physics~\cite{web_nobel1994}.
@@ -81,7 +82,7 @@ A two-axis diffractometer is used for determining the static structure of crysta
 which are here typically provided in powder form, but can also be single-crystals.
 It is the single most fundamental kind of machine in the field of
 neutron scattering at research reactors. This instrument type consists of a single-crystal (meaning it comprises one
-single grain), which is called ``monochromator'' and named after its function to pick out one specific wavelength,
+single grain), which is called ``monochromator'' \cite[pp. 57-73]{Shirane2002} and named after its function to pick out one specific wavelength,
 $\lambda_i$, from the polychromatic neutron beam coming from the reactor core or from one of its moderators.
 The physical principle behind wavelength selection is Bragg reflection \cite[p. 68]{Gross2012} \cite[p. 13]{Shirane2002},
 \begin{equation}
@@ -145,7 +146,8 @@ which is given by the de Broglie equation as \cite[p. 89]{Gross2012} \cite[p. 11
 	\label{eq:E}
 	E \ =\ E_i - E_f \ =\ \frac{\left( \hbar k_i \right)^2}{2 m_n} - \frac{\left( \hbar k_f \right)^2}{2 m_n}.
 \end{equation}
-The constant $m_n$ is the neutron mass, for elastic scattering $k_i = k_f$.
+The constant $m_n$ is the neutron mass. For elastic scattering, the magnitudes of
+the incoming and outgoing wavevectors are equal, $k_i = k_f$ \cite[p. 14]{Shirane2002}.
 The data obtained from such an instrument is instead integrated over all possible energy transfers.
 This is no problem in practice, because elastic scattering, i.e. scattering with no energy transfer,
 is usually many orders of magnitude stronger than inelastic scattering and any inelastic contribution
@@ -167,7 +169,7 @@ Since we also know the incoming wavelength $\lambda_i$ before the scattering eve
 transferred energy as given by Eq. \ref{eq:E}. This additional crystal and the corresponding instrument axis are named ``analyser''.
 Fig. \ref{fig:spectroscopy} visualises the principles of the instrument, Fig. \ref{fig:thales} shows a typical triple-axis
 instrument with its three axes, namely the monochromator in the right-hand side of the picture, the sample and the analyser
-with the attached detector.
+with the attached detector. A detailed description of all components comprising a TAS can be found in Ref. \cite[pp. 55-93]{Shirane2002}.
 
 \begin{figure}[htb]
 	\centering
@@ -188,6 +190,9 @@ with the attached detector.
 		The triple-axis spectrometer \textit{Thales} \cite{thales} at the Institut Laue-Langevin in Grenoble, France.
 		The neutron path from the reactor to the detector is marked as white arrows. The momentum transfer, 
 		$\hbar \underline{Q}$, is also shown.
+		In addition to the theoretical layout shown in Fig. \ref{fig:spectroscopy},
+		an optional beryllium filter removing unwanted high energy neutrons \cite[pp. 78-84]{Shirane2002}
+		is also visible in this picture.
 		This picture is reproduced from the supplementary information of Ref. \cite{skxpaper}.}
 	\label{fig:thales}
 \end{figure}
@@ -213,9 +218,10 @@ now become the new norm, with users connecting to a web interface from which the
 be analysed~\cite{web_ill_visa}.
 Discussions with instrument scientists take place via web-cams that have been installed at every instrument.
 
-At the same time, the idea to automate manual tasks at instruments using algorithms and artificial intelligence has
-gained significant traction, with first autonomous experiments being attempted at the ILL's spectroscopy group
-\cite{web_ill_autonomous2020, Noack2021}.
+At the same time, the idea to automate manual tasks at instruments using algorithms, artificial intelligence,
+and machine learning \cite{web_gpcam} has gained significant traction, with first autonomous experiments being
+attempted at the ILL's spectroscopy group \cite{web_ill_autonomous2020, Noack2021}, as well as at other
+facilities \cite{Parente2021}.
 
 As part of the current drive towards autonomous experimentation at the ILL, the goal of the present work is the design
 and implementation of a software tool which enables an automatic pathfinding for TAS instruments. Pathfinding

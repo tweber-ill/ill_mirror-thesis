@@ -142,8 +142,8 @@
 @book
 {
 	Jacrot2021,
-	author = {Jacrot, B.},
-	editor = {Filhol, A.},
+	author = {Jacrot, B. and Filhol, A.},
+	OPTeditor = {Filhol, A.},
 	title = {{Neutrons for Science: The history of the Institut Laue-Langevin, an exceptionally successful international cooperation}},
 	year = {2021},
 	publisher = {EDP Sciences, France},
@@ -210,12 +210,12 @@
 @book
 {
 	Rossum2011,
-	title={{Python Language Reference Manual}},
-	author={Guido van Rossum},
-	editor = {Fred L. Drake, Jr.},
-	year={2011},
-	publisher={Network Theory Ltd.},
-	isbn={978-1-906-96614-0},
+	title = {{Python Language Reference Manual}},
+	author = {Guido van Rossum and Fred L. Drake, Jr.},
+	OPTeditor = {Fred L. Drake, Jr.},
+	year = {2011},
+	publisher = {Network Theory Ltd.},
+	isbn = {978-1-906-96614-0},
 }
 
 
@@ -369,7 +369,10 @@
 	booktitle = {2012 IEEE International Conference on Robotics and Automation},
 	year = {2012},
 	pages = {1697-1702},
-	doi = {10.1109/ICRA.2012.6224766}
+	doi = {10.1109/ICRA.2012.6224766},
+	isbn = {978-1-4673-1405-3},
+	issn = {1050-4729},
+	publisher = {IEEE},
 }
 
 % -----------------------------------------------------------------------------
@@ -548,8 +551,8 @@
 	Noack2021,
 	title = {{Gaussian processes for autonomous data acquisition at large-scale synchrotron and neutron facilities}},
 	journal = "Nature Review Physics",
-	volume = "",
-	pages = "",
+	volume = "3",
+	pages = "685-697",
 	year = "2021",
 	doi = "10.1038/s42254-021-00345-y",
 	OPTurl = "https://doi.org/10.1038/s42254-021-00345-y",
@@ -560,12 +563,25 @@
 }
 
 
+@misc
+{
+	Parente2021,
+	title = {{Autonomous Experiments for Neutron Three-Axis Spectrometers (TAS) with Log-Gaussian Processes}},
+	author = {Mario Teixeira Parente and Georg Brandl and Christian Franz and Astrid Schneidewind and Marina Ganeva},
+	year = {2021},
+	url = {https://arxiv.org/abs/2105.07716},
+	archivePrefix = {arXiv},
+	eprint = {2105.07716},
+	note = {Preprint available on arXiv: 2105.07716},
+}
+
+
 @article
 {
 	skxpaper,
 	author = {T. Weber and D. M. Fobes and J. Waizner and P. Steffens and G. S. Tucker and M. B\"ohm and L. Beddrich and C. Franz and H. Gabold and R. Bewley and D. Voneshen and M. Skoulatos and R. Georgii and G. Ehlers and A. Bauer and C. Pfleiderer and P. B\"oni and M. Janoschek and M. Garst},
 	title = {{Topological magnon band structure of emergent Landau levels in a skyrmion lattice}},
-	note = {in preparation}
+	note = {submitted}
 }
 
 
@@ -1279,6 +1295,20 @@
 	year = {2006},
 	url = "https://github.com/McStasMcXtrace/McCode/blob/master/mcstas-comps/examples/templateTAS.instr",
 	note = "[Online; accessed 6-September-2021]",
+}
+
+
+@misc
+{
+	web_gpcam,
+	author = {Noack, Marcus},
+	title = {{gpCAM (Software)}},
+	year = {2021},
+	github = {https://bitbucket.org/MarcusMichaelNoack/gpcam/},
+	url = {https://gpcam.lbl.gov},
+	doi = {10.11578/dc.20210217.5},
+	institution = {Lawrence Berkeley National Laboratory (LBNL), Berkeley, CA, USA},
+	note = "[Online; accessed 4-October-2021]",
 }
 
 
