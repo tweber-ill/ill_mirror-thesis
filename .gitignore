@@ -47,6 +47,7 @@ build/**
 *.lof
 *.lol
 *.lot
+*.lyx~
 
 *.pdf
 !figures/pyworkflow.pdf
