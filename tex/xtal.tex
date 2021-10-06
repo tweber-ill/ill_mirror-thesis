@@ -243,6 +243,7 @@ is transformed by the $B$ matrix into the orthogonal lab units used at the instr
 It is then rotated by the $U$ matrix to account for the actual crystal orientation \cite{Lumsden2005}:
 \begin{equation}
 	\left|Q_{\mathrm{lab}}\right> \ =\  U \cdot B \cdot \left|Q_{\mathrm{rlu}}\right>.
+	\label{eq:UBtrafo}
 \end{equation}
 In the rest of this work we will not use the $U$ matrix explicitly, though, but instead directly work 
 with its basis vectors. This is just a formality, though, the mathematics are the same.
@@ -323,6 +324,13 @@ by forming the scalar product of $\left| Q \right>$ with itself \cite[p. 11]{Shi
 	\boxed{ 2 \theta_S \ =\  \sigma_s \cdot \arccos \left( \frac{k_i^2 + k_f^2 - Q^2}{2 k_i k_f} \right). }
 \end{equation}
 
+We could now -- as is done in the work by Lumsden \textit{et al.} \cite{Lumsden2005} -- calculate the length
+$Q$ of the vector $\left| Q \right>$ by explicitly transforming it into lab units using Eq. \ref{eq:UBtrafo}.
+Instead, we directly determine its length in lab units from its native rlu system using the covariant dot product \cite[p. 808]{Arens2015}:
+\begin{equation}
+	Q \ =\  \sqrt{Q^{\mathrm{rlu}}_i Q_{\mathrm{rlu}}^i} \ =\  \sqrt{g_{ij} Q_{\mathrm{rlu}}^i Q_{\mathrm{rlu}}^j}.
+\end{equation}
+
 As we could scatter in either clockwise or counter-clockwise direction, $2 \theta_S$ can be positive or negative.
 The sign of $2 \theta_S$ is given by the sample scattering sense $\sigma_s = \pm 1$.
 
@@ -366,22 +374,23 @@ The angle $\xi$ between $\left| Q \right>$ and orientation vector $\left| a \rig
 from the properties of the scalar product.
 Here we have to use its covariant form via the metric tensor, $g_{ij}$, \cite[p. 808]{Arens2015},
 because $\left| a \right>$ is a coordinate in crystal space naming a Bragg reflection,
-while $\left| Q \right>$ lives, as before, in instrument space.
+while $\left| Q \right>$ lives, as before, in instrument space, where we can thus avoid transforming to,
+unlike Ref. \cite{Lumsden2005}.
 \begin{equation} 
 	\boxed{ \xi \ =\  
-\sigma_{\mathrm{side}} \cdot \arccos \left( \frac{ \left< Q | a \right> }{ \sqrt{\left< Q | Q \right>} \sqrt{\left< a | a \right>} } \right) \ =\  
-\sigma_{\mathrm{side}} \cdot \arccos \left( \frac{ Q^i g_{ij} a^j }{ \sqrt{Q^i g_{ij} Q^j} \sqrt{a^i g_{ij} a^j} } \right).}
+\sigma_{\mathrm{side}} \cdot \arccos \left( \frac{ \left< Q_{\mathrm{rlu}} | a \right> }{ \sqrt{\left< Q_{\mathrm{rlu}} | Q_{\mathrm{rlu}} \right>} \sqrt{\left< a | a \right>} } \right) \ =\  
+\sigma_{\mathrm{side}} \cdot \arccos \left( \frac{ Q_{\mathrm{rlu}}^i g_{ij} a^j }{ \sqrt{Q_{\mathrm{rlu}}^i g_{ij} Q_{\mathrm{rlu}}^j} \sqrt{a^i g_{ij} a^j} } \right).}
 \label{eq:xi}
 \end{equation}
 
 The sign, $\sigma_{\mathrm{side}}$, of $\xi$ depends on which side of the orientation vector 
-$\left| a \right>$ the scattering vector $\left| Q \right>$ is located. 
+$\left| a \right>$ the scattering vector $\left| Q_{\mathrm{rlu}} \right>$ is located. 
 The sign can be found by calculating the (covariant) cross product of $\left| a \right>$ and 
-$\left| Q \right>$ to give an out-of-plane vector $\left| x \right>$ which can be compared with 
+$\left| Q_{\mathrm{rlu}} \right>$ to give an out-of-plane vector $\left| x \right>$ which can be compared with 
 the given scattering plane up vector.
 The covariant cross-product is calculated as \cite[p. 815]{Arens2015}:
 \begin{equation}
-	x^l \ =\  g^{li} \epsilon_{ijk} a^j Q^k,
+	x^l \ =\  g^{li} \epsilon_{ijk} a^j Q_{\mathrm{rlu}}^k,
 \end{equation}
 where $\epsilon_{ijk}$ is the general Levi-Civita symbol formed from the determinant of the 
 basis vectors $\left| \underline{b}_i \right>$, see Ref. \cite[p. 815]{Arens2015}:
@@ -399,7 +408,7 @@ For cubic crystals with $\alpha = \beta = \gamma = 90^{\circ}$ and the lattice c
 $a = b = c$, the metric tensor is diagonal, $g_{ij} = \delta_{ij} \cdot \left( 2\pi / a \right)^2$.
 With that Eq. \ref{eq:xi} simplifies to:
 \begin{equation}
-	\xi \ =\  \sigma_{\mathrm{side}} \cdot \arccos \left( \frac{ Q_i a^i }{ \sqrt{Q_i Q^i} \sqrt{a_i a^i} } \right).
+	\xi \ =\  \sigma_{\mathrm{side}} \cdot \arccos \left( \frac{ Q^{\mathrm{rlu}}_i a^i }{ \sqrt{Q^{\mathrm{rlu}}_i Q_{\mathrm{rlu}}^i} \sqrt{a_i a^i} } \right).
 \end{equation}
 % ------------------------------------------------------------------------------------------------------------------------------------
 
