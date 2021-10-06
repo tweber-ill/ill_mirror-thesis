@@ -121,9 +121,12 @@ Tobias Weber
 \end_layout
 
 \begin_layout Itemize
-Chapter 2 of the thesis presents the formalism for calculating fractional
- crystal coordinates (section 2.1) and from that the triple-axis angles (section
- 2.2).
+Chapter 2 of the thesis presents the formalism for calculating the fractional
+ crystal coordinate 
+\begin_inset Formula $UB$
+\end_inset
+
+ matrix (section 2.1) and from that the triple-axis angles (section 2.2).
  The original presentation of both these calculations, namely Ref.
  
 \begin_inset CommandInset citation
@@ -134,6 +137,14 @@ literal "false"
 \end_inset
 
 , was only cited for section 2.1, but should also be cited for section 2.2.
+\end_layout
+
+\begin_layout Itemize
+Typo on page 19, second paragraph: ``these formula'' 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ ``these formulas''.
 \end_layout
 
 \begin_layout Section*
