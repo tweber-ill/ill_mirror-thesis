@@ -11,7 +11,7 @@
 In this chapter we review the theory for conversion between crystal coordinates and scattering angles 
 at the triple-axis instrument. Section \ref{sec:xtalcoords} introduces crystal coordinates and the so-called 
 $UB$ matrix formalism, section \ref{sec:tasangles} calculates the corresponding TAS angles. 
-The formalisms presented here are ubiquitous in neutron science, they are not only used 
+The formalisms \cite{Lumsden2005} reviewed here are ubiquitous in neutron science, they are not only used 
 in the control programs of triple-axis instruments, among them \textit{NOMAD} \cite{web_NOMAD} 
 or \textit{NICOS} \cite{web_NICOS}, but are also employed in virtual instrument simulators like \textit{vTAS} \cite{vTAS2013} or 
 \textit{McStas} \cite{McStas2020}, as well as in data analysis software like \textit{Mantid} \cite{Arnold2014}.
@@ -258,7 +258,7 @@ with its basis vectors. This is just a formality, though, the mathematics are th
 With the metric tensor \cite[pp. 807-809]{Arens2015} of the crystal coordinate system, we can now calculate the scattering angles
 $2 \theta_M$, $2 \theta_S$, and $2 \theta_A$ from the monochromator, sample and analyser, respectively. 
 The derivation of basic scattering geometries in triple-axis spectrometers can be found in \cite[Ch. 1.3]{Shirane2002},
-which we follow here.
+which we follow here. The explicit calculation of the TAS angles based on the $UB$ formalism is given in Ref. \cite{Lumsden2005}.
 
 For the monochromator and analyser, the crystal angles $\theta_M$ and $\theta_A$ are coupled to 
 their scattering angles, they are simply half their value, because the Bragg condition of Eq. \ref{eq:bragg}

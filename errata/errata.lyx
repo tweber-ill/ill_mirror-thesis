@@ -100,11 +100,40 @@ Pathfinding for Triple-Axis Spectrometers
 \begin_inset Quotes erd
 \end_inset
 
+ (DOI: 
+\begin_inset CommandInset href
+LatexCommand href
+name "10.5281/zenodo.5092159"
+target "https://doi.org/10.5281/zenodo.5092159"
+literal "false"
 
+\end_inset
+
+)
 \end_layout
 
 \begin_layout Author
 Tobias Weber
+\end_layout
+
+\begin_layout Section*
+6 October, 2021
+\end_layout
+
+\begin_layout Itemize
+Chapter 2 of the thesis presents the formalism for calculating fractional
+ crystal coordinates (section 2.1) and from that the triple-axis angles (section
+ 2.2).
+ The original presentation of both these calculations, namely Ref.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lumsden2005"
+literal "false"
+
+\end_inset
+
+, was only cited for section 2.1, but should also be cited for section 2.2.
 \end_layout
 
 \begin_layout Section*
