@@ -55,3 +55,4 @@ build/**
 !figures/strategies_avoid_walls.pdf
 !figures/strategies_skeleton.pdf
 !figures/strategies_configspace.pdf
+!figures/pointrobot_walls_potential.pdf
