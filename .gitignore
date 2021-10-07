@@ -53,3 +53,5 @@ build/**
 !figures/pyworkflow.pdf
 !figures/strategies_shortest_path.pdf
 !figures/strategies_avoid_walls.pdf
+!figures/strategies_skeleton.pdf
+!figures/strategies_configspace.pdf
