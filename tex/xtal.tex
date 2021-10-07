@@ -209,6 +209,7 @@ Having a metric makes it straightforward to calculate lengths and angles.
 The length of a reciprocal lattice vector $\left| G \right>$ seen from the lab system is 
 (in 1/\AA{} units) \cite[p. 808]{Arens2015}:
 \begin{equation}
+	G  \ =\ 
 	\left\Vert \left< G | G \right> \right\Vert \ =\  \sqrt{\left< G | G \right>}
 		\ =\  \sqrt{G_i G^i} \ =\  \sqrt{g_{ij} G^i G^j}.
 \end{equation}
@@ -309,7 +310,7 @@ Here, the two wavevectors enclose the scattering angle $2 \theta_S$.
 \end{figure}
 
 We can calculate $2 \theta_S$ via the cosine theorem \cite[pp. 694-695]{Arens2015}, i.e.
-by forming the scalar product of $\left| Q \right>$ with itself \cite[p. 11]{Shirane2002}:
+by forming the scalar product of $\left| Q \right>$ with itself in lab units \cite[p. 11]{Shirane2002}:
 \begin{equation} 
 	\left| Q \right> \ =\  \left| k_i \right> - \left| k_f \right>,
 \end{equation}
@@ -326,9 +327,11 @@ by forming the scalar product of $\left| Q \right>$ with itself \cite[p. 11]{Shi
 
 We could now -- as is done in the work by Lumsden \textit{et al.} \cite{Lumsden2005} -- calculate the length
 $Q$ of the vector $\left| Q \right>$ by explicitly transforming it into lab units using Eq. \ref{eq:UBtrafo}.
-Instead, we directly determine its length in lab units from its native rlu system using the covariant dot product \cite[p. 808]{Arens2015}:
+Instead, we directly determine its length in lab units from its native rlu system using the covariant dot 
+product \cite[p. 808]{Arens2015}:
 \begin{equation}
-	Q \ =\ Q_{\mathrm{lab}} \ =\ 
+	Q %\ =\ Q_{\mathrm{lab}} 
+	\ =\ 
 	\sqrt{Q^{\mathrm{rlu}}_i Q_{\mathrm{rlu}}^i} \ =\  \sqrt{g_{ij} Q_{\mathrm{rlu}}^i Q_{\mathrm{rlu}}^j}.
 \end{equation}
 
@@ -352,7 +355,8 @@ and the angle $\xi$ between $\left| Q \right>$ and $\left| a \right>$:
 %\vspace{0.5cm}
 
 
-The angle $\psi$ between $\left| k_i \right>$ and $\left| Q \right>$ is determined from the scattering triangle, as before:
+The angle $\psi$ between $\left| k_i \right>$ and $\left| Q \right>$ is determined from the scattering triangle, as before
+in lab units:
 \begin{equation}
 	\left| k_f \right> \ =\  \left| k_i \right> - \left| Q \right>,
 \end{equation}
@@ -375,7 +379,7 @@ The angle $\xi$ between $\left| Q \right>$ and orientation vector $\left| a \rig
 from the properties of the scalar product.
 Here we have to use its covariant form via the metric tensor, $g_{ij}$, \cite[p. 808]{Arens2015},
 because $\left| a \right>$ is a coordinate in crystal space naming a Bragg reflection,
-while $\left| Q \right>$ lives, as before, in instrument space, where we can thus avoid transforming to,
+while $\left| Q \right>$ would natively live, as before, in instrument space, where we can thus avoid transforming to,
 unlike Ref. \cite{Lumsden2005}.
 \begin{equation} 
 	\boxed{ \xi \ =\  

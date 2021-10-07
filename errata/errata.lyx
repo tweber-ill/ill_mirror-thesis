@@ -92,7 +92,7 @@
 \begin_body
 
 \begin_layout Title
-Errata and Infos for 
+Errata and Addenda for 
 \begin_inset Quotes eld
 \end_inset
 
@@ -117,7 +117,102 @@ Tobias Weber
 \end_layout
 
 \begin_layout Section*
-6 October, 2021
+October 7, 2021
+\end_layout
+
+\begin_layout Itemize
+Addendum for chapter 2, pp.
+ 23-24 of the thesis: The important thing about these calculations is that
+ they are all performed in crystal space using the metric tensor, even though
+ some equations are written in lab/instrument space for simplicity.
+ 
+\begin_inset Newline newline
+\end_inset
+
+For example, the wavenumbers 
+\begin_inset Formula $Q$
+\end_inset
+
+ in equations (2.30) and (2.35) are implicitly understood to be calculated
+ as 
+\begin_inset Formula $Q=\sqrt{Q_{i}^{\mathrm{rlu}}Q_{\mathrm{rlu}}^{i}}=\sqrt{g_{ij}Q_{\mathrm{rlu}}^{i}Q_{\mathrm{rlu}}^{j}}$
+\end_inset
+
+, i.e.
+ using the covariant dot product 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "p. 808"
+key "Arens2015"
+literal "false"
+
+\end_inset
+
+ for the vector length.
+ Equally, the wavevectors 
+\begin_inset Formula $\left|Q\right>$
+\end_inset
+
+ in equations (2.36)-(2.39) are understood to be given in crystal space, i.e.
+ 
+\begin_inset Formula $\left|Q\right>=\left|Q_{\mathrm{rlu}}\right>$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+See 
+\begin_inset CommandInset href
+LatexCommand href
+name "here"
+target "https://code.ill.fr/scientific-software/takin/mag-core/-/blob/master/tools/tascalc/tas.py"
+literal "false"
+
+\end_inset
+
+ for an implementation in 
+\shape italic
+Python
+\shape default
+ and 
+\begin_inset CommandInset href
+LatexCommand href
+name "here (function: calc_tas_a3a4)"
+target "https://code.ill.fr/scientific-software/takin/tlibs2/-/blob/master/libs/maths.h"
+literal "false"
+
+\end_inset
+
+ for an implementation in C++ of the formalism.
+\end_layout
+
+\begin_layout Itemize
+Note again that – as mentioned in the thesis – chapter 2 had already been
+ published previously in my physics PhD thesis 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "pp. 139-143"
+key "PhDWeber"
+literal "false"
+
+\end_inset
+
+ and in the software from Ref.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Takin2021"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+October 6, 2021
 \end_layout
 
 \begin_layout Itemize
@@ -149,7 +244,7 @@ Typo on page 19, second paragraph: ``these formula''
 \end_layout
 
 \begin_layout Section*
-5 October, 2021
+October 5, 2021
 \end_layout
 
 \begin_layout Itemize
