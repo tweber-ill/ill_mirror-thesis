@@ -117,6 +117,44 @@ Tobias Weber
 \end_layout
 
 \begin_layout Section*
+October 8, 2021
+\end_layout
+
+\begin_layout Itemize
+Forgot to thank Alain Filhol in the ``Acknowledgements and Thanks'' chapter
+ on p.
+ 9 (sorry Alain!).
+ He has always helped me with all things Mac since the 
+\shape italic
+Takin
+\shape default
+ software, especially concerning application directory layout, application
+ packaging, 
+\shape italic
+Info.plist
+\shape default
+s, and with the build scripts.
+ The build scripts and general purpose code in the present software are
+ based on their counterparts from the 
+\shape italic
+Takin
+\shape default
+ and 
+\shape italic
+tlibs
+\shape default
+ software 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Takin2021,Takin2017,Takin2016"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
 October 7, 2021
 \end_layout
 
