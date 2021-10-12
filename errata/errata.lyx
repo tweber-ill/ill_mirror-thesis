@@ -117,6 +117,45 @@ Tobias Weber
 \end_layout
 
 \begin_layout Section*
+October 12, 2021
+\end_layout
+
+\begin_layout Itemize
+Further info for chapters 1 and 2: The wavenumbers of the incoming and outgoing
+ neutron beams, 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $k_{f}$
+\end_inset
+
+, are related to their respective wavelengths, 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda_{f}$
+\end_inset
+
+, via 
+\begin_inset Formula $k_{i,f}=2\pi/\lambda_{i,f}$
+\end_inset
+
+, see, e.g., Ref.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "p. 66"
+key "Gross2012"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
 October 8, 2021
 \end_layout
 
