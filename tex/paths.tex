@@ -39,7 +39,16 @@ Such a robot is capable of finding a path out of a maze using the Pledge algorit
 which consists of noting the angle of an initially arbitrary direction, repeatedly
 moving along that direction until an obstacle is hit, and then moving parallel to the
 obstacle's faces as long as the accumulated angle is not at its initial value again,
-for instance $0$ degrees \cite[Ch. 7.2, pp. 316-322]{FUH_geo2020}.
+for instance $0$ degrees \cite[Ch. 7.2, pp. 316-322]{FUH_geo2020}. 
+An example run of the algorithm is shown in Fig. \ref{fig:pledge}.
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width = 0.33 \textwidth]{figures/pledge.pdf}
+	\caption[Pledge algorithm.]{
+		Finding a path out of a maze using Pledge's algorithm.}
+	\label{fig:pledge}
+\end{figure}
+
 
 If -- aside from the tactile sensor and the angular sense -- the robot also knows
 its current position relative to the target point, it can execute a \textit{bug algorithm}
