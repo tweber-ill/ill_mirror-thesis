@@ -40,15 +40,7 @@ which consists of noting the angle of an initially arbitrary direction, repeated
 moving along that direction until an obstacle is hit, and then moving parallel to the
 obstacle's faces as long as the accumulated angle is not at its initial value again,
 for instance $0$ degrees \cite[Ch. 7.2, pp. 316-322]{FUH_geo2020}. 
-An example run of the algorithm is shown in Fig. \ref{fig:pledge}.
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width = 0.33 \textwidth]{figures/pledge.pdf}
-	\caption[Pledge algorithm.]{
-		Finding a path out of a maze using Pledge's algorithm.}
-	\label{fig:pledge}
-\end{figure}
-
+An example run of the algorithm is shown in the left-hand side of Fig. \ref{fig:pledge_bug}.
 
 If -- aside from the tactile sensor and the angular sense -- the robot also knows
 its current position relative to the target point, it can execute a \textit{bug algorithm}
@@ -57,6 +49,25 @@ Several variations of these algorithms exist \cite{Choset2010_ch2}, and the basi
 of moving in the direction of the target, fully circling a potential obstacle in the way,
 returning to the obstacle's point of closest distance to the target and repeating the movement
 towards the target \cite[Ch. 7.3.1, pp. 323-326]{FUH_geo2020}.
+This is shown in the right-hand side of Fig. \ref{fig:pledge_bug}.
+
+\begin{figure}[htb]
+	\begin{minipage}{0.5 \textwidth}
+		\begin{center}
+			\includegraphics[width = 0.7 \textwidth]{figures/pledge.pdf}
+		\end{center}
+	\end{minipage}
+	\begin{minipage}{0.5 \textwidth}
+		%\vspace{0.25cm}
+		\begin{center}
+			\includegraphics[width = 0.5 \textwidth]{figures/bug.pdf}
+		\end{center}
+	\end{minipage}
+	\caption[Pledge and bug algorithms.]{
+	Left panel: Finding a path out of a maze using Pledge's algorithm.
+	Right panel: Moving around an obstacle and towards a target (green) using a bug strategy.}
+	\label{fig:pledge_bug}
+\end{figure}
 
 A still more sophisticated strategy is the \textit{continuous angular bisector}
 (CAB) \cite{Icking1995}, which solves the specific problem of a robot finding the visibility kernel
