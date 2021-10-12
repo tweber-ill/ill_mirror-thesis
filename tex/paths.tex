@@ -38,8 +38,8 @@ i.e. a basic robotic vacuum cleaner.
 Such a robot is capable of finding a path out of a maze using the Pledge algorithm,
 which consists of noting the angle of an initially arbitrary direction, repeatedly
 moving along that direction until an obstacle is hit, and then moving parallel to the
-obstacle's faces as long as the accumulated angle is not at its initial value again,
-for instance $0$ degrees \cite[Ch. 7.2, pp. 316-322]{FUH_geo2020}. 
+obstacle's faces as long as the accumulated angle (without modulo calculation) 
+is not at its initial value again, for instance $0$ degrees \cite[Ch. 7.2, pp. 316-322]{FUH_geo2020}. 
 An example run of the algorithm is shown in the left-hand side of Fig. \ref{fig:pledge_bug}.
 
 If -- aside from the tactile sensor and the angular sense -- the robot also knows

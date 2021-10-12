@@ -1,0 +1,70 @@
+Slide 3
+-------
+In August 2020 we performed first autonomous experiments at Thales using the gpCAM software, which is based on machine learning and Gaussian processes. gpCAM is able to automatically probe an unknown dispersion, but is oblivious to the details of the actual instrument, in our case the triple-axis spectrometer. It does not know the angular positions of the instrument and might drive it into a wall. So far, we have averted this case by defining very tight restrictions on the motors' angles using soft limits within the control system.
+
+Complementing gpCAM with a pathfinding system for the instrument, we now take the opposite approach, meaning that instead of using machine learning, the algorithm will be analytical. We will use a robot motion planning approach towards moving the instrument, where the triple-axis spectrometer can be viewed as a robot arm moving in one plane.
+
+
+Slide 5
+-------
+Several different types of robot motion planning exist, depending on the sensory equipment of the robot and the problem to be solved. Here, we only list a selected few of them. 
+
+The Pledge algorithm is a pathfinding strategy for a robot trapped in a maze, where the robot is only equipped with a touch sensor and an angle counter. The algorithm guaranteed that the robot will eventually find the exit of the maze, but it does not guarantee an optimal path. In practice the discovered path is in fact everything but optimal. It works by designating one special direction along which the robot moves and whose angle it remembers. On contact with a wall it moves along the wall and only detaches from it if the initial angle is equal to the initial angle (without modulo calculation, so 360 degrees is not equivalent to 0 degrees).
+
+The bug strategies are modelled after the movement of insects and are used to direct a robot around obstacles. The robot in this case is equipped with a sense of the direction along which the target lies. It will move along this direction until it hits an obstacle. Upon contact with the object, the robot circles it and returns to the point of closest distance to the target. From there, it detaches from the obstacle and continued its path in the direction of the target.
+
+TODO: CAB.
+
+A very different approach is motion planning for robots which have full information of their surroundings, as is the case for the triple-axis spectrometer. Here, there are also many different methods, of which we present three principal ones, namely the sector-based method, the potential field method and the retraction method.
+
+
+Slide 6
+-------
+In the sector-based method the available configuration space (more on that later) is divided into sectors, for example a trapezoid map as is shown in the figure. To move to its goal, the robot first finds the sector it is in and moves to the centre of that sector. It next moves to the middle of the edge connecting the current sector to the next one leading to the goal. From the edge it again moves to the centre of the neighbouring sector, and so on, until it reaches the sector with the goal.
+
+For our present case, this approach would in principle be feasible, it's only problem is that the implementation turned out to be far more complex than initially envisaged, especially with respect to all the special cases one has to account for when building the trapezoid map.
+
+
+Slide 7
+-------
+In the potential field method, the target point is thought to assert an attractive force to the robot, and all obstacles generate a repulsive potential. Ideally, the robot would slide down the potential landscape to the target and avoid all obstacles. In practice, the robot in this case may get caught between obstacles. So we can rule it out as a possible method for the triple-axis spectrometer.
+
+
+Slide 8
+-------
+The final method in our list is the retraction method. Here, a roadmap of possible paths is generated onto which the robot retracts (hence the name). On the roadmap it moves into the vicinity of the goal, detaches from the roadmap, and moves towards the target.
+
+The path mesh comprising the roadmap can be calculated using different approaches. The most obvious choice are the bisectors of the medial axes, also known as the topological skeleton of the geometry. The medial axis is a generalised Voronoi diagram, and by moving along the bisectors the robot will always stay at a maximum distance of any wall.
+
+
+Slide 10
+--------
+Voronoi diagrams are a collection of bisectors. Bisectors are the loci with the maximum distance between sites. Sites, finally, can be points, lines or curves, where we consider the case for point sites in this slide. For point sites, the bisectors are n-1 dimensional hyperplanes, lines or line segments in two dimensions. The Voronoi regions can be open or closed, as can be seen in the figure.
+
+
+Slide 11
+--------
+Voronoi diagrams for point sites are of course well known in physics as the first Brillouin zone. The Brillouin zone is in fact a special case of the more general Voronoi diagram, it is the Voronoi diagram of an infinite collection of regular sites, leading to a space-filling repetition of the same Voronoi region and -- due to the infinity of the sites -- having no open regions.
+
+
+Slide 12
+--------
+In case the sites for which the Voronoi diagram is to be constructed comprises line segments, the bisectors will consist of lines, line segments and parabola. In general, the bisector between two line segments is pieced together of up to seven segments, as is seen in the figure.
+
+
+Slide 13
+--------
+Still going one step further: In the case where the sites are themselves curves, the Vornoi diagram is called the medial axis. The medial axis is difficult to calculate analytically, but can be approximated using the Voronoi diagram of line segments which discretise the original curves. This is shown in the left figure.
+
+The right figure again shows how the medial axis (or its approximation) is used in the retraction method.
+
+
+Slide 15
+--------
+One problem that still remains has already been hinted at in the previous slides. The triple-axis instrument's geometry is too complicated to directly calculate its movement. We need to use a coordinate system in which the instrument itself can be treated as point-like, the so-called configuration space. There are several options for a configuration space. One possibility would be the reciprocal crystal space. A problem with that is that with its three momentum and one energy dimension it is four-dimensional. Using only a two-dimensional sub-space would not allow to move the instrument around an obstacle (figures). Furthermore, the configuration space would depend on the sample crystal that is used.
+
+A better choice is the angular configuration space defined by the triple-axis angles. The monochromator, sample, and analyser rocking angles do not need to be considered, because the do not define the positioning of the arms. Furthermore, the instrument usually operates in either with fixed kf or ki, so in the configuration space we only need to consider the sample scattering angle a4 and either the monochromator angle a2 or the analyser angle a6. This is shown in the right-hand figure.
+
+
+Slide 17
+--------
