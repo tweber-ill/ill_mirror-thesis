@@ -54,7 +54,7 @@ In case the sites for which the Voronoi diagram is to be constructed comprises l
 
 Slide 13
 --------
-Still going one step further: In the case where the sites are themselves curves, the Vornoi diagram is called the medial axis. The medial axis is difficult to calculate analytically, but can be approximated using the Voronoi diagram of line segments which discretise the original curves. This is shown in the left figure.
+Still going one step further: In the case where the sites are themselves curves, the Voronoi diagram is called the medial axis. The medial axis is difficult to calculate analytically, but can be approximated using the Voronoi diagram of line segments which discretise the original curves. This is shown in the left figure.
 
 The right figure again shows how the medial axis (or its approximation) is used in the retraction method.
 
@@ -67,4 +67,10 @@ A better choice is the angular configuration space defined by the triple-axis an
 
 
 Slide 17
+--------
+As already seen, the roadmap constitutes the mesh of all possible paths. For the approximation of the medial axis, we use line-segment Voronoi diagrams. It is therefore necessary to quantise the configuration space into bins. Quantisation works by driving the virtual instrument to each of the angular coordinates and checking if a collision occurs or if an angular limit is reached.
+This exaggerated example shows the instrument caught between two pillars. The corresponding configuration space is shown on the right-hand side, where the x axis is the sample scattering angle a4, and the y axis is the monochromator a2 angle. The red areas correspond to collisions of the instrument with the walls, pillars, or with itself as well as crystal angles which are out of limits. The blue regions are allowed instrument positions.
+
+
+Slide 18
 --------
