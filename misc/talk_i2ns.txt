@@ -74,3 +74,15 @@ This exaggerated example shows the instrument caught between two pillars. The co
 
 Slide 18
 --------
+Once the configuration space has been quantised, we trace the contours of the borders between allowed and forbidden regions. As the amount of line segments after the initial tracing step would be far too large to calculate the Voronoi diagram efficiently, they are simplified in two additional steps. The graph shows typical calculation times on a desktop computer, we can see that calculating the Voronoi diagram of 300 line segments already approaches half a minute of processor time.
+
+The first simplification step removes "staircase artefacts" that appear from the quantisation of diagonal lines. The second step removes all inner vertices from straight lines. Having performed these simplifications, the typical calculation times are down to the order of a few seconds.
+
+ 
+Slide 19
+--------
+With the line segments approximating the contour, the medial axis is approximated by the line segment Voronoi diagram. The results can be seen in the right-hand figure, and the generated mesh of possible paths constitutes the roadmap for pathfinding.
+
+
+Slide 20
+--------
