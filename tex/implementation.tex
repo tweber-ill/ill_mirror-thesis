@@ -167,6 +167,8 @@ A thread pool maintains a fixed number of threads, $n$, onto which it loads a va
 of tasks, $m$, where $m$ is usually larger than $n$. Each of the $n$ threads maintains a queue for the
 threads it receives and processes them sequentially. A good explanation for thread pools can be 
 found in Ref. \cite[pp. 273-299]{Williams2012}.
+For processing and storing the image of the quantised configuration space, we
+use the \textit{Boost.GIL} library \cite{web_boost_gil}.
 
 With the given two-dimensional simplifications, we only need to distinguish three possible 
 intersection tests for collisions: intersections between two polygons, which is done by an intersection
