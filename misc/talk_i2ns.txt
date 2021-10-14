@@ -83,6 +83,15 @@ Slide 19
 --------
 With the line segments approximating the contour, the medial axis is approximated by the line segment Voronoi diagram. The results can be seen in the right-hand figure, and the generated mesh of possible paths constitutes the roadmap for pathfinding.
 
+Together with the Voronoi diagram, a graph representation of the Voronoi vertices is generated with the bisectors as the edges connecting the vertices.
+
 
 Slide 20
+--------
+The graph representation of the roadmap is used to calculate the shortest path using the classic Dijkstra algorithm. As can be seen in the figure, the shortest path is not necessarily the optimal one with respect to the distance from the obstacles. Of the four paths in this example, the one at the bottom would be the best choice.
+
+To take this into account, we offer an alternate pathfinding strategy which is similar to the potential field method seen before, i.e. the walls generate a repulsive potential. But in difference with the latter, the instrument is still constrained to the roadmap and the potential function only serves to modify the edge weight factors of the graphs that are used for Dijkstra's algorithm.
+
+
+Slide 22
 --------
