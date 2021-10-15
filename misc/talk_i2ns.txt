@@ -95,3 +95,19 @@ To take this into account, we offer an alternate pathfinding strategy which is s
 
 Slide 22
 --------
+The software system is written in modern C++20 and makes use of the Boost libraries. It can be used as a library, but also features a Qt-based GUI. In addition, scripting via Python is possible. Apart from pathfinding visualisation, the GUI doubles as editor for the instrument space geometry and for trying out configurations. The software is open source and licensed under GPLv3.
+
+
+Slides 24-31
+------------
+This example is modelled after a situation we had once at Thales. We were at a position of (1.5 1.5 0.5) rlu and 10 meV and wanted to move back to the (220) Bragg peak. Visualising the positions both in real instrument space as well as in angular configuration space gives the impression that it poses no problems to move from one to the other. But this is not the case. In reality, the monochromator moves much slower than the sample two-theta motor, this would cause the instrument drive into one of the outer walls.
+
+Asking the pathfinding software for a solution, the optimal path it finds has the monochromator move to a safe position first before driving the sample motors. The motion sequence can be seen in the following slides. 
+
+
+Slide 33
+--------
+In summary, robot motion planning was applied to find paths in triple-axis spectrometers. Two reasons have been our motivation. The first was our experience with autonomous measurements using machine learning. Here, the present software will act as a safeguard to keep the gpCAM system from driving into or too close to walls. Second, the software will help the instrument scientist plan the movement of the instrument without having to do it manually inside the instrument space.
+
+There a several paths for future developments. The first and obvious one will be the creation of a plug-in for the NOMAD instrument control system. It will be transparent to the user and can be switched on and off at any time. The second development will test if the RBGZ cameras that are available at the ILL can be used to automatically determine the geometries at the instrument and the positions of obstacles.
+ 
