@@ -9,7 +9,7 @@ Slide 5
 -------
 Several different types of robot motion planning exist, depending on the sensory equipment of the robot and the problem to be solved. Here, we only list a selected few of them. 
 
-The Pledge algorithm is a pathfinding strategy for a robot trapped in a maze, where the robot is only equipped with a touch sensor and an angle counter. The algorithm guaranteed that the robot will eventually find the exit of the maze, but it does not guarantee an optimal path. In practice the discovered path is in fact everything but optimal. It works by designating one special direction along which the robot moves and whose angle it remembers. On contact with a wall it moves along the wall and only detaches from it if the initial angle is equal to the initial angle (without modulo calculation, so 360 degrees is not equivalent to 0 degrees).
+The Pledge algorithm is a pathfinding strategy for a robot trapped in a maze, where the robot is only equipped with a touch sensor and an angle counter. The algorithm guarantees that the robot will eventually find the exit of the maze, but it does not guarantee an optimal path. In practice the discovered path is in fact everything but optimal. It works by designating one special direction along which the robot moves and whose angle it remembers. On contact with a wall it moves along the wall and only detaches from it if the initial angle is equal to the initial angle (without modulo calculation, so 360 degrees is not equivalent to 0 degrees).
 
 The bug strategies are modelled after the movement of insects and are used to direct a robot around obstacles. The robot in this case is equipped with a sense of the direction along which the target lies. It will move along this direction until it hits an obstacle. Upon contact with the object, the robot circles it and returns to the point of closest distance to the target. From there, it detaches from the obstacle and continued its path in the direction of the target.
 
@@ -22,7 +22,7 @@ Slide 6
 -------
 In the sector-based method the available configuration space (more on that later) is divided into sectors, for example a trapezoid map as is shown in the figure. To move to its goal, the robot first finds the sector it is in and moves to the centre of that sector. It next moves to the middle of the edge connecting the current sector to the next one leading to the goal. From the edge it again moves to the centre of the neighbouring sector, and so on, until it reaches the sector with the goal.
 
-For our present case, this approach would in principle be feasible, it's only problem is that the implementation turned out to be far more complex than initially envisaged, especially with respect to all the special cases one has to account for when building the trapezoid map.
+For our present case, this approach would in principle be feasible, its only problem is that the implementation turned out to be far more complex than initially envisaged, especially with respect to all the special cases one has to account for when building the trapezoid map.
 
 
 Slide 7
@@ -69,6 +69,7 @@ A better choice is the angular configuration space defined by the triple-axis an
 Slide 17
 --------
 As already seen, the roadmap constitutes the mesh of all possible paths. For the approximation of the medial axis, we use line-segment Voronoi diagrams. It is therefore necessary to quantise the configuration space into bins. Quantisation works by driving the virtual instrument to each of the angular coordinates and checking if a collision occurs or if an angular limit is reached.
+
 This exaggerated example shows the instrument caught between two pillars. The corresponding configuration space is shown on the right-hand side, where the x axis is the sample scattering angle a4, and the y axis is the monochromator a2 angle. The red areas correspond to collisions of the instrument with the walls, pillars, or with itself as well as crystal angles which are out of limits. The blue regions are allowed instrument positions.
 
 
@@ -96,6 +97,8 @@ To take this into account, we offer an alternate pathfinding strategy which is s
 Slide 22
 --------
 The software system is written in modern C++20 and makes use of the Boost libraries. It can be used as a library, but also features a Qt-based GUI. In addition, scripting via Python is possible. Apart from pathfinding visualisation, the GUI doubles as editor for the instrument space geometry and for trying out configurations. The software is open source and licensed under GPLv3.
+
+[Demo with pillar.]
 
 
 Slides 24-31
