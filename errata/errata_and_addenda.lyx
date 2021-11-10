@@ -117,6 +117,29 @@ Tobias Weber
 \end_layout
 
 \begin_layout Section*
+November 10, 2021
+\end_layout
+
+\begin_layout Itemize
+Demonstration videos for the pathfinding software can be found here: 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.youtube.com/channel/UCzhvfiu0jVYvvxGdm3v9q4A/videos
+\end_layout
+
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Section*
 October 14, 2021
 \end_layout
 
@@ -383,7 +406,16 @@ readme.txt
 \shape italic
 tlibs2
 \shape default
- library, which is included in the source archive under sub-directory 
+ library, which is included in the 
+\begin_inset CommandInset href
+LatexCommand href
+name "source code archive"
+target "https://doi.org/10.5281/zenodo.4625649"
+literal "false"
+
+\end_inset
+
+ under sub-directory 
 \family typewriter
 ./tlibs2
 \family default
