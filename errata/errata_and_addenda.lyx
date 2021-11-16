@@ -117,11 +117,30 @@ Tobias Weber
 \end_layout
 
 \begin_layout Section*
+November 16, 2021
+\end_layout
+
+\begin_layout Itemize
+The dissertation, Ref.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "PhDWeber"
+literal "false"
+
+\end_inset
+
+, should more strictly be designated as ``doctoral thesis'', not as ``PhD
+ thesis''.
+\end_layout
+
+\begin_layout Section*
 November 10, 2021
 \end_layout
 
 \begin_layout Itemize
-Demonstration videos for the pathfinding software can be found here: 
+Info: Demonstration videos for the pathfinding software can be found here:
+ 
 \begin_inset Newline newline
 \end_inset
 
