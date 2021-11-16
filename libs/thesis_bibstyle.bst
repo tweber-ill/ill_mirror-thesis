@@ -877,7 +877,7 @@ FUNCTION {phdthesis}
   format.authors "author" output.check
   format.btitle "title" output.check
   new.block
-  "PhD Thesis" output.nonnull
+  "Doctoral Thesis" output.nonnull
   school "school" output.check
   address output
   format.date "year" output.check
