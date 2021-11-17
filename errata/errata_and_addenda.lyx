@@ -438,7 +438,11 @@ literal "false"
 \family typewriter
 ./tlibs2
 \family default
-, is 
+ (or 
+\family typewriter
+./taspaths/tlibs2
+\family default
+), is 
 \series bold
 not
 \series default
