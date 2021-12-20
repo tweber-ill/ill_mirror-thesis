@@ -121,18 +121,22 @@ December 20, 2021
 \end_layout
 
 \begin_layout Itemize
-Thanks to A.
- Filhol for producing a signed 
+Many thanks to A.
+ Filhol for producing a 
+\bar under
+signed
+\bar default
+ 
 \shape italic
 MacOS
 \shape default
- package of the software, which can be downloaded under 
+ package of the software, which can be downloaded from 
 \begin_inset Flex URL
 status open
 
 \begin_layout Plain Layout
 
-http://ill.eu/tas-paths
+http://www.ill.eu/tas-paths
 \end_layout
 
 \end_inset
