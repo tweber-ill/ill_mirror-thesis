@@ -117,6 +117,30 @@ Tobias Weber
 \end_layout
 
 \begin_layout Section*
+December 20, 2021
+\end_layout
+
+\begin_layout Itemize
+Thanks to A.
+ Filhol for producing a signed 
+\shape italic
+MacOS
+\shape default
+ package of the software, which can be downloaded under 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://ill.eu/tas-paths
+\end_layout
+
+\end_inset
+
+ (also thanks for setting up the website).
+\end_layout
+
+\begin_layout Section*
 November 17, 2021
 \end_layout
 
@@ -510,8 +534,8 @@ literal "false"
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintCited"
-bibfiles "/users/tw/sec_home/Projects/repos/thesis/tex/thesis"
-options "/users/tw/sec_home/Projects/repos/thesis/libs/thesis_bibstyle"
+bibfiles "../tex/thesis"
+options "../libs/thesis_bibstyle"
 
 \end_inset
 
