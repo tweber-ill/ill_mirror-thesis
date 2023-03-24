@@ -21,7 +21,7 @@ modular fashion, it comprises a core module, which was introduced in chapter \re
 and which can be easily used as a library and linked into external C++ applications. 
 More details on directly employing the core library can be found in section \ref{sec:library}.
 Such a library usage will be important in the future when we plan to utilise the software as a 
-plug-in module to the instrument control software \textit{NOMAD} \cite{web_NOMAD} that is 
+plug-in module to the instrument control software \textit{NOMAD} \cite{Mutti2011, web_NOMAD} that is 
 employed at the Institut Laue-Langevin.
 
 Furthermore, a graphical user interface (GUI) has been implemented for a visual and interactive 
@@ -60,7 +60,7 @@ Currently, three possible output classes are available:
 	\item \lstinline[language=C++]|PathsExporterRaw|, which outputs the vertices of the calculated 
 		final instrument path in a raw text format.
 	\item \lstinline[language=C++]|PathsExporterNomad|, which writes out commands for driving the
-		motors of instruments which are controlled by the \textit{NOMAD} software \cite{web_NOMAD}.
+		motors of instruments which are controlled by the \textit{NOMAD} software \cite{Mutti2011, web_NOMAD}.
 	\item \lstinline[language=C++]|PathsExporterNicos|, which generates \textit{Python} code to
 		be used for driving the instrument using the \textit{NICOS} \cite{web_NICOS} control system.
 \end{itemize}
